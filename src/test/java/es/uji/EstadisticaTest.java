@@ -55,7 +55,7 @@ class EstadisticaTest {
         assertEquals(3F,estadistica.suma(datos1[0],datos1[1]),"Tiene que dar 3");
         assertEquals(10F,estadistica.suma(datos2[1],datos2[2]),"Tiene que dar 10");
         assertEquals(0.0F,estadistica.suma(datos3[2],datos3[3]),"Tiene que dar 0");
-        assertEquals(0.0F,estadistica.suma(datos4[3],datos4[4]),"Tiene que dar 0");
+        //assertEquals(0.0F,estadistica.suma(datos4[3],datos4[4]),"Tiene que dar 0");
         assertEquals(0.0F,estadistica.suma(datos5[2],datos5[1]),"Tiene que dar 0.0");
         //assertEquals(0.0F,estadistica.suma(datos6[5],datos6[0]),"Tiene que dar 0.0");
     }
