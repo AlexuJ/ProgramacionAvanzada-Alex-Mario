@@ -24,16 +24,16 @@ class EstadisticaTest {
         assertEquals(5F,estadistica.mediaAritmetica(datos2),"Tiene que dar 5");
         assertEquals(0.0F,estadistica.mediaAritmetica(datos3),"Tiene que dar 0");
         assertEquals(8F,estadistica.mediaAritmetica(datos4),"Tiene que dar 8");
-        assertEquals(0F,estadistica.mediaAritmetica(datos5),"Tiene que dar 0");
-        assertEquals(0F,estadistica.mediaAritmetica(datos6),"Tiene que dar 0");
+        assertEquals(0.0F,estadistica.mediaAritmetica(datos5),"Tiene que dar 0");
+        assertEquals(0.0F,estadistica.mediaAritmetica(datos6),"Tiene que dar 0");
     }
 
     @Test
     void varianza() {
         assertEquals(1.25F,estadistica.varianza(datos1),"Tiene que dar 1.25");
-        assertEquals(0F,estadistica.varianza(datos2),"Tiene que dar 0");
-        assertEquals(0F,estadistica.varianza(datos3),"Tiene que dar 0");
-        assertEquals(0F,estadistica.varianza(datos4),"Tiene que dar 0");
+        assertEquals(0.0F,estadistica.varianza(datos2),"Tiene que dar 0");
+        assertEquals(0.0F,estadistica.varianza(datos3),"Tiene que dar 0");
+        assertEquals(0.0F,estadistica.varianza(datos4),"Tiene que dar 0");
         assertEquals(2.5F,estadistica.varianza(datos5),"Tiene que dar 2.5");
         assertEquals(0.0F,estadistica.varianza(datos6),"Tiene que dar 0");
 
@@ -45,7 +45,7 @@ class EstadisticaTest {
         assertEquals(0.0F,estadistica.desviacionTipica(datos2),"Tiene que dar 0.0");
         assertEquals(0.0F,estadistica.desviacionTipica(datos3),"Tiene que dar 0.0");
         assertEquals(0.0F,estadistica.desviacionTipica(datos4),"Tiene que dar 0.0");
-        assertEquals(0.0F,estadistica.desviacionTipica(datos5),"Tiene que dar 0");
+        assertEquals(01.5811388F,estadistica.desviacionTipica(datos5),"Tiene que dar 1.5811388");
         assertEquals(0.0F,estadistica.desviacionTipica(datos6),"Tiene que dar 0.0");
 
     }
@@ -55,7 +55,7 @@ class EstadisticaTest {
         assertEquals(3F,estadistica.suma(datos1[0],datos1[1]),"Tiene que dar 3");
         assertEquals(10F,estadistica.suma(datos2[1],datos2[2]),"Tiene que dar 10");
         assertEquals(0.0F,estadistica.suma(datos3[2],datos3[3]),"Tiene que dar 0");
-        //assertEquals(0.0F,estadistica.suma(datos4[3],datos4[4]),"Tiene que dar 0");
+        assertEquals(0.0F,estadistica.suma(datos4[3],datos4[4]),"Tiene que dar 0");
         assertEquals(0.0F,estadistica.suma(datos5[2],datos5[1]),"Tiene que dar 0.0");
         //assertEquals(0.0F,estadistica.suma(datos6[5],datos6[0]),"Tiene que dar 0.0");
     }
