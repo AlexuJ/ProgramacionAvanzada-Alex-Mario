@@ -3,13 +3,7 @@ package es.uji.delaHorraBuga;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-
 class AritmeticaTest {
-
-
-
-
     @Test
     //en el test contemplo que funciona la suma que se pueda restar y que se pueden usar enteros
     void sumar() {
@@ -54,7 +48,5 @@ class AritmeticaTest {
         assertEquals(aritmetica.sumador(vector3),6.900000095367432,"1+2+3.9=6.9");
         assertEquals(aritmetica.sumador(vector4),0,"0=0");
         assertEquals(aritmetica.sumador(vector5),0,"-1+2+3=4");
-
     }
-    //Test de eleva
 }
