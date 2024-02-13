@@ -2,6 +2,7 @@ package es.uji;
 
 public class Estadistica {
     private float ultimoResultado;
+    private float Mario;
     public float mediaAritmetica(float[] datos) {
         float suma_total=sumador(datos);
         float total_de_numeros=datos.length;
