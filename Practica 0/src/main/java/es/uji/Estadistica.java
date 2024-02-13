@@ -8,9 +8,15 @@ public class Estadistica {
         return division(suma_total,total_de_numeros);
     }
     public float varianza(float[] datos) {
-        float total_de_numeros=datos.length;
-        return division(restador_varianza(datos),total_de_numeros);
-
+        if (datos.length>0) {
+            float total_de_numeros=datos.length;
+            float suma_total = 0.0F;
+            for (int i=0;i< datos.length;i++) {
+                suma_total+= (float) Math.pow(suma(datos[i],-mediaAritmetica(datos)),2);
+            }
+            return suma_total/total_de_numeros;
+        }
+        return 0.0F;
     }
     public float desviacionTipica(float[] datos) {
         return (float) Math.sqrt(varianza(datos));
@@ -39,12 +45,5 @@ public class Estadistica {
             sumatotal = suma(sumatotal,datos[i]);
         }
         return  ultimoResultado = sumatotal;
-    }
-    public float restador_varianza (float[] datos) {
-        float resultado=0;
-        for (int i=0;i<datos.length;i++) {
-            resultado+= (float) Math.pow(resta(datos[i],mediaAritmetica(datos)),2);
-        }
-        return resultado;
     }
 }
