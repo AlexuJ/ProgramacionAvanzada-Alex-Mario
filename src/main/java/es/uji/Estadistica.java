@@ -8,13 +8,15 @@ public class Estadistica {
         return division(suma_total,total_de_numeros);
     }
     public float varianza(float[] datos) {
-        float total_de_numeros=datos.length;
-        float suma_total = 0.0F;
-        for (int i=0;i< datos.length;i++) {
-            suma_total+= (float) Math.pow(suma(datos[i],-mediaAritmetica(datos)),2);
+        if (datos.length>0) {
+            float total_de_numeros=datos.length;
+            float suma_total = 0.0F;
+            for (int i=0;i< datos.length;i++) {
+                suma_total+= (float) Math.pow(suma(datos[i],-mediaAritmetica(datos)),2);
+            }
+            return suma_total/total_de_numeros;
         }
-        return suma_total/total_de_numeros;
-
+        return 0.0F;
     }
     public float desviacionTipica(float[] datos) {
         return (float) Math.sqrt(varianza(datos));
