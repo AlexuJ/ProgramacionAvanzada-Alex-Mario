@@ -6,11 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EstadisticaTest {
     private final Estadistica estadistica = new Estadistica();
-    private final float[] datos1 = {1.0F, 2.0F, 3.0F, 4.0F};
-    private final float[] datos2 = {5F, 5F, 5F, 5F};
-    private final float[] datos3= {0.0F, 0.0F, 0.0F, 0.0F};
-    private final float[] datos4 = {8F};
-    private final float[] datos5 = {-2F, -1F, 1F, 2F};
+    private final float[] datos1 = {1, 2, 3, 4};
+    private final float[] datos2 = {5, 5, 5, 5};
+    private final float[] datos3= {0, 0, 0, 0};
+    private final float[] datos4 = {8};
+    private final float[] datos5 = {-2, -1, 1, 2};
     private final float[] datos6 = {};
     @Test
     void mediaAritmetica() {
