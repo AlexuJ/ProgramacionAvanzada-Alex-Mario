@@ -46,35 +46,27 @@ class EstadisticaTest {
         assertEquals(3F,estadistica.suma(datos1[0],datos1[1]),"Tiene que dar 3");
         assertEquals(10F,estadistica.suma(datos2[1],datos2[2]),"Tiene que dar 10");
         assertEquals(0.0F,estadistica.suma(datos3[2],datos3[3]),"Tiene que dar 0");
-        //assertEquals(0.0F,estadistica.suma(datos4[3],datos4[4]),"Tiene que dar 0");
         assertEquals(0.0F,estadistica.suma(datos5[2],datos5[1]),"Tiene que dar 0.0");
-        //assertEquals(0.0F,estadistica.suma(datos6[5],datos6[0]),"Tiene que dar 0.0");
     }
     @Test
     void resta() {
         assertEquals(-1F,estadistica.resta(datos1[0],datos1[1]),"Tiene que dar -1");
         assertEquals(0.0F,estadistica.resta(datos2[1],datos2[2]),"Tiene que dar 0");
         assertEquals(0.0F,estadistica.resta(datos3[2],datos3[3]),"Tiene que dar 0");
-        //assertEquals(0.0F,estadistica.resta(datos4[3],datos4[4]),"Tiene que dar 0");
         assertEquals(2.0F,estadistica.resta(datos5[2],datos5[1]),"Tiene que dar 2");
-        //assertEquals(0.0F,estadistica.resta(datos6[5],datos6[0]),"Tiene que dar 0.0");
     }
     @Test
     void multiplicacion() {
         assertEquals(2F,estadistica.multiplicacion(datos1[0],datos1[1]),"Tiene que dar 2");
         assertEquals(25F,estadistica.multiplicacion(datos2[1],datos2[2]),"Tiene que dar 25");
         assertEquals(0.0F,estadistica.multiplicacion(datos3[2],datos3[3]),"Tiene que dar 0");
-        //assertEquals(0.0F,estadistica.multiplicacion(datos4[3],datos4[4]),"Tiene que dar 0");
         assertEquals(-1.0F,estadistica.multiplicacion(datos5[2],datos5[1]),"Tiene que dar -1.0");
-        //assertEquals(0.0F,estadistica.multiplicacion(datos6[5],datos6[0]),"Tiene que dar 0.0");
     }
     @Test
     void division() {
         assertEquals(0.5F,estadistica.division(datos1[0],datos1[1]),"Tiene que dar 0.5");
         assertEquals(1F,estadistica.division(datos2[1],datos2[2]),"Tiene que dar 1");
         assertEquals(0.0F,estadistica.division(datos3[2],datos3[3]),"Tiene que dar 0");
-        //assertEquals(0.0F,estadistica.division(datos4[3],datos4[4]),"Tiene que dar 0");
         assertEquals(-1.0F,estadistica.division(datos5[2],datos5[1]),"Tiene que dar -1.0");
-        //assertEquals(0.0F,estadistica.division(datos6[5],datos6[0]),"Tiene que dar 0.0");
     }
 }
