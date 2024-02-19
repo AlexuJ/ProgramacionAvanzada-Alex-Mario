@@ -21,22 +21,22 @@ public class Estadistica {
     public float desviacionTipica(float[] datos) {
         return (float) Math.sqrt(varianza(datos));
     }
-    protected float suma(float primerSumando, float segundoSumando) {
+    public float suma(float primerSumando, float segundoSumando) {
         return ultimoResultado = primerSumando + segundoSumando;
     }
-    protected float resta(float minuendo, float sustraendo) {
+    public float resta(float minuendo, float sustraendo) {
         return ultimoResultado = minuendo - sustraendo;
     }
-    protected float multiplicacion(float primerFactor, float segundoFactor) {
+    public float multiplicacion(float primerFactor, float segundoFactor) {
         return ultimoResultado = primerFactor * segundoFactor;
     }
-    protected float division(float dividendo, float divisor) {
+    public float division(float dividendo, float divisor) {
         if (divisor!=0) {
             return ultimoResultado = dividendo / divisor;
         }
         return 0.0F;
     }
-    protected float getUltimoResultado() {
+    public float getUltimoResultado() {
         return ultimoResultado;
     }
     public  float sumador (float [] datos){

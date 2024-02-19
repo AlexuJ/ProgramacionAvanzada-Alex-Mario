@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica 1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica 1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica 1/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica 1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica 1/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica 1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica 1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica 1/src/main/java/es/uji/Estadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Estadistica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica 1/src/test/java/es/uji/EstadisticaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/EstadisticaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +43,30 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Alex/ProgramacionAvanzada-Alex-Mario"
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Users/Alex/ProgramacionAvanzada-Alex-Mario",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\test\java" />
+      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\main\java\es\uji" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="es.uji" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="es.uji" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
