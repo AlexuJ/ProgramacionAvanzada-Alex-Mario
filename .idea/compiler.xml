@@ -7,10 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Practica0" />
-        <module name="Practica 1" />
+        <module name="Practica1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Practica 1" target="19" />
       <module name="Pratica0" target="19" />
     </bytecodeTargetLevel>
   </component>
