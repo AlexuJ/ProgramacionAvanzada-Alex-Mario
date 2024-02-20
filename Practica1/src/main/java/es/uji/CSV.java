@@ -3,6 +3,7 @@ package es.uji;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.stream.DoubleStream;
 
 public class CSV {
     public Table readTable(String fichero) throws FileNotFoundException {
@@ -15,7 +16,7 @@ public class CSV {
             Row fila = new Row();
             String[] valores = linea_datos.split("\\s+");
             for (String valor : valores) {
-                fila.data.add(Double.parseDouble(valor));
+                fila.data.add(Double.valueOf(valor));
             }
             tabla.datos.add(fila);
         }
