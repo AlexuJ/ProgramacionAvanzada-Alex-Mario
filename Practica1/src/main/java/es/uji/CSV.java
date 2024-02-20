@@ -12,9 +12,8 @@ public class CSV {
         String linea_headers = sc.nextLine();
         tabla.headers.add(linea_headers);
         while (sc.hasNextLine()) {
-            String linea_datos = sc.nextLine();
             Row fila = new Row();
-            String[] valores = linea_datos.split("\\s+");
+            String[] valores = sc.nextLine().split("\\s+");
             for (String valor : valores) {
                 fila.data.add(Double.valueOf(valor));
             }
