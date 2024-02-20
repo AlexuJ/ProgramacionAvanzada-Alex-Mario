@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="" />
+    <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/CSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/CSV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/Row.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/Row.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/Table.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,8 +62,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\main\java\es\uji" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1" />
+      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src" />
+      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\main\java\es\uji" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\test\java" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
