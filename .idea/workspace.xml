@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="" />
+    <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Table.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,8 +61,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\test\java" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\main\java\es\uji" />
+      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1" />
+      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\test\java" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -78,5 +85,8 @@
       <updated>1708359421866</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
 </project>
