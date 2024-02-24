@@ -8,7 +8,7 @@ public class CSV implements LectorTabla {
     public Table readTable(String fichero) throws FileNotFoundException {
         Table tabla = new Table();
         tabla.headers=Headers(fichero);
-        tabla.datos=DatosSinEtiqueta(fichero);a
+        tabla.datos=DatosSinEtiqueta(fichero);
         return tabla;
     }
     public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException {
