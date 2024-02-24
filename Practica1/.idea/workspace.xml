@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cff46fb1-cbe9-4711-ab35-4eb32ac78ed9" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/CSVTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/RowTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/RowWithLabelsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/TableTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/TableWithLabelsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Practica 0/src/test/java/es/uji/EstadisticaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica 0/src/test/java/es/uji/EstadisticaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/es/uji/CSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uji/CSV.class" afterDir="false" />
