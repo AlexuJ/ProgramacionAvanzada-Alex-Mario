@@ -12,12 +12,10 @@ public class Main {
         for (Row fila : tabla.datos) {
             System.out.println(fila.getData());
         }
-        CSV prueba2 = new CSV();
-        TableWithLabels TablaconEtiquetas = prueba2.readTableWithLabels(fichero2);
+        TableWithLabels TablaconEtiquetas = prueba.readTableWithLabels(fichero2);
         System.out.println(TablaconEtiquetas.headers);
         for (RowWithLabels fila : TablaconEtiquetas.DatosConEtiquetas) {
-            System.out.println(fila.getData());
-            System.out.println(fila.getNumberClass());
+            System.out.println(fila.getData()+" "+fila.getNumberClass());
         }
     }
 }
