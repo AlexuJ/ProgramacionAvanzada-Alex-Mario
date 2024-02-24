@@ -3,6 +3,7 @@ package es.uji;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -21,5 +22,11 @@ public class TableWithLabels extends Table {
             }
         }
         return Etiquetas;
+    }
+    public RowWithLabels getRowAt(int rowNumber) {
+        RowWithLabels FilaConEtiqueta = new RowWithLabels();
+        FilaConEtiqueta.data=FilaConEtiqueta.getData();
+        FilaConEtiqueta.numberClass=FilaConEtiqueta.getNumberClass();
+        return FilaConEtiqueta;
     }
 }
