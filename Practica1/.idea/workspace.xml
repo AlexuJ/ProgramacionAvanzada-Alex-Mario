@@ -10,8 +10,6 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/CSVTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/RowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/RowTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/RowWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/RowWithLabelsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/TableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/TableTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/TableWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/TableWithLabelsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/es/uji/CSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uji/CSV.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/es/uji/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uji/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/es/uji/Row.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uji/Row.class" afterDir="false" />
@@ -67,7 +65,7 @@
       <recent name="es.uji" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CSVTest">
+  <component name="RunManager" selected="JUnit.RowTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="es.uji.Main" />
       <module name="Practica1" />
@@ -112,10 +110,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RowTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.RowTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CSVTest" />
+        <item itemvalue="JUnit.RowTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CSVTest" />
         <item itemvalue="JUnit.CSVTest.suma" />
       </list>
     </recent_temporary>
