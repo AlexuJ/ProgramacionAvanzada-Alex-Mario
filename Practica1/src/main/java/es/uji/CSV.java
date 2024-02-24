@@ -3,7 +3,6 @@ package es.uji;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.stream.DoubleStream;
 
 public class CSV {
     public Table readTable(String fichero) throws FileNotFoundException {
@@ -21,5 +20,25 @@ public class CSV {
         }
         sc.close();
         return tabla;
+    }
+    public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException{
+        TableWithLabels TablaConEtiquetas = new TableWithLabels();
+        Scanner sc = new Scanner(new File(fichero));
+        String linea_headers = sc.nextLine();
+        TablaConEtiquetas.headers.add(linea_headers);
+        while (sc.hasNextLine()) {
+            RowWithLabels fila = new RowWithLabels();
+            String[] valores =sc.nextLine().split(",");
+            for (String valor : valores) {
+                if (TablaConEtiquetas.rellenarMapaEtiquetas(fichero).containsKey(valor)) {
+                    fila.numberClass=TablaConEtiquetas.rellenarMapaEtiquetas(fichero).get(valor);
+                } else {
+                    fila.data.add(Double.valueOf(valor));
+                }
+            }
+            TablaConEtiquetas.DatosConEtiquetas.add(fila);
+        }
+        sc.close();
+        return TablaConEtiquetas;
     }
 }
