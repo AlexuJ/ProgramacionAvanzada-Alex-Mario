@@ -25,9 +25,6 @@ public class TableWithLabels extends Table {
         return Etiquetas;
     }
     public RowWithLabels getRowAt(int rowNumber) {
-        RowWithLabels FilaConEtiqueta = new RowWithLabels();
-        FilaConEtiqueta.data=FilaConEtiqueta.getData();
-        FilaConEtiqueta.numberClass=FilaConEtiqueta.getNumberClass();
-        return FilaConEtiqueta;
+        return DatosConEtiquetas.get(rowNumber);
     }
 }
