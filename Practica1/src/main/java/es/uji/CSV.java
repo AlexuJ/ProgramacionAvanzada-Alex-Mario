@@ -2,43 +2,63 @@ package es.uji;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.util.*;
 
-public class CSV {
+public class CSV implements LectorTabla {
     public Table readTable(String fichero) throws FileNotFoundException {
         Table tabla = new Table();
-        Scanner sc = new Scanner(new File(fichero));
-        String linea_headers = sc.nextLine();
-        tabla.headers.add(linea_headers);
-        while (sc.hasNextLine()) {
-            Row fila = new Row();
-            String[] valores = sc.nextLine().split("\\s+");
-            for (String valor : valores) {
-                fila.data.add(Double.valueOf(valor));
-            }
-            tabla.datos.add(fila);
-        }
-        sc.close();
+        tabla.headers=Headers(fichero);
+        tabla.datos=DatosSinEtiqueta(fichero);
         return tabla;
     }
-    public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException{
+    public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException {
         TableWithLabels TablaConEtiquetas = new TableWithLabels();
+        TablaConEtiquetas.headers=Headers(fichero);
+        TablaConEtiquetas.DatosConEtiquetas=DatosConEtiqueta(fichero,TablaConEtiquetas.rellenarMapaEtiquetas(fichero));
+        return TablaConEtiquetas;
+    }
+    @Override
+    public List<String> Headers(String fichero) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(fichero));
-        String linea_headers = sc.nextLine();
-        TablaConEtiquetas.headers.add(linea_headers);
+        String[] linea = sc.nextLine().split("\\s+");
+        List<String> cabeceras = new ArrayList<>(List.of(linea));
+        sc.close();
+        return cabeceras;
+    }
+    @Override
+    public List<Row> DatosSinEtiqueta(String fichero) throws FileNotFoundException {
+        List<Row> DatosSinEtiqueta = new ArrayList<>();
+        Scanner sc = new Scanner(new File(fichero));
+        sc.nextLine();
         while (sc.hasNextLine()) {
-            RowWithLabels fila = new RowWithLabels();
-            String[] valores =sc.nextLine().split(",");
-            for (String valor : valores) {
-                if (TablaConEtiquetas.rellenarMapaEtiquetas(fichero).containsKey(valor)) {
-                    fila.numberClass=TablaConEtiquetas.rellenarMapaEtiquetas(fichero).get(valor);
-                } else {
-                    fila.data.add(Double.valueOf(valor));
-                }
+            Row fila = new Row();
+            String[] linea = sc.nextLine().split(",");
+            for (String dato : linea) {
+                fila.data.add(Double.valueOf(dato));
             }
-            TablaConEtiquetas.DatosConEtiquetas.add(fila);
+            DatosSinEtiqueta.add(fila);
         }
         sc.close();
-        return TablaConEtiquetas;
+        return DatosSinEtiqueta;
+    }
+    @Override
+    public List<RowWithLabels> DatosConEtiqueta(String fichero, Map<String, Integer> Etiquetas) throws FileNotFoundException {
+        List<RowWithLabels> DatosConEtiqueta = new ArrayList<>();
+        Scanner sc = new Scanner(new File(fichero));
+        sc.nextLine();
+        while (sc.hasNextLine()) {
+            RowWithLabels fila = new RowWithLabels();
+            String[] linea = sc.nextLine().split(",");
+            for (String dato : linea) {
+                if (Etiquetas.containsKey(dato)) {
+                    fila.numberClass=Etiquetas.get(dato);
+                } else {
+                    fila.data.add(Double.valueOf(dato));
+                }
+            }
+            DatosConEtiqueta.add(fila);
+        }
+        sc.close();
+        return DatosConEtiqueta;
     }
 }

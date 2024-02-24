@@ -22,6 +22,7 @@ public class TableWithLabels extends Table {
                 Etiquetas.put(valores[valores.length-1],ClaseEtiqueta++);
             }
         }
+        sc.close();
         return Etiquetas;
     }
     public RowWithLabels getRowAt(int rowNumber) {
