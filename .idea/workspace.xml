@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/CSVTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/RowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/RowTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/CSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/CSV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/TableWithLabels.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/TableWithLabels.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/TodasLasPruebasTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/TodosLosTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/CSVTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/CSVTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/RowTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/RowTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/TodasLasPruebasTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +82,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="TodasLasPruebasTest.ComprobarFilas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CSVTest.prueba1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
@@ -94,7 +91,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="es.uji" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.TodasLasPruebasTest" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.CSVTest" />
+      <option name="METHOD_NAME" value="prueba1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodosLosTests.ComprobarFilas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.CSV" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.TodosLosTests" />
       <option name="METHOD_NAME" value="ComprobarFilas" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -103,7 +116,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TodasLasPruebasTest.ComprobarFilas" />
+        <item itemvalue="JUnit.CSVTest.prueba1" />
+        <item itemvalue="JUnit.TodosLosTests.ComprobarFilas" />
       </list>
     </recent_temporary>
   </component>
