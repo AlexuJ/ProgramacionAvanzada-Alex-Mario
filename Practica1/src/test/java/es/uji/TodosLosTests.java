@@ -49,7 +49,7 @@ public class TodosLosTests {
             Assertions.assertEquals(NumerosEsperados[iterador++],MapaConEtiquetas.get(etiqueta),"Tiene que ser: "+ResultadoEsperado);
         }
     }
-    @DisplayName("Comprobar filas guardadas")
+    @DisplayName("Comprobar filas añadidas")
     @Test
     void ComprobarFilasAnyadidas() {
         Row FilanyadidaSinEtiqueta = AnyadirFilaTablaSinEtiquetas();
