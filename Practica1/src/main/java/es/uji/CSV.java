@@ -7,20 +7,28 @@ import java.util.*;
 public class CSV implements LectorTabla {
     public Table readTable(String fichero) throws FileNotFoundException {
         Table tabla = new Table();
-        tabla.headers=Headers(fichero);
+        tabla.headers=HeadersSinEtiqueta(fichero);
         tabla.datos=DatosSinEtiqueta(fichero);
         return tabla;
     }
     public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException {
         TableWithLabels TablaConEtiquetas = new TableWithLabels();
-        TablaConEtiquetas.headers=Headers(fichero);
+        TablaConEtiquetas.headers=HeadersConEtiqueta(fichero);
         TablaConEtiquetas.DatosConEtiquetas=DatosConEtiqueta(fichero,TablaConEtiquetas.rellenarMapaEtiquetas(fichero));
         return TablaConEtiquetas;
     }
     @Override
-    public List<String> Headers(String fichero) throws FileNotFoundException {
+    public List<String> HeadersSinEtiqueta(String fichero) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(fichero));
         String[] linea = sc.nextLine().split("\\s+");
+        List<String> cabeceras = new ArrayList<>(List.of(linea));
+        sc.close();
+        return cabeceras;
+    }
+    @Override
+    public List<String> HeadersConEtiqueta(String fichero) throws FileNotFoundException {
+        Scanner sc = new Scanner(new File(fichero));
+        String[] linea = sc.nextLine().split(",");
         List<String> cabeceras = new ArrayList<>(List.of(linea));
         sc.close();
         return cabeceras;
@@ -32,7 +40,7 @@ public class CSV implements LectorTabla {
         sc.nextLine();
         while (sc.hasNextLine()) {
             Row fila = new Row();
-            String[] linea = sc.nextLine().split(",");
+            String[] linea = sc.nextLine().split("\\s+");
             for (String dato : linea) {
                 fila.data.add(Double.valueOf(dato));
             }
