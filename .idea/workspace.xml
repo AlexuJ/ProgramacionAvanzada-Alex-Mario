@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/TodosLosTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/TodosLosTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +78,7 @@
       <recent name="es.uji" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TodosLosTests.ComprobarFilas">
     <configuration name="CSVTest.prueba1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica1" />
       <extension name="coverage">
@@ -112,8 +113,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CSVTest.prueba1" />
         <item itemvalue="JUnit.TodosLosTests.ComprobarFilas" />
+        <item itemvalue="JUnit.CSVTest.prueba1" />
       </list>
     </recent_temporary>
   </component>

@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.Map;
 
 public class TodosLosTests {
-    private static final String FicheroSinEtiquetas = "./Practica1/miles_dolars.txt";
-    private static final String FicheroConEtiquetas = "./Practica1/iris.txt";
+    private static String FicheroSinEtiquetas = "./Practica1/miles_dolars.txt";
+    private static String FicheroConEtiquetas = "./Practica1/iris.txt";
     private static Table TablaSinEtiquetas;
     private static TableWithLabels TablaConEtiquetas;
     private static Map<String,Integer> MapaConEtiquetas;
