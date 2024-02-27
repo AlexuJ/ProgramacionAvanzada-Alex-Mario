@@ -6,6 +6,5 @@ import java.util.Map;
 
 public interface LectorTabla {
     public List<String> Headers(String fichero, String Separador) throws FileNotFoundException;
-    public List<Row> DatosSinEtiqueta (String fichero) throws FileNotFoundException;
-    public List<RowWithLabels> DatosConEtiqueta (String fichero, Map<String,Integer> Etiquetas) throws FileNotFoundException;
+    public List<Row> DatosTabla (String fichero, String Separador) throws FileNotFoundException;
 }

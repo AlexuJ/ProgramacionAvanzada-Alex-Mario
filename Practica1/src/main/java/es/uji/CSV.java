@@ -8,13 +8,13 @@ public class CSV implements LectorTabla {
     public Table readTable(String fichero) throws FileNotFoundException {
         Table tabla = new Table();
         tabla.headers=Headers(fichero, "\\s+");
-        tabla.datos=DatosSinEtiqueta(fichero);
+        tabla.datos=DatosTabla(fichero, "\\s+");
         return tabla;
     }
     public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException {
         TableWithLabels TablaConEtiquetas = new TableWithLabels();
         TablaConEtiquetas.headers=Headers(fichero, ",");
-        TablaConEtiquetas.DatosConEtiquetas=DatosConEtiqueta(fichero,TablaConEtiquetas.rellenarMapaEtiquetas(fichero));
+        TablaConEtiquetas.DatosConEtiquetas=TratarDatosConEtiqueta(fichero, TablaConEtiquetas.rellenarMapaEtiquetas(fichero));
         return TablaConEtiquetas;
     }
     @Override
@@ -26,39 +26,35 @@ public class CSV implements LectorTabla {
         return cabeceras;
     }
     @Override
-    public List<Row> DatosSinEtiqueta(String fichero) throws FileNotFoundException {
+    public List<Row> DatosTabla (String fichero, String Separador) throws FileNotFoundException {
         List<Row> DatosSinEtiqueta = new ArrayList<>();
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
         while (sc.hasNextLine()) {
             Row fila = new Row();
-            String[] linea = sc.nextLine().split("\\s+");
-            for (String dato : linea) {
-                fila.data.add(Double.valueOf(dato));
+            String[] linea = sc.nextLine().split(Separador);
+            int fin = linea.length;
+            if (Separador.equals(",") && fichero.equals("./Practica1/iris.txt")) {
+                fin-=1;
             }
-            DatosSinEtiqueta.add(fila);
+            for (int i=0; i<fin; i++) {
+                fila.data.add(Double.valueOf(linea[i]));
+                DatosSinEtiqueta.add(fila);
+            }
         }
         sc.close();
         return DatosSinEtiqueta;
     }
-    @Override
-    public List<RowWithLabels> DatosConEtiqueta(String fichero, Map<String, Integer> Etiquetas) throws FileNotFoundException {
+    private List<RowWithLabels> TratarDatosConEtiqueta(String fichero, Map<String, Integer> Etiquetas) throws FileNotFoundException {
         List<RowWithLabels> DatosConEtiqueta = new ArrayList<>();
-        Scanner sc = new Scanner(new File(fichero));
-        sc.nextLine();
-        while (sc.hasNextLine()) {
-            RowWithLabels fila = new RowWithLabels();
-            String[] linea = sc.nextLine().split(",");
-            for (String dato : linea) {
-                if (Etiquetas.containsKey(dato)) {
-                    fila.numberClass=Etiquetas.get(dato);
-                } else {
-                    fila.data.add(Double.valueOf(dato));
-                }
-            }
-            DatosConEtiqueta.add(fila);
+        List<Row> DatosATratar = DatosTabla(fichero, ",");
+        int iterador = 0;
+        for (String etiqueta : Etiquetas.keySet()) {
+            RowWithLabels LineaConEtiqueta = new RowWithLabels();
+            LineaConEtiqueta.data = DatosATratar.get(iterador++).data;
+            LineaConEtiqueta.numberClass = Etiquetas.get(etiqueta);
+            DatosConEtiqueta.add(LineaConEtiqueta);
         }
-        sc.close();
         return DatosConEtiqueta;
     }
 }

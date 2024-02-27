@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/TodosLosTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/TodosLosTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/LectorTabla.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/LectorTabla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/CSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/CSV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/LectorTabla.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/LectorTabla.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +83,7 @@
       <recent name="es.uji" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TodosLosTests.ComprobarFilas">
+  <component name="RunManager">
     <configuration name="CSVTest.prueba1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica1" />
       <extension name="coverage">
