@@ -43,20 +43,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mariu/OneDrive/Escritorio/Programacion avanzada/Repositorio-Programacion_Avanzada/ProgramacionAvanzada-Alex-Mario/Practica1&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/mariu/OneDrive/Escritorio/Programacion avanzada/Repositorio-Programacion_Avanzada/ProgramacionAvanzada-Alex-Mario/Practica1",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -65,8 +66,8 @@
       <recent name="es.uji" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TableTest.SetHeader">
-    <configuration name="RowTest.Prueba3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RowWithLabelsTest.GetSetRowithLabels">
+    <configuration name="RowWithLabelsTest.GetSetNumberOfClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
@@ -75,8 +76,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="es.uji" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.RowTest" />
-      <option name="METHOD_NAME" value="Prueba3" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.RowWithLabelsTest" />
+      <option name="METHOD_NAME" value="GetSetNumberOfClass" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RowWithLabelsTest.GetSetRowithLabels" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.RowWithLabelsTest" />
+      <option name="METHOD_NAME" value="GetSetRowithLabels" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,29 +146,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TableTest.SetRow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Practica1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="es.uji.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="es.uji" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.TableTest" />
-      <option name="METHOD_NAME" value="SetRow" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RowWithLabelsTest.GetSetRowithLabels" />
+        <item itemvalue="JUnit.RowWithLabelsTest.GetSetNumberOfClass" />
         <item itemvalue="JUnit.TableTest.SetHeader" />
         <item itemvalue="JUnit.TableTest.GetRow" />
         <item itemvalue="JUnit.TableTest" />
-        <item itemvalue="JUnit.TableTest.SetRow" />
-        <item itemvalue="JUnit.RowTest.Prueba3" />
       </list>
     </recent_temporary>
   </component>
