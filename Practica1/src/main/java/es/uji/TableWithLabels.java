@@ -5,10 +5,6 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class TableWithLabels extends Table {
-    public List<RowWithLabels> DatosConEtiquetas;
-    public TableWithLabels() {
-        DatosConEtiquetas = new ArrayList<>();
-    }
     public Map<String,Integer> rellenarMapaEtiquetas(String fichero) throws FileNotFoundException {
         Map<String,Integer> Etiquetas = new HashMap<>();
         Scanner sc = new Scanner(new File(fichero));
@@ -25,7 +21,8 @@ public class TableWithLabels extends Table {
         sc.close();
         return Etiquetas;
     }
-    public RowWithLabels getRowAt(int rowNumber) {
-        return DatosConEtiquetas.get(rowNumber);
+    @Override
+    public Row getRowAt(int rowNumber) {
+        return super.getRowAt(rowNumber);
     }
 }
