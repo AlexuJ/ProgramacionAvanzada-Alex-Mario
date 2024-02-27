@@ -3,12 +3,18 @@ package es.uji;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-
+//esta clase implementa la interfaz LectorTabla
 public class CSV implements LectorTabla {
+    //Metodo para leer la tabla sin etiquetas lanza una excepcion si no encuentra el fichero
+    //se me a ocurrido usar una interfaz para tabla y para filas de esta forma podrias aplicar el poliformismo y siplificar tu codigo
     public Table readTable(String fichero) throws FileNotFoundException {
+        //Mejoras para esta funcion crear una funcion vacia que haga el trabajo de asignar los headers y los datos
+        //crea una nueva tabla
         Table tabla = new Table();
-        tabla.headers=HeadersSinEtiqueta(fichero);
-        tabla.datos=DatosSinEtiqueta(fichero);
+        //crea los headers  atraves de HeadersSinEtiqueta
+        tabla.setHeaders(HeadersSinEtiqueta(fichero));
+        //coje los datos sin etiqueta y manda return de la tabla
+        tabla.setRows(DatosSinEtiqueta(fichero));
         return tabla;
     }
     public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException {
@@ -17,6 +23,7 @@ public class CSV implements LectorTabla {
         TablaConEtiquetas.DatosConEtiquetas=DatosConEtiqueta(fichero,TablaConEtiquetas.rellenarMapaEtiquetas(fichero));
         return TablaConEtiquetas;
     }
+    //soy yo o esto estas usando un  metodo exactamente igules para obtener los headers lo cual se simplifica añadiendo un unico metodo
     @Override
     public List<String> HeadersSinEtiqueta(String fichero) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(fichero));
