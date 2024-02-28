@@ -5,6 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 public interface LectorTabla {
-    public List<String> Headers(String fichero, String Separador) throws FileNotFoundException;
-    public List<Row> DatosTabla (String fichero, String Separador) throws FileNotFoundException;
+    public List<String> Headers(String fichero) throws FileNotFoundException;
+    public List<Row> DatosTabla (String fichero) throws FileNotFoundException;
 }
