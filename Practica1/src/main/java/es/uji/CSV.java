@@ -8,16 +8,28 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CSV implements LectorTabla {
-    public Table readTable(String fichero)throws FileNotFoundException {
+    public Table readTable(String fichero) throws FileNotFoundException {
         Table TablaSinEtiquetas = new Table();
         TablaSinEtiquetas.headers = Headers(fichero);
-        TablaSinEtiquetas.datos = DatosTabla(fichero);
+        Scanner sc = new Scanner(new File(fichero));
+        sc.nextLine();
+        while (sc.hasNextLine()) {
+            String[] linea = sc.nextLine().split(",");
+            TablaSinEtiquetas.addFilaSinEtiquetas(linea);
+        }
+        sc.close();
         return TablaSinEtiquetas;
     }
     public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException {
         TableWithLabels TablaConEtiquetas = new TableWithLabels();
         TablaConEtiquetas.headers = Headers(fichero);
-        TablaConEtiquetas.datos = DatosTabla(fichero);
+        Scanner sc = new Scanner(new File(fichero));
+        sc.nextLine();
+        while (sc.hasNextLine()) {
+            String[] linea = sc.nextLine().split(",");
+            TablaConEtiquetas.addFilaConEtiqueta(linea);
+        }
+        sc.close();
         return TablaConEtiquetas;
     }
     @Override

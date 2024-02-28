@@ -5,16 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class TableWithLabels extends Table {
-    // atributos que tenemos una lista de Row
-    public List<Row> DatosConEtiquetas;
-
-    // constructor Vacio
-    public TableWithLabels() {
-        DatosConEtiquetas = new ArrayList<>();
-    }
-
-    // metodo no revisado
-    public Map<String, Integer> rellenarMapaEtiquetas(String fichero) throws FileNotFoundException {
+    public Map<String, Integer> lebelsToIndex(String fichero) throws FileNotFoundException {
         Map<String, Integer> Etiquetas = new HashMap<>();
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
@@ -30,5 +21,16 @@ public class TableWithLabels extends Table {
         sc.close();
         return Etiquetas;
     }
-
+    public void addFilaConEtiqueta(String[] linea) {
+        RowWithLabels FilaConEtiqueta = new RowWithLabels();
+        for (int i=0; i<linea.length-1; i++) {
+            FilaConEtiqueta.data.add(Double.valueOf(linea[i]));
+        }
+        FilaConEtiqueta.numberClass = Integer.parseInt(linea[linea.length-1]);
+        datos.add(FilaConEtiqueta);
+    }
+    @Override
+    public Row getRowAt(int rowNumber) {
+        return super.getRowAt(rowNumber);
+    }
 }

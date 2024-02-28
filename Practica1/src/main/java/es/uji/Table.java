@@ -13,6 +13,13 @@ public class Table {
         headers = new ArrayList<>();
         datos = new ArrayList<>();
     }
+    public void addFilaSinEtiquetas(String[] linea) {
+        Row FilaSinEtiqueta = new Row();
+        for (String dato : linea) {
+            FilaSinEtiqueta.data.add(Double.valueOf(dato));
+        }
+        datos.add(FilaSinEtiqueta);
+    }
 
     // metodo para consultar lo que hay en esta parte de la tabla
     public Row getRowAt(int rowNumber) {
