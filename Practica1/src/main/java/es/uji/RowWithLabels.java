@@ -1,5 +1,6 @@
 package es.uji;
 
+import java.util.Date;
 import java.util.List;
 
 public class RowWithLabels extends Row {
@@ -11,7 +12,7 @@ public class RowWithLabels extends Row {
         return numberClass;
     }
     @Override
-    public List<Number> getData() {
+    public List<Double> getData() {
         return super.getData();
     }
     // creo el set de NumberClass
