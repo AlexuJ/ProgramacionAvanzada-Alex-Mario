@@ -21,16 +21,15 @@ public class TableWithLabels extends Table {
         sc.close();
         return Etiquetas;
     }
-    public void addFilaConEtiqueta(String[] linea) {
+    public void addFilaConEtiqueta(String[] linea, Map<String,Integer> Etiquetas) {
         RowWithLabels FilaConEtiqueta = new RowWithLabels();
         for (int i=0; i<linea.length-1; i++) {
             FilaConEtiqueta.data.add(Double.valueOf(linea[i]));
         }
-        FilaConEtiqueta.numberClass = Integer.parseInt(linea[linea.length-1]);
+        FilaConEtiqueta.numberClass = Etiquetas.get(linea[linea.length-1]);
         datos.add(FilaConEtiqueta);
     }
-    @Override
-    public Row getRowAt(int rowNumber) {
-        return super.getRowAt(rowNumber);
+    public RowWithLabels getRowAt(int rowNumber) {
+        return (RowWithLabels) super.getRowAt(rowNumber);
     }
 }

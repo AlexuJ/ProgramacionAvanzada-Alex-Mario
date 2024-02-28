@@ -28,7 +28,7 @@ public class CSV implements LectorTabla {
         sc.nextLine();
         while (sc.hasNextLine()) {
             String[] linea = sc.nextLine().split(",");
-            TablaConEtiquetas.addFilaConEtiqueta(linea);
+            TablaConEtiquetas.addFilaConEtiqueta(linea, TablaConEtiquetas.lebelsToIndex(fichero));
         }
         sc.close();
         return TablaConEtiquetas;
