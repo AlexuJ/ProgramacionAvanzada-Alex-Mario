@@ -20,6 +20,7 @@ public class CSV implements LectorTabla {
         sc.close();
         return TablaSinEtiquetas;
     }
+
     public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException {
         TableWithLabels TablaConEtiquetas = new TableWithLabels();
         TablaConEtiquetas.headers = Headers(fichero);
@@ -32,6 +33,7 @@ public class CSV implements LectorTabla {
         sc.close();
         return TablaConEtiquetas;
     }
+
     @Override
     public List<String> Headers(String fichero) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(fichero));
