@@ -26,8 +26,4 @@ public class CSV implements LectorTabla {
         String[] linea = sc.nextLine().split(",");
         return new ArrayList<>(Arrays.asList(linea));
     }
-    @Override
-    public List<Row> DatosTabla(String fichero) throws FileNotFoundException {
-        List<Row> Datos = new ArrayList<>();
-    }
 }
