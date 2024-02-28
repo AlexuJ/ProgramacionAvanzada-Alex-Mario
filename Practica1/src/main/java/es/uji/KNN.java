@@ -1,13 +1,12 @@
 package es.uji;
 
 import java.io.FileNotFoundException;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class KNN {
     private TableWithLabels TablaEntrenamiento;
-    private final String fichero = "./Practica1/iris.csv";
+
     public KNN() {
         TablaEntrenamiento = new TableWithLabels();
     }
@@ -16,19 +15,29 @@ public class KNN {
     }
     public Integer estimate(List<Double> data) throws FileNotFoundException {
         CSV Lector = new CSV();
+        String fichero = "./Practica1/iris.csv";
         TableWithLabels TablaDatos = Lector.readTableWithLabels(fichero);
         train(TablaDatos);
-        for (Row fila : TablaEntrenamiento.datos) {
-            CalcularMetricaEuclidiana(data, fila);
+        int Estimacion = 0;
+        double MenorAproximacion = 3.0;
+        for (int i=0; i<TablaEntrenamiento.datos.size(); i++) {
+            double Aproximacion = (double) TablaDatos.getRowAt(i).getNumberClass() - CalcularMetricaEuclidiana(data, TablaDatos.datos.get(i));
+            if (Aproximacion<0) {
+                Aproximacion*=-1;
+            }
+            if (Aproximacion < MenorAproximacion) {
+                MenorAproximacion = Aproximacion;
+                Estimacion = TablaDatos.getRowAt(i).getNumberClass();
+            }
         }
-        return 0;
+        return Estimacion;
     }
-    private void CalcularMetricaEuclidiana(List<Double> data, Row fila) {
+    private Double CalcularMetricaEuclidiana(List<Double> data, Row fila) {
         double MetricaEuclidiana = 0.0;
         for (int i=0; i<data.size(); i++) {
             MetricaEuclidiana+=Math.pow(data.get(i)-fila.data.get(i),2);
         }
-        System.out.println(Math.sqrt(MetricaEuclidiana));
+        return Math.sqrt(MetricaEuclidiana);
     }
     public static void main(String[] args) throws FileNotFoundException {
         KNN prueba = new KNN();
