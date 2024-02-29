@@ -6,7 +6,6 @@ import java.util.List;
 
 public class KNN {
     private TableWithLabels TablaEntrenamiento;
-
     public KNN() {
         TablaEntrenamiento = new TableWithLabels();
     }
@@ -22,7 +21,7 @@ public class KNN {
         double MenorAproximacion = 3.0;
         for (int i=0; i<TablaEntrenamiento.datos.size(); i++) {
             double Aproximacion = (double) TablaDatos.getRowAt(i).getNumberClass() - CalcularMetricaEuclidiana(data, TablaDatos.datos.get(i));
-            if (Aproximacion<0) {
+            if (Aproximacion < 0) {
                 Aproximacion*=-1;
             }
             if (Aproximacion < MenorAproximacion) {
