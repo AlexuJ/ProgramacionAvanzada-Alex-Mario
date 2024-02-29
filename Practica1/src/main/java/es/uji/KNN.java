@@ -36,13 +36,4 @@ public class KNN {
         }
         return Math.sqrt(MetricaEuclidiana);
     }
-    public static void main(String[] args) throws FileNotFoundException {
-        KNN prueba = new KNN();
-        List<Double> datos = new ArrayList<>();
-        datos.add(10.4);
-        datos.add(8.7);
-        datos.add(5.4);
-        datos.add(3.2);
-        System.out.println(prueba.estimate(datos));
-    }
 }

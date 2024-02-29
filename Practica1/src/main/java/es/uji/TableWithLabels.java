@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class TableWithLabels extends Table {
-    public Map<String, Integer> lebelsToIndex(String fichero) throws FileNotFoundException {
+    public Map<String, Integer> lebelsToIndex(String fichero) throws FileNotFoundException  {
         Map<String, Integer> Etiquetas = new HashMap<>();
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
