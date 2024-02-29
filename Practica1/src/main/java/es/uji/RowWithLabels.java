@@ -11,10 +11,7 @@ public class RowWithLabels extends Row {
     public int getNumberClass() {
         return numberClass;
     }
-    @Override
-    public List<Double> getData() {
-        return super.getData();
-    }
+
     // creo el set de NumberClass
     public void setNumberClass(int number) {
         numberClass = number;

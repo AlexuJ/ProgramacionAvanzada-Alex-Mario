@@ -46,9 +46,7 @@ class RowTest {
         nuevosDatos.add(10);
         nuevosDatos.add(20);
         nuevosDatos.add(30);
-
         fila.setData(nuevosDatos);
-
         assertArrayEquals(nuevosDatos.toArray(), fila.getData().toArray(),
                 "Los datos no se han establecido correctamente");
     }
