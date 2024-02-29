@@ -5,28 +5,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KNN {
+    private static final String fichero = "./Practica1/iris.csv";
+    private CSV Lector = new CSV();
+    private TableWithLabels TablaDatos;
     private TableWithLabels TablaEntrenamiento;
-    public KNN() {
+    public KNN() throws FileNotFoundException {
+        TablaDatos = Lector.readTableWithLabels(fichero);
         TablaEntrenamiento = new TableWithLabels();
     }
     public void train(TableWithLabels data) {
         TablaEntrenamiento = data;
     }
-    public Integer estimate(List<Double> data) throws FileNotFoundException {
-        CSV Lector = new CSV();
-        String fichero = "./Practica1/iris.csv";
-        TableWithLabels TablaDatos = Lector.readTableWithLabels(fichero);
+    public Integer estimate(List<Double> data) {
         train(TablaDatos);
         int Estimacion = 0;
         double MenorAproximacion = 3.0;
         for (int i=0; i<TablaEntrenamiento.datos.size(); i++) {
-            double Aproximacion = (double) TablaDatos.getRowAt(i).getNumberClass() - CalcularMetricaEuclidiana(data, TablaDatos.datos.get(i));
-            if (Aproximacion < 0) {
-                Aproximacion*=-1;
-            }
-            if (Aproximacion < MenorAproximacion) {
-                MenorAproximacion = Aproximacion;
-                Estimacion = TablaDatos.getRowAt(i).getNumberClass();
+            Double MetricaEuclidiana = CalcularMetricaEuclidiana(data, TablaEntrenamiento.getRowAt(i));
+            if (MetricaEuclidiana < MenorAproximacion) {
+                MenorAproximacion = MetricaEuclidiana;
+                Estimacion = TablaEntrenamiento.getRowAt(i).getNumberClass();
             }
         }
         return Estimacion;
@@ -41,10 +39,10 @@ public class KNN {
     public static void main(String[] args) throws FileNotFoundException {
         KNN prueba = new KNN();
         List<Double> datos = new ArrayList<>();
-        datos.add(5.2);
-        datos.add(3.7);
-        datos.add(1.2);
-        datos.add(0.5);
+        datos.add(10.4);
+        datos.add(8.7);
+        datos.add(5.4);
+        datos.add(3.2);
         System.out.println(prueba.estimate(datos));
     }
 }
