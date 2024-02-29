@@ -1,7 +1,11 @@
 package es.uji;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Table {
     // usamos las interfaces List y los datos deberan ser String y Row
@@ -20,7 +24,11 @@ public class Table {
         }
         datos.add(FilaSinEtiqueta);
     }
-
+    public List<String> Cabeceras(String fichero) throws FileNotFoundException {
+        Scanner sc = new Scanner(new File(fichero));
+        String[] linea = sc.nextLine().split(",");
+        return new ArrayList<>(Arrays.asList(linea));
+    }
     // metodo para consultar lo que hay en esta parte de la tabla
     public Row getRowAt(int rowNumber) {
         return datos.get(rowNumber);

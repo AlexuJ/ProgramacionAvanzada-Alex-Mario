@@ -7,10 +7,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class CSV implements LectorTabla {
+public class CSV {
     public Table readTable(String fichero) throws FileNotFoundException {
         Table TablaSinEtiquetas = new Table();
-        TablaSinEtiquetas.headers = Headers(fichero);
+        TablaSinEtiquetas.headers = TablaSinEtiquetas.Cabeceras(fichero);
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
         while (sc.hasNextLine()) {
@@ -23,7 +23,7 @@ public class CSV implements LectorTabla {
 
     public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException {
         TableWithLabels TablaConEtiquetas = new TableWithLabels();
-        TablaConEtiquetas.headers = Headers(fichero);
+        TablaConEtiquetas.headers = TablaConEtiquetas.Cabeceras(fichero);
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
         while (sc.hasNextLine()) {
@@ -32,12 +32,5 @@ public class CSV implements LectorTabla {
         }
         sc.close();
         return TablaConEtiquetas;
-    }
-
-    @Override
-    public List<String> Headers(String fichero) throws FileNotFoundException {
-        Scanner sc = new Scanner(new File(fichero));
-        String[] linea = sc.nextLine().split(",");
-        return new ArrayList<>(Arrays.asList(linea));
     }
 }

@@ -19,7 +19,7 @@ public class KNN {
     public Integer estimate(List<Double> data) {
         train(TablaDatos);
         int Estimacion = 0;
-        double MenorAproximacion = 3.0;
+        double MenorAproximacion = 20.0;
         for (int i=0; i<TablaEntrenamiento.datos.size(); i++) {
             Double MetricaEuclidiana = CalcularMetricaEuclidiana(data, TablaEntrenamiento.getRowAt(i));
             if (MetricaEuclidiana < MenorAproximacion) {
@@ -32,7 +32,7 @@ public class KNN {
     private Double CalcularMetricaEuclidiana(List<Double> data, Row fila) {
         double MetricaEuclidiana = 0.0;
         for (int i=0; i<data.size(); i++) {
-            MetricaEuclidiana+=Math.pow(data.get(i)-fila.data.get(i),2);
+            MetricaEuclidiana+=Math.pow(data.get(i)-fila.data.get(i).doubleValue(),2);
         }
         return Math.sqrt(MetricaEuclidiana);
     }
