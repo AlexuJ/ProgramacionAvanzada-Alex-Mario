@@ -1,30 +1,35 @@
 package es.uji;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 class CSVTest {
     private CSV Lector;
     private ArrayList<String> Ficheros;
-    @BeforeAll
-    void  inicioClase(){
+
+    @BeforeEach
+    void inicioClase() {
         Lector = new CSV();
-        Ficheros.add("./Practica1/miles_dolars.txt");
+        Ficheros = new ArrayList<>();
+        Ficheros.add("./Practica1/miles_dolars.csv");
         Ficheros.add("./Practica1/iris.txt");
         Ficheros.add("RedBunny");
     }
-    @Test
-     @DisplayName("Metodo readTable sin exception ")
-    void prueba1(){
 
-    }
     @Test
-    @DisplayName("Metodo readTable con exception ")
-    void prueba2(){
+    @DisplayName("TestReadtable")
+    void prueba1() throws FileNotFoundException {
 
+        String ruta = Ficheros.get(0);
+        Table table = Lector.readTable(ruta);
+
+        assertEquals(25, table.getRows().size(), "Las filas no coinciden");
     }
 }
