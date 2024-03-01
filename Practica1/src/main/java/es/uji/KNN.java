@@ -1,17 +1,19 @@
 package es.uji;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class KNN {
-    private static final String fichero = "./Practica1/iris.csv";
-    private TableWithLabels TablaDatos;
+    private static final String fichero = "./iris.csv";
+    private final TableWithLabels TablaDatos;
     private TableWithLabels TablaEntrenamiento;
     public KNN() throws FileNotFoundException {
         CSV Lector = new CSV();
         TablaDatos = Lector.readTableWithLabels(fichero);
         TablaEntrenamiento = new TableWithLabels();
+    }
+    public TableWithLabels getTablaEntrenamiento() {
+        return TablaEntrenamiento;
     }
     public void train(TableWithLabels data) {
         TablaEntrenamiento = data;
@@ -29,7 +31,7 @@ public class KNN {
         }
         return Estimacion;
     }
-    private Double CalcularMetricaEuclidiana(List<Double> data, Row fila) {
+    public Double CalcularMetricaEuclidiana(List<Double> data, Row fila) {
         double MetricaEuclidiana = 0.0;
         for (int i=0; i<data.size(); i++) {
             MetricaEuclidiana+=Math.pow(data.get(i)-fila.data.get(i).doubleValue(),2);

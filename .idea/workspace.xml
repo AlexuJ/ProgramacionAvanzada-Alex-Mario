@@ -8,9 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/KNN.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/CSVTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/RowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/RowTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/RowWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/RowWithLabelsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/TableWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/TableWithLabelsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/KNN.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/KNN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/CSVTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/CSVTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
