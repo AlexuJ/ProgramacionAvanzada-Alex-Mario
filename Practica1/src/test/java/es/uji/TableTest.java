@@ -14,13 +14,12 @@ class TableTest {
     // inicio prueba 1 de test
     private Table tabla;
     private List<String> headersPrueba;
-    private List<Row> FilasPrueba;
 
     @BeforeEach
     void inicio() {
         tabla = new Table();
-        FilasPrueba = new ArrayList<>();
-        FilasPrueba = CreadorFilas(FilasPrueba, 5);
+        List<Row> filasPrueba = new ArrayList<>();
+        filasPrueba = CreadorFilas(filasPrueba, 5);
         headersPrueba = new ArrayList<>();
 
     }
@@ -63,8 +62,8 @@ class TableTest {
     void GetRow() {
         List<Row> ListaFilas = new ArrayList<>();
         ListaFilas = CreadorFilas(ListaFilas, 5);
-        for (int i = 0; i < ListaFilas.size(); i++) {
-            tabla.setRow(ListaFilas.get(i));
+        for (Row listaFila : ListaFilas) {
+            tabla.setRow(listaFila);
         }
         for (int j = 0; j < ListaFilas.size(); j++) {
             List<Number> filaPrueba = ListaFilas.get(j).getData();
