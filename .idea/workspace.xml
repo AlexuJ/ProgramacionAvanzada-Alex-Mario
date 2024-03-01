@@ -6,18 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/KNN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/TableWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/TableWithLabels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/CSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/CSV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/KNN.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/KNN.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/LectorTabla.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/Table.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/CSVTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/CSVTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/RowTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/RowTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/RowWithLabelsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/RowWithLabelsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/TableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/TableTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/TableWithLabelsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/TableWithLabelsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/CSVTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/RowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/RowTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/RowWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/RowWithLabelsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/TableWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/TableWithLabelsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

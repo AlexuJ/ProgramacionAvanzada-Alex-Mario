@@ -1,10 +1,8 @@
 package es.uji;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,7 +25,7 @@ class RowTest {
     @BeforeEach
     void inicioClase() {
         fila = new Row();
-        datos = new ArrayList<Number>();
+        datos = new ArrayList<>();
         fila.setData(datos);
         fila.setData(Creadatos(fila.getData()));
         datos = Creadatos(datos);

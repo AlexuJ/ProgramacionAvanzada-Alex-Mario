@@ -6,10 +6,10 @@ import java.util.List;
 
 public class KNN {
     private static final String fichero = "./Practica1/iris.csv";
-    private CSV Lector = new CSV();
     private TableWithLabels TablaDatos;
     private TableWithLabels TablaEntrenamiento;
     public KNN() throws FileNotFoundException {
+        CSV Lector = new CSV();
         TablaDatos = Lector.readTableWithLabels(fichero);
         TablaEntrenamiento = new TableWithLabels();
     }
