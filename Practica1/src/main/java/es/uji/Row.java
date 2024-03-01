@@ -27,4 +27,9 @@ public class Row {
     public void setUnicData(Number nuevoNumero) {
         data.add(nuevoNumero);
     }
+
+    public int size() {
+        return data.size();
+    }
+
 }
