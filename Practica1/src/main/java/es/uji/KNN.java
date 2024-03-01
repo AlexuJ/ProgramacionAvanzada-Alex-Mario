@@ -24,7 +24,6 @@ public class KNN {
             Double MetricaEuclidiana = CalcularMetricaEuclidiana(data, TablaEntrenamiento.getRowAt(i));
             if (MetricaEuclidiana < MenorAproximacion) {
                 MenorAproximacion = MetricaEuclidiana;
-                System.out.println(TablaEntrenamiento.getRowAt(i).data);
                 Estimacion = TablaEntrenamiento.getRowAt(i).getNumberClass();
             }
         }
