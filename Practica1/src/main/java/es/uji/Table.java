@@ -1,7 +1,7 @@
 package es.uji;
 
-import java.io.File;
 import java.io.FileNotFoundException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,24 +11,26 @@ public class Table {
     // usamos las interfaces List y los datos deberan ser String y Row
     public List<String> headers;
     public List<Row> datos;
+    public String fichero;
 
     // constructor crea un array list al cual se
     public Table() {
-        headers = new ArrayList<>();
-        datos = new ArrayList<>();
+
     }
-    public void addFilaSinEtiquetas(String[] linea) {
-        Row FilaSinEtiqueta = new Row();
+
+    public void SetFichero(String ficher) {
+        this.fichero = ficher;
+    }
+
+    // metodo para añadir filas atraves del fichero
+    protected void addFilaSinEtiquetas(List<String> linea) {
+        Row filaSinEtiqueta = new Row();
         for (String dato : linea) {
-            FilaSinEtiqueta.data.add(Double.valueOf(dato));
+            filaSinEtiqueta.setUnicData(Double.valueOf(dato));
         }
-        datos.add(FilaSinEtiqueta);
+        setRow(filaSinEtiqueta);
     }
-    public List<String> Cabeceras(String fichero) throws FileNotFoundException {
-        Scanner sc = new Scanner(new File(fichero));
-        String[] linea = sc.nextLine().split(",");
-        return new ArrayList<>(Arrays.asList(linea));
-    }
+
     // metodo para consultar lo que hay en esta parte de la tabla
     public Row getRowAt(int rowNumber) {
         return datos.get(rowNumber);
@@ -64,5 +66,19 @@ public class Table {
     // esto se usa para setear la cabecera
     public void setHeaders(List<String> encabezados) {
         headers = encabezados;
+    }
+
+    public List<String> setHeadersList(String divisor, String lista) {
+        List<String> encabezados = new ArrayList<>();
+        encabezados = Arrays.asList(lista.split(divisor));
+        return encabezados;
+    }
+
+    public void SetTableFichero(Scanner scanner, String separador) throws FileNotFoundException {
+        setHeadersList(scanner.nextLine(), separador);
+        while (scanner.hasNextLine()) {
+            addFilaSinEtiquetas(Arrays.asList(scanner.nextLine().split(separador)));
+        }
+        scanner.close();
     }
 }

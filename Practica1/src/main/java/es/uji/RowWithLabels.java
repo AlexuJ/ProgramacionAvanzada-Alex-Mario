@@ -1,13 +1,11 @@
 package es.uji;
 
-import java.util.Date;
-import java.util.List;
-
 public class RowWithLabels extends Row {
     // etiqueta convertida en numero
     public int numberClass;
 
     // getNumberClass returnea numberClass
+    @Override
     public int getNumberClass() {
         return numberClass;
     }

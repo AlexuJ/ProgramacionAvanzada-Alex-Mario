@@ -1,33 +1,32 @@
 package es.uji;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class CSV {
-    public Table readTable(String fichero) throws FileNotFoundException {
-        Table TablaSinEtiquetas = new Table();
-        TablaSinEtiquetas.headers = TablaSinEtiquetas.Cabeceras(fichero);
-        Scanner sc = new Scanner(new File(fichero));
-        sc.nextLine();
-        while (sc.hasNextLine()) {
-            String[] linea = sc.nextLine().split(",");
-            TablaSinEtiquetas.addFilaSinEtiquetas(linea);
+    public Table selectorTabla(String distingidor, String linea, String fichero) {
+        Table table;
+        if (linea.contains(distingidor)) {
+            table = new TableWithLabels();
+            table.SetFichero(fichero);
+        } else {
+            table = new Table();
         }
-        sc.close();
-        return TablaSinEtiquetas;
+
+        return table;
     }
 
-    public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException {
-        TableWithLabels TablaConEtiquetas = new TableWithLabels();
-        TablaConEtiquetas.headers = TablaConEtiquetas.Cabeceras(fichero);
-        Scanner sc = new Scanner(new File(fichero));
-        sc.nextLine();
-        while (sc.hasNextLine()) {
-            String[] linea = sc.nextLine().split(",");
-            TablaConEtiquetas.addFilaConEtiqueta(linea, TablaConEtiquetas.lebelsToIndex(fichero));
-        }
-        sc.close();
-        return TablaConEtiquetas;
+    public Table readerTable(String ficher) throws FileNotFoundException {
+        String separador = ",";
+        String distigidor = "-";
+        Scanner scanner = new Scanner(ficher);
+        String headers = scanner.nextLine();
+        String Fila1 = scanner.nextLine();
+        Table table = selectorTabla(distigidor, Fila1, ficher);
+        table.setHeadersList(headers, separador);
+        scanner.close();
+
+        return table;
     }
+
 }

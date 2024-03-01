@@ -1,7 +1,6 @@
 package es.uji;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Row {
@@ -19,6 +18,10 @@ public class Row {
         return data;
     }
 
+    public Number getDatoIndex(int indice) {
+        return data.get(indice);
+    }
+
     // pasar una lista al atributo data
     public void setData(List<Number> newData) {
         data = newData;
@@ -26,5 +29,9 @@ public class Row {
 
     public void setUnicData(Number nuevoNumero) {
         data.add(nuevoNumero);
+    }
+
+    public int getNumberClass() {
+        return -1;
     }
 }
