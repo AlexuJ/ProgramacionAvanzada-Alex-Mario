@@ -18,7 +18,7 @@ class CSVTest {
     void inicioClase() {
         Lector = new CSV();
         Ficheros = new ArrayList<>();
-        Ficheros.add("./Practica1/miles_dolars.csv");
+        Ficheros.add("./miles_dolars.csv");
         Ficheros.add("./Practica1/iris.txt");
         Ficheros.add("RedBunny");
     }
