@@ -29,6 +29,7 @@ class CSVTest {
         Table table = Lector.readTable(ruta);
         assertEquals(25, table.getRows().size(), "Las filas no coinciden");
         assertEquals(2, table.getRowAt(1).data.size(), "Las columnas no coinciden");
+        assertEquals(2, table.getRowAt(1).size(), "Las columnas no coinciden");
     }
 
     @Test
@@ -51,9 +52,9 @@ class CSVTest {
     @DisplayName("Dimensiones TableWithLabels")
     void prueba4() throws FileNotFoundException {
         TableWithLabels Tabla = Lector.readTableWithLabels(Ficheros.get(1));
-
         assertEquals(Tabla.getRows().size(), 150);
         assertEquals(Tabla.getRowAt(1).data.size(), 4);
+        assertEquals(Tabla.getRowAt(1).size(), 4);
     }
 
     @Test
