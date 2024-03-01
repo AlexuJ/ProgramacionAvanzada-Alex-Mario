@@ -18,7 +18,11 @@ class CSVTest {
         Lector = new CSV();
         Ficheros = new ArrayList<>();
         Ficheros.add("./miles_dolars.csv");
+<<<<<<< HEAD
         Ficheros.add("./iris.csv");
+=======
+        Ficheros.add("./Practica1/iris.txt");
+>>>>>>> 8607944fd1c1ec2c85e4fa30902170b9976ca2c9
         Ficheros.add("RedBunny");
     }
 
