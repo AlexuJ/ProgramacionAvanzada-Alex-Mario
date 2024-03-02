@@ -9,14 +9,15 @@ import java.util.Scanner;
 
 public class Table {
     // usamos las interfaces List y los datos deberan ser String y Row
-    public List<String> headers;
-    public List<Row> datos;
+    protected List<String> headers;
+    protected List<Row> datos;
 
     // constructor crea un array list al cual se
     public Table() {
         headers = new ArrayList<>();
         datos = new ArrayList<>();
     }
+
     public void addFilaSinEtiquetas(String[] linea) {
         Row FilaSinEtiqueta = new Row();
         for (String dato : linea) {
@@ -24,11 +25,13 @@ public class Table {
         }
         datos.add(FilaSinEtiqueta);
     }
+
     public List<String> Cabeceras(String fichero) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(fichero));
         String[] linea = sc.nextLine().split(",");
         return new ArrayList<>(Arrays.asList(linea));
     }
+
     // metodo para consultar lo que hay en esta parte de la tabla
     public Row getRowAt(int rowNumber) {
         return datos.get(rowNumber);
