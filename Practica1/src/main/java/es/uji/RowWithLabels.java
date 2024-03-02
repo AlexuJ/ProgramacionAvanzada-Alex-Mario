@@ -5,7 +5,7 @@ import java.util.List;
 
 public class RowWithLabels extends Row {
     // etiqueta convertida en numero
-    public int numberClass;
+    private int numberClass;
 
     // getNumberClass returnea numberClass
     public int getNumberClass() {

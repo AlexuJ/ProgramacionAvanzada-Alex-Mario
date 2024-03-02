@@ -5,9 +5,10 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class CSV {
+    //Método para leer archivo sin etiquetas
     public Table readTable(String fichero) throws FileNotFoundException {
         Table TablaSinEtiquetas = new Table();
-        TablaSinEtiquetas.headers = TablaSinEtiquetas.Cabeceras(fichero);
+        TablaSinEtiquetas.setHeaders(TablaSinEtiquetas.Cabeceras(fichero));
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
         while (sc.hasNextLine()) {
@@ -18,9 +19,10 @@ public class CSV {
         return TablaSinEtiquetas;
     }
 
+    //Método para leer archivos con etiquetas
     public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException {
         TableWithLabels TablaConEtiquetas = new TableWithLabels();
-        TablaConEtiquetas.headers = TablaConEtiquetas.Cabeceras(fichero);
+        TablaConEtiquetas.setHeaders(TablaConEtiquetas.Cabeceras(fichero));
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
         while (sc.hasNextLine()) {

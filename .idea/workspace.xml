@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/KNN.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/RowWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/RowWithLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/TableWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/TableWithLabels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/CSVTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/KNN.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/KNN.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/Row.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/Row.class" afterDir="false" />
@@ -13,8 +18,6 @@
       <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/Table.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/TableWithLabels.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/TableWithLabels.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/CSVTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/CSVTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/KNNTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/KNNTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/TableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/TableTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +62,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Merging master",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "19",
     "last_opened_file_path": "C:/Users/Alex/ProgramacionAvanzada-Alex-Mario",

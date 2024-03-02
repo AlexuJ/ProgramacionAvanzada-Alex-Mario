@@ -9,21 +9,23 @@ import java.util.Scanner;
 
 public class Table {
     // usamos las interfaces List y los datos deberan ser String y Row
-    public List<String> headers;
-    public List<Row> datos;
+    private List<String> headers;
+    private List<Row> datos;
 
-    // constructor crea un array list al cual se
+    // constructor para inicializar listas
     public Table() {
         headers = new ArrayList<>();
         datos = new ArrayList<>();
     }
+    //Método para añadir filas sin etiquetas
     public void addFilaSinEtiquetas(String[] linea) {
         Row FilaSinEtiqueta = new Row();
         for (String dato : linea) {
-            FilaSinEtiqueta.data.add(Double.valueOf(dato));
+            FilaSinEtiqueta.getData().add(Double.valueOf(dato));
         }
         datos.add(FilaSinEtiqueta);
     }
+    //Método para añadir las cabeceras independientemente del fichero
     public List<String> Cabeceras(String fichero) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(fichero));
         String[] linea = sc.nextLine().split(",");

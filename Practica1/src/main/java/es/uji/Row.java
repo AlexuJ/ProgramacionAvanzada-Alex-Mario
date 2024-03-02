@@ -7,7 +7,7 @@ import java.util.List;
 public class Row {
     // se almacena una list de cualquier dato numerico que necesitemos
     // usamos la interfaz Number y List para poder obtener flexivilidad en codigo
-    public List<Number> data;
+    private List<Number> data;
 
     // constructor de la clase crea una ArrayList
     public Row() {
