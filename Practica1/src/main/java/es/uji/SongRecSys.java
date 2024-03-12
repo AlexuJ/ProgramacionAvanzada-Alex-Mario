@@ -1,3 +1,8 @@
+package es.uji;
+
+import es.uji.CSV;
+import es.uji.Table;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -26,11 +31,11 @@ class SongRecSys {
         algorithms.put("kmeans",new KMeans(15, 200, 4321));
 
         // Tables
-        Map<String,Table> tables = new HashMap<>();
+        Map<String, Table> tables = new HashMap<>();
         String [] stages = {"train", "test"};
         CSV csv = new CSV();
         for (String stage : stages) {
-            tables.put("knn" + stage, csv.readTableWithLabel(filenames.get("knn" + stage)));
+            tables.put("knn" + stage, csv.readTableWithLabels(filenames.get("knn" + stage)));
             tables.put("kmeans" + stage, csv.readTable(filenames.get("kmeans" + stage)));
         }
 

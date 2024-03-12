@@ -5,51 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/DeLaHorra_Mario_Buga_Alex_LA3.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/RecSysDiagram.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/basic1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/basic2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/basic3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/basic4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/basic5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/blob.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/box.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/boxes.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/boxes2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/boxes3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/chrome.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/dart.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/dart2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/face.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/hyperplane.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/isolation.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/lines.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/lines2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/network.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/outliers.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/ring.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/sparse.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/spiral.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/spiral2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/spirals.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/supernova.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/triangle.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/un.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/un2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/data/wave.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/display_clustering.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/songs/songs_test.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/songs/songs_test_names.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/songs/songs_test_withoutnames.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/songs/songs_train.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/songs/songs_train_names.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/songs/songs_train_withoutnames.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/src/main/java/SongRecSys.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/src/main/java/es/uji/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica2/src/main/java/saveTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/SongRecSys.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +79,7 @@
       <recent name="es.uji" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.KNN">
+  <component name="RunManager">
     <configuration name="KNN" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="es.uji.KNN" />
       <module name="Practica1" />
