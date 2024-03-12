@@ -1,7 +1,6 @@
 package es.uji;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Row {

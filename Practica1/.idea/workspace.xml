@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cff46fb1-cbe9-4711-ab35-4eb32ac78ed9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Practica 0/src/test/java/es/uji/EstadisticaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica 0/src/test/java/es/uji/EstadisticaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/CSVTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/RowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/RowTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/RowWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/RowWithLabelsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/uji/CSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uji/CSV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/uji/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uji/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/uji/Row.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uji/Row.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/uji/RowWithLabels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uji/RowWithLabels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/uji/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uji/Table.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/es/uji/TableWithLabels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uji/TableWithLabels.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,28 +27,28 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2cp09UFzo9s8xJNJ96Wski9meCQ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/mariu/OneDrive/Escritorio/Programacion avanzada/Repositorio-Programacion_Avanzada/ProgramacionAvanzada-Alex-Mario/Practica1",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mariu/OneDrive/Escritorio/Programacion avanzada/Repositorio-Programacion_Avanzada/ProgramacionAvanzada-Alex-Mario/Practica1&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
