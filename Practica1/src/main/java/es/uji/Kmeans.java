@@ -15,7 +15,7 @@ public class Kmeans {
     }
     public void train(Table datos) {
         List<Row> Representantes = inicializar(datos);
-        for (int i=0; i<numIterations; i++) {
+        for (int i=0; i < numIterations; i++) {
             for (Row fila : datos.getRows()) {
                 AsignarGrupo(fila,Representantes);
             }
@@ -54,16 +54,14 @@ public class Kmeans {
     }
     private List<Row> CalcularCentroides() {
         List<Row> CentroidesGrupos = new ArrayList<>();
-        int i = 1;
         for (List<Row> grupo : Grupos.values()) {
             Row Centroide = new Row();
-            for (Number dato : grupo.get(i).getData()) {
-                Centroide.sumeData(i++,dato);
-                if (i == 3) {
-                    i = 1;
+            for (Row fila : grupo) {
+                for (int i = 0; i < fila.size(); i++) {
+                    Centroide.sumeData(i, fila.getData().get(i));
                 }
             }
-            for (int j=0; j < Centroide.size(); j++) {
+            for (int j=0; j < Centroide.size();j ++) {
                 Centroide.splitData(j, grupo.size());
             }
             CentroidesGrupos.add(Centroide);
