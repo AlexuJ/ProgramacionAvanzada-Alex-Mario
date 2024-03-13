@@ -14,27 +14,23 @@ public class Kmeans {
         this.Grupos = new HashMap<>();
     }
     public void train(Table datos) {
-        List<Row> NuevosRepresentantes = inicializar(datos);
+        List<Row> Representantes = inicializar(datos);
         for (int i=0; i<numIterations; i++) {
             for (Row fila : datos.getRows()) {
-                AsignarGrupo(fila,NuevosRepresentantes);
+                AsignarGrupo(fila,Representantes);
             }
-            NuevosRepresentantes = CalcularCentroides();
+            Representantes = CalcularCentroides();
         }
     }
     private List<Row> inicializar(Table datos) {
         Random random = new Random(100);
         List<Row> Representantes = new ArrayList<>();
-        for (int i=1; i <= getNumClusters(); i++) {
+        for (int i=0; i < getNumClusters(); i++) {
             int fila = random.nextInt(datos.getRows().size());
             if (!Representantes.contains(datos.getRowAt(fila))) {
                 Representantes.add(datos.getRowAt(fila));
-
             }
             Grupos.put(i, new ArrayList<>());
-        }
-        for (Row fila : datos.getRows()) {
-            AsignarGrupo(fila,Representantes);
         }
         return Representantes;
     }
