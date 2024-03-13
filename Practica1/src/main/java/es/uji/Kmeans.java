@@ -6,7 +6,7 @@ public class Kmeans {
     private final int numClusters;
     private final int numIterations;
     private final long seed;
-    private Map<Integer,List<Row>> Grupos;
+    private final Map<Integer,List<Row>> Grupos;
     public Kmeans(int numClusters, int numIterations, long seed) {
         this.numClusters = numClusters;
         this.numIterations = numIterations;
