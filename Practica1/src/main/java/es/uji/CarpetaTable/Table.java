@@ -1,4 +1,6 @@
-package es.uji;
+package es.uji.CarpetaTable;
+
+import es.uji.CarpetaRow.Row;
 
 import java.io.File;
 import java.io.FileNotFoundException;

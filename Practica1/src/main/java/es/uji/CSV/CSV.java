@@ -1,4 +1,7 @@
-package es.uji;
+package es.uji.CSV;
+
+import es.uji.CarpetaTable.Table;
+import es.uji.CarpetaTable.TableWithLabels;
 
 import java.io.File;
 import java.io.FileNotFoundException;

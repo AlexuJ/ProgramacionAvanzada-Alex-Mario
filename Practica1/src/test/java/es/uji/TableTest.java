@@ -1,5 +1,7 @@
 package es.uji;
 
+import es.uji.CarpetaRow.Row;
+import es.uji.CarpetaTable.Table;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

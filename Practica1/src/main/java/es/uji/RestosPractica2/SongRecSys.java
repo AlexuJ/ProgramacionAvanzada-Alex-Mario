@@ -1,7 +1,8 @@
-package es.uji;
+package es.uji.RestosPractica2;
 
-import es.uji.CSV;
-import es.uji.Table;
+import es.uji.CSV.CSV;
+import es.uji.CarpetaTable.Table;
+import es.uji.KNN.KNN;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

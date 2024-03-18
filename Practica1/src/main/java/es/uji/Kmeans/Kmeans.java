@@ -1,4 +1,7 @@
-package es.uji;
+package es.uji.Kmeans;
+
+import es.uji.CarpetaRow.Row;
+import es.uji.CarpetaTable.Table;
 
 import java.util.*;
 

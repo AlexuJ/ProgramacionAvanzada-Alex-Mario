@@ -1,5 +1,7 @@
 package es.uji;
 
+import es.uji.CarpetaTable.TableWithLabels;
+import es.uji.KNN.KNN;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
