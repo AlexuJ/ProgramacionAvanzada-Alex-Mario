@@ -12,8 +12,7 @@ public class CSV {
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
         while (sc.hasNextLine()) {
-            String[] linea = sc.nextLine().split(",");
-            TablaSinEtiquetas.addFilaSinEtiquetas(linea);
+            TablaSinEtiquetas.addFila(sc.nextLine().split(","));
         }
         sc.close();
         return TablaSinEtiquetas;
@@ -26,8 +25,7 @@ public class CSV {
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
         while (sc.hasNextLine()) {
-            String[] linea = sc.nextLine().split(",");
-            TablaConEtiquetas.addFilaConEtiqueta(linea, TablaConEtiquetas.lebelsToIndex(fichero));
+            TablaConEtiquetas.addFila(sc.nextLine().split(","));
         }
         sc.close();
         return TablaConEtiquetas;

@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class TableWithLabels extends Table {
+
     //Método para crear un mapa que guarde las etiquetas con sus números de clase
     public Map<String, Integer> lebelsToIndex(String fichero) throws FileNotFoundException  {
         Map<String, Integer> Etiquetas = new HashMap<>();
@@ -24,12 +25,13 @@ public class TableWithLabels extends Table {
     }
 
     //Método para añadir filas con etiquetas
-    public void addFilaConEtiqueta(String[] linea, Map<String,Integer> Etiquetas) {
+    @Override
+    public void addFila(String[] linea) throws FileNotFoundException {
         RowWithLabels FilaConEtiqueta = new RowWithLabels();
         for (int i=0; i<linea.length-1; i++) {
             FilaConEtiqueta.getData().add(Double.valueOf(linea[i]));
         }
-        FilaConEtiqueta.setNumberClass(Etiquetas.get(linea[linea.length-1]));
+        FilaConEtiqueta.setNumberClass(lebelsToIndex(".iris.csv").get(linea[linea.length-1]));
         getRows().add(FilaConEtiqueta);
     }
 

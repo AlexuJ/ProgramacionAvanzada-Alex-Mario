@@ -18,7 +18,7 @@ public class Table {
         datos = new ArrayList<>();
     }
     //Método para añadir filas sin etiquetas
-    public void addFilaSinEtiquetas(String[] linea) {
+    public void addFila(String[] linea) throws FileNotFoundException {
         Row FilaSinEtiqueta = new Row();
         for (String dato : linea) {
             FilaSinEtiqueta.getData().add(Double.valueOf(dato));
