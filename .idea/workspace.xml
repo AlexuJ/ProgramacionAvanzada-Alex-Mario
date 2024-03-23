@@ -6,6 +6,30 @@
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica 0/src/main/java/es/uji/Estadistica.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica 0/src/main/java/es/uji/al426239/Estadistica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica 0/src/test/java/es/uji/EstadisticaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica 0/src/test/java/es/uji/al426239/EstadisticaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CSV/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CSV/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CarpetaRow/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaRow/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CarpetaRow/RowWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaRow/RowWithLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CarpetaTable/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaTable/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CarpetaTable/TableWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaTable/TableWithLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/KNN/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/KNN/KNN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Kmeans/Kmeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/Kmeans/Kmeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/RestosPractica2/SongRecSys.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/RestosPractica2/display_clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/RestosPractica2/display_clustering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/RestosPractica2/saveTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/CSVTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KNNTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/RowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/RowTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/RowWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/RowWithLabelsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/TableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/TableTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/TableWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/TableWithLabelsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/CSVTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/CSVTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/KNNTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/KNNTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/RowTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/RowTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/RowWithLabelsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/RowWithLabelsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/TableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/TableTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/TableWithLabelsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/TableWithLabelsTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +86,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\main\java\es\uji\RestosPractica2" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica2" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\main\java\es\uji" />
-      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\test\java" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -80,11 +104,11 @@
   </component>
   <component name="RunManager">
     <configuration name="KNN" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="es.uji.KNN" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.KNN.KNN" />
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.*" />
+          <option name="PATTERN" value="es.uji.CarpetaRow.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,7 +116,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CSVTest.prueba1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CSVTest.prueba4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
@@ -102,13 +126,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="es.uji" />
       <option name="MAIN_CLASS_NAME" value="es.uji.CSVTest" />
-      <option name="METHOD_NAME" value="prueba1" />
+      <option name="METHOD_NAME" value="prueba4" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KNNTest.CalcularMetricaEuclidiana" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CSVTest.prueba5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
@@ -117,24 +141,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="es.uji" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.KNNTest" />
-      <option name="METHOD_NAME" value="CalcularMetricaEuclidiana" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.CSVTest" />
+      <option name="METHOD_NAME" value="prueba5" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TodosLosTests.ComprobarFilas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CSVTest.prueba6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.CSV" />
+          <option name="PATTERN" value="es.uji.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="es.uji" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.TodosLosTests" />
-      <option name="METHOD_NAME" value="ComprobarFilas" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.CSVTest" />
+      <option name="METHOD_NAME" value="prueba6" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CSVTest.prueba7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.CSVTest" />
+      <option name="METHOD_NAME" value="prueba7" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,10 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.KNNTest.CalcularMetricaEuclidiana" />
+        <item itemvalue="JUnit.CSVTest.prueba7" />
+        <item itemvalue="JUnit.CSVTest.prueba6" />
+        <item itemvalue="JUnit.CSVTest.prueba5" />
+        <item itemvalue="JUnit.CSVTest.prueba4" />
         <item itemvalue="Application.KNN" />
-        <item itemvalue="JUnit.TodosLosTests.ComprobarFilas" />
-        <item itemvalue="JUnit.CSVTest.prueba1" />
       </list>
     </recent_temporary>
   </component>

@@ -1,4 +1,4 @@
-package es.uji.CarpetaRow;
+package es.uji.al426239.CarpetaRow;
 
 public class RowWithLabels extends Row {
     // etiqueta convertida en numero

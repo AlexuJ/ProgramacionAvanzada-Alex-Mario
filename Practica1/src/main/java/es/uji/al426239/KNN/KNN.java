@@ -1,18 +1,18 @@
-package es.uji.KNN;
+package es.uji.al426239.KNN;
 
-import es.uji.CSV.CSV;
-import es.uji.CarpetaRow.Row;
-import es.uji.CarpetaTable.TableWithLabels;
+import es.uji.al426239.CSV.CSV;
+import es.uji.al426239.CarpetaRow.Row;
+import es.uji.al426239.CarpetaTable.TableWithLabels;
 
 import java.io.FileNotFoundException;
 import java.util.List;
 
 public class KNN {
-    private static final String fichero = "./iris.csv";
     private TableWithLabels TablaEntrenamiento;
+    private  String fichero;
 
     //Constructor para inicializar una tabla de datos y modificar la tabla de entrenamiento
-    public KNN() throws FileNotFoundException {
+    public KNN(String fichero) throws FileNotFoundException {
         CSV Lector = new CSV();
         TableWithLabels TablaDatos = Lector.readTableWithLabels(fichero);
         train(TablaDatos);

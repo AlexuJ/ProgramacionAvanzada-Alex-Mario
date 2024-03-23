@@ -1,6 +1,6 @@
-package es.uji.CarpetaTable;
+package es.uji.al426239.CarpetaTable;
 
-import es.uji.CarpetaRow.RowWithLabels;
+import es.uji.al426239.CarpetaRow.RowWithLabels;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -33,7 +33,7 @@ public class TableWithLabels extends Table {
         for (int i=0; i<linea.length-1; i++) {
             FilaConEtiqueta.getData().add(Double.valueOf(linea[i]));
         }
-        FilaConEtiqueta.setNumberClass(lebelsToIndex(".iris.csv").get(linea[linea.length-1]));
+        FilaConEtiqueta.setNumberClass(lebelsToIndex("iris.csv").get(linea[linea.length-1]));
         getRows().add(FilaConEtiqueta);
     }
 

@@ -1,7 +1,7 @@
-package es.uji;
+package es.uji.al426239;
 
-import es.uji.CarpetaRow.Row;
-import es.uji.CarpetaTable.Table;
+import es.uji.al426239.CarpetaRow.Row;
+import es.uji.al426239.CarpetaTable.Table;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

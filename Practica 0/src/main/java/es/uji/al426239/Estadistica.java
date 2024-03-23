@@ -1,4 +1,4 @@
-package es.uji;
+package es.uji.al426239;
 
 public class Estadistica {
     private float ultimoResultado;

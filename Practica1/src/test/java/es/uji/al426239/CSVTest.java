@@ -1,10 +1,10 @@
-package es.uji;
+package es.uji.al426239;
 
-import es.uji.CSV.CSV;
-import es.uji.CarpetaRow.Row;
-import es.uji.CarpetaRow.RowWithLabels;
-import es.uji.CarpetaTable.Table;
-import es.uji.CarpetaTable.TableWithLabels;
+import es.uji.al426239.CSV.CSV;
+import es.uji.al426239.CarpetaRow.Row;
+import es.uji.al426239.CarpetaRow.RowWithLabels;
+import es.uji.al426239.CarpetaTable.Table;
+import es.uji.al426239.CarpetaTable.TableWithLabels;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
