@@ -2,9 +2,11 @@ package es.uji.al426239.Kmeans;
 
 import es.uji.al426239.CarpetaRow.Row;
 import es.uji.al426239.CarpetaTable.Table;
+import es.uji.al426239.Interfaz.Algorithm;
+
 import java.util.*;
 
-public class Kmeans {
+public class Kmeans implements Algorithm<Table, List<Number>,Integer> {
     private final int numClusters;
     private final int numIterations;
     private final long seed;
@@ -17,6 +19,7 @@ public class Kmeans {
         this.Representantes = new ArrayList<>();
         this.Grupos = new HashMap<>();
     }
+    @Override
     public void train(Table datos) {
         inicializar(datos);
         for (int i=0; i < numIterations; i++) {
@@ -51,7 +54,7 @@ public class Kmeans {
             Representantes.add(Centroide);
         }
     }
-    public int estimate(List<Number> dato) {
+    public Integer estimate(List<Number> dato) {
         double menor = Double.MAX_VALUE;
         double cercania = 0.0;
         int grupo = 0;
