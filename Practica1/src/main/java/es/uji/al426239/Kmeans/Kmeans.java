@@ -2,6 +2,7 @@ package es.uji.al426239.Kmeans;
 
 import es.uji.al426239.CarpetaRow.Row;
 import es.uji.al426239.CarpetaTable.Table;
+import es.uji.al426239.Excepciones.Comparador;
 import es.uji.al426239.Interfaz.Algorithm;
 
 import java.util.*;
@@ -20,13 +21,13 @@ public class Kmeans implements Algorithm<Table,List<Number>,Integer> {
         this.Grupos = new HashMap<>();
     }
     @Override
-    public void train(Table datos) {
+    public void train(Table datos) throws Comparador {
         inicializar(datos);
         for (int i=0; i < numIterations; i++) {
             for (Row fila : datos.getRows()) {
                 Grupos.get(estimate(fila.getData())).add(fila);
             }
-            calcularCentroides();
+            calcularCentroides(datos);
         }
     }
     private void inicializar(Table datos) {
@@ -39,19 +40,23 @@ public class Kmeans implements Algorithm<Table,List<Number>,Integer> {
             Grupos.put(i, new ArrayList<>());
         }
     }
-    private void calcularCentroides() {
-        Representantes.clear();
-        for (List<Row> grupo : Grupos.values()) {
-            Row Centroide = new Row();
-            for (Row fila : grupo) {
-                for (int i = 0; i < fila.getData().size(); i++) {
-                    Centroide.sumeData(i, fila.getData().get(i));
+    private void calcularCentroides(Table datos) throws Comparador {
+        if (numClusters > datos.getRows().size()) {
+            throw new Comparador(numClusters,datos.getRows().size());
+        } else {
+            Representantes.clear();
+            for (List<Row> grupo : Grupos.values()) {
+                Row Centroide = new Row();
+                for (Row fila : grupo) {
+                    for (int i = 0; i < fila.getData().size(); i++) {
+                        Centroide.sumeData(i, fila.getData().get(i));
+                    }
                 }
+                for (int j=0; j < Centroide.size();j ++) {
+                    Centroide.splitData(j, grupo.size());
+                }
+                Representantes.add(Centroide);
             }
-            for (int j=0; j < Centroide.size();j ++) {
-                Centroide.splitData(j, grupo.size());
-            }
-            Representantes.add(Centroide);
         }
     }
     @Override
