@@ -6,7 +6,7 @@ import es.uji.al426239.Interfaz.Algorithm;
 
 import java.util.*;
 
-public class Kmeans implements Algorithm<Table, List<Number>,Integer> {
+public class Kmeans implements Algorithm<Table,List<Number>,Integer> {
     private final int numClusters;
     private final int numIterations;
     private final long seed;

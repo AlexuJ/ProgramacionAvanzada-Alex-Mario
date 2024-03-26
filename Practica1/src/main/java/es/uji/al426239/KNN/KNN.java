@@ -10,7 +10,6 @@ import java.util.List;
 
 public class KNN implements Algorithm<TableWithLabels,List<Double>,Integer> {
     private TableWithLabels TablaEntrenamiento;
-    private  String fichero;
 
     //Constructor para inicializar una tabla de datos y modificar la tabla de entrenamiento
     public KNN(String fichero) throws FileNotFoundException {
