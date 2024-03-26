@@ -3,11 +3,12 @@ package es.uji.al426239.KNN;
 import es.uji.al426239.CSV.CSV;
 import es.uji.al426239.CarpetaRow.Row;
 import es.uji.al426239.CarpetaTable.TableWithLabels;
+import es.uji.al426239.Interfaz.Algorithm;
 
 import java.io.FileNotFoundException;
 import java.util.List;
 
-public class KNN {
+public class KNN implements Algorithm<TableWithLabels,List<Double>,Integer> {
     private TableWithLabels TablaEntrenamiento;
     private  String fichero;
 
@@ -24,11 +25,13 @@ public class KNN {
     }
 
     //Método para aplicar a la tabla de entrenamiento los datos en cuestión
+    @Override
     public void train(TableWithLabels data) {
         TablaEntrenamiento = data;
     }
 
     //Método para estimar el número de la clase al que pertenece esos datos
+    @Override
     public Integer estimate(List<Double> data) {
         int Estimacion = 0;
         double MenorAproximacion = 20.0;

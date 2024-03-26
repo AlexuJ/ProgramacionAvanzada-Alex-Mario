@@ -54,6 +54,7 @@ public class Kmeans implements Algorithm<Table, List<Number>,Integer> {
             Representantes.add(Centroide);
         }
     }
+    @Override
     public Integer estimate(List<Number> dato) {
         double menor = Double.MAX_VALUE;
         double cercania = 0.0;
