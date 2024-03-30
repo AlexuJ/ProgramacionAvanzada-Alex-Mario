@@ -1,12 +1,8 @@
 package es.uji.al426239.CarpetaTable;
 
 import es.uji.al426239.CarpetaRow.Row;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 public class Table {
     // usamos las interfaces List y los datos deberan ser String y Row
@@ -18,12 +14,7 @@ public class Table {
         headers = new ArrayList<>();
         datos = new ArrayList<>();
     }
-    //Método para añadir las cabeceras independientemente del fichero
-    public List<String> Cabeceras(String fichero) throws FileNotFoundException {
-        Scanner sc = new Scanner(new File(fichero));
-        String[] linea = sc.nextLine().split(",");
-        return new ArrayList<>(Arrays.asList(linea));
-    }
+
     // metodo para consultar lo que hay en esta parte de la tabla
     public Row getRowAt(int rowNumber) {
         return datos.get(rowNumber);
