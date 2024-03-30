@@ -3,7 +3,7 @@
 public class RowWithLabels extends Row {
     // etiqueta convertida en numero
     private int numberClass;
-    public RowWithLabels(int numero){
+    public RowWithLabels(int numero) {
         numberClass = numero;
     }
     // getNumberClass returnea numberClass

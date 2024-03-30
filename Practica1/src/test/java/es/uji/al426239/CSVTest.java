@@ -98,8 +98,7 @@ class CSVTest {
     @DisplayName("Contenido de Filas")
     void prueba7() throws FileNotFoundException {
         TableWithLabels table = Lector.readTableWithLabels(Ficheros.get(1));
-        RowWithLabels Row1 = new RowWithLabels();
-        Row1.setNumberClass(1);
+        RowWithLabels Row1 = new RowWithLabels(1);
         assertEquals(Row1.getNumberClass(), table.getRowAt(1).getNumberClass());
         Row1.setNumberClass(2);
         assertEquals(Row1.getNumberClass(),table.getRowAt(70).getNumberClass());

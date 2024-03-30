@@ -10,22 +10,16 @@ public class TableWithLabels extends Table {
     public TableWithLabels() {
         etiquetas = new HashMap<>();
     }
-    // Método para añadir filas con etiquetas
-    @Override
-    public void addFila (String[] linea) {
-        RowWithLabels FilaConEtiqueta = new RowWithLabels();
-        for (int i = 0; i < linea.length - 1; i++) {
-            FilaConEtiqueta.getData().add(Double.valueOf(linea[i]));
-        }
-        FilaConEtiqueta.setNumberClass(etiquetas.get(linea[linea.length-1]));
-        getRows().add(FilaConEtiqueta);
-    }
+
     // Metodo para agregar claves al dicionario
     public void SetKey (String etiqueta) {
         int valor = 1;
         if (!etiquetas.containsKey(etiqueta)) {
             etiquetas.put(etiqueta, etiquetas.size() + valor);
         }
+    }
+    public int GetKey(String etiqueta) {
+        return etiquetas.get(etiqueta);
     }
     public Map<String, Integer> getEtiquetas() {
         return etiquetas;

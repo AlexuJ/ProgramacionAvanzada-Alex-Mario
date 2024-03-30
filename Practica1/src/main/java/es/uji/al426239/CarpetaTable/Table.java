@@ -18,14 +18,6 @@ public class Table {
         headers = new ArrayList<>();
         datos = new ArrayList<>();
     }
-    //Método para añadir filas sin etiquetas
-    public void addFila(String[] linea) {
-        Row FilaSinEtiqueta = new Row();
-        for (String dato : linea) {
-            FilaSinEtiqueta.getData().add(Double.valueOf(dato));
-        }
-        datos.add(FilaSinEtiqueta);
-    }
     //Método para añadir las cabeceras independientemente del fichero
     public List<String> Cabeceras(String fichero) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(fichero));

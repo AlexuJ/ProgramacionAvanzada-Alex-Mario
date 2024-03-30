@@ -15,7 +15,7 @@ public class CSV {
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
         while (sc.hasNextLine()) {
-            String linea[] = sc.next().split(",");
+            String[] linea = sc.next().split(",");
             Row fila = new Row();
             for (int i = 0 ;i < linea.length-1 ;i++) {
                 fila.setUnicData(Double.valueOf(linea[i]));
@@ -33,10 +33,9 @@ public class CSV {
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
         while (sc.hasNextLine()) {
-            String linea[] = sc.next().split(",");
-            String etiqueta = linea[linea.length-1];
-            TablaConEtiquetas.SetKey(etiqueta);
-            Row fila = new RowWithLabels( TablaConEtiquetas.GetKey(etiqueta));
+            String[] linea = sc.next().split(",");
+            TablaConEtiquetas.SetKey(linea[linea.length-1]);
+            Row fila = new RowWithLabels( TablaConEtiquetas.GetKey(linea[linea.length-1]));
             for (int i = 0 ;i < linea.length-1 ;i++) {
                 fila.setUnicData(Double.valueOf(linea[i]));
             }

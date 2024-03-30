@@ -33,7 +33,7 @@ class TableWithLabelsTest {
     public List<Row> CreadorFilas(List<Row> filas, int numeroFilas) {
         Random random = new Random();
         for (int i = 0; i < numeroFilas; i++) {
-            Row fila = new RowWithLabels();
+            Row fila = new RowWithLabels(0);
             for (int j = 0; j < 5; j++) {
                 fila.setUnicData(random.nextDouble(1, 10));
             }

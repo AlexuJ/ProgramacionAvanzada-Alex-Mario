@@ -20,7 +20,7 @@ class RowWithLabelsTest {
     // beforeEach para no usar el static
     @BeforeEach
     void inicioClase() {
-        fila = new RowWithLabels();
+        fila = new RowWithLabels(0);
     }
 
     public List<Number> generador(int cantidad) {
