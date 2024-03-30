@@ -4,7 +4,6 @@ import es.uji.al426239.CarpetaRow.Row;
 import es.uji.al426239.CarpetaTable.Table;
 import es.uji.al426239.Excepciones.Comparador;
 import es.uji.al426239.Interfaz.Algorithm;
-
 import java.util.*;
 
 public class Kmeans implements Algorithm<Table,List<Number>,Integer> {

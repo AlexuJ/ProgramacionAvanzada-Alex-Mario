@@ -1,8 +1,8 @@
 package es.uji.al426239.CSV;
 
+import es.uji.al426239.CarpetaRow.RowWithLabels;
 import es.uji.al426239.CarpetaTable.Table;
 import es.uji.al426239.CarpetaTable.TableWithLabels;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -28,7 +28,14 @@ public class CSV {
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
         while (sc.hasNextLine()) {
-            TablaConEtiquetas.addFila(sc.nextLine().split(","));
+            String[] linea = sc.nextLine().split(",");
+            RowWithLabels fila = new RowWithLabels();
+            for (int i = 0 ; i < linea.length-1; i++){
+                fila.setUnicData(Double.valueOf(linea[i]));
+            }
+            TablaConEtiquetas.RellenarMapaEtiquetas(linea[linea.length-1]);
+            fila.setNumberClass(TablaConEtiquetas.getLebelsToIndex().get(linea[linea.length-1]));
+            TablaConEtiquetas.setRow(fila);
         }
         sc.close();
         return TablaConEtiquetas;
