@@ -1,5 +1,7 @@
 package es.uji.al426239.CSV;
 
+import es.uji.al426239.CarpetaRow.Row;
+import es.uji.al426239.CarpetaRow.RowWithLabels;
 import es.uji.al426239.CarpetaTable.Table;
 import es.uji.al426239.CarpetaTable.TableWithLabels;
 import java.io.File;
@@ -13,7 +15,13 @@ public class CSV {
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
         while (sc.hasNextLine()) {
-            TablaSinEtiquetas.addFila(sc.nextLine().split(","));
+            String linea[] = sc.next().split(",");
+            Row fila = new Row();
+            for (int i = 0 ;i < linea.length-1 ;i++) {
+                fila.setUnicData(Double.valueOf(linea[i]));
+            }
+            TablaSinEtiquetas.setRow(fila);
+
         }
         sc.close();
         return TablaSinEtiquetas;
@@ -25,9 +33,15 @@ public class CSV {
         Scanner sc = new Scanner(new File(fichero));
         sc.nextLine();
         while (sc.hasNextLine()) {
-            String[] linea = sc.nextLine().split(",");
-            TablaConEtiquetas.SetKey(linea[linea.length-1]);
-            TablaConEtiquetas.addFila(linea);
+            String linea[] = sc.next().split(",");
+            String etiqueta = linea[linea.length-1];
+            TablaConEtiquetas.SetKey(etiqueta);
+            Row fila = new RowWithLabels( TablaConEtiquetas.GetKey(etiqueta));
+            for (int i = 0 ;i < linea.length-1 ;i++) {
+                fila.setUnicData(Double.valueOf(linea[i]));
+            }
+            TablaConEtiquetas.setRow(fila);
+            
         }
         sc.close();
         return TablaConEtiquetas;

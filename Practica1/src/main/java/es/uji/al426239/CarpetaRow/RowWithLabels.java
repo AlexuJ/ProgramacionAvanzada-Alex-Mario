@@ -1,9 +1,11 @@
-package es.uji.al426239.CarpetaRow;
+ package es.uji.al426239.CarpetaRow;
 
 public class RowWithLabels extends Row {
     // etiqueta convertida en numero
     private int numberClass;
-
+    public RowWithLabels(int numero){
+        numberClass = numero;
+    }
     // getNumberClass returnea numberClass
     public int getNumberClass() {
         return numberClass;
