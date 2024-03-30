@@ -33,7 +33,7 @@ public class KNN implements Algorithm<TableWithLabels,List<Double>,Integer> {
     @Override
     public Integer estimate(List<Double> data) {
         int Estimacion = 0;
-        double MenorAproximacion = 20.0;
+        double MenorAproximacion = Double.MAX_VALUE;
         for (int i=0; i<TablaEntrenamiento.getRows().size(); i++) {
             Double MetricaEuclidiana = CalcularMetricaEuclidiana(data, TablaEntrenamiento.getRowAt(i));
             if (MetricaEuclidiana < MenorAproximacion) {

@@ -6,10 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/CSV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/Row.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CSV/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CSV/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaRow/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaRow/Row.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaTable/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaTable/Table.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaTable/TableWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaTable/TableWithLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/KNN/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/KNN/KNN.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/Kmeans/Kmeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/Kmeans/Kmeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/CSVTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/CSVTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CSV/CSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CSV/CSV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CarpetaRow/Row.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CarpetaRow/Row.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CarpetaRow/RowWithLabels.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CarpetaRow/RowWithLabels.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CarpetaTable/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CarpetaTable/Table.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CarpetaTable/TableWithLabels.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CarpetaTable/TableWithLabels.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Excepciones/Comparador.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Excepciones/Comparador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Interfaz/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Interfaz/Algorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/KNN/KNN.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/KNN/KNN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Kmeans/Kmeans.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Kmeans/Kmeans.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/CSVTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/CSVTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/CSVTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/KNNTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/KNNTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/RowTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/RowTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/RowWithLabelsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/RowWithLabelsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/TableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/TableTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/TableWithLabelsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/TableWithLabelsTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,25 +104,12 @@
       <recent name="es.uji" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="KNN" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="es.uji.KNN.KNN" />
-      <module name="Practica1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="es.uji.CarpetaRow.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.CSVTest.prueba7 (1)">
     <configuration name="CSVTest.prueba4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.*" />
+          <option name="PATTERN" value="es.uji.al426239.CSV.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,7 +125,7 @@
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.*" />
+          <option name="PATTERN" value="es.uji.al426239.CSV.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,7 +141,7 @@
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.*" />
+          <option name="PATTERN" value="es.uji.al426239.CSV.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,11 +153,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CSVTest.prueba7 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.al426239.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji.al426239" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.CSVTest" />
+      <option name="METHOD_NAME" value="prueba7" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CSVTest.prueba7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.*" />
+          <option name="PATTERN" value="es.uji.al426239.CSV.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -162,11 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CSVTest.prueba7 (1)" />
         <item itemvalue="JUnit.CSVTest.prueba7" />
         <item itemvalue="JUnit.CSVTest.prueba6" />
         <item itemvalue="JUnit.CSVTest.prueba5" />
         <item itemvalue="JUnit.CSVTest.prueba4" />
-        <item itemvalue="Application.KNN" />
       </list>
     </recent_temporary>
   </component>

@@ -1,7 +1,6 @@
 package es.uji.al426239.CarpetaTable;
 
 import es.uji.al426239.CarpetaRow.Row;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

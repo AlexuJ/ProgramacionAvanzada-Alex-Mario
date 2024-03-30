@@ -102,8 +102,8 @@ class CSVTest {
         Row1.setNumberClass(1);
         assertEquals(Row1.getNumberClass(), table.getRowAt(1).getNumberClass());
         Row1.setNumberClass(2);
-        assertEquals(table.getRowAt(70).getNumberClass(), Row1.getNumberClass());
+        assertEquals(Row1.getNumberClass(),table.getRowAt(70).getNumberClass());
         Row1.setNumberClass(3);
-        assertEquals(table.getRowAt(130).getNumberClass(), Row1.getNumberClass());
+        assertEquals(Row1.getNumberClass(),table.getRowAt(130).getNumberClass());
     }
 }

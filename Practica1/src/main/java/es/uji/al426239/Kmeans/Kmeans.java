@@ -9,13 +9,11 @@ import java.util.*;
 public class Kmeans implements Algorithm<Table,List<Number>,Integer> {
     private final int numClusters;
     private final int numIterations;
-    private final long seed;
     private final List<Row> Representantes;
     private final Map<Integer,List<Row>> Grupos;
-    public Kmeans(int numClusters, int numIterations, long seed) {
+    public Kmeans(int numClusters, int numIterations) {
         this.numClusters = numClusters;
         this.numIterations = numIterations;
-        this.seed = seed;
         this.Representantes = new ArrayList<>();
         this.Grupos = new HashMap<>();
     }
@@ -31,7 +29,7 @@ public class Kmeans implements Algorithm<Table,List<Number>,Integer> {
     }
     private void inicializar(Table datos) {
         Random random = new Random(100);
-        for (int i=0; i < getNumClusters(); i++) {
+        for (int i=0; i < numClusters; i++) {
             int fila = random.nextInt(datos.getRows().size());
             if (!Representantes.contains(datos.getRowAt(fila))) {
                 Representantes.add(datos.getRowAt(fila));
@@ -76,20 +74,5 @@ public class Kmeans implements Algorithm<Table,List<Number>,Integer> {
             }
         }
         return grupo;
-    }
-    public int getNumClusters() {
-        return numClusters;
-    }
-    public int getNumIterations() {
-        return numIterations;
-    }
-    public long getSeed() {
-        return seed;
-    }
-    public List<Row> getRepresentantes() {
-        return Representantes;
-    }
-    private Map<Integer,List<Row>> getGrupos() {
-        return Grupos;
     }
 }

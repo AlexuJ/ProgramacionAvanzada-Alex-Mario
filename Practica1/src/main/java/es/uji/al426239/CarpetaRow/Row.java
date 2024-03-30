@@ -36,5 +36,4 @@ public class Row {
     public int size() {
         return data.size();
     }
-
 }
