@@ -12,21 +12,25 @@ public class TableWithLabels extends Table {
     }
 
     // Metodo para agregar claves al dicionario
-    public void SetKey (String etiqueta) {
+    public void SetKey(String etiqueta) {
         int valor = 1;
         if (!etiquetas.containsKey(etiqueta)) {
             etiquetas.put(etiqueta, etiquetas.size() + valor);
         }
     }
-    public int GetKey(String etiqueta) {
+
+    public Integer GetKey(String etiqueta) {
+        if (!etiquetas.containsKey(etiqueta)) {
+            SetKey(etiqueta);
+        }
         return etiquetas.get(etiqueta);
     }
+
     public Map<String, Integer> getEtiquetas() {
         return etiquetas;
     }
+
     public RowWithLabels getRowAt(int i) {
         return (RowWithLabels) super.getRowAt(i);
     }
 }
-
-
