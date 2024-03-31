@@ -16,10 +16,9 @@ public class CSV {
         Scanner sc = new Scanner(new File(fichero));
         Cabeceras(sc.next().split(","), TablaSinEtiquetas);
         while (sc.hasNextLine()) {
-            String[] linea = sc.next().split(",");
             Row fila = new Row();
-            for (int i = 0; i < linea.length - 1; i++) {
-                fila.setUnicData(Double.valueOf(linea[i]));
+            for (int i = 0; i < sc.next().split(",").length; i++) {
+                fila.setUnicData(Double.valueOf(sc.next().split(",")[i]));
             }
             TablaSinEtiquetas.setRow(fila);
 
@@ -34,8 +33,7 @@ public class CSV {
         Cabeceras(sc.next().split(","), TablaConEtiquetas);
         while (sc.hasNextLine()) {
             String[] linea = sc.next().split(",");
-            String etiqueta = linea[linea.length - 1];
-            Row fila = new RowWithLabels(TablaConEtiquetas.GetKey(etiqueta));
+            Row fila = new RowWithLabels(TablaConEtiquetas.GetKey(linea[linea.length - 1]));
             for (int i = 0; i < linea.length - 1; i++) {
                 fila.setUnicData(Double.valueOf(linea[i]));
             }
@@ -47,7 +45,7 @@ public class CSV {
     }
 
     // metodo que seta a las tablas las cabeceras
-    public void Cabeceras(String[] linea, Table tabla) throws FileNotFoundException {
+    private void Cabeceras(String[] linea, Table tabla) {
         ArrayList<String> cabezeras = new ArrayList<>(Arrays.asList(linea));
         tabla.setHeaders(cabezeras);
     }

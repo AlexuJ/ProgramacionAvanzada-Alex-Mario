@@ -62,7 +62,7 @@ public class Kmeans implements Algorithm<Table,List<Number>,Integer> {
         double cercania = 0.0;
         int grupo = 0;
         for (int i=0; i < Representantes.size(); i++) {
-            for (int j=0; j < Representantes.get(i).getData().size(); j++) {
+            for (int j=0; j < Representantes.get(i).size(); j++) {
                 cercania += Representantes.get(i).getData().get(j).doubleValue()-dato.get(j).doubleValue();
             }
             if (cercania < 0) {
