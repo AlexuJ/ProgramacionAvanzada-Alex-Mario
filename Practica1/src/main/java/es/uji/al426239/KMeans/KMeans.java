@@ -1,4 +1,4 @@
-package es.uji.al426239.Kmeans;
+package es.uji.al426239.KMeans;
 
 import es.uji.al426239.CarpetaRow.Row;
 import es.uji.al426239.CarpetaTable.Table;

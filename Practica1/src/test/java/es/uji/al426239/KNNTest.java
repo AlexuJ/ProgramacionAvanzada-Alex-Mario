@@ -16,12 +16,15 @@ import java.util.List;
 class KNNTest {
     private static TableWithLabels TablaEntramiento;
     private static KNN Estimador;
+    private static String separator;
     private static List<Double> Datos1, Datos2, Datos3, Datos4, Datos5;
     @BeforeAll
     static void inicioClase() throws FileNotFoundException {
         CSV Lector = new CSV();
         Estimador = new KNN();
-        Estimador.train(Lector.readTableWithLabels("irisr.csv"));
+        separator = System.getProperty("file.separator");
+        System.out.println(separator);
+        Estimador.train(Lector.readTableWithLabels("iris.csv"));
         TablaEntramiento = Estimador.getTablaEntrenamiento();
         Datos1 = new ArrayList<>(List.of(4.2,2.6,1.2,0.7));
         Datos2 = new ArrayList<>(List.of(7.2,5.6,2.5,1.9));
