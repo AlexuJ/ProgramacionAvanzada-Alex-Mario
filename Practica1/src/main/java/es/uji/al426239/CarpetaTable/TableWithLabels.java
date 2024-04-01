@@ -26,11 +26,7 @@ public class TableWithLabels extends Table {
         return etiquetas.get(etiqueta);
     }
 
-    public Map<String, Integer> getEtiquetas() {
-        return etiquetas;
-    }
-
     public RowWithLabels getRowAt(int i) {
-        return (RowWithLabels) super.getRowAt(i);
+        return (RowWithLabels) super.getRow(i);
     }
 }

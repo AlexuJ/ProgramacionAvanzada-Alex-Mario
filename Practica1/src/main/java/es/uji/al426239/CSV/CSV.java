@@ -18,7 +18,7 @@ public class CSV {
         while (sc.hasNextLine()) {
             Row fila = new Row();
             for (int i = 0; i < sc.next().split(",").length; i++) {
-                fila.setUnicData(Double.valueOf(sc.next().split(",")[i]));
+                fila.setData(Double.valueOf(sc.next().split(",")[i]));
             }
             TablaSinEtiquetas.setRow(fila);
 
@@ -35,7 +35,7 @@ public class CSV {
             String[] linea = sc.next().split(",");
             Row fila = new RowWithLabels(TablaConEtiquetas.GetKey(linea[linea.length - 1]));
             for (int i = 0; i < linea.length - 1; i++) {
-                fila.setUnicData(Double.valueOf(linea[i]));
+                fila.setData(Double.valueOf(linea[i]));
             }
             TablaConEtiquetas.setRow(fila);
 

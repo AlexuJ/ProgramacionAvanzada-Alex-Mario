@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -87,7 +86,6 @@ class TableTest {
     @DisplayName("GetHeaders")
     void prueba2() {
         ComparadorFilas(filasPrueba2, tablaLLena.getRow());
-        List<Row> filasTablaLlena = tablaLLena.getRow();
         for (int j = 0; j < numeroFilas; j++) {
             Filas(tablaLLena.getRow(j), filasPrueba2.get(j));
         }

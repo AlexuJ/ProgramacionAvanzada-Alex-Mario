@@ -15,45 +15,45 @@ import java.util.Random;
 //Maneras de mejorar los test una clase con funciones y parametros que vayamos a usar para las pruebas
 class TableWithLabelsTest {
     // inicio prueba 1 de test
-    public List<Row> FilasPrueba;
-
-    public List<String> headersPrueba;
-
-    public Table tabla;
+    private List<Row> FilasPrueba;
+    private List<String> headersPrueba;
+    private TableWithLabels tablallena;
+    private TableWithLabels tablaVacia;
+    private int numeroFilas;
+    private String etiquetas;
 
     @BeforeEach
     void inicio() {
-        tabla = new TableWithLabels();
-        FilasPrueba = new ArrayList<>();
-        FilasPrueba = CreadorFilas(FilasPrueba, 5);
+        tablallena = new TableWithLabels();
+        tablaVacia = new TableWithLabels();
+        numeroFilas = 5;
         headersPrueba = new ArrayList<>();
+        etiquetas = "alfa,beta,gamma,fi,pi,omega,";
+        SetKeys(tablallena);
 
     }
 
-    public List<Row> CreadorFilas(List<Row> filas, int numeroFilas) {
-        Random random = new Random();
+    public void CreadorFilas(List<Row> filas) {
         for (int i = 0; i < numeroFilas; i++) {
-            Row fila = new RowWithLabels(0);
-            for (int j = 0; j < 5; j++) {
-                fila.setUnicData(random.nextDouble(1, 10));
-            }
+            Row fila = new RowWithLabels(i);
+
             filas.add(fila);
         }
-        return filas;
+
+    }
+
+    public void SetKeys(TableWithLabels tabla) {
+        for (String etiqueta : etiquetas.split(",")) {
+            tabla.SetKey(etiqueta);
+        }
     }
 
     @Test
-    @DisplayName("GetSetTabla")
+    @DisplayName("GetKey y el set Key")
     void GetSetTablaWithLabels() {
-        tabla.setRows(FilasPrueba); // Establecer las filas de prueba en la tabla
-        List<Row> filasObtenidas = tabla.getRows(); // Obtener las filas de la tabla
-
-        // Verificar que el número de filas es el mismo
-        assertEquals(FilasPrueba.size(), filasObtenidas.size());
-
-        // Verificar que cada fila de prueba se encuentra en la tabla
-        for (int i = 0; i < FilasPrueba.size(); i++) {
-            assertEquals(FilasPrueba.get(i), filasObtenidas.get(i));
+        for (int i = 0; i < etiquetas.split(",").length - 1; i++) {
+            assertEquals(i + 1, tablallena.GetKey(etiquetas.split(",")[i]));
         }
     }
+
 }
