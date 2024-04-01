@@ -1,11 +1,13 @@
 package es.uji.al426239;
 
+import es.uji.al426239.CSV.CSV;
 import es.uji.al426239.CarpetaTable.TableWithLabels;
 import es.uji.al426239.KNN.KNN;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -17,7 +19,9 @@ class KNNTest {
     private static List<Double> Datos1, Datos2, Datos3, Datos4, Datos5;
     @BeforeAll
     static void inicioClase() throws FileNotFoundException {
-        Estimador = new KNN("iris.csv");
+        CSV Lector = new CSV();
+        Estimador = new KNN();
+        Estimador.train(Lector.readTableWithLabels("irisr.csv"));
         TablaEntramiento = Estimador.getTablaEntrenamiento();
         Datos1 = new ArrayList<>(List.of(4.2,2.6,1.2,0.7));
         Datos2 = new ArrayList<>(List.of(7.2,5.6,2.5,1.9));
