@@ -5,7 +5,6 @@ import es.uji.al426239.CarpetaTable.Table;
 import es.uji.al426239.Interfaz.Algorithm;
 import es.uji.al426239.KNN.KNN;
 import es.uji.al426239.Kmeans.KMeans;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
