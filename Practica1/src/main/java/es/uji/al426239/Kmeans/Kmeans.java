@@ -21,7 +21,7 @@ public class Kmeans implements Algorithm<Table,List<Number>,Integer> {
     public void train(Table datos) throws Comparador {
         inicializar(datos);
         for (int i=0; i < numIterations; i++) {
-            for (Row fila : datos.getRows()) {
+            for (Row fila : datos.getRow()) {
                 Grupos.get(estimate(fila.getData())).add(fila);
             }
             calcularCentroides(datos);
@@ -30,16 +30,16 @@ public class Kmeans implements Algorithm<Table,List<Number>,Integer> {
     private void inicializar(Table datos) {
         Random random = new Random(100);
         for (int i=0; i < numClusters; i++) {
-            int fila = random.nextInt(datos.getRows().size());
-            if (!Representantes.contains(datos.getRowAt(fila))) {
-                Representantes.add(datos.getRowAt(fila));
+            int fila = random.nextInt(datos.getRow().size());
+            if (!Representantes.contains(datos.getRow(fila))) {
+                Representantes.add(datos.getRow(fila));
             }
             Grupos.put(i, new ArrayList<>());
         }
     }
     private void calcularCentroides(Table datos) throws Comparador {
-        if (numClusters > datos.getRows().size()) {
-            throw new Comparador(numClusters,datos.getRows().size());
+        if (numClusters > datos.getRow().size()) {
+            throw new Comparador(numClusters,datos.getRow().size());
         } else {
             Representantes.clear();
             for (List<Row> grupo : Grupos.values()) {

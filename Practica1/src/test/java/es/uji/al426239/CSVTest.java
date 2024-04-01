@@ -32,9 +32,9 @@ class CSVTest {
     void prueba1() throws FileNotFoundException {
         String ruta = Ficheros.get(0);
         Table table = Lector.readTable(ruta);
-        assertEquals(25, table.getRows().size(), "Las filas no coinciden");
-        assertEquals(2, table.getRowAt(1).getData().size(), "Las columnas no coinciden");
-        assertEquals(2, table.getRowAt(1).size(), "Las columnas no coinciden");
+        assertEquals(25, table.getRow().size(), "Las filas no coinciden");
+        assertEquals(2, table.getRow(1).getData().size(), "Las columnas no coinciden");
+        assertEquals(2, table.getRow(1).size(), "Las columnas no coinciden");
     }
 
     @Test
@@ -57,7 +57,7 @@ class CSVTest {
     @DisplayName("Dimensiones TableWithLabels")
     void prueba4() throws FileNotFoundException {
         TableWithLabels Tabla = Lector.readTableWithLabels(Ficheros.get(1));
-        assertEquals(Tabla.getRows().size(), 150);
+        assertEquals(Tabla.getRow().size(), 150);
         assertEquals(Tabla.getRowAt(1).getData().size(), 4);
         assertEquals(Tabla.getRowAt(1).size(), 4);
     }
@@ -71,7 +71,7 @@ class CSVTest {
         array.add(4692.0);
         Row fila = new Row();
         fila.setData(array);
-        Row filaTabla = table.getRowAt(13);
+        Row filaTabla = table.getRow(13);
         for (int i = 0; i < fila.getData().size(); i++) {
             assertEquals(fila.getData().get(i), filaTabla.getData().get(i));
         }
@@ -88,7 +88,7 @@ class CSVTest {
         array.add(0.1);
         Row fila = new Row();
         fila.setData(array);
-        Row filaTabla = tabla.getRowAt(13);
+        Row filaTabla = tabla.getRow(13);
         for (int i = 0; i < fila.getData().size(); i++) {
             assertEquals(fila.getData().get(i), filaTabla.getData().get(i));
         }

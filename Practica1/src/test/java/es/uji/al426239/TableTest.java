@@ -5,10 +5,8 @@ import es.uji.al426239.CarpetaTable.Table;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,7 +16,6 @@ class TableTest {
     private Table tablaVacia;
     private List<String> headersPrueba;
     private List<String> headersPrueba2;
-    private String encabezados;
     private int numeroFilas;
     private int numeroDatos;
     private List<Row> filasPrueba;
@@ -37,7 +34,7 @@ class TableTest {
         tablaLLena.setRow(filasPrueba);
         headersPrueba = new ArrayList<>();
         headersPrueba2 = new ArrayList<>();
-        encabezados = "sepal length,sepal width,petal length,petal width,class";
+        String encabezados = "sepal length,sepal width,petal length,petal width,class";
         for (String encabezado : encabezados.split(",")) {
             headersPrueba.add(encabezado);
             headersPrueba2.add(encabezado);
@@ -87,7 +84,6 @@ class TableTest {
     @DisplayName("GetHeaders")
     void prueba2() {
         ComparadorFilas(filasPrueba2, tablaLLena.getRow());
-        List<Row> filasTablaLlena = tablaLLena.getRow();
         for (int j = 0; j < numeroFilas; j++) {
             Filas(tablaLLena.getRow(j), filasPrueba2.get(j));
         }

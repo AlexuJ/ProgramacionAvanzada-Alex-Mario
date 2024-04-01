@@ -35,7 +35,7 @@ class TableWithLabelsTest {
         for (int i = 0; i < numeroFilas; i++) {
             Row fila = new RowWithLabels(0);
             for (int j = 0; j < 5; j++) {
-                fila.setUnicData(random.nextDouble(1, 10));
+                fila.setData(random.nextDouble(1, 10));
             }
             filas.add(fila);
         }
@@ -45,8 +45,8 @@ class TableWithLabelsTest {
     @Test
     @DisplayName("GetSetTabla")
     void GetSetTablaWithLabels() {
-        tabla.setRows(FilasPrueba); // Establecer las filas de prueba en la tabla
-        List<Row> filasObtenidas = tabla.getRows(); // Obtener las filas de la tabla
+        tabla.setRow(FilasPrueba); // Establecer las filas de prueba en la tabla
+        List<Row> filasObtenidas = tabla.getRow(); // Obtener las filas de la tabla
 
         // Verificar que el número de filas es el mismo
         assertEquals(FilasPrueba.size(), filasObtenidas.size());

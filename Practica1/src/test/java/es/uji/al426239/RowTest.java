@@ -60,7 +60,7 @@ class RowTest {
     @Test
     @DisplayName("SetData(Number)")
     void Prueba4() {
-        for (Double i = 0.0; i < valor; i++) {
+        for (double i = 0.0; i < valor; i++) {
             filavacia.setData(i);
         }
         assertEquals(datos, filavacia.getData(), "El metodo SetData(Number) No esta asignando bien");
