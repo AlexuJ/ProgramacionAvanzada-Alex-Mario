@@ -16,26 +16,26 @@ public class Table {
     }
 
     // metodo para consultar lo que hay en esta parte de la tabla
-    public Row getRowAt(int rowNumber) {
+    public Row getRow(int rowNumber) {
         return datos.get(rowNumber);
     }
 
-    public List<Row> getRows() {
+    public List<Row> getRow() {
         return datos;
     }
 
     // te permite añadir una fila al final
     public void setRow(Row fila) {
-        setRowAt(fila, datos.size());
+        setRow(fila, datos.size());
     }
 
-    public void setRows(List<Row> filas) {
+    public void setRow(List<Row> filas) {
         datos = filas;
     }
 
     // te permite insertar una fila donde tu quieras hay que lanzar una excepcion si
     // indice es mayor que el tamaño que la tabla
-    public void setRowAt(Row fila, int indice) {
+    public void setRow(Row fila, int indice) {
         if (indice > datos.size()) {
             throw new IndexOutOfBoundsException("El indice proporcionado es mas grande que el tamaño de la tabla");
         }
