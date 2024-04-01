@@ -1,26 +1,14 @@
 package es.uji.al426239.KNN;
 
-import es.uji.al426239.CSV.CSV;
 import es.uji.al426239.CarpetaRow.Row;
 import es.uji.al426239.CarpetaTable.TableWithLabels;
 import es.uji.al426239.Interfaz.Algorithm;
-
-import java.io.FileNotFoundException;
 import java.util.List;
 
 public class KNN implements Algorithm<TableWithLabels,List<Double>,Integer> {
     private TableWithLabels TablaEntrenamiento;
-
-    //Constructor para inicializar una tabla de datos y modificar la tabla de entrenamiento
-    public KNN(String fichero) throws FileNotFoundException {
-        CSV Lector = new CSV();
-        TableWithLabels TablaDatos = Lector.readTableWithLabels(fichero);
-        train(TablaDatos);
-    }
-
-    //Método para devolver la tabla de entrenamiento
-    public TableWithLabels getTablaEntrenamiento() {
-        return TablaEntrenamiento;
+    public KNN() {
+        this.TablaEntrenamiento = new TableWithLabels();
     }
 
     //Método para aplicar a la tabla de entrenamiento los datos en cuestión
@@ -54,5 +42,9 @@ public class KNN implements Algorithm<TableWithLabels,List<Double>,Integer> {
             MetricaEuclidiana+=Math.pow(data.get(i)-fila.getData().get(i).doubleValue(),2);
         }
         return Math.sqrt(MetricaEuclidiana);
+    }
+    //Método para devolver la tabla de entrenamiento
+    public TableWithLabels getTablaEntrenamiento() {
+        return TablaEntrenamiento;
     }
 }

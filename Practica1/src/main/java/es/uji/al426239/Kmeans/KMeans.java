@@ -6,14 +6,16 @@ import es.uji.al426239.Excepciones.Comparador;
 import es.uji.al426239.Interfaz.Algorithm;
 import java.util.*;
 
-public class Kmeans implements Algorithm<Table,List<Number>,Integer> {
+public class KMeans implements Algorithm<Table,List<Number>,Integer> {
     private final int numClusters;
     private final int numIterations;
     private final List<Row> Representantes;
+    private final long seed;
     private final Map<Integer,List<Row>> Grupos;
-    public Kmeans(int numClusters, int numIterations) {
+    public KMeans(int numClusters, int numIterations, long seed) {
         this.numClusters = numClusters;
         this.numIterations = numIterations;
+        this.seed = seed;
         this.Representantes = new ArrayList<>();
         this.Grupos = new HashMap<>();
     }
@@ -42,18 +44,7 @@ public class Kmeans implements Algorithm<Table,List<Number>,Integer> {
             throw new Comparador(numClusters,datos.getRow().size());
         } else {
             Representantes.clear();
-            for (List<Row> grupo : Grupos.values()) {
-                Row Centroide = new Row();
-                for (Row fila : grupo) {
-                    for (int i = 0; i < fila.getData().size(); i++) {
-                        Centroide.sumeData(i, fila.getData().get(i));
-                    }
-                }
-                for (int j=0; j < Centroide.size();j ++) {
-                    Centroide.splitData(j, grupo.size());
-                }
-                Representantes.add(Centroide);
-            }
+            SumarYDividir();
         }
     }
     @Override
@@ -74,5 +65,19 @@ public class Kmeans implements Algorithm<Table,List<Number>,Integer> {
             }
         }
         return grupo;
+    }
+    private void SumarYDividir() {
+        for (List<Row> grupo : Grupos.values()) {
+            Row Centroide = new Row();
+            for (Row fila : grupo) {
+                for (int i = 0; i < fila.getData().size(); i++) {
+                    Centroide.sumeData(i, fila.getData().get(i));
+                }
+            }
+            for (int j=0; j < Centroide.size();j ++) {
+                Centroide.splitData(j, grupo.size());
+            }
+            Representantes.add(Centroide);
+        }
     }
 }
