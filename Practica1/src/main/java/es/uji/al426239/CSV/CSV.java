@@ -19,7 +19,7 @@ public class CSV {
             String[] linea = sc.next().split(",");
             Row fila = new Row();
             for (int i = 0; i < linea.length - 1; i++) {
-                fila.setUnicData(Double.valueOf(linea[i]));
+                fila.setData(Double.valueOf(linea[i]));
             }
             TablaSinEtiquetas.setRow(fila);
 
@@ -37,7 +37,7 @@ public class CSV {
             String etiqueta = linea[linea.length - 1];
             Row fila = new RowWithLabels(TablaConEtiquetas.GetKey(etiqueta));
             for (int i = 0; i < linea.length - 1; i++) {
-                fila.setUnicData(Double.valueOf(linea[i]));
+                fila.setData(Double.valueOf(linea[i]));
             }
             TablaConEtiquetas.setRow(fila);
 

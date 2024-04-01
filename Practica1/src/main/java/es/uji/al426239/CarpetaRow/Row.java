@@ -22,14 +22,18 @@ public class Row {
     public void setData(List<Number> newData) {
         data = newData;
     }
+
+    // Podria ser que este metodo no fuera Necesario
+    // Aviso Metodo Peligroso Necesario Lanzar Una Execpecion si i supera el tamaño
     public void sumeData(int i, Number newData) {
-        data.set(i,data.get(i).doubleValue()+newData.doubleValue());
-    }
-    public void splitData(int i, Number Splitter) {
-        data.set(i,data.get(i).doubleValue()/Splitter.doubleValue());
+        data.set(i, data.get(i).doubleValue() + newData.doubleValue());
     }
 
-    public void setUnicData(Number nuevoNumero) {
+    public void splitData(int i, Number Splitter) {
+        data.set(i, data.get(i).doubleValue() / Splitter.doubleValue());
+    }
+
+    public void setData(Number nuevoNumero) {
         data.add(nuevoNumero);
     }
 

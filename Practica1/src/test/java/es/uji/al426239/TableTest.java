@@ -14,74 +14,97 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TableTest {
     // inicio prueba 1 de test
-    private Table tabla;
+    private Table tablaLLena;
+    private Table tablaVacia;
     private List<String> headersPrueba;
+    private List<String> headersPrueba2;
+    private String encabezados;
+    private int numeroFilas;
+    private int numeroDatos;
+    private List<Row> filasPrueba;
+    private List<Row> filasPrueba2;
 
     @BeforeEach
     void inicio() {
-        tabla = new Table();
-        List<Row> filasPrueba = new ArrayList<>();
-        filasPrueba = CreadorFilas(filasPrueba, 5);
+        tablaLLena = new Table();
+        numeroFilas = 5;
+        numeroDatos = 5;
+        filasPrueba = new ArrayList<>();
+        filasPrueba2 = new ArrayList<>();
+        CreadorFilas(filasPrueba);
+        CreadorFilas(filasPrueba2);
+        tablaVacia = new Table();
+        tablaLLena.setRow(filasPrueba);
         headersPrueba = new ArrayList<>();
-
-    }
-
-    // funcion que añade un caracter por string que se le pasa
-    public List<String> CreadorHeaders(List<String> encabezado, String palabra) {
-        for (char i : palabra.toCharArray()) {
-            encabezado.add(String.valueOf(i));
+        headersPrueba2 = new ArrayList<>();
+        encabezados = "sepal length,sepal width,petal length,petal width,class";
+        for (String encabezado : encabezados.split(",")) {
+            headersPrueba.add(encabezado);
+            headersPrueba2.add(encabezado);
         }
-        return encabezado;
+        tablaLLena.setHeaders(headersPrueba);
+
     }
 
     // un bucle doble que genera filas y las almacena con numeros aleatorios
-    public List<Row> CreadorFilas(List<Row> filas, int numeroFilas) {
-        Random random = new Random();
+    public void CreadorFilas(List<Row> filas) {
         for (int i = 0; i < numeroFilas; i++) {
             Row fila = new Row();
-            for (int j = 0; j < 5; j++) {
-                fila.setUnicData(random.nextDouble(1, 10));
+            for (int j = 0; j < numeroDatos; j++) {
+                fila.setData(j);
             }
             filas.add(fila);
         }
-        return filas;
+    }
+
+    public void ComparadorFilas(List<Row> Lista1, List<Row> Lista2) {
+        for (int j = 0; j < numeroFilas; j++) {
+            assertEquals(Lista1.get(j).getData(), Lista2.get(j).getData());
+        }
+    }
+
+    public void Filas(Row Lista1, Row Lista2) {
+        for (int j = 0; j < numeroDatos; j++) {
+            assertEquals(Lista1.getData(), Lista2.getData());
+        }
     }
 
     @Test
     @DisplayName("SetRowTest")
     void SetRow() {
-        List<Row> ListaFilas = new ArrayList<>();
-        ListaFilas = CreadorFilas(ListaFilas, 1);
-        Row fila = ListaFilas.get(0);
-        tabla.setRow(fila);
-        List<Number> filaClase = tabla.getRows().get(0).getData();
-        List<Number> filaPrueba = fila.getData();
-        assertArrayEquals(filaClase.toArray(), filaPrueba.toArray(), "Las filas no coinciden");
+
+        for (int i = 0; i < numeroFilas; i++) {
+            tablaVacia.setRow(filasPrueba2.get(i));
+            Filas(filasPrueba.get(i), tablaVacia.getRow(i));
+        }
+        ComparadorFilas(filasPrueba, filasPrueba2);
+        tablaVacia.setRow(filasPrueba);
+        ComparadorFilas(filasPrueba2, tablaVacia.getRow());
+
+    }
+
+    @Test
+    @DisplayName("GetHeaders")
+    void prueba2() {
+        ComparadorFilas(filasPrueba2, tablaLLena.getRow());
+        List<Row> filasTablaLlena = tablaLLena.getRow();
+        for (int j = 0; j < numeroFilas; j++) {
+            Filas(tablaLLena.getRow(j), filasPrueba2.get(j));
+        }
+
     }
 
     @Test
     @DisplayName("GetRowAtTest")
-    void GetRow() {
-        List<Row> ListaFilas = new ArrayList<>();
-        ListaFilas = CreadorFilas(ListaFilas, 5);
-        for (Row listaFila : ListaFilas) {
-            tabla.setRow(listaFila);
-        }
-        for (int j = 0; j < ListaFilas.size(); j++) {
-            List<Number> filaPrueba = ListaFilas.get(j).getData();
-            List<Number> filaTabla = tabla.getRowAt(j).getData();
-            assertArrayEquals(filaTabla.toArray(), filaPrueba.toArray(), "Las filas no coinciden ");
-
-        }
+    void GetHeaders() {
+        assertEquals(headersPrueba2, tablaLLena.getHeaders());
     }
 
     @Test
-    @DisplayName("SetHeaderTest && GetHeaderTest")
-    void SetHeader() {
-        headersPrueba = CreadorHeaders(headersPrueba, "MARIO");
-        tabla.setHeaders(CreadorHeaders(tabla.getHeaders(), "MARIO"));
-        assertEquals(headersPrueba, tabla.getHeaders(), "Los Headers No coinciden");
-
+    @DisplayName("GetRowAtTest")
+    void setHeaders() {
+        tablaVacia.setHeaders(headersPrueba2);
+        assertEquals(headersPrueba, tablaVacia.getHeaders());
     }
 
 }

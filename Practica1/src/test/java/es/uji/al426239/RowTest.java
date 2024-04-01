@@ -9,44 +9,80 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RowTest {
-    private Row fila;
+    private Row filallena;
+    private Row filavacia;
     private List<Number> datos;
+    private int valor;
 
     // una funcion que añade numeros a las listas para poder trabajar
-    public List<Number> Creadatos(List<Number> datos) {
-        for (double i = 0; i < 5; i++) {
-            datos.add(i);
-        }
-        System.out.println(datos);
-        return datos;
-    }
 
     // lo que se iniciara al principio y es comun a todos los test se elige
     // beforeEach para no usar el static
     @BeforeEach
     void inicioClase() {
-        fila = new Row();
+        filavacia = new Row();
         datos = new ArrayList<>();
-        fila.setData(datos);
-        fila.setData(Creadatos(fila.getData()));
-        datos = Creadatos(datos);
+        filallena = new Row();
+        valor = 5;
+        for (Double i = 0.0; i < valor; i++) {
+            filallena.setData(i);
+            datos.add(i);
+        }
     }
 
     @Test
     @DisplayName("getData")
     void Prueba1() {
-        assertArrayEquals(datos.toArray(), fila.getData().toArray(), "fila no esta almacenando datos");
+
+        assertEquals(datos.toArray().length, filallena.getData().toArray().length,
+                "Tamaños diferentes datos " + datos.toArray().length + "filallena " + filallena.size());
+        assertEquals(filallena.getData(), datos, "Contenidos distintos");
     }
 
     @Test
-    @DisplayName("SetData")
+    @DisplayName("Size")
+    void Prueb2() {
+
+        assertEquals(valor, filallena.getData().toArray().length,
+                "Tamaños esperado " + valor + "filallena " + filallena.size());
+    }
+
+    @Test
+    @DisplayName("SetData(List<Number>)")
     void Prueba3() {
-        List<Number> nuevosDatos = new ArrayList<>();
-        nuevosDatos.add(10);
-        nuevosDatos.add(20);
-        nuevosDatos.add(30);
-        fila.setData(nuevosDatos);
-        assertArrayEquals(nuevosDatos.toArray(), fila.getData().toArray(),
-                "Los datos no se han establecido correctamente");
+        // Asigna la lista de datos a filavacia
+        filavacia.setData(filallena.getData());
+
+        // Verifica que las listas de datos de filallena y filavacia sean iguales
+        assertEquals(filallena.getData(), filavacia.getData(), "Las listas de datos deben ser iguales");
+    }
+
+    @Test
+    @DisplayName("SetData(Number)")
+    void Prueba4() {
+        for (Double i = 0.0; i < valor; i++) {
+            filavacia.setData(i);
+        }
+        assertEquals(datos, filavacia.getData(), "El metodo SetData(Number) No esta asignando bien");
+    }
+
+    @Test
+    @DisplayName("sumeData")
+    void Prueba5() {
+        for (int i = 0; i < valor; i++) {
+            datos.set(i, datos.get(i).doubleValue() + i);
+            filallena.sumeData(i, i);
+        }
+        assertEquals(datos, filallena.getData(), "Las listas de datos deben ser iguales");
+    }
+
+    @Test
+    @DisplayName("splitData")
+    void Prueba6() {
+        for (int i = 0; i < valor; i++) {
+            datos.set(i, datos.get(i).doubleValue() / i);
+            filallena.splitData(i, i);
+        }
+        assertEquals(datos, filallena.getData(), "Las listas de datos deben ser iguales");
     }
 }
