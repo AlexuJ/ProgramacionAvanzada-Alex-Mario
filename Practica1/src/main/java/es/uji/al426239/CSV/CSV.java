@@ -14,11 +14,14 @@ public class CSV {
     public Table readTable(String fichero) throws FileNotFoundException {
         Table TablaSinEtiquetas = new Table();
         Scanner sc = new Scanner(new File(fichero));
-        Cabeceras(sc.next().split(","), TablaSinEtiquetas);
+        String[] alfa = sc.nextLine().split(",");
+        Cabeceras(alfa, TablaSinEtiquetas);
+        Cabeceras(alfa, TablaSinEtiquetas);
         while (sc.hasNextLine()) {
+            String[] linea = sc.next().split(",");
             Row fila = new Row();
-            for (int i = 0; i < sc.next().split(",").length; i++) {
-                fila.setData(Double.valueOf(sc.next().split(",")[i]));
+            for (int i = 0; i < linea.length - 1; i++) {
+                fila.setData(Double.valueOf(linea[i]));
             }
             TablaSinEtiquetas.setRow(fila);
 
@@ -30,11 +33,13 @@ public class CSV {
     public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException {
         TableWithLabels TablaConEtiquetas = new TableWithLabels();
         Scanner sc = new Scanner(new File(fichero));
-        Cabeceras(sc.next().split(","), TablaConEtiquetas);
+        String[] alfa = sc.nextLine().split(",");
+        Cabeceras(alfa, TablaConEtiquetas);
         while (sc.hasNextLine()) {
             String[] linea = sc.next().split(",");
             Row fila = new RowWithLabels(TablaConEtiquetas.GetKey(linea[linea.length - 1]));
             for (int i = 0; i < linea.length - 1; i++) {
+                System.out.println(Double.valueOf(Double.valueOf(linea[i])));
                 fila.setData(Double.valueOf(linea[i]));
             }
             TablaConEtiquetas.setRow(fila);
@@ -46,7 +51,11 @@ public class CSV {
 
     // metodo que setea a las tablas las cabeceras
     private void Cabeceras(String[] linea, Table tabla) {
-        ArrayList<String> cabezeras = new ArrayList<>(Arrays.asList(linea));
+
+        ArrayList<String> cabezeras = new ArrayList<>();
+        for (String header : linea) {
+            cabezeras.add(header);
+        }
         tabla.setHeaders(cabezeras);
     }
 
