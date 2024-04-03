@@ -39,11 +39,10 @@ public class CSV {
             String[] linea = sc.next().split(",");
             Row fila = new RowWithLabels(TablaConEtiquetas.GetKey(linea[linea.length - 1]));
             for (int i = 0; i < linea.length - 1; i++) {
-                System.out.println(Double.valueOf(Double.valueOf(linea[i])));
+                System.out.println(Double.valueOf(linea[i]));
                 fila.setData(Double.valueOf(linea[i]));
             }
             TablaConEtiquetas.setRow(fila);
-
         }
         sc.close();
         return TablaConEtiquetas;
@@ -51,11 +50,7 @@ public class CSV {
 
     // metodo que setea a las tablas las cabeceras
     private void Cabeceras(String[] linea, Table tabla) {
-
-        ArrayList<String> cabezeras = new ArrayList<>();
-        for (String header : linea) {
-            cabezeras.add(header);
-        }
+        ArrayList<String> cabezeras = new ArrayList<>(Arrays.asList(linea));
         tabla.setHeaders(cabezeras);
     }
 

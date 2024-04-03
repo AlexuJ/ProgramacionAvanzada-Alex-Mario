@@ -2,7 +2,7 @@ package es.uji.al426239.KMeans;
 
 import es.uji.al426239.CarpetaRow.Row;
 import es.uji.al426239.CarpetaTable.Table;
-import es.uji.al426239.Excepciones.Comparador;
+import es.uji.al426239.Excepciones.Comparator;
 import es.uji.al426239.Interfaz.Algorithm;
 import java.util.*;
 
@@ -20,7 +20,7 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
         this.Grupos = new HashMap<>();
     }
     @Override
-    public void train(Table datos) throws Comparador {
+    public void train(Table datos) throws Comparator {
         inicializar(datos);
         for (int i=0; i < numIterations; i++) {
             for (Row fila : datos.getRow()) {
@@ -39,9 +39,9 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
             Grupos.put(i, new ArrayList<>());
         }
     }
-    private void calcularCentroides(Table datos) throws Comparador {
+    private void calcularCentroides(Table datos) throws Comparator {
         if (numClusters > datos.getRow().size()) {
-            throw new Comparador(numClusters,datos.getRow().size());
+            throw new Comparator(numClusters,datos.getRow().size());
         } else {
             Representantes.clear();
             SumarYDividir();
