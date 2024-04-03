@@ -8,10 +8,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 class KNNTest {
     private static TableWithLabels TablaEntramiento;
@@ -20,11 +22,15 @@ class KNNTest {
     private static List<Double> Datos1, Datos2, Datos3, Datos4, Datos5;
     @BeforeAll
     static void inicioClase() throws FileNotFoundException {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el fichero a tratar: ");
+        String info = sc.nextLine();
+        sc.close();
         CSV Lector = new CSV();
         Estimador = new KNN();
         separator = System.getProperty("file.separator");
-        System.out.println(separator);
-        Estimador.train(Lector.readTableWithLabels("iris.csv"));
+        String fichero = "." + separator + info;
+        Estimador.train(Lector.readTableWithLabels(fichero));
         TablaEntramiento = Estimador.getTablaEntrenamiento();
         Datos1 = new ArrayList<>(List.of(4.2,2.6,1.2,0.7));
         Datos2 = new ArrayList<>(List.of(7.2,5.6,2.5,1.9));
