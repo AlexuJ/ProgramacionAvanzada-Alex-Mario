@@ -4,6 +4,8 @@ import es.uji.al426239.CarpetaRow.Row;
 import es.uji.al426239.CarpetaTable.Table;
 import es.uji.al426239.Excepciones.Comparator;
 import es.uji.al426239.Interfaz.Algorithm;
+import es.uji.al426239.KNN.KNN;
+
 import java.util.*;
 
 public class KMeans implements Algorithm<Table,List<Number>,Integer> {
@@ -30,7 +32,7 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
         }
     }
     private void inicializar(Table datos) {
-        Random random = new Random(100);
+        Random random = new Random(seed);
         for (int i=0; i < numClusters; i++) {
             int fila = random.nextInt(datos.getRow().size());
             if (!Representantes.contains(datos.getRow(fila))) {
@@ -49,22 +51,24 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
     }
     @Override
     public Integer estimate(List<Number> dato) {
+        KNN calculador = new KNN();
         double menor = Double.MAX_VALUE;
-        double cercania = 0.0;
         int grupo = 0;
         for (int i=0; i < Representantes.size(); i++) {
-            for (int j=0; j < Representantes.get(i).size(); j++) {
-                cercania += Representantes.get(i).getData().get(j).doubleValue()-dato.get(j).doubleValue();
-            }
-            if (cercania < 0) {
-                cercania *= -1;
-            }
+            Double cercania = calculador.CalcularMetricaEuclidiana(convertirADouble(dato), Representantes.get(i));
             if (cercania < menor) {
                 menor = cercania;
                 grupo = i;
             }
         }
         return grupo;
+    }
+    private List<Double> convertirADouble(List<Number> datos) {
+        List<Double> datoDoubles = new ArrayList<>();
+        for (Number num : datos) {
+            datoDoubles.add(num.doubleValue());
+        }
+        return datoDoubles;
     }
     private void SumarYDividir() {
         for (List<Row> grupo : Grupos.values()) {

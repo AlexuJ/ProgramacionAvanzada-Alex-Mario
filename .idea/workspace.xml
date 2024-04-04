@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KNNTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/KMeans/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/KMeans/KMeans.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,11 +66,11 @@
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\main\java\es\uji\al426239" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\data" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\main\java\es\uji\RestosPractica2" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica2" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src" />
-      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\main\java\es\uji" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
