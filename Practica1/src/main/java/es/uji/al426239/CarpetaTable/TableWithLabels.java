@@ -1,10 +1,11 @@
 package es.uji.al426239.CarpetaTable;
 
+import es.uji.al426239.CarpetaRow.Row;
 import es.uji.al426239.CarpetaRow.RowWithLabels;
 import java.util.*;
 
 public class TableWithLabels extends Table {
-    private final Map<String, Integer> etiquetas;
+    private Map<String, Integer> etiquetas;
 
     // Constructor clase TableWithlabels
     public TableWithLabels() {
@@ -26,8 +27,9 @@ public class TableWithLabels extends Table {
         return etiquetas.get(etiqueta);
     }
 
-
-    public RowWithLabels getRowAt(int i) {
+    @Override
+    public RowWithLabels getRow(int i) {
         return (RowWithLabels) super.getRow(i);
     }
+
 }
