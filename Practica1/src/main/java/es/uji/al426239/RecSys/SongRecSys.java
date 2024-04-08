@@ -26,7 +26,7 @@ class SongRecSys {
         filenames.put("kmeans"+"test",ruta+sep+"songs_test_withoutnames.csv");
 
         // Algorithms
-        Map<String, Algorithm<Table, List<Number>, Integer>> algorithms = new HashMap<>();
+        Map<String, Algorithm> algorithms = new HashMap<>();
         algorithms.put("knn",new KNN());
         algorithms.put("kmeans",new KMeans(15, 200, 4321));
 
