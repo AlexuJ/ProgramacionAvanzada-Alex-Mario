@@ -55,7 +55,7 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
         double menor = Double.MAX_VALUE;
         int grupo = 0;
         for (int i=0; i < Representantes.size(); i++) {
-            Double cercania = calculador.CalcularMetricaEuclidiana(convertirADouble(dato), Representantes.get(i));
+            double cercania = calculador.CalcularMetricaEuclidiana(convertirADouble(dato), Representantes.get(i));
             if (cercania < menor) {
                 menor = cercania;
                 grupo = i;
