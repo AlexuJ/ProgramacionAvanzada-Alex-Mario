@@ -2,6 +2,7 @@ package es.uji.al426239.KMeans;
 
 import es.uji.al426239.CarpetaRow.Row;
 import es.uji.al426239.CarpetaTable.Table;
+import es.uji.al426239.Convertidor.Convertidor;
 import es.uji.al426239.Excepciones.Comparator;
 import es.uji.al426239.Interfaz.Algorithm;
 import es.uji.al426239.KNN.KNN;
@@ -51,23 +52,17 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
     @Override
     public Integer estimate(List<Number> dato) {
         KNN calculador = new KNN();
+        Convertidor Convertidor = new Convertidor();
         double menor = Double.MAX_VALUE;
         int grupo = 0;
         for (int i=0; i < Representantes.size(); i++) {
-            double cercania = calculador.CalcularMetricaEuclidiana(convertirADouble(dato), Representantes.get(i));
+            double cercania = calculador.CalcularMetricaEuclidiana(Convertidor.convertirADouble(dato), Representantes.get(i));
             if (cercania < menor) {
                 menor = cercania;
                 grupo = i;
             }
         }
         return grupo;
-    }
-    private List<Double> convertirADouble(List<Number> datos) {
-        List<Double> datoDoubles = new ArrayList<>();
-        for (Number num : datos) {
-            datoDoubles.add(num.doubleValue());
-        }
-        return datoDoubles;
     }
     private void SumarYDividir() {
         for (List<Row> grupo : Grupos.values()) {
