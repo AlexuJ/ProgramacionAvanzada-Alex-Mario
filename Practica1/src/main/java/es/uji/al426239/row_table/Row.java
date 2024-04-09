@@ -1,4 +1,4 @@
-package es.uji.al426239.CarpetaRow;
+package es.uji.al426239.row_table;
 
 import java.util.ArrayList;
 import java.util.List;

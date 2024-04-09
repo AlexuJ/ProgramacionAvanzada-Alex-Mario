@@ -1,10 +1,10 @@
-package es.uji.al426239.RecSys;
+package es.uji.al426239.sistema_de_recomendacion;
 
-import es.uji.al426239.CSV.CSV;
-import es.uji.al426239.CarpetaTable.Table;
-import es.uji.al426239.Interfaz.Algorithm;
-import es.uji.al426239.KNN.KNN;
-import es.uji.al426239.KMeans.KMeans;
+import es.uji.al426239.lector_de_tablas.CSV;
+import es.uji.al426239.row_table.Table;
+import es.uji.al426239.algoritmos.Algorithm;
+import es.uji.al426239.algoritmos.KNN;
+import es.uji.al426239.algoritmos.KMeans;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

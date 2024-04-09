@@ -1,4 +1,4 @@
-package es.uji.al426239.Excepciones;
+package es.uji.al426239.algoritmos;
 
 public class EtiquetaNoEncontrada extends Exception {
     public EtiquetaNoEncontrada(String etiqueta) {

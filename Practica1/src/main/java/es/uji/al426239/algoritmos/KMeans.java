@@ -1,11 +1,10 @@
-package es.uji.al426239.KMeans;
+package es.uji.al426239.algoritmos;
 
-import es.uji.al426239.CarpetaRow.Row;
-import es.uji.al426239.CarpetaTable.Table;
-import es.uji.al426239.Convertidor.Convertidor;
-import es.uji.al426239.Excepciones.Comparator;
-import es.uji.al426239.Interfaz.Algorithm;
-import es.uji.al426239.KNN.KNN;
+import es.uji.al426239.row_table.Row;
+import es.uji.al426239.row_table.Table;
+import es.uji.al426239.metodos.Convertidor;
+import es.uji.al426239.metodos.MetricaEuclidiana;
+
 import java.util.*;
 
 public class KMeans implements Algorithm<Table,List<Number>,Integer> {
@@ -51,12 +50,12 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
     }
     @Override
     public Integer estimate(List<Number> dato) {
-        KNN calculador = new KNN();
-        Convertidor Convertidor = new Convertidor();
+        MetricaEuclidiana calculador = new MetricaEuclidiana();
+        Convertidor convertidor = new Convertidor();
         double menor = Double.MAX_VALUE;
         int grupo = 0;
         for (int i=0; i < Representantes.size(); i++) {
-            double cercania = calculador.CalcularMetricaEuclidiana(Convertidor.convertirADouble(dato), Representantes.get(i));
+            double cercania = calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(dato), Representantes.get(i));
             if (cercania < menor) {
                 menor = cercania;
                 grupo = i;

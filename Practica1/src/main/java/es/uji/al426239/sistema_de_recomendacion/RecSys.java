@@ -1,8 +1,8 @@
-package es.uji.al426239.RecSys;
+package es.uji.al426239.sistema_de_recomendacion;
 
-import es.uji.al426239.CarpetaTable.Table;
-import es.uji.al426239.Excepciones.Comparator;
-import es.uji.al426239.Interfaz.Algorithm;
+import es.uji.al426239.row_table.Table;
+import es.uji.al426239.algoritmos.Comparator;
+import es.uji.al426239.algoritmos.Algorithm;
 import java.util.*;
 
 public class RecSys {
@@ -10,11 +10,11 @@ public class RecSys {
    private Table testData;
    private  List<String> testItemNames;
    private final List<String> selectedItems;
-   private final  Map<Integer, List<String>> labelToItems;
+   private final Map<Integer, Integer> estimatedLabels;
    public RecSys(Algorithm<Table, List<Number>, Integer> algorithm) {
        this.algorithm = algorithm;
        this.selectedItems = new ArrayList<>();
-       this.labelToItems = new HashMap<>();
+       this.estimatedLabels = new HashMap<>();
    }
    public void train(Table trainData) throws Comparator {
        algorithm.train(trainData);
@@ -34,7 +34,7 @@ public class RecSys {
     /* Para la parte de run() encargada de estimar la etiqueta de todo el conjunto de test */
    private void estimate() {
        for (int i=0; i < testData.getRow().size(); i++) {
-           algorithm.estimate(testData.getRow().get(i).getData());
+           estimatedLabels.put(i,algorithm.estimate(testData.getRow().get(i).getData()));
        }
    }
 
@@ -47,10 +47,8 @@ public class RecSys {
     private void selectItems(int idxLikedItem, int labelLikedItem, int numRec) {
        int count = 0;
        for (int i = 0; i < testData.getRow().size() && count < numRec; i++) {
-           if (algorithm.estimate(testData.getRow().get(i).getData()) == labelLikedItem && i != idxLikedItem) {
+           if (estimatedLabels.get(i) == labelLikedItem && i != idxLikedItem) {
                selectedItems.add(testItemNames.get(i));
-               List<String> items = labelToItems.computeIfAbsent(labelLikedItem, k -> new ArrayList<>());
-               items.add(testItemNames.get(i));
                count++;
            }
        }

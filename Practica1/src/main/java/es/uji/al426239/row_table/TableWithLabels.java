@@ -1,7 +1,5 @@
-package es.uji.al426239.CarpetaTable;
+package es.uji.al426239.row_table;
 
-import es.uji.al426239.CarpetaRow.Row;
-import es.uji.al426239.CarpetaRow.RowWithLabels;
 import java.util.*;
 
 public class TableWithLabels extends Table {

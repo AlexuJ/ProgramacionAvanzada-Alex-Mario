@@ -1,6 +1,6 @@
 package es.uji.al426239;
 
-import es.uji.al426239.CarpetaRow.RowWithLabels;
+import es.uji.al426239.row_table.RowWithLabels;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

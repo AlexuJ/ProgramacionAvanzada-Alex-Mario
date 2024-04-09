@@ -5,8 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/algoritmos/Algorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/Interfaz/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/Interfaz/Algorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CSV/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/lector_de_tablas/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaRow/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/row_table/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaRow/RowWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/row_table/RowWithLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaTable/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/row_table/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/CarpetaTable/TableWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/row_table/TableWithLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/Convertidor/Convertidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/metodos/Convertidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/Excepciones/Comparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/algoritmos/Comparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/Excepciones/EtiquetaNoEncontrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/algoritmos/EtiquetaNoEncontrada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/Interfaz/Algorithm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/KMeans/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/algoritmos/KMeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/KNN/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/algoritmos/KNN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/RecSys/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/sistema_de_recomendacion/RecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/RecSys/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/sistema_de_recomendacion/SongRecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/RestosPractica2/display_clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/resto_practica_2/display_clustering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/CSVTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KNNTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/RowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/RowTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/RowWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/RowWithLabelsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/TableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/TableTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/TableWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/TableWithLabelsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Interfaz/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Interfaz/Algorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Kmeans/Kmeans.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,11 +106,11 @@
   </component>
   <component name="RunManager">
     <configuration name="SongRecSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.RecSys.SongRecSys" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.sistema_de_recomendacion.SongRecSys" />
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al426239.RecSys.*" />
+          <option name="PATTERN" value="es.uji.al426239.sistema_de_recomendacion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,7 +122,7 @@
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al426239.CSV.*" />
+          <option name="PATTERN" value="es.uji.al426239.lector_de_tablas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,7 +138,7 @@
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al426239.CSV.*" />
+          <option name="PATTERN" value="es.uji.al426239.lector_de_tablas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,7 +154,7 @@
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al426239.CSV.*" />
+          <option name="PATTERN" value="es.uji.al426239.lector_de_tablas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

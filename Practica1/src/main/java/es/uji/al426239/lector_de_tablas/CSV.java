@@ -1,9 +1,9 @@
-package es.uji.al426239.CSV;
+package es.uji.al426239.lector_de_tablas;
 
-import es.uji.al426239.CarpetaRow.Row;
-import es.uji.al426239.CarpetaRow.RowWithLabels;
-import es.uji.al426239.CarpetaTable.Table;
-import es.uji.al426239.CarpetaTable.TableWithLabels;
+import es.uji.al426239.row_table.Row;
+import es.uji.al426239.row_table.RowWithLabels;
+import es.uji.al426239.row_table.Table;
+import es.uji.al426239.row_table.TableWithLabels;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
