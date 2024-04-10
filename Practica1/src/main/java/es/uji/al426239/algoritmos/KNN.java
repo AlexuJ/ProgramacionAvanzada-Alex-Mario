@@ -2,7 +2,6 @@ package es.uji.al426239.algoritmos;
 
 import es.uji.al426239.row_table.TableWithLabels;
 import es.uji.al426239.metodos.MetricaEuclidiana;
-
 import java.util.List;
 
 public class KNN implements Algorithm<TableWithLabels, List<Double>, Integer> {
