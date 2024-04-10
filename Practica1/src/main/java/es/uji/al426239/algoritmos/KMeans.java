@@ -4,7 +4,6 @@ import es.uji.al426239.row_table.Row;
 import es.uji.al426239.row_table.Table;
 import es.uji.al426239.metodos.Convertidor;
 import es.uji.al426239.metodos.MetricaEuclidiana;
-
 import java.util.*;
 
 public class KMeans implements Algorithm<Table,List<Number>,Integer> {
@@ -24,9 +23,11 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
     public void train(Table datos) throws Comparator {
         inicializar(datos);
         for (int i=0; i < numIterations; i++) {
+            Grupos.clear();
             for (Row fila : datos.getRow()) {
-                Grupos.get(estimate(fila.getData())).add(fila);
+                Grupos.computeIfAbsent(estimate(fila.getData()), k -> new ArrayList<>()).add(fila);
             }
+            Representantes.clear();
             calcularCentroides(datos);
         }
     }
@@ -44,7 +45,6 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
         if (numClusters > datos.getRow().size()) {
             throw new Comparator(numClusters,datos.getRow().size());
         } else {
-            Representantes.clear();
             SumarYDividir();
         }
     }
@@ -65,16 +65,18 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
     }
     private void SumarYDividir() {
         for (List<Row> grupo : Grupos.values()) {
-            Row Centroide = new Row();
+            Row centroide = new Row();
+            centroide.inicializarTamanyo(grupo.get(0).size());
             for (Row fila : grupo) {
-                for (int i = 0; i < fila.getData().size(); i++) {
-                    Centroide.sumeData(i, fila.getData().get(i));
+                for (int j = 0; j < fila.getData().size(); j++) {
+                    centroide.sumeData(j, fila.getData().get(j).doubleValue());
                 }
             }
-            for (int j=0; j < Centroide.size();j ++) {
-                Centroide.splitData(j, grupo.size());
+            for (int k = 0; k < centroide.size(); k++) {
+                centroide.splitData(k, grupo.size());
             }
-            Representantes.add(Centroide);
+            Representantes.add(centroide);
         }
     }
+
 }

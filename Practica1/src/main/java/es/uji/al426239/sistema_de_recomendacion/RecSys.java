@@ -30,20 +30,14 @@ public class RecSys {
        selectItems(idx, likedItemLabel, numRecommendations);
        return getNamesSelectedItems();
    }
-
-    /* Para la parte de run() encargada de estimar la etiqueta de todo el conjunto de test */
    private void estimate() {
        for (int i=0; i < testData.getRow().size(); i++) {
            estimatedLabels.put(i,algorithm.estimate(testData.getRow().get(i).getData()));
        }
    }
-
-    /* Devuelve el identificador de clase/grupo de nameItem, para el paso 1a de recommend() */
     private int findName(String nameItem) {
        return testItemNames.indexOf(nameItem);
    }
-
-   /* Para el paso 3a de recommend() */
     private void selectItems(int idxLikedItem, int labelLikedItem, int numRec) {
        int count = 0;
        for (int i = 0; i < testData.getRow().size() && count < numRec; i++) {
@@ -53,8 +47,6 @@ public class RecSys {
            }
        }
    }
-
-    /* Para el paso 3b de recommend() */
     private List<String> getNamesSelectedItems() {
        return selectedItems;
    }

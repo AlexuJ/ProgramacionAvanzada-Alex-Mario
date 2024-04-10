@@ -6,22 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/algoritmos/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/algoritmos/KNN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/lector_de_tablas/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/lector_de_tablas/CSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/sistema_de_recomendacion/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/sistema_de_recomendacion/SongRecSys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CSV/CSV.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CarpetaRow/Row.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CarpetaRow/RowWithLabels.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CarpetaTable/Table.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/CarpetaTable/TableWithLabels.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Excepciones/Comparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Excepciones/EtiquetaNoEncontrada.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Interfaz/Algorithm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/KNN/KNN.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Metodos/Convertidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Metodos/Convertidor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Metodos/MetricaEuclidiana.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/Metodos/MetricaEuclidiana.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/RecSys/RecSys.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/RecSys/SongRecSys.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/algoritmos/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/algoritmos/KMeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/row_table/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/row_table/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/algoritmos/KMeans.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/algoritmos/KMeans.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/sistema_de_recomendacion/SongRecSys.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/sistema_de_recomendacion/SongRecSys.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -91,13 +79,16 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="es.uji.al426239" />
       <recent name="es.uji" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="es.uji.al426239.metodos" />
+      <recent name="es.uji.al426239.algoritmos" />
       <recent name="es.uji" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SongRecSys">
+  <component name="RunManager">
     <configuration name="SongRecSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="es.uji.al426239.sistema_de_recomendacion.SongRecSys" />
       <module name="Practica1" />

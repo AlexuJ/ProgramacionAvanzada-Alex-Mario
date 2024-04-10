@@ -28,9 +28,17 @@ public class Row {
     public void sumeData(int i, Number newData) {
         data.set(i, data.get(i).doubleValue() + newData.doubleValue());
     }
-
-    public void splitData(int i, Number Splitter) {
-        data.set(i, data.get(i).doubleValue() / Splitter.doubleValue());
+    public void splitData(int i, Number splitter) {
+        if (splitter.doubleValue() != 0) {
+            data.set(i, data.get(i).doubleValue() / splitter.doubleValue());
+        } else {
+            System.err.println("Error: División por cero en splitData()");
+        }
+    }
+    public void inicializarTamanyo(int tamanyo) {
+        for (int i=0; i < tamanyo; i++) {
+            data.add(0);
+        }
     }
 
     public void setData(Number nuevoNumero) {
