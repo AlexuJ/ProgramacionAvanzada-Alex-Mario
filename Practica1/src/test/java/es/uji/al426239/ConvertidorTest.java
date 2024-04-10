@@ -1,12 +1,12 @@
-package es.uji.al426239.metodos;
+package es.uji.al426239;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MetricaEuclidianaTest {
+class ConvertidorTest {
 
     @Test
-    void calcularMetricaEuclidiana() {
+    void convertirADouble() {
     }
 }

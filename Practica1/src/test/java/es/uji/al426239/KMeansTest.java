@@ -1,4 +1,4 @@
-package es.uji.al426239.algoritmos;
+package es.uji.al426239;
 
 import org.junit.jupiter.api.Test;
 
