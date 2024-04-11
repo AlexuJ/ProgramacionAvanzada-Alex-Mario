@@ -7,7 +7,7 @@ import es.uji.al426239.metodos.MetricaEuclidiana;
 import java.util.*;
 
 public class KMeans implements Algorithm<Table,List<Number>,Integer> {
-    private final int numClusters;
+    private int numClusters;
     private final int numIterations;
     private final List<Row> Representantes;
     private final long seed;
@@ -19,8 +19,9 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
         this.Representantes = new ArrayList<>();
         this.Grupos = new HashMap<>();
     }
+
     @Override
-    public void train(Table datos) throws Comparator {
+    public void train(Table datos) {
         inicializar(datos);
         for (int i=0; i < numIterations; i++) {
             Grupos.clear();
@@ -41,9 +42,9 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
             Grupos.put(i, new ArrayList<>());
         }
     }
-    private void calcularCentroides(Table datos) throws Comparator {
+    private void calcularCentroides(Table datos) {
         if (numClusters > datos.getRow().size()) {
-            throw new Comparator(numClusters,datos.getRow().size());
+            numClusters = datos.getRow().size();
         } else {
             SumarYDividir();
         }
@@ -78,5 +79,4 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
             Representantes.add(centroide);
         }
     }
-
 }
