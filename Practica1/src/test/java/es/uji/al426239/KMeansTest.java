@@ -1,10 +1,12 @@
 package es.uji.al426239;
 
+import es.uji.al426239.algoritmos.Algorithm;
+import es.uji.al426239.algoritmos.Comparator;
 import es.uji.al426239.algoritmos.KMeans;
 import es.uji.al426239.lector_de_tablas.CSV;
 import es.uji.al426239.row_table.Row;
 import es.uji.al426239.row_table.Table;
-import org.junit.jupiter.api.BeforeAll;
+import es.uji.al426239.sistema_de_recomendacion.RecSys;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.io.FileNotFoundException;

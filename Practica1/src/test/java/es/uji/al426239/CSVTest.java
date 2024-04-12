@@ -58,8 +58,8 @@ class CSVTest {
         for (String s : lineas) {
             Row Fila = new Row();
             String[] linea = s.split(",");
-            for (int j = 0; j < linea.length ; j++) {
-                Fila.setData(Double.valueOf(linea[j]));
+            for (String string : linea) {
+                Fila.setData(Double.valueOf(string));
             }
             tablaLLena.setRow(Fila);
         }
@@ -81,9 +81,7 @@ class CSVTest {
     void prueba2() throws FileNotFoundException {
         tableSinEtiquetas = Lector.readTableWithLabels("." + separator + "FicheroPrueba.csv");
         for (int i = 0; i < tablaConEtiquetas.getRow().size(); i++) {
-            System.out.println("Hola");
-            System.out
-                    .println(tablaConEtiquetas.getRow(i).getData() + " " + tableSinEtiquetas.getRow().get(i).getData());
+            System.out.println(tablaConEtiquetas.getRow(i).getData() + " " + tableSinEtiquetas.getRow().get(i).getData());
             assertEquals(tablaConEtiquetas.getRow(i).getData(), tableSinEtiquetas.getRow(i).getData());
         }
         for (String string : ConjuntoEtiquetas) {
