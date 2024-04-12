@@ -6,12 +6,17 @@ import es.uji.al426239.row_table.Table;
 import es.uji.al426239.metodos.Convertidor;
 import java.util.*;
 
-public class KMeans implements Algorithm<Table,List<Number>,Integer> {
+public class KMeans implements Algorithm<Table, List<Number>, Integer> {
     private int numClusters;
     private int numIterations;
     private List<Row> Representantes;
     private long seed;
+<<<<<<< HEAD
     private Map<Integer,List<Row>> Grupos;
+=======
+    private Map<Integer, List<Row>> Grupos;
+
+>>>>>>> 654ec48bbf9579c979fd48c5a9e901cd98fab183
     public KMeans(int numClusters, int numIterations, long seed) {
         this.numClusters = numClusters;
         this.numIterations = numIterations;
@@ -19,22 +24,34 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
         this.Representantes = new ArrayList<>();
         this.Grupos = new HashMap<>();
     }
+
     @Override
     public void train(Table datos) {
         Operaciones calculador = new Operaciones();
         inicializar(datos);
-        for (int i=0; i < numIterations; i++) {
+        for (int i = 0; i < numIterations; i++) {
             Grupos.clear();
             for (Row fila : datos.getRow()) {
+<<<<<<< HEAD
                 //si el resultado del estimate esta añade no hace nada si no existe la clave añade la fila
                 Grupos.computeIfAbsent(estimate(fila.getData()), k -> new ArrayList<>()).add(fila);
             }
             Representantes = calculador.calcularCentroides(datos,numClusters,Grupos,Representantes);
+=======
+                // si el resultado del stimate esta añade no hace nada si no existe la clave
+                // añade la fila
+                Grupos.computeIfAbsent(estimate(fila.getData()), k -> new ArrayList<>()).add(fila);
+            }
+            Representantes.clear();
+            Operaciones calculador = new Operaciones();
+            Representantes = calculador.calcularCentroides(datos, numClusters, Grupos, Representantes);
+>>>>>>> 654ec48bbf9579c979fd48c5a9e901cd98fab183
         }
     }
+
     private void inicializar(Table datos) {
         Random random = new Random(seed);
-        for (int i=0; i < numClusters; i++) {
+        for (int i = 0; i < numClusters; i++) {
             int fila = random.nextInt(datos.getRow().size());
             if (!Representantes.contains(datos.getRow(fila))) {
                 Representantes.add(datos.getRow(fila));
@@ -42,14 +59,16 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
             Grupos.put(i, new ArrayList<>());
         }
     }
+
     @Override
     public Integer estimate(List<Number> dato) {
         Operaciones calculador = new Operaciones();
         Convertidor convertidor = new Convertidor();
         double menor = Double.MAX_VALUE;
         int grupo = 0;
-        for (int i=0; i < Representantes.size(); i++) {
-            double cercania = calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(dato), Representantes.get(i));
+        for (int i = 0; i < Representantes.size(); i++) {
+            double cercania = calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(dato),
+                    Representantes.get(i));
             if (cercania < menor) {
                 menor = cercania;
                 grupo = i;
