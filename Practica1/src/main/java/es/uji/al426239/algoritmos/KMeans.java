@@ -8,10 +8,10 @@ import java.util.*;
 
 public class KMeans implements Algorithm<Table,List<Number>,Integer> {
     private int numClusters;
-    private  int numIterations;
-    private   List<Row> Representantes;
-    private   long seed;
-    private   Map<Integer,List<Row>> Grupos;
+    private int numIterations;
+    private List<Row> Representantes;
+    private long seed;
+    private Map<Integer,List<Row>> Grupos;
     public KMeans(int numClusters, int numIterations, long seed) {
         this.numClusters = numClusters;
         this.numIterations = numIterations;
@@ -21,14 +21,14 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
     }
     @Override
     public void train(Table datos) {
+        Operaciones calculador = new Operaciones();
         inicializar(datos);
         for (int i=0; i < numIterations; i++) {
             Grupos.clear();
             for (Row fila : datos.getRow()) {
-                //si el resultado del stimate esta añade no hace nada si no existe la clave añade la fila
+                //si el resultado del estimate esta añade no hace nada si no existe la clave añade la fila
                 Grupos.computeIfAbsent(estimate(fila.getData()), k -> new ArrayList<>()).add(fila);
             }
-           Operaciones calculador = new Operaciones();
             Representantes = calculador.calcularCentroides(datos,numClusters,Grupos,Representantes);
         }
     }
