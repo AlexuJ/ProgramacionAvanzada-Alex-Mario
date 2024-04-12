@@ -4,12 +4,8 @@ import es.uji.al426239.metodos.MetricaEuclidiana;
 import es.uji.al426239.row_table.Row;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Arrays;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class MetricaEuclidianaTest {

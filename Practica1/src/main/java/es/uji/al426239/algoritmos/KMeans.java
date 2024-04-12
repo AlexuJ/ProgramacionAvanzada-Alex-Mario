@@ -7,11 +7,11 @@ import es.uji.al426239.metodos.MetricaEuclidiana;
 import java.util.*;
 
 public class KMeans implements Algorithm<Table,List<Number>,Integer> {
-    private  int numClusters;
-    private int numIterations;
-    private  List<Row> Representantes;
-    private  long seed;
-    private  Map<Integer,List<Row>> Grupos;
+    private int numClusters;
+    private final int numIterations;
+    private  final List<Row> Representantes;
+    private  final long seed;
+    private  final Map<Integer,List<Row>> Grupos;
     public KMeans(int numClusters, int numIterations, long seed) {
         this.numClusters = numClusters;
         this.numIterations = numIterations;
@@ -20,7 +20,7 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
         this.Grupos = new HashMap<>();
     }
     @Override
-    public void train(Table datos) throws Comparator {
+    public void train(Table datos) {
         inicializar(datos);
         for (int i=0; i < numIterations; i++) {
             Grupos.clear();
@@ -41,14 +41,11 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
             Grupos.put(i, new ArrayList<>());
         }
     }
-    private void calcularCentroides(Table datos) throws Comparator {
+    private void calcularCentroides(Table datos) {
         if (numClusters > datos.getRow().size()) {
-            System.out.println(datos.getRow().size());
-
-            throw new Comparator(numClusters,datos.getRow().size());
-        } else {
-            SumarYDividir();
+            numClusters = datos.getRow().size();
         }
+        SumarYDividir();
     }
     @Override
     public Integer estimate(List<Number> dato) {
@@ -80,5 +77,7 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
             Representantes.add(centroide);
         }
     }
-
+    public Map<Integer, List<Row>> getGrupos() {
+        return Grupos;
+    }
 }

@@ -40,7 +40,6 @@ public class Row {
             data.add(0);
         }
     }
-
     public void setData(Number nuevoNumero) {
         data.add(nuevoNumero);
     }

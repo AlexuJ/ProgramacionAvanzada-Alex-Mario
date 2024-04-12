@@ -14,14 +14,12 @@ public class CSV {
     public Table readTable(String fichero) throws FileNotFoundException {
         Table TablaSinEtiquetas = new Table();
         Scanner sc = new Scanner(new File(fichero));
-        String[] alfa = sc.nextLine().split(",");
-        Cabeceras(alfa, TablaSinEtiquetas);
-        Cabeceras(alfa, TablaSinEtiquetas);
+        Cabeceras(sc.nextLine().split(","), TablaSinEtiquetas);
         while (sc.hasNextLine()) {
             String[] linea = sc.nextLine().split(",");
             Row fila = new Row();
-            for (int i = 0; i < linea.length-1 ; i++) {
-                fila.setData(Double.valueOf(linea[i]));
+            for (String s : linea) {
+                fila.setData(Double.valueOf(s));
             }
             TablaSinEtiquetas.setRow(fila);
 
@@ -33,8 +31,7 @@ public class CSV {
     public TableWithLabels readTableWithLabels(String fichero) throws FileNotFoundException {
         TableWithLabels TablaConEtiquetas = new TableWithLabels();
         Scanner sc = new Scanner(new File(fichero));
-        String[] alfa = sc.nextLine().split(",");
-        Cabeceras(alfa, TablaConEtiquetas);
+        Cabeceras(sc.nextLine().split(","), TablaConEtiquetas);
         while (sc.hasNextLine()) {
             String[] linea = sc.nextLine().split(",");
             Row fila = new RowWithLabels(TablaConEtiquetas.GetKey(linea[linea.length - 1]));
