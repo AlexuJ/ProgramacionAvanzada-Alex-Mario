@@ -4,7 +4,6 @@ import es.uji.al426239.algoritmos.KMeans;
 import es.uji.al426239.lector_de_tablas.CSV;
 import es.uji.al426239.row_table.Row;
 import es.uji.al426239.row_table.Table;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.io.FileNotFoundException;
@@ -37,6 +36,7 @@ class KMeansTest {
         for (List<Row> grupo : kmeans.getGrupos().values()) {
             for (Row fila : grupo) {
                 System.out.println(kmeans.estimate(fila.getData()));
+                System.out.println(kmeans.getGrupos().get(kmeans.estimate(fila.getData())));
             }
         }
     }

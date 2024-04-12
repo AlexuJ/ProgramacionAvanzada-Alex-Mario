@@ -1,6 +1,7 @@
 package es.uji.al426239;
 
-import es.uji.al426239.metodos.MetricaEuclidiana;
+
+import es.uji.al426239.metodos.Operaciones;
 import es.uji.al426239.row_table.Row;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,7 @@ class MetricaEuclidianaTest {
     @Test
     void calcularMetricaEuclidiana() {
 
-            MetricaEuclidiana metricaEuclidiana = new MetricaEuclidiana();
+            Operaciones metricaEuclidiana = new Operaciones();
 
             // Caso de prueba con listas del mismo tamaño
             List<Double> data1 = Arrays.asList(1.0, 2.0, 3.0);

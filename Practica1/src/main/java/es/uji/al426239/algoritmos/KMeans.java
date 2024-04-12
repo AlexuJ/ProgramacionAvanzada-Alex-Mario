@@ -1,17 +1,17 @@
 package es.uji.al426239.algoritmos;
 
+import es.uji.al426239.metodos.Operaciones;
 import es.uji.al426239.row_table.Row;
 import es.uji.al426239.row_table.Table;
 import es.uji.al426239.metodos.Convertidor;
-import es.uji.al426239.metodos.MetricaEuclidiana;
 import java.util.*;
 
 public class KMeans implements Algorithm<Table,List<Number>,Integer> {
     private int numClusters;
-    private final int numIterations;
-    private  final List<Row> Representantes;
-    private  final long seed;
-    private  final Map<Integer,List<Row>> Grupos;
+    private  int numIterations;
+    private   List<Row> Representantes;
+    private   long seed;
+    private   Map<Integer,List<Row>> Grupos;
     public KMeans(int numClusters, int numIterations, long seed) {
         this.numClusters = numClusters;
         this.numIterations = numIterations;
@@ -25,10 +25,11 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
         for (int i=0; i < numIterations; i++) {
             Grupos.clear();
             for (Row fila : datos.getRow()) {
+                //si el resultado del stimate esta añade no hace nada si no existe la clave añade la fila
                 Grupos.computeIfAbsent(estimate(fila.getData()), k -> new ArrayList<>()).add(fila);
             }
-            Representantes.clear();
-            calcularCentroides(datos);
+           Operaciones calculador = new Operaciones();
+            Representantes = calculador.calcularCentroides(datos,numClusters,Grupos,Representantes);
         }
     }
     private void inicializar(Table datos) {
@@ -41,15 +42,9 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
             Grupos.put(i, new ArrayList<>());
         }
     }
-    private void calcularCentroides(Table datos) {
-        if (numClusters > datos.getRow().size()) {
-            numClusters = datos.getRow().size();
-        }
-        SumarYDividir();
-    }
     @Override
     public Integer estimate(List<Number> dato) {
-        MetricaEuclidiana calculador = new MetricaEuclidiana();
+        Operaciones calculador = new Operaciones();
         Convertidor convertidor = new Convertidor();
         double menor = Double.MAX_VALUE;
         int grupo = 0;
@@ -62,21 +57,7 @@ public class KMeans implements Algorithm<Table,List<Number>,Integer> {
         }
         return grupo;
     }
-    private void SumarYDividir() {
-        for (List<Row> grupo : Grupos.values()) {
-            Row centroide = new Row();
-            centroide.inicializarTamanyo(grupo.get(0).size());
-            for (Row fila : grupo) {
-                for (int j = 0; j < fila.getData().size(); j++) {
-                    centroide.sumeData(j, fila.getData().get(j).doubleValue());
-                }
-            }
-            for (int k = 0; k < centroide.size(); k++) {
-                centroide.splitData(k, grupo.size());
-            }
-            Representantes.add(centroide);
-        }
-    }
+
     public Map<Integer, List<Row>> getGrupos() {
         return Grupos;
     }

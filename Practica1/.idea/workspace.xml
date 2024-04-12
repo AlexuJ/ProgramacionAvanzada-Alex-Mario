@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cff46fb1-cbe9-4711-ab35-4eb32ac78ed9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al426239/algoritmos/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al426239/algoritmos/KMeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al426239/algoritmos/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al426239/algoritmos/KNN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al426239/metodos/MetricaEuclidiana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al426239/metodos/Operaciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al426239/KMeansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al426239/KMeansTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al426239/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al426239/KNNTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al426239/MetricaEuclidianaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al426239/MetricaEuclidianaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uji/al426239/algoritmos/KMeans.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uji/al426239/algoritmos/KMeans.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uji/al426239/algoritmos/KNN.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/es/uji/al426239/algoritmos/KNN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/es/uji/al426239/metodos/MetricaEuclidiana.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/es/uji/al426239/KMeansTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,20 +46,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mariu/OneDrive/Escritorio/Programacion avanzada/Repositorio-Programacion_Avanzada/ProgramacionAvanzada-Alex-Mario/Practica1&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.SongRecSys.executor": "Run",
+    "JUnit.CSVTest (1).executor": "Run",
+    "JUnit.RowTest.Prueba3.executor": "Run",
+    "JUnit.RowTest.executor": "Run",
+    "JUnit.gKMeansTest.executor": "Run",
+    "JUnit.gKMeansTest.train.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/mariu/OneDrive/Escritorio/Programacion avanzada/Repositorio-Programacion_Avanzada/ProgramacionAvanzada-Alex-Mario/Practica1",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -57,13 +76,13 @@
       <recent name="es.uji" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RowTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="es.uji.Main" />
+  <component name="RunManager" selected="Application.SongRecSys">
+    <configuration name="SongRecSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.sistema_de_recomendacion.SongRecSys" />
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.*" />
+          <option name="PATTERN" value="es.uji.al426239.sistema_de_recomendacion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -75,29 +94,43 @@
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.*" />
+          <option name="PATTERN" value="es.uji.al426239.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="es.uji" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.CSVTest" />
+      <option name="PACKAGE_NAME" value="es.uji.al426239" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.CSVTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CSVTest.suma" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KMeansTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.*" />
+          <option name="PATTERN" value="es.uji.al426239.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="es.uji" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.CSVTest" />
-      <option name="METHOD_NAME" value="suma" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="es.uji.al426239" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.KMeansTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MetricaEuclidianaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.al426239.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji.al426239" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.MetricaEuclidianaTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -106,12 +139,12 @@
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.*" />
+          <option name="PATTERN" value="es.uji.al426239.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="es.uji" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.RowTest" />
+      <option name="PACKAGE_NAME" value="es.uji.al426239" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.RowTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,12 +152,20 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SongRecSys" />
+        <item itemvalue="JUnit.CSVTest (1)" />
+        <item itemvalue="JUnit.MetricaEuclidianaTest" />
+        <item itemvalue="JUnit.gKMeansTest" />
         <item itemvalue="JUnit.RowTest" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.CSVTest" />
-        <item itemvalue="JUnit.CSVTest.suma" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-c9be4d5f" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -136,5 +177,15 @@
       <updated>1708793061483</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
