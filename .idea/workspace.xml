@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/CSVTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KMeansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KMeansTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/CSVTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/CSVTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/KMeansTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/KMeansTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
