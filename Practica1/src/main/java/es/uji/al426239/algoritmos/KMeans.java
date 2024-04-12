@@ -11,12 +11,8 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
     private int numIterations;
     private List<Row> Representantes;
     private long seed;
-<<<<<<< HEAD
     private Map<Integer,List<Row>> Grupos;
-=======
-    private Map<Integer, List<Row>> Grupos;
 
->>>>>>> 654ec48bbf9579c979fd48c5a9e901cd98fab183
     public KMeans(int numClusters, int numIterations, long seed) {
         this.numClusters = numClusters;
         this.numIterations = numIterations;
@@ -32,20 +28,12 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
         for (int i = 0; i < numIterations; i++) {
             Grupos.clear();
             for (Row fila : datos.getRow()) {
-<<<<<<< HEAD
-                //si el resultado del estimate esta añade no hace nada si no existe la clave añade la fila
-                Grupos.computeIfAbsent(estimate(fila.getData()), k -> new ArrayList<>()).add(fila);
-            }
-            Representantes = calculador.calcularCentroides(datos,numClusters,Grupos,Representantes);
-=======
-                // si el resultado del stimate esta añade no hace nada si no existe la clave
-                // añade la fila
+                //si existe una lista de filas en el mapa para la estimación, la devuelve, si no, la crea
+                //En cualquier caso añade la nueva fila
                 Grupos.computeIfAbsent(estimate(fila.getData()), k -> new ArrayList<>()).add(fila);
             }
             Representantes.clear();
-            Operaciones calculador = new Operaciones();
             Representantes = calculador.calcularCentroides(datos, numClusters, Grupos, Representantes);
->>>>>>> 654ec48bbf9579c979fd48c5a9e901cd98fab183
         }
     }
 

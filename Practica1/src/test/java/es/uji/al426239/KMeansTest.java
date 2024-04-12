@@ -13,22 +13,15 @@ import java.util.List;
 class KMeansTest {
     private KMeans kmeans;
     private List<List<Number>> parametrosprueba;
-    private Integer numeroclusters;
-    private Integer iteraciones;
-    private Long semilla;
     private Table tabla;
-    private CSV lector;
 
     @BeforeEach
     void inicioClase() throws FileNotFoundException {
         String separator = System.getProperty("file.separator");
-        lector = new CSV();
+        CSV lector = new CSV();
         tabla = lector.readTable("." + separator + "data" + separator + "songs_train_withoutnames.csv");
         parametrosprueba = new ArrayList<>();
-        semilla = 4321L;
-        numeroclusters = 15;
-        iteraciones = 200;
-        kmeans = new KMeans(numeroclusters, iteraciones, semilla);
+        kmeans = new KMeans(15, 200, 4321);
     }
 
     @Test

@@ -21,7 +21,6 @@ public class Operaciones {
         if (numeroclusters > datos.getRow().size()) {
             numeroclusters = datos.getRow().size();
         }
-
         for (List<Row> grupo : Grupos.values()) {
             Row centroide = new Row();
             centroide.inicializarTamanyo(grupo.get(0).size());
