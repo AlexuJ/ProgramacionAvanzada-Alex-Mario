@@ -20,7 +20,7 @@ public class CSV {
         while (sc.hasNextLine()) {
             String[] linea = sc.nextLine().split(",");
             Row fila = new Row();
-            for (int i = 0; i < linea.length - 1; i++) {
+            for (int i = 0; i < linea.length-1 ; i++) {
                 fila.setData(Double.valueOf(linea[i]));
             }
             TablaSinEtiquetas.setRow(fila);
