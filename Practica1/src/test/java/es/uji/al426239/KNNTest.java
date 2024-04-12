@@ -1,9 +1,10 @@
 package es.uji.al426239;
 
 import es.uji.al426239.lector_de_tablas.CSV;
+import es.uji.al426239.metodos.Operaciones;
 import es.uji.al426239.row_table.TableWithLabels;
 import es.uji.al426239.algoritmos.KNN;
-import es.uji.al426239.metodos.MetricaEuclidiana;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -16,14 +17,14 @@ import java.util.List;
 class KNNTest {
         private TableWithLabels TablaEntramiento;
         private KNN Estimador;
-        private MetricaEuclidiana CalcularMetricaEuclidiana;
+        private Operaciones CalcularMetricaEuclidiana;
         private List<Double> Datos1, Datos2, Datos3, Datos4, Datos5;
         private List<Integer> Datos6;
 
         @BeforeEach
         void inicioClase() {
                 try {
-                        CalcularMetricaEuclidiana = new MetricaEuclidiana();
+                        CalcularMetricaEuclidiana = new Operaciones();
                         CSV lector = new CSV();
                         Estimador = new KNN();
                         String separator = System.getProperty("file.separator");

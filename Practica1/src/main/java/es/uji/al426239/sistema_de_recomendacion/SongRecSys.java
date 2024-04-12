@@ -76,7 +76,7 @@ class SongRecSys {
     }
 
     public static void main(String[] args) throws Exception {
-        new SongRecSys("knn");
         new SongRecSys("kmeans");
+        new SongRecSys("knn");
     }
 }

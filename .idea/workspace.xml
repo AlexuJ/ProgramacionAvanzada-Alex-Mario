@@ -91,7 +91,11 @@
       <recent name="es.uji" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.SongRecSys">
+=======
+  <component name="RunManager" selected="JUnit.CSVTest.prueba4">
+>>>>>>> 3d9dddb1a5e281a1a39581f2712fb5f0f3e2b6c1
     <configuration name="SongRecSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="es.uji.al426239.sistema_de_recomendacion.SongRecSys" />
       <module name="Practica1" />
@@ -220,7 +224,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

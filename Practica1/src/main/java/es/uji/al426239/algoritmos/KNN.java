@@ -1,7 +1,8 @@
 package es.uji.al426239.algoritmos;
 
+import es.uji.al426239.metodos.Operaciones;
 import es.uji.al426239.row_table.TableWithLabels;
-import es.uji.al426239.metodos.MetricaEuclidiana;
+
 import java.util.List;
 
 public class KNN implements Algorithm<TableWithLabels, List<Double>, Integer> {
@@ -20,7 +21,7 @@ public class KNN implements Algorithm<TableWithLabels, List<Double>, Integer> {
     // Método para estimar el número de la clase al que pertenece esos datos
     @Override
     public Integer estimate(List<Double> data) {
-        MetricaEuclidiana Calculador = new MetricaEuclidiana();
+       Operaciones Calculador = new Operaciones();
         int Estimacion = 0;
         double MenorAproximacion = Double.MAX_VALUE;
         for (int i = 0; i < TablaEntrenamiento.getRow().size(); i++) {
