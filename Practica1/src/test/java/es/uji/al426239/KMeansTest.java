@@ -24,7 +24,7 @@ class KMeansTest {
     void inicioClase() throws FileNotFoundException {
        String separator = System.getProperty("file.separator");
        lector = new CSV();
-       tabla = lector.readTable("."+ separator +"FicheroPrueba3.csv");
+       tabla = lector.readTable("."+ separator + "data"+ separator +"songs_train_withoutnames.csv");
        parametrosprueba = new ArrayList<>();
        semilla = 4321L;
        numeroclusters = 15;
