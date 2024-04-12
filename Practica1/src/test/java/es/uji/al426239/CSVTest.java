@@ -29,7 +29,6 @@ class CSVTest {
         Lector = new CSV();
         ArrayList<String> ficheros = new ArrayList<>();
         separator = System.getProperty("file.separator");
-        System.out.println(separator);
         ArrayList<String> lineas = new ArrayList<>();
         tablaConEtiquetas = new TableWithLabels();
         String headers = "sepal length,sepal width,petal length,petal width,class";
@@ -59,7 +58,7 @@ class CSVTest {
         for (String s : lineas) {
             Row Fila = new Row();
             String[] linea = s.split(",");
-            for (int j = 0; j < linea.length - 1; j++) {
+            for (int j = 0; j < linea.length ; j++) {
                 Fila.setData(Double.valueOf(linea[j]));
             }
             tablaLLena.setRow(Fila);
@@ -98,6 +97,7 @@ class CSVTest {
     void prueba4() throws FileNotFoundException {
         tableVacia = Lector.readTable("." + separator + "FicheroPrueba2.csv");
         for (int i = 0; i < tablaLLena.getRow().size(); i++) {
+            System.out.println(tablaLLena.getRow(i).getData()+" "+tableVacia.getRow().get(i).getData());
             assertEquals(tablaLLena.getRow().get(i).getData(), tableVacia.getRow().get(i).getData());
         }
     }
