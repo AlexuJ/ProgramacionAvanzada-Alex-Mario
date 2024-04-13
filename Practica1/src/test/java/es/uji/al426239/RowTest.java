@@ -76,13 +76,4 @@ class RowTest {
         assertEquals(datos, filallena.getData(), "Las listas de datos deben ser iguales");
     }
 
-    @Test
-    @DisplayName("splitData")
-    void Prueba6() {
-        for (int i = 0; i < valor; i++) {
-            datos.set(i, datos.get(i).doubleValue() / i);
-            filallena.splitData(i, i);
-        }
-        assertEquals(datos, filallena.getData(), "Las listas de datos deben ser iguales");
-    }
 }

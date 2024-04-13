@@ -11,7 +11,8 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
     private int numIterations;
     private List<Row> Representantes;
     private long seed;
-    private Map<Integer,List<Row>> Grupos;
+    private Map<Integer, List<Row>> Grupos;
+    private Operaciones calculador;
 
     public KMeans(int numClusters, int numIterations, long seed) {
         this.numClusters = numClusters;
@@ -23,13 +24,13 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
 
     @Override
     public void train(Table datos) {
-        Operaciones calculador = new Operaciones();
         inicializar(datos);
         for (int i = 0; i < numIterations; i++) {
             Grupos.clear();
             for (Row fila : datos.getRow()) {
-                //si existe una lista de filas en el mapa para la estimación, la devuelve, si no, la crea
-                //En cualquier caso añade la nueva fila
+                // si existe una lista de filas en el mapa para la estimación, la devuelve, si
+                // no, la crea
+                // En cualquier caso añade la nueva fila
                 Grupos.computeIfAbsent(estimate(fila.getData()), k -> new ArrayList<>()).add(fila);
             }
             Representantes.clear();
@@ -50,7 +51,6 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
 
     @Override
     public Integer estimate(List<Number> dato) {
-        Operaciones calculador = new Operaciones();
         Convertidor convertidor = new Convertidor();
         double menor = Double.MAX_VALUE;
         int grupo = 0;
