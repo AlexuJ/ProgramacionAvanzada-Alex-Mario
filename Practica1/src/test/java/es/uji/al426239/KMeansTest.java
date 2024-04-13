@@ -6,6 +6,9 @@ import es.uji.al426239.row_table.Row;
 import es.uji.al426239.row_table.Table;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.assertEquals;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +17,7 @@ class KMeansTest {
     private KMeans kmeans;
     private List<List<Number>> parametrosprueba;
     private Table tabla;
+    private Integer resultado;
 
     @BeforeEach
     void inicioClase() throws FileNotFoundException {
@@ -23,6 +27,7 @@ class KMeansTest {
         tabla = lector.readTable(rutaFicheroPrueba);
         parametrosprueba = new ArrayList<>();
         kmeans = new KMeans(3, 2000, 4321);
+        resultado = 0;
     }
 
     @Test
@@ -32,8 +37,9 @@ class KMeansTest {
             for (Row fila : grupo) {
                 System.out.println(fila.getData());
                 System.out.println(kmeans.estimate(fila.getData()));
-
+                assertEquals(resultado, kmeans.estimate(fila.getData()));
             }
+            resultado++;
         }
     }
 }
