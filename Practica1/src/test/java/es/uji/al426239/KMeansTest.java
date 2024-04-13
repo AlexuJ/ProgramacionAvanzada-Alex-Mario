@@ -18,15 +18,10 @@ class KMeansTest {
     void inicioClase() throws FileNotFoundException {
         String separator = System.getProperty("file.separator");
         CSV lector = new CSV();
-<<<<<<< HEAD
         tabla = lector.readTable("." + separator + "data" + separator + "songs_train_withoutnames.csv");
-        kmeans = new KMeans(15, 200, 4321);
-=======
         String rutaFicheroPrueba = "." + separator + "FicheroPrueba3.csv";
         tabla = lector.readTable(rutaFicheroPrueba);
-        parametrosprueba = new ArrayList<>();
-        kmeans = new KMeans(3, 2000, 4321);
->>>>>>> 424aba1e9d82d3169532f8d4077dd6ea3b5c2007
+        kmeans = new KMeans(3, 200, 4321);
     }
 
     @Test
@@ -36,7 +31,6 @@ class KMeansTest {
             for (Row fila : grupo) {
                 System.out.println(fila.getData());
                 System.out.println(kmeans.estimate(fila.getData()));
-
             }
         }
     }

@@ -6,15 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/algoritmos/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/algoritmos/KMeans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/lector_de_tablas/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/lector_de_tablas/CSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/metodos/Operaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/main/java/es/uji/al426239/metodos/Operaciones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KMeansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KMeansTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/OperacionesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/OperacionesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/algoritmos/KMeans.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/algoritmos/KMeans.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/lector_de_tablas/CSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/lector_de_tablas/CSV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/metodos/Operaciones.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/metodos/Operaciones.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/row_table/Row.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/classes/es/uji/al426239/row_table/Row.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/CSVTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/CSVTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/KMeansTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/KMeansTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/OperacionesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/OperacionesTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +96,7 @@
       <recent name="es.uji" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.OperacionesTest.MetricaEuclidiana">
     <configuration name="SongRecSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="es.uji.al426239.sistema_de_recomendacion.SongRecSys" />
       <module name="Practica1" />
@@ -110,21 +106,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CSVTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Practica1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="es.uji.al426239.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="es.uji.al426239" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.CSVTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,22 +121,6 @@
       <option name="PACKAGE_NAME" value="es.uji.al426239" />
       <option name="MAIN_CLASS_NAME" value="es.uji.al426239.CSVTest" />
       <option name="METHOD_NAME" value="prueba4" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CSVTest.prueba7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Practica1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="es.uji.al426239.RecSys.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="es.uji.al426239" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.CSVTest" />
-      <option name="METHOD_NAME" value="prueba7" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -193,13 +158,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OperacionesTest.MetricaEuclidiana" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.al426239.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji.al426239" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.OperacionesTest" />
+      <option name="METHOD_NAME" value="MetricaEuclidiana" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OperacionesTest.MetricaEuclidiana" />
         <item itemvalue="Application.SongRecSys" />
         <item itemvalue="JUnit.KMeansTest.train" />
         <item itemvalue="JUnit.CSVTest.prueba4" />
         <item itemvalue="JUnit.MetricaEuclidianaTest.calcularMetricaEuclidiana" />
-        <item itemvalue="JUnit.CSVTest" />
       </list>
     </recent_temporary>
   </component>
