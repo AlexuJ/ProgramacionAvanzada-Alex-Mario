@@ -1,6 +1,6 @@
 package es.uji.al426239;
 
-import com.beust.ah.A;
+import es.uji.al426239.algoritmos.FilaVacia;
 import es.uji.al426239.algoritmos.KMeans;
 import es.uji.al426239.lector_de_tablas.CSV;
 import es.uji.al426239.metodos.Convertidor;
@@ -22,7 +22,6 @@ class OperacionesTest {
     private Table tabla;
     private Integer numeroclusters;
     private Map<Integer, List<Row>> grupos;
-    private Row f;
 
     @BeforeEach
     void inicio() throws FileNotFoundException {
@@ -65,8 +64,8 @@ class OperacionesTest {
     }
 
     @Test
-    void calcularCentroides() {
-        KMeans algoritmo = new KMeans(3,10,4321);
+    void calcularCentroides() throws FilaVacia {
+        KMeans algoritmo = new KMeans(numeroclusters,10,4321);
         for (Row datos : tabla.getRow()) {
             System.out.println(algoritmo.estimate(datos.getData()));
             grupos.computeIfAbsent(algoritmo.estimate(datos.getData()), k -> new ArrayList<>()).add(datos);

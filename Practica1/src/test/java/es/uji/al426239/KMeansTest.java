@@ -1,6 +1,8 @@
 package es.uji.al426239;
 
+import es.uji.al426239.algoritmos.FilaVacia;
 import es.uji.al426239.algoritmos.KMeans;
+import es.uji.al426239.algoritmos.TablaVacia;
 import es.uji.al426239.lector_de_tablas.CSV;
 import es.uji.al426239.row_table.Row;
 import es.uji.al426239.row_table.Table;
@@ -29,7 +31,7 @@ class KMeansTest {
     }
 
     @Test
-    void train() {
+    void train() throws TablaVacia, FilaVacia {
         kmeans.train(tabla);
         for (List<Row> grupo : kmeans.getGrupos().values()) {
             for (Row fila : grupo) {

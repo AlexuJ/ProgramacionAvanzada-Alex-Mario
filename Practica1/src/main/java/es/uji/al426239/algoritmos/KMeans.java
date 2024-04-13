@@ -8,11 +8,11 @@ import java.util.*;
 
 public class KMeans implements Algorithm<Table, List<Number>, Integer> {
     private int numClusters;
-    private int numIterations;
+    private final int numIterations;
     private List<Row> Representantes;
-    private long seed;
-    private Map<Integer, List<Row>> Grupos;
-    private Operaciones calculador;
+    private final long seed;
+    private final Map<Integer, List<Row>> Grupos;
+    private final Operaciones calculador;
 
     public KMeans(int numClusters, int numIterations, long seed) {
         this.numClusters = numClusters;
@@ -24,20 +24,24 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
     }
 
     @Override
-    public void train(Table datos) {
-        inicializar(datos);
-        if (numClusters > datos.getRow().size()) {
-            numClusters = datos.getRow().size();
-        }
-        for (int i = 0; i < numIterations; i++) {
-            Grupos.clear();
-            for (Row fila : datos.getRow()) {
-                // si existe una lista de filas en el mapa para la estimación, la devuelve, si no, la crea
-                // En cualquier caso añade la nueva fila
-                Grupos.computeIfAbsent(estimate(fila.getData()), k -> new ArrayList<>()).add(fila);
+    public void train(Table datos) throws TablaVacia, FilaVacia {
+        if (datos.getRow().isEmpty()) {
+            throw new TablaVacia(datos);
+        } else {
+            inicializar(datos);
+            if (numClusters > datos.getRow().size()) {
+                numClusters = datos.getRow().size();
             }
-            Representantes.clear();
-            Representantes = calculador.calcularCentroides(Grupos, Representantes);
+            for (int i = 0; i < numIterations; i++) {
+                Grupos.clear();
+                for (Row fila : datos.getRow()) {
+                    // si existe una lista de filas en el mapa para la estimación, la devuelve, si no, la crea
+                    // En cualquier caso añade la nueva fila
+                    Grupos.computeIfAbsent(estimate(fila.getData()), k -> new ArrayList<>()).add(fila);
+                }
+                Representantes.clear();
+                Representantes = calculador.calcularCentroides(Grupos, Representantes);
+            }
         }
     }
 
@@ -53,13 +57,15 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
     }
 
     @Override
-    public Integer estimate(List<Number> dato) {
+    public Integer estimate(List<Number> dato) throws FilaVacia {
+        if (dato.isEmpty()) {
+            throw new FilaVacia(dato);
+        }
         Convertidor convertidor = new Convertidor();
         double menor = Double.MAX_VALUE;
         int grupo = 0;
         for (int i = 0; i < Representantes.size(); i++) {
-            double cercania = calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(dato),
-                    Representantes.get(i));
+            double cercania = calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(dato), Representantes.get(i));
             if (cercania < menor) {
                 menor = cercania;
                 grupo = i;
@@ -70,8 +76,5 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
 
     public Map<Integer, List<Row>> getGrupos() {
         return Grupos;
-    }
-    public void SetRepresentantes(List<Row> NuevosRepresentantes) {
-        this.Representantes = NuevosRepresentantes;
     }
 }

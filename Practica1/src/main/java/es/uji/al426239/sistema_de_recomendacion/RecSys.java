@@ -1,5 +1,7 @@
 package es.uji.al426239.sistema_de_recomendacion;
 
+import es.uji.al426239.algoritmos.FilaVacia;
+import es.uji.al426239.algoritmos.TablaVacia;
 import es.uji.al426239.row_table.Table;
 import es.uji.al426239.algoritmos.Comparator;
 import es.uji.al426239.algoritmos.Algorithm;
@@ -16,21 +18,21 @@ public class RecSys {
        this.selectedItems = new ArrayList<>();
        this.estimatedLabels = new HashMap<>();
    }
-   public void train(Table trainData) throws Comparator {
+   public void train(Table trainData) throws Comparator, FilaVacia, TablaVacia {
        algorithm.train(trainData);
    }
-   public void run(Table testData, List<String> testItemNames) {
+   public void run(Table testData, List<String> testItemNames) throws FilaVacia {
        this.testData = testData;
        this.testItemNames = testItemNames;
        estimate();
    }
-   public List<String> recommend(String nameLikedItem, int numRecommendations) {
+   public List<String> recommend(String nameLikedItem, int numRecommendations) throws FilaVacia {
        int idx = findName(nameLikedItem);
        int likedItemLabel = algorithm.estimate(testData.getRow().get(idx).getData());
        selectItems(idx, likedItemLabel, numRecommendations);
        return getNamesSelectedItems();
    }
-   private void estimate() {
+   private void estimate() throws FilaVacia {
        for (int i=0; i < testData.getRow().size(); i++) {
            estimatedLabels.put(i,algorithm.estimate(testData.getRow().get(i).getData()));
        }
