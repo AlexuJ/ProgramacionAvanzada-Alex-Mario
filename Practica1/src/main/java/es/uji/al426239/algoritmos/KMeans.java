@@ -20,6 +20,7 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
         this.seed = seed;
         this.Representantes = new ArrayList<>();
         this.Grupos = new HashMap<>();
+        this.calculador = new Operaciones();
     }
 
     @Override

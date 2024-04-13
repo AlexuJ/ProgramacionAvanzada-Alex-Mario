@@ -29,6 +29,14 @@ public class Row {
         data.set(i, data.get(i).doubleValue() + newData.doubleValue());
     }
 
+    public void splitData(int i, Number splitter) {
+        if (splitter.doubleValue() != 0) {
+            data.set(i, data.get(i).doubleValue() / splitter.doubleValue());
+        } else {
+            System.err.println("Error: División por cero en splitData()");
+        }
+    }
+
     public void inicializarTamanyo(int tamanyo) {
         for (int i = 0; i < tamanyo; i++) {
             data.add(0);
