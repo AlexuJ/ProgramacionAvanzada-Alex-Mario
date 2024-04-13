@@ -81,7 +81,8 @@ class CSVTest {
     void prueba2() throws FileNotFoundException {
         tableSinEtiquetas = Lector.readTableWithLabels("." + separator + "FicheroPrueba.csv");
         for (int i = 0; i < tablaConEtiquetas.getRow().size(); i++) {
-            System.out.println(tablaConEtiquetas.getRow(i).getData() + " " + tableSinEtiquetas.getRow().get(i).getData());
+            System.out
+                    .println(tablaConEtiquetas.getRow(i).getData() + " " + tableSinEtiquetas.getRow().get(i).getData());
             assertEquals(tablaConEtiquetas.getRow(i).getData(), tableSinEtiquetas.getRow(i).getData());
         }
         for (String string : ConjuntoEtiquetas) {
@@ -95,7 +96,7 @@ class CSVTest {
     void prueba4() throws FileNotFoundException {
         tableVacia = Lector.readTable("." + separator + "FicheroPrueba2.csv");
         for (int i = 0; i < tablaLLena.getRow().size(); i++) {
-            System.out.println(tablaLLena.getRow(i).getData()+" "+tableVacia.getRow().get(i).getData());
+            System.out.println(tablaLLena.getRow(i).getData() + " " + tableVacia.getRow().get(i).getData());
             assertEquals(tablaLLena.getRow().get(i).getData(), tableVacia.getRow().get(i).getData());
         }
     }

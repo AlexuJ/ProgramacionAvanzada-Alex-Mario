@@ -34,7 +34,6 @@ public class CSV {
         Cabeceras(sc.nextLine().split(","), TablaConEtiquetas);
         while (sc.hasNextLine()) {
             String[] linea = sc.nextLine().split(",");
-            System.out.println(linea);
             Row fila = new RowWithLabels(TablaConEtiquetas.GetKey(linea[linea.length - 1]));
             for (int i = 0; i < linea.length - 1; i++) {
                 fila.setData(Double.valueOf(linea[i]));

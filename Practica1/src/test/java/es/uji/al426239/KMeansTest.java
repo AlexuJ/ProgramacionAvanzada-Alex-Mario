@@ -19,9 +19,10 @@ class KMeansTest {
     void inicioClase() throws FileNotFoundException {
         String separator = System.getProperty("file.separator");
         CSV lector = new CSV();
-        tabla = lector.readTable("." + separator + "data" + separator + "songs_train_withoutnames.csv");
+        String rutaFicheroPrueba = "." + separator + "FicheroPrueba3.csv";
+        tabla = lector.readTable(rutaFicheroPrueba);
         parametrosprueba = new ArrayList<>();
-        kmeans = new KMeans(15, 200, 4321);
+        kmeans = new KMeans(3, 2000, 4321);
     }
 
     @Test
@@ -29,8 +30,9 @@ class KMeansTest {
         kmeans.train(tabla);
         for (List<Row> grupo : kmeans.getGrupos().values()) {
             for (Row fila : grupo) {
+                System.out.println(fila.getData());
                 System.out.println(kmeans.estimate(fila.getData()));
-                System.out.println(kmeans.getGrupos().get(kmeans.estimate(fila.getData())));
+
             }
         }
     }
