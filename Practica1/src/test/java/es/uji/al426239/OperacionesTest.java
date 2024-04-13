@@ -16,12 +16,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class OperacionesTest {
     private Operaciones calculador;
     private Convertidor convertidor;
-    private List<Number> data1, data2, data3, data4;
+    private List<Number> data1, data2, data3, data4, resultados1, resultados2, resultados3, resultados4, resultados5,
+            resultados6, resultados7;
     private Row fila1, fila2, fila3, fila4;
     // parametros del CalcularCentroides
     private Table tabla;
     private Integer numeroclusters;
+    private Integer iteraciones;
+    private Integer seed;
     private Map<Integer, List<Row>> grupos;
+    private List<List<Number>> resultados;
 
     @BeforeEach
     void inicio() throws FileNotFoundException {
@@ -40,39 +44,65 @@ class OperacionesTest {
         data2 = Arrays.asList(1.0, 1.0, 1.0);
         data3 = Arrays.asList(1.0, 3.0, 4.0);
         data4 = Arrays.asList(2.0, 2.0, 3.0);
+
         // variables para el test calcular centroides
         String separator = System.getProperty("file.separator");
         CSV Lector = new CSV();
         grupos = new HashMap<>();
         tabla = Lector.readTable("." + separator + "FicheroPrueba4.csv");
         numeroclusters = 3;
+        iteraciones = 10;
+        seed = 4321;
+        resultados = new ArrayList<>();
+        resultados1 = Arrays.asList(1.0, 2.0, 3.0);
+        resultados2 = Arrays.asList(1.0, 1.0, 1.0);
+        resultados3 = Arrays.asList(1.0, 3.0, 4.0);
+        resultados4 = Arrays.asList(2.0, 2.0, 3.0);
+        resultados5 = Arrays.asList(2.0, 3.0, 4.0);
+        resultados6 = Arrays.asList(5.0, 2.0, 5.0);
+        resultados7 = Arrays.asList(4.0, 6.0, 7.0);
+        resultados.add(resultados1);
+        resultados.add(resultados2);
+        resultados.add(resultados3);
+        resultados.add(resultados4);
+        resultados.add(resultados5);
+        resultados.add(resultados6);
+        resultados.add(resultados7);
     }
 
     @Test
     void MetricaEuclidiana() {
         double resultadoEsperado1 = Math.sqrt(Math.pow(1.0 - 4.0, 2) + Math.pow(2.0 - 5.0, 2) + Math.pow(3.0 - 6.0, 2));
-        assertEquals(resultadoEsperado1, calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data1), fila1));
+        assertEquals(resultadoEsperado1,
+                calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data1), fila1));
         // Caso de prueba con listas del mismo tamaño y todos los elementos iguales
         assertEquals(0.0, calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data2), fila2));
 
         // Caso de prueba con listas del mismo tamaño y todos los elementos diferentes
         double resultadoEsperado3 = Math.sqrt(Math.pow(1.0 - 4.0, 2) + Math.pow(3.0 - 6.0, 2) + Math.pow(4.0 - 8.0, 2));
-        assertEquals(resultadoEsperado3, calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data3), fila3));
+        assertEquals(resultadoEsperado3,
+                calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data3), fila3));
 
         // Caso de prueba con listas de diferentes tamaños
-        assertThrows(IllegalArgumentException.class, () -> calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data4), fila4));
+        assertThrows(IllegalArgumentException.class,
+                () -> calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data4), fila4));
     }
 
     @Test
     void calcularCentroides() throws FilaVacia {
-        KMeans algoritmo = new KMeans(numeroclusters,10,4321);
+        KMeans algoritmo = new KMeans(numeroclusters, iteraciones, seed);
+        int contador = 0;
         for (Row datos : tabla.getRow()) {
             System.out.println(algoritmo.estimate(datos.getData()));
             grupos.computeIfAbsent(algoritmo.estimate(datos.getData()), k -> new ArrayList<>()).add(datos);
         }
         for (List<Row> grupo : grupos.values()) {
             for (Row fila : grupo) {
+                System.out.println();
                 System.out.println(fila.getData());
+                assertEquals(fila.getData(), resultados.get(contador));
+                contador++;
+
             }
         }
     }
