@@ -29,12 +29,10 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
         for (int i = 0; i < numIterations; i++) {
             Grupos.clear();
             for (Row fila : datos.getRow()) {
-                // si existe una lista de filas en el mapa para la estimación, la devuelve, si
-                // no, la crea
+                // si existe una lista de filas en el mapa para la estimación, la devuelve, si no, la crea
                 // En cualquier caso añade la nueva fila
                 Grupos.computeIfAbsent(estimate(fila.getData()), k -> new ArrayList<>()).add(fila);
             }
-            Representantes.clear();
             Representantes = calculador.calcularCentroides(datos, numClusters, Grupos, Representantes);
         }
     }
