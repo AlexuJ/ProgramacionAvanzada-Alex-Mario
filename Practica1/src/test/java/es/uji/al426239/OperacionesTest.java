@@ -1,5 +1,7 @@
 package es.uji.al426239;
 
+import com.beust.ah.A;
+import es.uji.al426239.algoritmos.KMeans;
 import es.uji.al426239.lector_de_tablas.CSV;
 import es.uji.al426239.metodos.Convertidor;
 import es.uji.al426239.metodos.Operaciones;
@@ -10,28 +12,19 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class OperacionesTest {
     private Operaciones calculador;
     private Convertidor convertidor;
-    private List<Double> data1;
-    private List<Double> data2;
-    private List<Double> data3;
-    private List<Double> data4;
-    private Row fila1;
-    private Row fila2;
-    private Row fila3;
-    private Row fila4;
+    private List<Double> data1, data2, data3, data4, data5, data6, data7, data8;
+    private Row fila1, fila2, fila3, fila4;
     // parametros del CalcularCentroides
     private Table tabla;
     private Integer numeroclusters;
-    private Map<Integer, List<Row>> Grupos;
+    private Map<Integer, List<Row>> grupos;
     private List<Row> representantes;
 
     @BeforeEach
@@ -58,7 +51,6 @@ class OperacionesTest {
         tabla = new Table();
         tabla = Lector.readTable(rutaFicheroPrueba);
         numeroclusters = 3;
-
     }
 
     @Test
@@ -77,7 +69,9 @@ class OperacionesTest {
     }
 
     @Test
-    void calcularCentroides() throws FileNotFoundException {
-        System.out.println(calculador.calcularCentroides(tabla, numeroclusters, Grupos, representantes));
+    void calcularCentroides() {
+        List<Row> representantesADevolver = new ArrayList<>();
+        grupos = new HashMap<>();
+        System.out.println(calculador.calcularCentroides(tabla, numeroclusters, grupos, new ArrayList<>()));
     }
 }

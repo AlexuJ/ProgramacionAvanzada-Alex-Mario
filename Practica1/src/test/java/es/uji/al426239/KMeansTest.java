@@ -12,7 +12,6 @@ import java.util.List;
 
 class KMeansTest {
     private KMeans kmeans;
-    private List<List<Number>> parametrosprueba;
     private Table tabla;
 
     @BeforeEach
@@ -20,7 +19,6 @@ class KMeansTest {
         String separator = System.getProperty("file.separator");
         CSV lector = new CSV();
         tabla = lector.readTable("." + separator + "data" + separator + "songs_train_withoutnames.csv");
-        parametrosprueba = new ArrayList<>();
         kmeans = new KMeans(15, 200, 4321);
     }
 

@@ -20,6 +20,7 @@ public class Operaciones {
 
     public List<Row> calcularCentroides(Table datos, Integer numeroclusters, Map<Integer, List<Row>> Grupos,
             List<Row> representantes) {
+        representantes.clear();
         if (numeroclusters > datos.getRow().size()) {
             numeroclusters = datos.getRow().size();
         }
