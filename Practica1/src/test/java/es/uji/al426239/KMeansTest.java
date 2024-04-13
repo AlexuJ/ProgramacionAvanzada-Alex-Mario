@@ -9,11 +9,7 @@ import es.uji.al426239.row_table.Table;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.Assert.assertEquals;
-
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 
 class KMeansTest {
@@ -35,8 +31,6 @@ class KMeansTest {
         kmeans.train(tabla);
         for (List<Row> grupo : kmeans.getGrupos().values()) {
             for (Row fila : grupo) {
-                System.out.println(fila.getData());
-                System.out.println(kmeans.estimate(fila.getData()));
                 Assertions.assertEquals(resultado, kmeans.estimate(fila.getData()));
             }
             resultado++;

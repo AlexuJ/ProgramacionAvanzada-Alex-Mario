@@ -16,14 +16,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class OperacionesTest {
     private Operaciones calculador;
     private Convertidor convertidor;
-    private List<Number> data1, data2, data3, data4, resultados1, resultados2, resultados3, resultados4, resultados5,
-            resultados6, resultados7;
+    private List<Number> data1, data2, data3, data4;
     private Row fila1, fila2, fila3, fila4;
     // parametros del CalcularCentroides
     private Table tabla;
-    private Integer numeroclusters;
-    private Integer iteraciones;
-    private Integer seed;
+    private Integer numeroclusters, iteraciones, seed;
     private Map<Integer, List<Row>> grupos;
     private List<List<Number>> resultados;
 
@@ -54,13 +51,13 @@ class OperacionesTest {
         iteraciones = 10;
         seed = 4321;
         resultados = new ArrayList<>();
-        resultados1 = Arrays.asList(1.0, 2.0, 3.0);
-        resultados2 = Arrays.asList(1.0, 1.0, 1.0);
-        resultados3 = Arrays.asList(1.0, 3.0, 4.0);
-        resultados4 = Arrays.asList(2.0, 2.0, 3.0);
-        resultados5 = Arrays.asList(2.0, 3.0, 4.0);
-        resultados6 = Arrays.asList(5.0, 2.0, 5.0);
-        resultados7 = Arrays.asList(4.0, 6.0, 7.0);
+        List<Number> resultados1 = Arrays.asList(1.0, 2.0, 3.0);
+        List<Number> resultados2 = Arrays.asList(1.0, 1.0, 1.0);
+        List<Number> resultados3 = Arrays.asList(1.0, 3.0, 4.0);
+        List<Number> resultados4 = Arrays.asList(2.0, 2.0, 3.0);
+        List<Number> resultados5 = Arrays.asList(2.0, 3.0, 4.0);
+        List<Number> resultados6 = Arrays.asList(5.0, 2.0, 5.0);
+        List<Number> resultados7 = Arrays.asList(4.0, 6.0, 7.0);
         resultados.add(resultados1);
         resultados.add(resultados2);
         resultados.add(resultados3);
@@ -93,13 +90,10 @@ class OperacionesTest {
         KMeans algoritmo = new KMeans(numeroclusters, iteraciones, seed);
         int contador = 0;
         for (Row datos : tabla.getRow()) {
-            System.out.println(algoritmo.estimate(datos.getData()));
             grupos.computeIfAbsent(algoritmo.estimate(datos.getData()), k -> new ArrayList<>()).add(datos);
         }
         for (List<Row> grupo : grupos.values()) {
             for (Row fila : grupo) {
-                System.out.println();
-                System.out.println(fila.getData());
                 assertEquals(fila.getData(), resultados.get(contador));
                 contador++;
 

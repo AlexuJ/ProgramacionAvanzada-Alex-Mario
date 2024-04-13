@@ -29,9 +29,6 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
             throw new TablaVacia(datos);
         } else {
             inicializar(datos);
-            if (numClusters > datos.getRow().size()) {
-                numClusters = datos.getRow().size();
-            }
             for (int i = 0; i < numIterations; i++) {
                 Grupos.clear();
                 for (Row fila : datos.getRow()) {
@@ -47,6 +44,9 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
 
     private void inicializar(Table datos) {
         Random random = new Random(seed);
+        if (numClusters > datos.getRow().size()) {
+            numClusters = datos.getRow().size();
+        }
         for (int i = 0; i < numClusters; i++) {
             int fila = random.nextInt(datos.getRow().size());
             if (!Representantes.contains(datos.getRow(fila))) {
