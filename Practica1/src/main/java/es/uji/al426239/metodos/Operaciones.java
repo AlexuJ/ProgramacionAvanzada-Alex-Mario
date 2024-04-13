@@ -18,12 +18,7 @@ public class Operaciones {
         return Math.sqrt(MetricaEuclidiana);
     }
 
-    public List<Row> calcularCentroides(Table datos, Integer numeroclusters, Map<Integer, List<Row>> Grupos,
-            List<Row> representantes) {
-        representantes.clear();
-        if (numeroclusters > datos.getRow().size()) {
-            numeroclusters = datos.getRow().size();
-        }
+    public List<Row> calcularCentroides(Map<Integer, List<Row>> Grupos, List<Row> representantes) {
         for (List<Row> grupo : Grupos.values()) {
             Row centroide = new Row();
             centroide.inicializarTamanyo(grupo.get(0).size());

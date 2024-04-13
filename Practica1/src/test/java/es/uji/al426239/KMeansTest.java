@@ -4,6 +4,7 @@ import es.uji.al426239.algoritmos.KMeans;
 import es.uji.al426239.lector_de_tablas.CSV;
 import es.uji.al426239.row_table.Row;
 import es.uji.al426239.row_table.Table;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,17 +23,9 @@ class KMeansTest {
     void inicioClase() throws FileNotFoundException {
         String separator = System.getProperty("file.separator");
         CSV lector = new CSV();
-<<<<<<< HEAD
-        tabla = lector.readTable("." + separator + "data" + separator + "songs_train_withoutnames.csv");
-        String rutaFicheroPrueba = "." + separator + "FicheroPrueba3.csv";
-        tabla = lector.readTable(rutaFicheroPrueba);
-        kmeans = new KMeans(3, 200, 4321);
-=======
-        String rutaFicheroPrueba = "." + separator + "FicheroPrueba3.csv";
-        tabla = lector.readTable(rutaFicheroPrueba);
+        tabla = lector.readTable("." + separator + "FicheroPrueba3.csv");
+        kmeans = new KMeans(3, 20, 4321);
         resultado = 0;
-        kmeans = new KMeans(3, 2000, 4321);
->>>>>>> 9e465e986de982f86bdb6c0d4a1266f6d895f849
     }
 
     @Test
@@ -42,10 +35,7 @@ class KMeansTest {
             for (Row fila : grupo) {
                 System.out.println(fila.getData());
                 System.out.println(kmeans.estimate(fila.getData()));
-<<<<<<< HEAD
-=======
-                assertEquals(resultado, kmeans.estimate(fila.getData()));
->>>>>>> 9e465e986de982f86bdb6c0d4a1266f6d895f849
+                Assertions.assertEquals(resultado, kmeans.estimate(fila.getData()));
             }
             resultado++;
         }

@@ -26,6 +26,9 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
     @Override
     public void train(Table datos) {
         inicializar(datos);
+        if (numClusters > datos.getRow().size()) {
+            numClusters = datos.getRow().size();
+        }
         for (int i = 0; i < numIterations; i++) {
             Grupos.clear();
             for (Row fila : datos.getRow()) {
@@ -33,7 +36,8 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
                 // En cualquier caso añade la nueva fila
                 Grupos.computeIfAbsent(estimate(fila.getData()), k -> new ArrayList<>()).add(fila);
             }
-            Representantes = calculador.calcularCentroides(datos, numClusters, Grupos, Representantes);
+            Representantes.clear();
+            Representantes = calculador.calcularCentroides(Grupos, Representantes);
         }
     }
 
@@ -66,5 +70,8 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
 
     public Map<Integer, List<Row>> getGrupos() {
         return Grupos;
+    }
+    public void SetRepresentantes(List<Row> NuevosRepresentantes) {
+        this.Representantes = NuevosRepresentantes;
     }
 }

@@ -7,24 +7,22 @@ import es.uji.al426239.metodos.Convertidor;
 import es.uji.al426239.metodos.Operaciones;
 import es.uji.al426239.row_table.Row;
 import es.uji.al426239.row_table.Table;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.io.FileNotFoundException;
 import java.util.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class OperacionesTest {
     private Operaciones calculador;
     private Convertidor convertidor;
-    private List<Number> data1, data2, data3, data4, data5, data6, data7, data8;
+    private List<Number> data1, data2, data3, data4;
     private Row fila1, fila2, fila3, fila4;
     // parametros del CalcularCentroides
     private Table tabla;
     private Integer numeroclusters;
     private Map<Integer, List<Row>> grupos;
+    private Row f;
 
     @BeforeEach
     void inicio() throws FileNotFoundException {
@@ -41,18 +39,13 @@ class OperacionesTest {
         fila4.setData(Arrays.asList(1.0, 2.0, 3.0, 1.0, 2.0, 3.0));
         data1 = Arrays.asList(1.0, 2.0, 3.0);
         data2 = Arrays.asList(1.0, 1.0, 1.0);
-        data3 = Arrays.asList(1.0, 2.0, 3.0);
-        data4 = Arrays.asList(1.0, 2.0, 3.0);
-        data5 = Arrays.asList(2.0, 3.0, 4.0);
-        data6 = Arrays.asList(2.0, 4.0, 3.0);
-        data7 = Arrays.asList(5.0, 2.0, 5.0);
-        data8 = Arrays.asList(4.0, 6.0, 7.0);
+        data3 = Arrays.asList(1.0, 3.0, 4.0);
+        data4 = Arrays.asList(2.0, 2.0, 3.0);
         // variables para el test calcular centroides
         String separator = System.getProperty("file.separator");
-        String rutaFicheroPrueba = "." + separator + "FicheroPrueba3.csv";
         CSV Lector = new CSV();
-        tabla = new Table();
-        tabla = Lector.readTable(rutaFicheroPrueba);
+        grupos = new HashMap<>();
+        tabla = Lector.readTable("." + separator + "FicheroPrueba4.csv");
         numeroclusters = 3;
     }
 
@@ -64,7 +57,7 @@ class OperacionesTest {
         assertEquals(0.0, calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data2), fila2));
 
         // Caso de prueba con listas del mismo tamaño y todos los elementos diferentes
-        double resultadoEsperado3 = Math.sqrt(Math.pow(1.0 - 4.0, 2) + Math.pow(2.0 - 6.0, 2) + Math.pow(3.0 - 8.0, 2));
+        double resultadoEsperado3 = Math.sqrt(Math.pow(1.0 - 4.0, 2) + Math.pow(3.0 - 6.0, 2) + Math.pow(4.0 - 8.0, 2));
         assertEquals(resultadoEsperado3, calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data3), fila3));
 
         // Caso de prueba con listas de diferentes tamaños
@@ -73,8 +66,15 @@ class OperacionesTest {
 
     @Test
     void calcularCentroides() {
-        List<Row> representantesADevolver = new ArrayList<>();
-        grupos = new HashMap<>();
-        System.out.println(calculador.calcularCentroides(tabla, numeroclusters, grupos, new ArrayList<>()));
+        KMeans algoritmo = new KMeans(3,10,4321);
+        for (Row datos : tabla.getRow()) {
+            System.out.println(algoritmo.estimate(datos.getData()));
+            grupos.computeIfAbsent(algoritmo.estimate(datos.getData()), k -> new ArrayList<>()).add(datos);
+        }
+        for (List<Row> grupo : grupos.values()) {
+            for (Row fila : grupo) {
+                System.out.println(fila.getData());
+            }
+        }
     }
 }
