@@ -79,10 +79,14 @@ class RowTest {
     @Test
     @DisplayName("splitData")
     void Prueba6() {
-        for (int i = 0; i < valor; i++) {
+        for (int i = 1; i < valor; i++) {
             datos.set(i, datos.get(i).doubleValue() / i);
             filallena.splitData(i, i);
         }
         assertEquals(datos, filallena.getData(), "Las listas de datos deben ser iguales");
+        // verifico si el lanzamiento de la excepcion funciona
+        assertThrows(ArithmeticException.class, () -> {
+            filallena.splitData(2, 0); // Intentamos dividir por cero
+        });
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Operaciones {
-     public double CalcularMetricaEuclidiana(List<Double> data, Row fila) {
+    public double CalcularMetricaEuclidiana(List<Double> data, Row fila) {
         if (data.size() != fila.getData().size()) {
             throw new IllegalArgumentException("Las listas deben tener la misma longitud");
         }
@@ -17,7 +17,9 @@ public class Operaciones {
         }
         return Math.sqrt(MetricaEuclidiana);
     }
-    public List<Row> calcularCentroides(Table datos, Integer numeroclusters , Map<Integer, List<Row>> Grupos , List<Row> representantes) {
+
+    public List<Row> calcularCentroides(Table datos, Integer numeroclusters, Map<Integer, List<Row>> Grupos,
+            List<Row> representantes) {
         if (numeroclusters > datos.getRow().size()) {
             numeroclusters = datos.getRow().size();
         }
@@ -34,6 +36,6 @@ public class Operaciones {
             }
             representantes.add(centroide);
         }
-       return representantes;
-     }
+        return representantes;
+    }
 }
