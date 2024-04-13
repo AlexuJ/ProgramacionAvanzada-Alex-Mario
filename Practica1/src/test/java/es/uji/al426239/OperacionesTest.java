@@ -1,54 +1,83 @@
 package es.uji.al426239;
 
+import es.uji.al426239.lector_de_tablas.CSV;
 import es.uji.al426239.metodos.Convertidor;
 import es.uji.al426239.metodos.Operaciones;
 import es.uji.al426239.row_table.Row;
+import es.uji.al426239.row_table.Table;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class OperacionesTest {
     private Operaciones calculador;
     private Convertidor convertidor;
-    private List<Number> data1;
+    private List<Double> data1;
     private List<Double> data2;
-    private Row fila;
+    private List<Double> data3;
+    private List<Double> data4;
+    private Row fila1;
+    private Row fila2;
+    private Row fila3;
+    private Row fila4;
+    // parametros del CalcularCentroides
+    private Table tabla;
+    private Integer numeroclusters;
+    private Map<Integer, List<Row>> Grupos;
+    private List<Row> representantes;
 
     @BeforeEach
-    void inicio() {
+    void inicio() throws FileNotFoundException {
+        // variable para el test de metricaeuclidiana
         calculador = new Operaciones();
         convertidor = new Convertidor();
+        fila1 = new Row();
+        fila2 = new Row();
+        fila3 = new Row();
+        fila4 = new Row();
+        fila1.setData(Arrays.asList(4.0, 5.0, 6.0));
+        fila2.setData(Arrays.asList(1.0, 1.0, 1.0));
+        fila3.setData(Arrays.asList(4.0, 6.0, 8.0));
+        fila4.setData(Arrays.asList(1.0, 2.0, 3.0, 1.0, 2.0, 3.0));
+        data4 = Arrays.asList(1.0, 2.0, 3.0);
+        data1 = Arrays.asList(1.0, 2.0, 3.0);
+        data2 = Arrays.asList(1.0, 1.0, 1.0);
+        data3 = Arrays.asList(1.0, 2.0, 3.0);
+        // variables para el test calcular centroides
+        String separator = System.getProperty("file.separator");
+        String rutaFicheroPrueba = "." + separator + "FicheroPrueba3.csv";
+        CSV Lector = new CSV();
+        tabla = new Table();
+        tabla = Lector.readTable(rutaFicheroPrueba);
+        numeroclusters = 3;
+
     }
 
     @Test
     void MetricaEuclidiana() {
-        List<Double> data1 = Arrays.asList(1.0, 2.0, 3.0);
-        Row fila1 = new Row();
-        fila1.setData(Arrays.asList(4.0, 5.0, 6.0));
         double resultadoEsperado1 = Math.sqrt(Math.pow(1.0 - 4.0, 2) + Math.pow(2.0 - 5.0, 2) + Math.pow(3.0 - 6.0, 2));
         assertEquals(resultadoEsperado1, calculador.CalcularMetricaEuclidiana(data1, fila1));
-
         // Caso de prueba con listas del mismo tamaño y todos los elementos iguales
-        List<Double> data2 = Arrays.asList(1.0, 1.0, 1.0);
-        Row fila2 = new Row();
-        fila2.setData(Arrays.asList(1.0, 1.0, 1.0));
         assertEquals(0.0, calculador.CalcularMetricaEuclidiana(data2, fila2));
 
         // Caso de prueba con listas del mismo tamaño y todos los elementos diferentes
-        List<Double> data3 = Arrays.asList(1.0, 2.0, 3.0);
-        Row fila3 = new Row();
-        fila3.setData(Arrays.asList(4.0, 6.0, 8.0));
         double resultadoEsperado3 = Math.sqrt(Math.pow(1.0 - 4.0, 2) + Math.pow(2.0 - 6.0, 2) + Math.pow(3.0 - 8.0, 2));
         assertEquals(resultadoEsperado3, calculador.CalcularMetricaEuclidiana(data3, fila3));
 
         // Caso de prueba con listas de diferentes tamaños
-        List<Double> data4 = Arrays.asList(1.0, 2.0, 3.0);
-        Row fila4 = new Row(); // fila4 tiene un elemento más
-        fila1.setData(Arrays.asList(4.0, 5.0, 6.0, 7.0));
         assertThrows(IllegalArgumentException.class, () -> calculador.CalcularMetricaEuclidiana(data4, fila4));
+    }
+
+    @Test
+    void calcularCentroides() throws FileNotFoundException {
+        System.out.println(calculador.calcularCentroides(tabla, numeroclusters, Grupos, representantes));
     }
 }
