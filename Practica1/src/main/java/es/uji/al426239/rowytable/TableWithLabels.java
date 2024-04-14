@@ -1,9 +1,9 @@
-package es.uji.al426239.row_table;
+package es.uji.al426239.rowytable;
 
 import java.util.*;
 
 public class TableWithLabels extends Table {
-    private Map<String, Integer> etiquetas;
+    private final Map<String, Integer> etiquetas;
 
     // Constructor clase TableWithlabels
     public TableWithLabels() {

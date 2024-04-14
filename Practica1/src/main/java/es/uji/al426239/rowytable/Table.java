@@ -1,4 +1,4 @@
-package es.uji.al426239.row_table;
+package es.uji.al426239.rowytable;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
-package es.uji.al426239.sistema_de_recomendacion;
+package es.uji.al426239.sistemaderecomendacion;
 
-import es.uji.al426239.lector_de_tablas.CSV;
-import es.uji.al426239.row_table.Table;
+import es.uji.al426239.lectordetablas.CSV;
+import es.uji.al426239.rowytable.Table;
 import es.uji.al426239.algoritmos.Algorithm;
 import es.uji.al426239.algoritmos.KNN;
 import es.uji.al426239.algoritmos.KMeans;
@@ -16,7 +16,7 @@ import java.util.Map;
 class SongRecSys {
     SongRecSys(String method) throws Exception {
         String sep = System.getProperty("file.separator");
-        String ruta = "."+sep+"Practica1"+sep+"data";
+        String ruta = "."+ sep +"data";
 
         // File names (could be provided as arguments to the constructor to be more general)
         Map<String,String> filenames = new HashMap<>();

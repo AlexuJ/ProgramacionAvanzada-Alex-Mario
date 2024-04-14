@@ -1,7 +1,7 @@
 package es.uji.al426239.algoritmos;
 
 import es.uji.al426239.metodos.Operaciones;
-import es.uji.al426239.row_table.TableWithLabels;
+import es.uji.al426239.rowytable.TableWithLabels;
 
 import java.util.List;
 

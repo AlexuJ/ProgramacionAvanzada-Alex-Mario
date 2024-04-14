@@ -1,4 +1,4 @@
- package es.uji.al426239.row_table;
+ package es.uji.al426239.rowytable;
 
 public class RowWithLabels extends Row {
     // etiqueta convertida en numero

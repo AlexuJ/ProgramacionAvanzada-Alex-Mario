@@ -1,4 +1,4 @@
-package es.uji.al426239.row_table;
+package es.uji.al426239.rowytable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,6 @@ public class Row {
         data.set(i, data.get(i).doubleValue() + newData.doubleValue());
     }
 
-    //
     public void splitData(int i, Number splitter) {
         if (splitter.doubleValue() != 0) {
             data.set(i, data.get(i).doubleValue() / splitter.doubleValue());

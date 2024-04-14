@@ -1,8 +1,6 @@
 package es.uji.al426239.metodos;
 
-import es.uji.al426239.row_table.Row;
-import es.uji.al426239.row_table.Table;
-
+import es.uji.al426239.rowytable.Row;
 import java.util.List;
 import java.util.Map;
 

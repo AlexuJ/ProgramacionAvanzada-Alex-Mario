@@ -1,8 +1,8 @@
 package es.uji.al426239;
 
-import es.uji.al426239.row_table.Row;
-import es.uji.al426239.row_table.Table;
-import es.uji.al426239.row_table.TableWithLabels;
+import es.uji.al426239.rowytable.Row;
+import es.uji.al426239.rowytable.Table;
+import es.uji.al426239.rowytable.TableWithLabels;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

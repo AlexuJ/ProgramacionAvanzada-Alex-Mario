@@ -1,8 +1,8 @@
-package es.uji.al426239.sistema_de_recomendacion;
+package es.uji.al426239.sistemaderecomendacion;
 
 import es.uji.al426239.algoritmos.FilaVacia;
 import es.uji.al426239.algoritmos.TablaVacia;
-import es.uji.al426239.row_table.Table;
+import es.uji.al426239.rowytable.Table;
 import es.uji.al426239.algoritmos.Comparator;
 import es.uji.al426239.algoritmos.Algorithm;
 import java.util.*;

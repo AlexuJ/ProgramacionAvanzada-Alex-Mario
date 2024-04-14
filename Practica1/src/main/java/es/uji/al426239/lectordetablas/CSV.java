@@ -1,9 +1,9 @@
-package es.uji.al426239.lector_de_tablas;
+package es.uji.al426239.lectordetablas;
 
-import es.uji.al426239.row_table.Row;
-import es.uji.al426239.row_table.RowWithLabels;
-import es.uji.al426239.row_table.Table;
-import es.uji.al426239.row_table.TableWithLabels;
+import es.uji.al426239.rowytable.Row;
+import es.uji.al426239.rowytable.RowWithLabels;
+import es.uji.al426239.rowytable.Table;
+import es.uji.al426239.rowytable.TableWithLabels;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
