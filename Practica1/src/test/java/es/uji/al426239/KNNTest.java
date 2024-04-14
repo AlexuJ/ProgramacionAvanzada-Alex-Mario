@@ -43,11 +43,13 @@ class KNNTest {
         @DisplayName("Devuelve TablaEntrenamiento")
         @Test
         void getTablaEntramiento() {
-                Assertions.assertEquals(0.592, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos1, tablaEntrenamiento.getRow(41)), 0.001,"Debería dar 0.592");
-                Assertions.assertEquals(4.019, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos2, tablaEntrenamiento.getRow(1)), 0.001,"Debería dar 4,019");
-                Assertions.assertEquals(7.246, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos3, tablaEntrenamiento.getRow(79)), 0.001,"Debería dar 7,246");
-                Assertions.assertEquals(6.722, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos4, tablaEntrenamiento.getRow(121)), 0.001,"Debería dar 6,722");
-                Assertions.assertEquals(2.341, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos5, tablaEntrenamiento.getRow(147)), 0.001,"Debería dar 2,341");
+                //variable de error
+                double delta = 0.001;
+                Assertions.assertEquals(0.592, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos1, tablaEntrenamiento.getRow(41)), delta,"Debería dar 0.592");
+                Assertions.assertEquals(4.019, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos2, tablaEntrenamiento.getRow(1)), delta,"Debería dar 4,019");
+                Assertions.assertEquals(7.246, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos3, tablaEntrenamiento.getRow(79)), delta,"Debería dar 7,246");
+                Assertions.assertEquals(6.722, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos4, tablaEntrenamiento.getRow(121)), delta,"Debería dar 6,722");
+                Assertions.assertEquals(2.341, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos5, tablaEntrenamiento.getRow(147)), delta,"Debería dar 2,341");
         }
 
         @DisplayName("Estimación")
