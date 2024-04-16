@@ -3,6 +3,8 @@ package es.uji.al426239;
 import es.uji.al426239.algoritmos.FilaVacia;
 import es.uji.al426239.algoritmos.KMeans;
 import es.uji.al426239.algoritmos.TablaVacia;
+import es.uji.al426239.distance.Distance;
+import es.uji.al426239.distance.EuclideanDistance;
 import es.uji.al426239.lectordetablas.CSV;
 import es.uji.al426239.rowytable.Row;
 import es.uji.al426239.rowytable.Table;
@@ -22,7 +24,8 @@ class KMeansTest {
         String separator = System.getProperty("file.separator");
         CSV lector = new CSV();
         tabla = lector.readTable("." + separator + "FicheroPrueba3.csv");
-        kmeans = new KMeans(3, 20, 4321);
+        Distance distance = new EuclideanDistance();
+        kmeans = new KMeans(3, 20, 4321, distance);
         resultado = 0;
     }
 

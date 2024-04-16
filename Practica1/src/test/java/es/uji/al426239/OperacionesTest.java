@@ -2,9 +2,10 @@ package es.uji.al426239;
 
 import es.uji.al426239.algoritmos.FilaVacia;
 import es.uji.al426239.algoritmos.KMeans;
+import es.uji.al426239.distance.Distance;
 import es.uji.al426239.lectordetablas.CSV;
 import es.uji.al426239.metodos.Convertidor;
-import es.uji.al426239.metodos.Operaciones;
+import es.uji.al426239.distance.EuclideanDistance;
 import es.uji.al426239.rowytable.Row;
 import es.uji.al426239.rowytable.Table;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,7 +15,7 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OperacionesTest {
-    private Operaciones calculador;
+    private Distance distance;
     private Convertidor convertidor;
     private List<Number> data1, data2, data3, data4;
     private Row fila1, fila2, fila3, fila4;
@@ -27,7 +28,7 @@ class OperacionesTest {
     @BeforeEach
     void inicio() throws FileNotFoundException {
         // variable para el test de metricaeuclidiana
-        calculador = new Operaciones();
+        distance = new EuclideanDistance();
         convertidor = new Convertidor();
         fila1 = new Row();
         fila2 = new Row();
@@ -71,23 +72,23 @@ class OperacionesTest {
     void MetricaEuclidiana() {
         double resultadoEsperado1 = Math.sqrt(Math.pow(1.0 - 4.0, 2) + Math.pow(2.0 - 5.0, 2) + Math.pow(3.0 - 6.0, 2));
         assertEquals(resultadoEsperado1,
-                calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data1), fila1));
+                distance.calculateDistance(convertidor.convertirADouble(data1), convertidor.convertirADouble(fila1.getData())));
         // Caso de prueba con listas del mismo tamaño y todos los elementos iguales
-        assertEquals(0.0, calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data2), fila2));
+        assertEquals(0.0, distance.calculateDistance(convertidor.convertirADouble(data2), convertidor.convertirADouble(fila2.getData())));
 
         // Caso de prueba con listas del mismo tamaño y todos los elementos diferentes
         double resultadoEsperado3 = Math.sqrt(Math.pow(1.0 - 4.0, 2) + Math.pow(3.0 - 6.0, 2) + Math.pow(4.0 - 8.0, 2));
         assertEquals(resultadoEsperado3,
-                calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data3), fila3));
+                distance.calculateDistance(convertidor.convertirADouble(data3), convertidor.convertirADouble(fila3.getData())));
 
         // Caso de prueba con listas de diferentes tamaños
         assertThrows(IllegalArgumentException.class,
-                () -> calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(data4), fila4));
+                () -> distance.calculateDistance(convertidor.convertirADouble(data4), convertidor.convertirADouble(fila4.getData())));
     }
 
     @Test
     void calcularCentroides() throws FilaVacia {
-        KMeans algoritmo = new KMeans(numeroclusters, iteraciones, seed);
+        KMeans algoritmo = new KMeans(numeroclusters, iteraciones, seed, distance);
         int contador = 0;
         for (Row datos : tabla.getRow()) {
             grupos.computeIfAbsent(algoritmo.estimate(datos.getData()), k -> new ArrayList<>()).add(datos);

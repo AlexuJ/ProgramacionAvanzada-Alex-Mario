@@ -1,5 +1,7 @@
 package es.uji.al426239.sistemaderecomendacion;
 
+import es.uji.al426239.distance.Distance;
+import es.uji.al426239.distance.EuclideanDistance;
 import es.uji.al426239.lectordetablas.CSV;
 import es.uji.al426239.rowytable.Table;
 import es.uji.al426239.algoritmos.Algorithm;
@@ -16,7 +18,7 @@ import java.util.Map;
 class SongRecSys {
     SongRecSys(String method) throws Exception {
         String sep = System.getProperty("file.separator");
-        String ruta = "."+ sep +"data";
+        String ruta = "."+ sep +"Practica1"+ sep +"data";
 
         // File names (could be provided as arguments to the constructor to be more general)
         Map<String,String> filenames = new HashMap<>();
@@ -26,9 +28,10 @@ class SongRecSys {
         filenames.put("kmeans"+"test",ruta+sep+"songs_test_withoutnames.csv");
 
         // Algorithms
+        Distance distance = new EuclideanDistance();
         Map<String, Algorithm> algorithms = new HashMap<>();
-        algorithms.put("knn",new KNN());
-        algorithms.put("kmeans",new KMeans(15, 200, 4321));
+        algorithms.put("knn",new KNN(distance));
+        algorithms.put("kmeans",new KMeans(15, 200, 4321,distance));
 
         // Tables
         Map<String, Table> tables = new HashMap<>();

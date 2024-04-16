@@ -1,6 +1,7 @@
 package es.uji.al426239.algoritmos;
 
-import es.uji.al426239.metodos.Operaciones;
+import es.uji.al426239.distance.Distance;
+import es.uji.al426239.metodos.CalcularCentroides;
 import es.uji.al426239.rowytable.Row;
 import es.uji.al426239.rowytable.Table;
 import es.uji.al426239.metodos.Convertidor;
@@ -12,15 +13,17 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
     private List<Row> Representantes;
     private final long seed;
     private final Map<Integer, List<Row>> Grupos;
-    private final Operaciones calculador;
+    private Distance distance;
+    private final CalcularCentroides calculador;
 
-    public KMeans(int numClusters, int numIterations, long seed) {
+    public KMeans(int numClusters, int numIterations, long seed, Distance distance) {
         this.numClusters = numClusters;
         this.numIterations = numIterations;
         this.seed = seed;
         this.Representantes = new ArrayList<>();
         this.Grupos = new HashMap<>();
-        this.calculador = new Operaciones();
+        this.distance = distance;
+        this.calculador = new CalcularCentroides();
     }
 
     @Override
@@ -65,7 +68,7 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
         double menor = Double.MAX_VALUE;
         int grupo = 0;
         for (int i = 0; i < Representantes.size(); i++) {
-            double cercania = calculador.CalcularMetricaEuclidiana(convertidor.convertirADouble(dato), Representantes.get(i));
+            double cercania = distance.calculateDistance(convertidor.convertirADouble(dato), convertidor.convertirADouble(Representantes.get(i).getData()));
             if (cercania < menor) {
                 menor = cercania;
                 grupo = i;
@@ -76,5 +79,8 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
 
     public Map<Integer, List<Row>> getGrupos() {
         return Grupos;
+    }
+    public void setDistance(Distance distance) {
+        this.distance = distance;
     }
 }

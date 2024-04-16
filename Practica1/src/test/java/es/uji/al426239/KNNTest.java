@@ -1,7 +1,9 @@
 package es.uji.al426239;
 
+import es.uji.al426239.distance.Distance;
 import es.uji.al426239.lectordetablas.CSV;
-import es.uji.al426239.metodos.Operaciones;
+import es.uji.al426239.distance.EuclideanDistance;
+import es.uji.al426239.metodos.Convertidor;
 import es.uji.al426239.rowytable.TableWithLabels;
 import es.uji.al426239.algoritmos.KNN;
 import org.junit.jupiter.api.Assertions;
@@ -15,16 +17,16 @@ import java.util.List;
 class KNNTest {
         private TableWithLabels tablaEntrenamiento;
         private KNN Estimador;
-        private Operaciones CalcularMetricaEuclidiana;
+        private Distance distance;
         private List<Double> Datos1, Datos2, Datos3, Datos4, Datos5;
         private List<Integer> Datos6;
 
         @BeforeEach
         void inicioClase() {
                 try {
-                        CalcularMetricaEuclidiana = new Operaciones();
+                        distance = new EuclideanDistance();
                         CSV lector = new CSV();
-                        Estimador = new KNN();
+                        Estimador = new KNN(distance);
                         String separator = System.getProperty("file.separator");
                         tablaEntrenamiento = lector.readTableWithLabels("." + separator + "iris.csv");
                         Estimador.train(tablaEntrenamiento);
@@ -45,11 +47,12 @@ class KNNTest {
         void getTablaEntramiento() {
                 //variable de error
                 double delta = 0.001;
-                Assertions.assertEquals(0.592, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos1, tablaEntrenamiento.getRow(41)), delta,"Debería dar 0.592");
-                Assertions.assertEquals(4.019, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos2, tablaEntrenamiento.getRow(1)), delta,"Debería dar 4,019");
-                Assertions.assertEquals(7.246, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos3, tablaEntrenamiento.getRow(79)), delta,"Debería dar 7,246");
-                Assertions.assertEquals(6.722, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos4, tablaEntrenamiento.getRow(121)), delta,"Debería dar 6,722");
-                Assertions.assertEquals(2.341, CalcularMetricaEuclidiana.CalcularMetricaEuclidiana(Datos5, tablaEntrenamiento.getRow(147)), delta,"Debería dar 2,341");
+                Convertidor convertidor = new Convertidor();
+                Assertions.assertEquals(0.592, distance.calculateDistance(Datos1, convertidor.convertirADouble(tablaEntrenamiento.getRow(41).getData())), delta,"Debería dar 0.592");
+                Assertions.assertEquals(4.019, distance.calculateDistance(Datos2, convertidor.convertirADouble(tablaEntrenamiento.getRow(1).getData())), delta,"Debería dar 4,019");
+                Assertions.assertEquals(7.246, distance.calculateDistance(Datos3, convertidor.convertirADouble(tablaEntrenamiento.getRow(79).getData())), delta,"Debería dar 7,246");
+                Assertions.assertEquals(6.722, distance.calculateDistance(Datos4, convertidor.convertirADouble(tablaEntrenamiento.getRow(121).getData())), delta,"Debería dar 6,722");
+                Assertions.assertEquals(2.341, distance.calculateDistance(Datos5, convertidor.convertirADouble(tablaEntrenamiento.getRow(147).getData())), delta,"Debería dar 2,341");
         }
 
         @DisplayName("Estimación")
