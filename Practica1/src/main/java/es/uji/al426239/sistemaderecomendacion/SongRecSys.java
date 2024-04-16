@@ -2,6 +2,7 @@ package es.uji.al426239.sistemaderecomendacion;
 
 import es.uji.al426239.distance.Distance;
 import es.uji.al426239.distance.EuclideanDistance;
+import es.uji.al426239.distance.ManhattanDistance;
 import es.uji.al426239.lectordetablas.CSV;
 import es.uji.al426239.rowytable.Table;
 import es.uji.al426239.algoritmos.Algorithm;
