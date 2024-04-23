@@ -10,7 +10,6 @@ import es.uji.al426239.rowytable.Row;
 import es.uji.al426239.rowytable.Table;
 
 public class CSVUnlabeledFileReader extends ReaderTemplate {
-    private Table table;
 
     public CSVUnlabeledFileReader(String source) {
         super(source);

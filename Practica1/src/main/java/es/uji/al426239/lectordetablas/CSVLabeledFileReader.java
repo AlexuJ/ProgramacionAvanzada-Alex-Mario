@@ -8,8 +8,6 @@ import es.uji.al426239.rowytable.TableWithLabels;
 import javax.print.DocFlavor.STRING;
 
 public class CSVLabeledFileReader extends CSVUnlabeledFileReader {
-    protected TableWithLabels table;
-
     public CSVLabeledFileReader(String source) {
         super(source);
     }
@@ -20,14 +18,10 @@ public class CSVLabeledFileReader extends CSVUnlabeledFileReader {
     }
 
     @Override
-    void openSource(String source) throws FileNotFoundException {
-        super.openSource(source);
-    }
-
-    @Override
     void processData(String data) {
+
         String[] linea = data.split(",");
-        Row fila = new RowWithLabels(table.GetKey(linea[linea.length - 1]));
+        Row fila = new RowWithLabels((TableWithLabels) table).GetKey(linea[linea.length - 1]));
         for (int i = 0; i < linea.length - 1; i++) {
             fila.setData(Double.valueOf(linea[i]));
         }

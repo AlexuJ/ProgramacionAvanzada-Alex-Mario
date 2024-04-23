@@ -7,7 +7,7 @@ import es.uji.al426239.rowytable.Table;
 
 public abstract class ReaderTemplate {
     protected String source;
-    private Table table;
+    protected Table table;
     protected Scanner sc;
 
     public ReaderTemplate(String source) {

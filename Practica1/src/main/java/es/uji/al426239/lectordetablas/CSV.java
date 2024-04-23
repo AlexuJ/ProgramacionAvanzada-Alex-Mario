@@ -45,7 +45,7 @@ public class CSV {
     }
 
     // metodo que setea a las tablas las cabeceras
-    private void Cabeceras(String[] linea, Table tabla) {
+    private void Cabeceras(String[] linea, Table tabla) throws FileNotFoundException {
         ArrayList<String> cabezeras = new ArrayList<>(Arrays.asList(linea));
         tabla.setHeaders(cabezeras);
         ReaderTemplate alfa = new CSVLabeledFileReader(null);
