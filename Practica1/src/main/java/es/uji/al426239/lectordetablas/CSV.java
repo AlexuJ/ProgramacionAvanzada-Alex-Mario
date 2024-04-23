@@ -48,6 +48,8 @@ public class CSV {
     private void Cabeceras(String[] linea, Table tabla) {
         ArrayList<String> cabezeras = new ArrayList<>(Arrays.asList(linea));
         tabla.setHeaders(cabezeras);
+        ReaderTemplate alfa = new CSVLabeledFileReader(null);
+        alfa.readTableFromSource();
     }
 
 }

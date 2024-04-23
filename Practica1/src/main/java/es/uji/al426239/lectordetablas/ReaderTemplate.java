@@ -1,31 +1,44 @@
 package es.uji.al426239.lectordetablas;
 
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 import es.uji.al426239.rowytable.Table;
 
 public abstract class ReaderTemplate {
-    private String source;
-    private String headers;
-    private String data;
-    public ReaderTemplate(String source, String headers, String data) {
+    protected String source;
+    private Table table;
+    protected Scanner sc;
+
+    public ReaderTemplate(String source) {
         this.source = source;
-        this.headers = headers;
-        this.data = data;
+        this.table = createTable();
     }
-    abstract void openSource(String source);
+
+    abstract void openSource(String source) throws FileNotFoundException;
+
     abstract void processHeaders(String headers);
+
     abstract void processData(String data);
+
     abstract void closeSource();
+
     abstract boolean hasMoreData();
+
     abstract String getNextData();
-    public final Table readTableFromSource() {
-        Table tabla = new Table();
+
+    abstract Table createTable();
+
+    public final Table readTableFromSource() throws FileNotFoundException {
         openSource(source);
-        processHeaders(headers);
-        while (hasMoreData()) {
-            processHeaders(data);
-            data = getNextData();
+        if (hasMoreData()) {
+            processHeaders(getNextData());
+            while (hasMoreData()) {
+                processData(getNextData());
+            }
+            closeSource();
         }
-        closeSource();
-        return tabla;
+        // lanza excepcion
+        return table;
     }
 }
