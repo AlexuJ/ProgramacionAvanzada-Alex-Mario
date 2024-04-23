@@ -2,7 +2,6 @@ package es.uji.al426239.lectordetablas;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
 import es.uji.al426239.rowytable.Table;
 
 public abstract class ReaderTemplate {
@@ -37,8 +36,9 @@ public abstract class ReaderTemplate {
                 processData(getNextData());
             }
             closeSource();
+        } else {
+            // lanza excepcion
         }
-        // lanza excepcion
         return table;
     }
 }

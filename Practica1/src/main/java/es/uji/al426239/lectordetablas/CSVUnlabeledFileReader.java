@@ -10,10 +10,8 @@ import es.uji.al426239.rowytable.Row;
 import es.uji.al426239.rowytable.Table;
 
 public class CSVUnlabeledFileReader extends ReaderTemplate {
-
     public CSVUnlabeledFileReader(String source) {
         super(source);
-
     }
 
     @Override
@@ -28,8 +26,7 @@ public class CSVUnlabeledFileReader extends ReaderTemplate {
 
     @Override
     void processHeaders(String headers) {
-        ArrayList<String> cabezeras = new ArrayList<>(Arrays.asList(headers.split(",")));
-        table.setHeaders(cabezeras);
+        table.setHeaders(new ArrayList<>(Arrays.asList(headers.split(","))));
     }
 
     @Override
@@ -49,11 +46,7 @@ public class CSVUnlabeledFileReader extends ReaderTemplate {
 
     @Override
     boolean hasMoreData() {
-        if (sc.hasNextLine()) {
-            return true;
-        } else {
-            return false;
-        }
+        return sc.hasNextLine();
     }
 
     @Override
