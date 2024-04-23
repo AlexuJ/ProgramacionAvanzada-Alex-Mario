@@ -27,14 +27,17 @@ public class KNN implements Algorithm<TableWithLabels, List<Double>, Integer> {
         int Estimacion = 0;
         double MenorAproximacion = Double.MAX_VALUE;
         for (int i = 0; i < TablaEntrenamiento.getRow().size(); i++) {
-            double MetricaEuclidiana = distance.calculateDistance(data, convertidor.convertirADouble(TablaEntrenamiento.getRow(i).getData()));
+            double MetricaEuclidiana = distance.calculateDistance(data,
+                    convertidor.convertirADouble(TablaEntrenamiento.getRow(i).getData()));
             if (MetricaEuclidiana < MenorAproximacion) {
                 MenorAproximacion = MetricaEuclidiana;
                 Estimacion = TablaEntrenamiento.getRow(i).getNumberClass();
             }
         }
+        System.out.println(Estimacion);
         return Estimacion;
     }
+
     public void setDistance(Distance distance) {
         this.distance = distance;
     }

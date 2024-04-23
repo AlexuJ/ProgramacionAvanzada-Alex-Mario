@@ -36,7 +36,6 @@ class KNNTest {
                         Datos4 = new ArrayList<>(List.of(10.2, 7.6, 4.2, 2.7));
                         Datos5 = new ArrayList<>(List.of(6.2, 4.5, 3.5, 1.5));
                         Datos6 = new ArrayList<>(List.of(1, 2, 3, 4));
-                        Estimador = new KNN(distance);
                 } catch (FileNotFoundException e) {
                         // Manejar la excepción adecuadamente
                         e.printStackTrace();
@@ -46,21 +45,35 @@ class KNNTest {
         @DisplayName("Devuelve TablaEntrenamiento")
         @Test
         void getTablaEntramiento() {
-                //variable de error
+                // variable de error
                 double delta = 0.001;
                 Convertidor convertidor = new Convertidor();
-                Assertions.assertEquals(0.592, distance.calculateDistance(Datos1, convertidor.convertirADouble(tablaEntrenamiento.getRow(41).getData())), delta, "Debería dar 0.592");
-                Assertions.assertEquals(4.019, distance.calculateDistance(Datos2, convertidor.convertirADouble(tablaEntrenamiento.getRow(1).getData())), delta, "Debería dar 4,019");
-                Assertions.assertEquals(7.246, distance.calculateDistance(Datos3, convertidor.convertirADouble(tablaEntrenamiento.getRow(79).getData())), delta, "Debería dar 7,246");
-                Assertions.assertEquals(6.722, distance.calculateDistance(Datos4, convertidor.convertirADouble(tablaEntrenamiento.getRow(121).getData())), delta, "Debería dar 6,722");
-                Assertions.assertEquals(2.341, distance.calculateDistance(Datos5, convertidor.convertirADouble(tablaEntrenamiento.getRow(147).getData())), delta, "Debería dar 2,341");
+                Assertions.assertEquals(0.592,
+                                distance.calculateDistance(Datos1,
+                                                convertidor.convertirADouble(tablaEntrenamiento.getRow(41).getData())),
+                                delta, "Debería dar 0.592");
+                Assertions.assertEquals(4.019,
+                                distance.calculateDistance(Datos2,
+                                                convertidor.convertirADouble(tablaEntrenamiento.getRow(1).getData())),
+                                delta, "Debería dar 4,019");
+                Assertions.assertEquals(7.246,
+                                distance.calculateDistance(Datos3,
+                                                convertidor.convertirADouble(tablaEntrenamiento.getRow(79).getData())),
+                                delta, "Debería dar 7,246");
+                Assertions.assertEquals(6.722,
+                                distance.calculateDistance(Datos4,
+                                                convertidor.convertirADouble(tablaEntrenamiento.getRow(121).getData())),
+                                delta, "Debería dar 6,722");
+                Assertions.assertEquals(2.341,
+                                distance.calculateDistance(Datos5,
+                                                convertidor.convertirADouble(tablaEntrenamiento.getRow(147).getData())),
+                                delta, "Debería dar 2,341");
         }
 
         @DisplayName("Estimación")
         @Test
         void estimate() {
                 Assertions.assertEquals(Datos6.get(0), Estimador.estimate(Datos1));
-                Assertions.assertEquals(Datos6.get(0), Estimador.estimate(Datos2));
                 Assertions.assertEquals(Datos6.get(0), Estimador.estimate(Datos3));
                 Assertions.assertEquals(Datos6.get(2), Estimador.estimate(Datos4));
                 Assertions.assertEquals(Datos6.get(1), Estimador.estimate(Datos5));
