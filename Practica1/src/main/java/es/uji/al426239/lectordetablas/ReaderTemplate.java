@@ -18,6 +18,14 @@ public abstract class ReaderTemplate {
     abstract boolean hasMoreData();
     abstract String getNextData();
     public final Table readTableFromSource() {
-
+        Table tabla = new Table();
+        openSource(source);
+        processHeaders(headers);
+        while (hasMoreData()) {
+            processHeaders(data);
+            data = getNextData();
+        }
+        closeSource();
+        return tabla;
     }
 }
