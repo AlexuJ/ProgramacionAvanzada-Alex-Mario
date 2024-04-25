@@ -20,7 +20,7 @@ import java.util.Map;
 class SongRecSys {
     SongRecSys(String method) throws Exception {
         String sep = System.getProperty("file.separator");
-        String ruta = "." + sep +"Practica1" + sep + "data";
+        String ruta = "." + sep +"Practica1" + sep + "data"; //HABRÁ QUE CAMBIAR LA RUTA PARA SVEN
 
         // File names (could be provided as arguments to the constructor to be more
         // general)

@@ -1,6 +1,8 @@
 package es.uji.al426239;
 
-import es.uji.al426239.lectordetablas.CSV;
+import es.uji.al426239.lectordetablas.CSVLabeledFileReader;
+import es.uji.al426239.lectordetablas.CSVUnlabeledFileReader;
+import es.uji.al426239.lectordetablas.ReaderTemplate;
 import es.uji.al426239.rowytable.Row;
 import es.uji.al426239.rowytable.RowWithLabels;
 import es.uji.al426239.rowytable.Table;
@@ -9,14 +11,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CSVTest {
-    private CSV Lector;
+    private ReaderTemplate Lector;
     private TableWithLabels tablaConEtiquetas;
     private TableWithLabels tableSinEtiquetas;
     private String separator;
@@ -26,8 +26,6 @@ class CSVTest {
 
     @BeforeEach
     void inicioClase() {
-        Lector = new CSV();
-        ArrayList<String> ficheros = new ArrayList<>();
         separator = System.getProperty("file.separator");
         ArrayList<String> lineas = new ArrayList<>();
         tablaConEtiquetas = new TableWithLabels();
@@ -48,7 +46,6 @@ class CSVTest {
             ConjuntoEtiquetas.add(linea[linea.length - 1]);
         }
         tablaConEtiquetas.setHeaders(cabezeras);
-        ficheros.add("." + separator + "FicheroPrueba.csv");
         tablaLLena = new Table();
         tableVacia = new Table();
         lineas.clear();
@@ -63,26 +60,23 @@ class CSVTest {
             }
             tablaLLena.setRow(Fila);
         }
-        ficheros.add("." + separator + "FicheroPrueba2.csv");
-
     }
 
     @Test
     @DisplayName("LecturaHeaders")
     void prueba1() throws FileNotFoundException {
-
-        tableSinEtiquetas = Lector.readTableWithLabels("." + separator + "FicheroPrueba.csv");
+        Lector = new CSVLabeledFileReader("." + separator + "FicheroPrueba.csv");
+        tableSinEtiquetas = (TableWithLabels) Lector.readTableFromSource();
         assertEquals(tablaConEtiquetas.getHeaders(), tableSinEtiquetas.getHeaders());
-
     }
 
     @Test
     @DisplayName("LecturaRows")
     void prueba2() throws FileNotFoundException {
-        tableSinEtiquetas = Lector.readTableWithLabels("." + separator + "FicheroPrueba.csv");
+        Lector = new CSVLabeledFileReader("." + separator + "FicheroPrueba.csv");
+        tableSinEtiquetas = (TableWithLabels) Lector.readTableFromSource();
         for (int i = 0; i < tablaConEtiquetas.getRow().size(); i++) {
-            System.out
-                    .println(tablaConEtiquetas.getRow(i).getData() + " " + tableSinEtiquetas.getRow().get(i).getData());
+            System.out.println(tablaConEtiquetas.getRow(i).getData() + " " + tableSinEtiquetas.getRow().get(i).getData());
             assertEquals(tablaConEtiquetas.getRow(i).getData(), tableSinEtiquetas.getRow(i).getData());
         }
         for (String string : ConjuntoEtiquetas) {
@@ -94,7 +88,8 @@ class CSVTest {
     @Test
     @DisplayName("LecturaRows")
     void prueba4() throws FileNotFoundException {
-        tableVacia = Lector.readTable("." + separator + "FicheroPrueba2.csv");
+        Lector = new CSVUnlabeledFileReader("." + separator + "FicheroPrueba2.csv");
+        tableVacia = Lector.readTableFromSource();
         for (int i = 0; i < tablaLLena.getRow().size(); i++) {
             System.out.println(tablaLLena.getRow(i).getData() + " " + tableVacia.getRow().get(i).getData());
             assertEquals(tablaLLena.getRow().get(i).getData(), tableVacia.getRow().get(i).getData());

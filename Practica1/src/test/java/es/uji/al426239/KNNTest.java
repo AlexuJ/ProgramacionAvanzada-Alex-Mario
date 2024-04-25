@@ -1,8 +1,9 @@
 package es.uji.al426239;
 
 import es.uji.al426239.distance.Distance;
-import es.uji.al426239.lectordetablas.CSV;
 import es.uji.al426239.distance.EuclideanDistance;
+import es.uji.al426239.lectordetablas.CSVLabeledFileReader;
+import es.uji.al426239.lectordetablas.ReaderTemplate;
 import es.uji.al426239.metodos.Convertidor;
 import es.uji.al426239.rowytable.TableWithLabels;
 import es.uji.al426239.algoritmos.KNN;
@@ -25,10 +26,10 @@ class KNNTest {
         void inicioClase() {
                 try {
                         distance = new EuclideanDistance();
-                        CSV lector = new CSV();
-                        Estimador = new KNN(distance);
                         String separator = System.getProperty("file.separator");
-                        tablaEntrenamiento = lector.readTableWithLabels("." + separator + "iris.csv");
+                        ReaderTemplate lector = new CSVLabeledFileReader("." + separator + "iris.csv");
+                        Estimador = new KNN(distance);
+                        tablaEntrenamiento = (TableWithLabels) lector.readTableFromSource();
                         Estimador.train(tablaEntrenamiento);
                         Datos1 = new ArrayList<>(List.of(4.2, 2.6, 1.2, 0.7));
                         Datos2 = new ArrayList<>(List.of(7.2, 5.6, 2.5, 1.9));
