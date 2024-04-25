@@ -34,7 +34,6 @@ public class KNN implements Algorithm<TableWithLabels, List<Double>, Integer> {
                 Estimacion = TablaEntrenamiento.getRow(i).getNumberClass();
             }
         }
-        System.out.println(Estimacion);
         return Estimacion;
     }
 

@@ -36,8 +36,6 @@ public abstract class ReaderTemplate {
                 processData(getNextData());
             }
             closeSource();
-        } else {
-            // lanza excepcion
         }
         return table;
     }

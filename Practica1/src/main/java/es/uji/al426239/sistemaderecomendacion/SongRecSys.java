@@ -2,8 +2,9 @@ package es.uji.al426239.sistemaderecomendacion;
 
 import es.uji.al426239.distance.Distance;
 import es.uji.al426239.distance.EuclideanDistance;
-import es.uji.al426239.distance.ManhattanDistance;
-import es.uji.al426239.lectordetablas.CSV;
+import es.uji.al426239.lectordetablas.CSVLabeledFileReader;
+import es.uji.al426239.lectordetablas.CSVUnlabeledFileReader;
+import es.uji.al426239.lectordetablas.ReaderTemplate;
 import es.uji.al426239.rowytable.Table;
 import es.uji.al426239.algoritmos.Algorithm;
 import es.uji.al426239.algoritmos.KNN;
@@ -19,7 +20,7 @@ import java.util.Map;
 class SongRecSys {
     SongRecSys(String method) throws Exception {
         String sep = System.getProperty("file.separator");
-        String ruta = "." + sep + "ProgramacionAvanzada-Alex-Mario" + sep + "Practica1" + sep + "data";
+        String ruta = "." + sep +"Practica1" + sep + "data";
 
         // File names (could be provided as arguments to the constructor to be more
         // general)
@@ -30,7 +31,7 @@ class SongRecSys {
         filenames.put("kmeans" + "test", ruta + sep + "songs_test_withoutnames.csv");
 
         // Algorithms
-        Distance distance = new ManhattanDistance();
+        Distance distance = new EuclideanDistance();
         Map<String, Algorithm> algorithms = new HashMap<>();
         algorithms.put("knn", new KNN(distance));
         algorithms.put("kmeans", new KMeans(15, 200, 4321, distance));
@@ -38,10 +39,14 @@ class SongRecSys {
         // Tables
         Map<String, Table> tables = new HashMap<>();
         String[] stages = { "train", "test" };
-        CSV csv = new CSV();
+
+        ReaderTemplate csvunlabeled, csvlabeled;
+
         for (String stage : stages) {
-            tables.put("knn" + stage, csv.readTableWithLabels(filenames.get("knn" + stage)));
-            tables.put("kmeans" + stage, csv.readTable(filenames.get("kmeans" + stage)));
+            csvlabeled = new CSVLabeledFileReader(filenames.get("knn" + stage));
+            csvunlabeled = new CSVUnlabeledFileReader((filenames.get("kmeans" + stage)));
+            tables.put("knn" + stage,  csvlabeled.readTableFromSource());
+            tables.put("kmeans" + stage, csvunlabeled.readTableFromSource());
         }
 
         // Names of items
