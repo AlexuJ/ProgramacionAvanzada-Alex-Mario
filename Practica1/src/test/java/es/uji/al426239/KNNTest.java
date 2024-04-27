@@ -49,25 +49,15 @@ class KNNTest {
                 // variable de error
                 double delta = 0.001;
                 Convertidor convertidor = new Convertidor();
-                Assertions.assertEquals(0.592,
-                                distance.calculateDistance(Datos1,
-                                                convertidor.convertirADouble(tablaEntrenamiento.getRow(41).getData())),
+                Assertions.assertEquals(0.592, distance.calculateDistance(Datos1, convertidor.convertirADouble(tablaEntrenamiento.getRow(41).getData())),
                                 delta, "Debería dar 0.592");
-                Assertions.assertEquals(4.019,
-                                distance.calculateDistance(Datos2,
-                                                convertidor.convertirADouble(tablaEntrenamiento.getRow(1).getData())),
+                Assertions.assertEquals(4.019, distance.calculateDistance(Datos2, convertidor.convertirADouble(tablaEntrenamiento.getRow(1).getData())),
                                 delta, "Debería dar 4,019");
-                Assertions.assertEquals(7.246,
-                                distance.calculateDistance(Datos3,
-                                                convertidor.convertirADouble(tablaEntrenamiento.getRow(79).getData())),
+                Assertions.assertEquals(7.246, distance.calculateDistance(Datos3, convertidor.convertirADouble(tablaEntrenamiento.getRow(79).getData())),
                                 delta, "Debería dar 7,246");
-                Assertions.assertEquals(6.722,
-                                distance.calculateDistance(Datos4,
-                                                convertidor.convertirADouble(tablaEntrenamiento.getRow(121).getData())),
+                Assertions.assertEquals(6.722, distance.calculateDistance(Datos4, convertidor.convertirADouble(tablaEntrenamiento.getRow(121).getData())),
                                 delta, "Debería dar 6,722");
-                Assertions.assertEquals(2.341,
-                                distance.calculateDistance(Datos5,
-                                                convertidor.convertirADouble(tablaEntrenamiento.getRow(147).getData())),
+                Assertions.assertEquals(2.341, distance.calculateDistance(Datos5, convertidor.convertirADouble(tablaEntrenamiento.getRow(147).getData())),
                                 delta, "Debería dar 2,341");
         }
 
