@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/ReaderTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KMeansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KMeansTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/KNNTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/distance/ManhattanDistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/distance/ManhattanDistanceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/CSVTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/CSVTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/KMeansTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/KMeansTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/KNNTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/target/test-classes/es/uji/al426239/KNNTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/ReaderTemplate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/ReaderTemplateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/ReaderTemplateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/distance/EuclideanDistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/EuclideanDistanceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/distance/ManhattanDistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1/src/test/java/es/uji/al426239/ManhattanDistanceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,12 +90,13 @@
       <recent name="es.uji" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="es.uji.al426239.distance" />
       <recent name="es.uji.al426239.metodos" />
       <recent name="es.uji.al426239.algoritmos" />
       <recent name="es.uji" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SongRecSys">
     <configuration name="SongRecSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="es.uji.al426239.sistemaderecomendacion.SongRecSys" />
       <module name="Practica1" />
@@ -116,12 +114,12 @@
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al426239.CSVTest" />
+          <option name="PATTERN" value="es.uji.al426239.distance.CSVTest" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="es.uji.al426239" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.CSVTest" />
+      <option name="PACKAGE_NAME" value="es.uji.al426239.distance" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al426239.distance.CSVTest" />
       <option name="METHOD_NAME" value="prueba1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -132,7 +130,7 @@
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al426239.CSVTest" />
+          <option name="PATTERN" value="es.uji.al426239.distance.CSVTest" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,7 +146,7 @@
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al426239.CSVTest" />
+          <option name="PATTERN" value="es.uji.al426239.distance.CSVTest" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -164,7 +162,7 @@
       <module name="Practica1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al426239.CSVTest" />
+          <option name="PATTERN" value="es.uji.al426239.distance.CSVTest" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -178,8 +176,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CSVTest.prueba1" />
         <item itemvalue="Application.SongRecSys" />
+        <item itemvalue="JUnit.CSVTest.prueba1" />
         <item itemvalue="JUnit.OperacionesTest.calcularCentroides" />
         <item itemvalue="JUnit.OperacionesTest.MetricaEuclidiana" />
         <item itemvalue="JUnit.KMeansTest.train" />
