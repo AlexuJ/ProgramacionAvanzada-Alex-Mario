@@ -15,7 +15,7 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CSVTest {
+class ReaderTemplatest {
     private ReaderTemplate Lector;
     private TableWithLabels tablaConEtiquetas;
     private TableWithLabels tableSinEtiquetas;
@@ -76,7 +76,6 @@ class CSVTest {
         Lector = new CSVLabeledFileReader("." + separator + "FicheroPrueba.csv");
         tableSinEtiquetas = (TableWithLabels) Lector.readTableFromSource();
         for (int i = 0; i < tablaConEtiquetas.getRow().size(); i++) {
-            System.out.println(tablaConEtiquetas.getRow(i).getData() + " " + tableSinEtiquetas.getRow().get(i).getData());
             assertEquals(tablaConEtiquetas.getRow(i).getData(), tableSinEtiquetas.getRow(i).getData());
         }
         for (String string : ConjuntoEtiquetas) {
@@ -91,7 +90,6 @@ class CSVTest {
         Lector = new CSVUnlabeledFileReader("." + separator + "FicheroPrueba2.csv");
         tableVacia = Lector.readTableFromSource();
         for (int i = 0; i < tablaLLena.getRow().size(); i++) {
-            System.out.println(tablaLLena.getRow(i).getData() + " " + tableVacia.getRow().get(i).getData());
             assertEquals(tablaLLena.getRow().get(i).getData(), tableVacia.getRow().get(i).getData());
         }
     }
