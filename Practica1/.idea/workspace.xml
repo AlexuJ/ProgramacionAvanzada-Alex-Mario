@@ -49,7 +49,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Alex/ProgramacionAvanzada-Alex-Mario/DelLaHorra_Mario_Buga_Alex_LA3",
+    "last_opened_file_path": "C:/Users/Alex/ProgramacionAvanzada-Alex-Mario/Practica1",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -64,7 +64,7 @@
       <recent name="es.uji" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SongRecSys">
+  <component name="RunManager">
     <configuration name="SongRecSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="es.uji.al426239.sistema_de_recomendacion.SongRecSys" />
       <module name="Practica1" />
