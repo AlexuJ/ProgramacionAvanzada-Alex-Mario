@@ -28,7 +28,7 @@
                 <version>0.0.8</version>
                 <configuration>
                     <executable>${java.home}/bin/java</executable>
-                    <mainClass>es.uji.al426239.MyFirstApp</mainClass>
+                    <mainClass>es.uji.al426239.MyFirstJavFXApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>
