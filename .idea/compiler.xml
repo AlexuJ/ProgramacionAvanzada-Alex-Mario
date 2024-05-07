@@ -11,6 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="MyFirstJavaFXProject" target="19" />
       <module name="Practica 1" target="19" />
       <module name="Practica2" target="19" />
       <module name="Pratica0" target="19" />

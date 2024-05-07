@@ -5,8 +5,238 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35632adb-b80e-46ac-bffa-75eeb3907601" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/.idea/Buga_Alex_DeLaHorra_Mario_LA3 (2).iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/FicheroPrueba.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/FicheroPrueba2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/FicheroPrueba3.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/FicheroPrueba4.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/RecSysDiagram.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/basic1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/basic2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/basic3.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/basic4.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/basic5.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/blob.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/box.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/boxes.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/boxes2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/boxes3.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/chrome.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/dart.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/dart2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/face.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/hyperplane.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/isolation.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/lines.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/lines2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/network.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/outliers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/ring.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/songs_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/songs_test_names.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/songs_test_withoutnames.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/songs_train.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/songs_train_names.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/songs_train_withoutnames.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/sparse.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/spiral.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/spiral2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/spirals.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/supernova.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/triangle.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/un.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/un2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/data/wave.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/iris.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/miles_dolars.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/algoritmos/Algorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/algoritmos/Comparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/algoritmos/FilaVacia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/algoritmos/KMeans.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/algoritmos/KNN.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/algoritmos/TablaVacia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/comprobadorvisual/display_clustering.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/distance/Distance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/distance/EuclideanDistance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/distance/ManhattanDistance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/lectordetablas/CSVLabeledFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/lectordetablas/CSVUnlabeledFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/lectordetablas/ReaderTemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/metodos/CalcularCentroides.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/metodos/Convertidor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/rowytable/Row.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/rowytable/RowWithLabels.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/rowytable/Table.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/rowytable/TableWithLabels.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/sistemaderecomendacion/RecSys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/sistemaderecomendacion/SongRecSys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/EuclideanDistanceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/KMeansTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/KNNTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/Lectordetablastest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/ManhattanDistanceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/RowTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/RowWithLabelsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/TableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/TableWithLabelsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/algoritmos/Algorithm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/algoritmos/Comparator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/algoritmos/FilaVacia.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/algoritmos/KMeans.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/algoritmos/KNN.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/algoritmos/TablaVacia.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/distance/Distance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/distance/EuclideanDistance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/distance/ManhattanDistance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/lectordetablas/CSVLabeledFileReader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/lectordetablas/CSVUnlabeledFileReader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/lectordetablas/ReaderTemplate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/metodos/CalcularCentroides.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/metodos/Convertidor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/rowytable/Row.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/rowytable/RowWithLabels.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/rowytable/Table.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/rowytable/TableWithLabels.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/sistemaderecomendacion/RecSys.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/classes/es/uji/al426239/sistemaderecomendacion/SongRecSys.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/test-classes/es/uji/al426239/EuclideanDistanceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/test-classes/es/uji/al426239/KMeansTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/test-classes/es/uji/al426239/KNNTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/test-classes/es/uji/al426239/Lectordetablastest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/test-classes/es/uji/al426239/ManhattanDistanceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/test-classes/es/uji/al426239/RowTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/test-classes/es/uji/al426239/RowWithLabelsTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/test-classes/es/uji/al426239/TableTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/Buga_Alex_DeLaHorra_Mario_LA3/target/test-classes/es/uji/al426239/TableWithLabelsTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/._Buga_Alex_DeLaHorra_Mario_LA3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._.idea" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._.vscode" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._FicheroPrueba.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._FicheroPrueba2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._FicheroPrueba3.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._FicheroPrueba4.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._RecSysDiagram.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._data" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._iris.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._miles_dolars.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/._src" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/.idea/._.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/.idea/._compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/.idea/._encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/.idea/._jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/.idea/._misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/.idea/._uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/.idea/._vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/.vscode/._settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._basic1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._basic2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._basic3.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._basic4.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._basic5.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._blob.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._box.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._boxes.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._boxes2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._boxes3.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._chrome.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._dart.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._dart2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._face.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._hyperplane.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._isolation.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._lines.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._lines2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._network.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._outliers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._ring.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._songs_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._songs_test_names.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._songs_test_withoutnames.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._songs_train.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._songs_train_names.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._songs_train_withoutnames.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._sparse.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._spiral.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._spiral2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._spirals.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._supernova.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._triangle.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._un.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._un2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/data/._wave.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/._main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/._test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/._java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/._resources" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/._es" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/._uji" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/._al426239" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/._algoritmos" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/._comprobadorvisual" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/._distance" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/._lectordetablas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/._metodos" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/._rowytable" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/._sistemaderecomendacion" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/algoritmos/._Algorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/algoritmos/._Comparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/algoritmos/._FilaVacia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/algoritmos/._KMeans.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/algoritmos/._KNN.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/algoritmos/._TablaVacia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/comprobadorvisual/._display_clustering.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/distance/._Distance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/distance/._EuclideanDistance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/distance/._ManhattanDistance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/lectordetablas/._CSVLabeledFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/lectordetablas/._CSVUnlabeledFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/lectordetablas/._ReaderTemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/metodos/._CalcularCentroides.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/metodos/._Convertidor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/rowytable/._Row.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/rowytable/._RowWithLabels.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/rowytable/._Table.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/rowytable/._TableWithLabels.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/sistemaderecomendacion/._RecSys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/main/java/es/uji/al426239/sistemaderecomendacion/._SongRecSys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/._java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/._es" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/._uji" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/._al426239" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/._EuclideanDistanceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/._KMeansTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/._KNNTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/._Lectordetablastest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/._ManhattanDistanceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/._RowTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/._RowWithLabelsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/._TableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Buga_Alex_DeLaHorra_Mario_LA3 (2)/__MACOSX/Buga_Alex_DeLaHorra_Mario_LA3/src/test/java/es/uji/al426239/._TableWithLabelsTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MyFirstJavFXProject/src/main/java/es/uji/al426239/HBoxExperiments.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/MyFirstJavFXProject/src/main/java/es/uji/al426239/MyFxApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyFirstJavFXProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MyFirstJavFXProject/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyFirstJavFXProject/src/main/java/es/uji/al426239/MyFirstJavFXApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyFirstJavFXProject/src/main/java/es/uji/al426239/MyFirstJavFXApp.java" afterDir="false" />
@@ -47,40 +277,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.SongRecSys.executor": "Run",
-    "JUnit.CSVTest.executor": "Run",
-    "JUnit.CSVTest.prueba4.executor": "Run",
-    "JUnit.KMeansTest.train.executor": "Run",
-    "JUnit.KNNTest.executor": "Run",
-    "JUnit.MetricaEuclidianaTest.calcularMetricaEuclidiana.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "19",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Alex/ProgramacionAvanzada-Alex-Mario",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.qodana"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.SongRecSys.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CSVTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CSVTest.prueba4.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KMeansTest.train.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KNNTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MetricaEuclidianaTest.calcularMetricaEuclidiana.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Alex/ProgramacionAvanzada-Alex-Mario&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\main\java\es\uji\al426239" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario" />
+      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\MyFirstJavaFXProject" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src" />
       <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\data" />
-      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica1\src\main\java\es\uji\RestosPractica2" />
-      <recent name="C:\Users\Alex\ProgramacionAvanzada-Alex-Mario\Practica2" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />

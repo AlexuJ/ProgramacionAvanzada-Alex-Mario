@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
@@ -7,6 +8,7 @@
         <option value="$PROJECT_DIR$/Practica 0/pom.xml" />
         <option value="$PROJECT_DIR$/Practica1/pom.xml" />
         <option value="$PROJECT_DIR$/Practica2/pom.xml" />
+        <option value="$PROJECT_DIR$/MyFirstJavaFXProject/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -14,7 +16,6 @@
         <option value="$PROJECT_DIR$/Pratica0/pom.xml" />
       </set>
     </option>
-    <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="19" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

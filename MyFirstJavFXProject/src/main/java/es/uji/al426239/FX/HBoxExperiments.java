@@ -1,4 +1,4 @@
-package es.uji.al426239;
+package es.uji.al426239.FX;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
