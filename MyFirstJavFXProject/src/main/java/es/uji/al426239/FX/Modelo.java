@@ -5,11 +5,11 @@ import es.uji.al426239.algoritmos.KMeans;
 import es.uji.al426239.algoritmos.KNN;
 import es.uji.al426239.distance.Distance;
 import es.uji.al426239.distance.EuclideanDistance;
-
-import java.util.List;
+import javafx.scene.Node;
+import javafx.scene.control.ListView;
 
 public class Modelo {
-    //sera con la llamada esperar a ver si le pasa el knn o el
+    //sera con la llamada esperar a ver si le pasa el knn o el kmeans
     private  Algorithm algorithm;
     private Distance distance;
     private  int numeroIteracion;
@@ -35,6 +35,9 @@ public class Modelo {
     public  void  getnumeroClusters(int numero){
         numeroIteracion = numero;
     }
+    public ListView<String> anyadircanciones() {
+        ListView<String> listacanciones = new ListView<>();
 
-
+        return listacanciones;
+    }
 }
