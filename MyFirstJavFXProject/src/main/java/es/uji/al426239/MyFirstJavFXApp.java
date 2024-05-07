@@ -1,9 +1,6 @@
 package es.uji.al426239;
 
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class MyFirstJavFXApp extends Application {
@@ -14,11 +11,7 @@ public class MyFirstJavFXApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Hello World!");
-        StackPane root = new StackPane();
-        Button btn = new Button("Hola");
-        root.getChildren().add(btn);
-        primaryStage.setScene(new Scene(root, 250, 250));
-        primaryStage.show();
+        HBoxExperiments escena = new HBoxExperiments();
+        escena.start(primaryStage);
     }
 }
