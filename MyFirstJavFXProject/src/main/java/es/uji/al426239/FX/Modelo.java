@@ -5,8 +5,10 @@ import es.uji.al426239.algoritmos.KMeans;
 import es.uji.al426239.algoritmos.KNN;
 import es.uji.al426239.distance.Distance;
 import es.uji.al426239.distance.EuclideanDistance;
-import javafx.scene.Node;
 import javafx.scene.control.ListView;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Modelo {
     //sera con la llamada esperar a ver si le pasa el knn o el kmeans
@@ -35,9 +37,14 @@ public class Modelo {
     public  void  getnumeroClusters(int numero){
         numeroIteracion = numero;
     }
-    public ListView<String> anyadircanciones() {
+    public ListView<String> anyadircanciones() throws FileNotFoundException {
         ListView<String> listacanciones = new ListView<>();
-
+        String sep = System.getProperty("file.separator");
+        String fichero = "." + sep + "Practica1"+ sep +"data"+ sep +"a.csv";
+        Scanner sc = new Scanner(new File(fichero));
+        while (sc.hasNextLine()) {
+            listacanciones.getItems().add(sc.nextLine());
+        }
         return listacanciones;
     }
 }

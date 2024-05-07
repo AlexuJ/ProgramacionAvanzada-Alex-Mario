@@ -11,6 +11,8 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
+
 public class Vista extends Application {
     private Controlador controlador;
     private Modelo modelo;
@@ -20,10 +22,12 @@ public class Vista extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws FileNotFoundException {
+        this.controlador = new Controlador();
+        this.modelo = new Modelo();
         escenaLista(primaryStage);
     }
-    private void escenaLista (Stage stage) {
+    private void escenaLista (Stage stage) throws FileNotFoundException {
         VBox vBox = new VBox();
         crearelecciones(vBox,"Recommendation Type", "Recommend based on songs features", "Recommend based on guessed genre");
         crearelecciones(vBox,"Distance Type","Euclidean","Manhattan");
@@ -44,9 +48,10 @@ public class Vista extends Application {
         radioButton2.setToggleGroup(radioGroupRecommendation);
         vBox.getChildren().addAll(tiporecomendacion,radioButton1,radioButton2);
     }
-    private void crearlistacanciones(VBox vBox) {
+    private void crearlistacanciones(VBox vBox) throws FileNotFoundException {
         Text titulolistacanciones = new Text("Song Titles");
         titulolistacanciones.setFont(Font.font("Bree Serif",FontWeight.SEMI_BOLD,20));
-        vBox.getChildren().addAll(titulolistacanciones,modelo.anyadircanciones());
+        ListView<String> listacanciones = modelo.anyadircanciones();
+        vBox.getChildren().addAll(titulolistacanciones,listacanciones);
     }
 }
