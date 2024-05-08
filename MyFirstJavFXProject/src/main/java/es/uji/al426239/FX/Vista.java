@@ -94,8 +94,6 @@ public class Vista extends Application {
         //Este botón cierra el escenario
         Button button = new Button("Close");
         vBox.getChildren().addAll(button);
-        button.setOnAction(value -> {
-            escenario.close();
-        });
+        button.setOnAction(value -> escenario.close());
     }
 }
