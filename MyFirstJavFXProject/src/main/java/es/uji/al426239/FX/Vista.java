@@ -1,6 +1,7 @@
 package es.uji.al426239.FX;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
@@ -32,7 +33,7 @@ public class Vista extends Application {
         crearelecciones(vBox,"Recommendation Type", "Recommend based on songs features", "Recommend based on guessed genre");
         crearelecciones(vBox,"Distance Type","Euclidean","Manhattan");
         crearlistacanciones(vBox);
-        Scene scene = new Scene(vBox, 300, 600);
+        Scene scene = new Scene(vBox, 300, 540);
         stage.setScene(scene);
         stage.show();
     }

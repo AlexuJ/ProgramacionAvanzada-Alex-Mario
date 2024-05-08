@@ -40,7 +40,7 @@ public class Modelo {
     public ListView<String> anyadircanciones() throws FileNotFoundException {
         ListView<String> listacanciones = new ListView<>();
         String sep = System.getProperty("file.separator");
-        String fichero = "." + sep + "Practica1"+ sep +"data"+ sep +"a.csv";
+        String fichero = "." + sep +"data"+ sep +"songs_train_names.csv";
         Scanner sc = new Scanner(new File(fichero));
         while (sc.hasNextLine()) {
             listacanciones.getItems().add(sc.nextLine());
