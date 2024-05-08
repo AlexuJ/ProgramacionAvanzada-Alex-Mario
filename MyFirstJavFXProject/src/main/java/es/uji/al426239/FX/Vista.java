@@ -1,22 +1,22 @@
 package es.uji.al426239.FX;
 
 import javafx.application.Application;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.io.FileNotFoundException;
 
 public class Vista extends Application {
     private Controlador controlador;
     private Modelo modelo;
+    private Stage escenario;
+    private Scene escenaCanciones;
+    private Scene escenaRecomendaciones;
 
     public static void main(String[] args) {
         launch(args);
@@ -26,16 +26,20 @@ public class Vista extends Application {
     public void start(Stage primaryStage) throws FileNotFoundException {
         this.controlador = new Controlador();
         this.modelo = new Modelo();
-        escenaLista(primaryStage);
+        this.escenario = primaryStage;
+        this.escenaCanciones = escenaListaCanciones();
+        this.escenaRecomendaciones = escenaRecomendarTitulos();
+        escenario.setScene(escenaCanciones);
+        escenario.show();
     }
-    private void escenaLista (Stage stage) throws FileNotFoundException {
+    //Escena canciones y sus métodos
+    private Scene escenaListaCanciones() throws FileNotFoundException {
         VBox vBox = new VBox();
         crearelecciones(vBox,"Recommendation Type", "Recommend based on songs features", "Recommend based on guessed genre");
         crearelecciones(vBox,"Distance Type","Euclidean","Manhattan");
         crearlistacanciones(vBox);
-        Scene scene = new Scene(vBox, 300, 540);
-        stage.setScene(scene);
-        stage.show();
+        botonRecomendar(vBox);
+        return new Scene(vBox,300,600);
     }
     private void crearelecciones(VBox vBox, String texto1, String texto2, String texto3) {
         Text tiporecomendacion = new Text(texto1);
@@ -54,5 +58,44 @@ public class Vista extends Application {
         titulolistacanciones.setFont(Font.font("Bree Serif",FontWeight.SEMI_BOLD,20));
         ListView<String> listacanciones = modelo.anyadircanciones();
         vBox.getChildren().addAll(titulolistacanciones,listacanciones);
+    }
+    private void botonRecomendar(VBox vBox) {
+        //Este botón pasa a la otra escena, la de recomendaciones
+        Button button = new Button("Recommend");
+        vBox.getChildren().addAll(button);
+        button.setOnAction(value -> {
+            escenario.setScene(escenaRecomendaciones);
+            escenario.show();
+        });
+    }
+    //Escena recomendaciones y sus métodos
+    private Scene escenaRecomendarTitulos() throws FileNotFoundException {
+        HBox hBox = anyadirNumeroRecomendaciones(new HBox());
+        VBox vBox = ensenyaRecomendaciones(hBox, new VBox());
+        botonClose(vBox);
+        return new Scene(vBox, 350, 300);
+    }
+    private HBox anyadirNumeroRecomendaciones(HBox hBox) {
+        Text texto = new Text("Number of recommendations:");
+        Spinner<Integer> stringSpinner = new Spinner<>(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1,1));
+        hBox.getChildren().addAll(texto,stringSpinner);
+        return hBox;
+    }
+    private VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FileNotFoundException {
+        // ↓ Este string habrá que hacer de alguna forma que guarde lo que se selecciona de la otra escena
+        String cancionLiked = "|DARK|HARD|TECHNO";
+        Text text = new Text("If you liked "+cancionLiked+" you might like");
+        //Habrá que buscar la forma de lanzar aquí las recomendaciones
+        ListView<String> listarecomendaciones = modelo.anyadircanciones();
+        vBox.getChildren().addAll(hBox,text,listarecomendaciones);
+        return vBox;
+    }
+    private void botonClose(VBox vBox) {
+        //Este botón cierra el escenario
+        Button button = new Button("Close");
+        vBox.getChildren().addAll(button);
+        button.setOnAction(value -> {
+            escenario.close();
+        });
     }
 }
