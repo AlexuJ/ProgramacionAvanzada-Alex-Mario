@@ -6,6 +6,8 @@ import es.uji.al426239.algoritmos.KNN;
 import es.uji.al426239.distance.Distance;
 import es.uji.al426239.distance.EuclideanDistance;
 import javafx.scene.control.ListView;
+
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -16,6 +18,7 @@ public class Modelo {
     private Distance distance;
     private  int numeroIteracion;
     private  int numeroClusters;
+    private String cancionRecomendada;
     public  Modelo(){
         distance = new EuclideanDistance();
         algorithm = new KNN(distance);
@@ -46,5 +49,12 @@ public class Modelo {
             listacanciones.getItems().add(sc.nextLine());
         }
         return listacanciones;
+    }
+
+    public String getCancionRecomendada() {
+        return cancionRecomendada;
+    }
+    public void setCancionRecomendada(String cancionRecomendada) {
+        this.cancionRecomendada = cancionRecomendada;
     }
 }

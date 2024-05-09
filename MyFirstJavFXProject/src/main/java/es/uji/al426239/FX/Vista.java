@@ -38,7 +38,6 @@ public class Vista extends Application {
         crearelecciones(vBox,"Recommendation Type", "Recommend based on songs features", "Recommend based on guessed genre");
         crearelecciones(vBox,"Distance Type","Euclidean","Manhattan");
         crearlistacanciones(vBox);
-        botonRecomendar(vBox);
         return new Scene(vBox,300,600);
     }
     private void crearelecciones(VBox vBox, String texto1, String texto2, String texto3) {
@@ -58,15 +57,21 @@ public class Vista extends Application {
         titulolistacanciones.setFont(Font.font("Bree Serif",FontWeight.SEMI_BOLD,20));
         ListView<String> listacanciones = modelo.anyadircanciones();
         vBox.getChildren().addAll(titulolistacanciones,listacanciones);
+        botonRecomendar(vBox, listacanciones);
     }
-    private void botonRecomendar(VBox vBox) {
-        //Este botón pasa a la otra escena, la de recomendaciones
+    private void botonRecomendar(VBox vBox, ListView<String> listacanciones) {
         Button button = new Button("Recommend");
-        vBox.getChildren().addAll(button);
-        button.setOnAction(value -> {
-            escenario.setScene(escenaRecomendaciones);
-            escenario.show();
+        button.setDisable(true);
+        //Este botón pasa a la otra escena, la de recomendaciones
+        listacanciones.setOnMouseClicked(mouseEvent -> {
+            modelo.setCancionRecomendada(listacanciones.getSelectionModel().getSelectedItem());
+            button.setDisable(false);
+            button.setOnAction(value -> {
+                escenario.setScene(escenaRecomendaciones);
+                escenario.show();
+            });
         });
+        vBox.getChildren().addAll(button);
     }
     //Escena recomendaciones y sus métodos
     private Scene escenaRecomendarTitulos() throws FileNotFoundException {
@@ -82,12 +87,8 @@ public class Vista extends Application {
         return hBox;
     }
     private VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FileNotFoundException {
-        // ↓ Este string habrá que hacer de alguna forma que guarde lo que se selecciona de la otra escena
-        String cancionLiked = "|DARK|HARD|TECHNO";
-        Text text = new Text("If you liked "+cancionLiked+" you might like");
-        //Habrá que buscar la forma de lanzar aquí las recomendaciones
-        ListView<String> listarecomendaciones = modelo.anyadircanciones();
-        vBox.getChildren().addAll(hBox,text,listarecomendaciones);
+        Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
+        vBox.getChildren().addAll(hBox,text,modelo.anyadircanciones());
         return vBox;
     }
     private void botonClose(VBox vBox) {
