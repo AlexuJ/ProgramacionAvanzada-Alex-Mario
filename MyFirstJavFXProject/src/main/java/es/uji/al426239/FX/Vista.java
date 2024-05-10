@@ -15,8 +15,6 @@ public class Vista extends Application {
     private Controlador controlador;
     private Modelo modelo;
     private Stage escenario;
-    private Scene escenaCanciones;
-    private Scene escenaRecomendaciones;
 
     public static void main(String[] args) {
         launch(args);
@@ -27,9 +25,7 @@ public class Vista extends Application {
         this.controlador = new Controlador();
         this.modelo = new Modelo();
         this.escenario = primaryStage;
-        this.escenaCanciones = escenaListaCanciones();
-        this.escenaRecomendaciones = escenaRecomendarTitulos();
-        escenario.setScene(escenaCanciones);
+        escenario.setScene(escenaListaCanciones());
         escenario.show();
     }
     //Escena canciones y sus métodos
@@ -67,14 +63,14 @@ public class Vista extends Application {
             modelo.setCancionRecomendada(listacanciones.getSelectionModel().getSelectedItem());
             button.setDisable(false);
             button.setOnAction(value -> {
-                escenario.setScene(escenaRecomendaciones);
+                escenario.setScene(escenaRecomendarTitulos());
                 escenario.show();
             });
         });
         vBox.getChildren().addAll(button);
     }
     //Escena recomendaciones y sus métodos
-    private Scene escenaRecomendarTitulos() throws FileNotFoundException {
+    private Scene escenaRecomendarTitulos() {
         HBox hBox = anyadirNumeroRecomendaciones(new HBox());
         VBox vBox = ensenyaRecomendaciones(hBox, new VBox());
         botonClose(vBox);
@@ -83,16 +79,16 @@ public class Vista extends Application {
     private HBox anyadirNumeroRecomendaciones(HBox hBox) {
         Text texto = new Text("Number of recommendations:");
         Spinner<Integer> stringSpinner = new Spinner<>(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1,1));
+        stringSpinner.getValueFactory().setValue(5);
         hBox.getChildren().addAll(texto,stringSpinner);
         return hBox;
     }
-    private VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FileNotFoundException {
+    private VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) {
         Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
-        vBox.getChildren().addAll(hBox,text,modelo.anyadircanciones());
+        vBox.getChildren().addAll(hBox,text,new ListView<String>());
         return vBox;
     }
     private void botonClose(VBox vBox) {
-        //Este botón cierra el escenario
         Button button = new Button("Close");
         vBox.getChildren().addAll(button);
         button.setOnAction(value -> escenario.close());
