@@ -5,9 +5,9 @@ import es.uji.al426239.algoritmos.KMeans;
 import es.uji.al426239.algoritmos.KNN;
 import es.uji.al426239.distance.Distance;
 import es.uji.al426239.distance.EuclideanDistance;
+import es.uji.al426239.distance.ManhattanDistance;
 import javafx.scene.control.ListView;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -19,20 +19,19 @@ public class Modelo {
     private  int numeroIteracion;
     private  int numeroClusters;
     private String cancionRecomendada;
-    public  Modelo(){
-        distance = new EuclideanDistance();
-        algorithm = new KNN(distance);
-    }
-
-    public void  setAlgorithm(boolean alfa){
-        if(alfa){
+    public void setAlgorithm(boolean alfa) {
+        if (alfa) {
             algorithm = new KNN(distance);
-        }else {
+        } else {
             algorithm = new KMeans(numeroClusters,numeroIteracion,100,distance);
         }
     }
-    public  void  setDistance(Distance distance2){
-        distance =distance2;
+    public void setDistance(boolean alfa) {
+        if (alfa) {
+            distance = new EuclideanDistance();
+        } else {
+            distance = new ManhattanDistance();
+        }
     }
     public  void  getnumeroIteraciones(int numero){
         numeroIteracion = numero;
