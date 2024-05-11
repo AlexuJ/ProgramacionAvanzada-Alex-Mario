@@ -1,4 +1,4 @@
-package es.uji.al426239.FX;
+package es.uji.al426239.FX.controlador;
 
 import es.uji.al426239.algoritmos.Algorithm;
 import es.uji.al426239.algoritmos.KMeans;

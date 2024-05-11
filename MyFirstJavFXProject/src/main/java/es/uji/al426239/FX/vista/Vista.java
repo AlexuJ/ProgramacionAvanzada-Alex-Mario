@@ -1,5 +1,7 @@
-package es.uji.al426239.FX;
+package es.uji.al426239.FX.vista;
 
+import es.uji.al426239.FX.controlador.Controlador;
+import es.uji.al426239.FX.modelo.Modelo;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
