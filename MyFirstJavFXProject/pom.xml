@@ -34,7 +34,7 @@
                 <version>0.0.8</version>
                 <configuration>
                     <executable>${java.home}/bin/java</executable>
-                    <mainClass>es.uji.al426239.FX.Vista</mainClass>
+                    <mainClass>es.uji.al426239.FX.LanzadorAplicacion</mainClass>
                 </configuration>
             </plugin>
         </plugins>

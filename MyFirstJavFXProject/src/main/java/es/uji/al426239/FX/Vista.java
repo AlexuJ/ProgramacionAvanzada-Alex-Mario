@@ -1,6 +1,5 @@
 package es.uji.al426239.FX;
 
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -12,20 +11,19 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 
-public class Vista extends Application {
+public class Vista {
     private Controlador controlador;
     private Modelo modelo;
     private Stage escenario;
-    public static void main(String[] args) {
-        launch(args);
+
+    public Vista(final Stage escenario) {
+        this.escenario = escenario;
     }
-    @Override
-    public void start(Stage primaryStage) throws FileNotFoundException {
-        this.controlador = new Controlador();
-        this.modelo = new Modelo();
-        this.escenario = primaryStage;
-        primaryStage.setScene(escenaListaCanciones());
-        primaryStage.show();
+    public void setModelo(Modelo modelo) {
+        this.modelo = modelo;
+    }
+    public void setControlador(Controlador controlador) {
+        this.controlador = controlador;
     }
     public Scene escenaListaCanciones() throws FileNotFoundException {
         VBox vBox = new VBox();
@@ -106,3 +104,4 @@ public class Vista extends Application {
         button.setOnAction(value -> escenario.close());
     }
 }
+
