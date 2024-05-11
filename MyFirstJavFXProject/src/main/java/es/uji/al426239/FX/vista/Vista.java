@@ -13,7 +13,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 
-public class Vista {
+public class Vista implements AskVista ,AnsweVista{
+    /*posible encapsulacion sacar las scenas de vista*/
     private Controlador controlador;
     private Modelo modelo;
     private Stage escenario;
@@ -27,6 +28,7 @@ public class Vista {
     public void setControlador(Controlador controlador) {
         this.controlador = controlador;
     }
+    //ESCENA NUMERO 1
     public Scene escenaListaCanciones() throws FileNotFoundException {
         VBox vBox = new VBox();
         crearelecciones(vBox,"Recommendation Type", "Recommend based on songs features", "Recommend based on guessed genre");
@@ -34,8 +36,9 @@ public class Vista {
         crearlistacanciones(vBox);
         vBox.setSpacing(10);
         vBox.setPadding(new Insets(5));
-        return new Scene(vBox,300,600);
+        return new Scene(vBox);
     }
+
     private void crearelecciones(VBox vBox, String texto1, String texto2, String texto3) {
         Text tiporecomendacion = new Text(texto1);
         tiporecomendacion.setFont(Font.font("Bree Serif", FontWeight.SEMI_BOLD,15));
@@ -49,13 +52,18 @@ public class Vista {
         seleccionarOpcion(radioButton1,radioButton2);
         vBox.getChildren().addAll(tiporecomendacion,radioButton1,radioButton2);
     }
-    private void seleccionarOpcion (RadioButton radioButton1, RadioButton radioButton2) {
+
+    private void seleccionarOpcion (Toggle toggle1, Toggle  toggle2) {
+
+        // Casting de Toggle a RadioButton
+        RadioButton radioButton1 = (RadioButton) toggle1;
+        RadioButton radioButton2 = (RadioButton) toggle2;
         if (radioButton1.getText().equals("Recommend based on songs features")) {
-            radioButton1.setOnAction(value -> controlador.setAlgorithm(true));
-            radioButton2.setOnAction(value -> controlador.setAlgorithm(false));
+            radioButton1.setOnAction(value -> controlador.EventAlgorithm(1));
+            radioButton2.setOnAction(value -> controlador.EventAlgorithm(2));
         } else {
-            radioButton1.setOnAction(value -> controlador.setDistance(true));
-            radioButton2.setOnAction(value -> controlador.setDistance(false));
+            radioButton1.setOnAction(value -> controlador.EventDistance(1));
+            radioButton2.setOnAction(value -> controlador.EventDistance(2));
         }
     }
     private void crearlistacanciones(VBox vBox) throws FileNotFoundException {
@@ -104,6 +112,11 @@ public class Vista {
         Button button = new Button("Close");
         vBox.getChildren().addAll(button);
         button.setOnAction(value -> escenario.close());
+    }
+    public void inicio(Scene escena){
+        escenario.setScene(escena);
+        escenario.show();
+
     }
 }
 

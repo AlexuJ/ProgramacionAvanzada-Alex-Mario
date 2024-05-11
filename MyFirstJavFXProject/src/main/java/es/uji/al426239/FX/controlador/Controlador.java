@@ -1,56 +1,53 @@
 package es.uji.al426239.FX.controlador;
 
+import es.uji.al426239.FX.modelo.Modelo;
+import es.uji.al426239.FX.vista.Vista;
 import es.uji.al426239.algoritmos.Algorithm;
 import es.uji.al426239.algoritmos.KMeans;
 import es.uji.al426239.algoritmos.KNN;
 import es.uji.al426239.distance.Distance;
 import es.uji.al426239.distance.EuclideanDistance;
 import es.uji.al426239.distance.ManhattanDistance;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Controlador {
-    private Algorithm algorithm;
-    private Distance distance;
-    private int numeroIteracion;
-    private int numeroClusters;
-    private String cancionRecomendada;
-    public void setAlgorithm(boolean alfa) {
-        if (alfa) {
-            algorithm = new KNN(distance);
-        } else {
-            algorithm = new KMeans(numeroClusters, numeroIteracion, 100, distance);
+public class Controlador implements AnswerControlador{
+    private Modelo modelo;
+    private Vista vista;
+    public  void getModelo(Modelo model){
+        modelo = model;
+    }
+    public  void  getScene(Vista visual){
+        visual = visual;
+    }
+    //esto podria ser un enum y esto se va directo a una interfaz
+    @Override
+    public void EventAlgorithm(int caso) {
+       switch (caso){
+        case 1 :
+            modelo.IsKnn();
+            break;
+
+           default:
+               modelo.IsKmeans();
+       }
+    }
+    //esto igual un enum
+
+
+    @Override
+    public void EventDistance(int caso){
+        switch (caso){
+            case 1 :
+                modelo.IsEuclidean();
+                break;
+
+            default:
+                modelo.IsManhhatn();
         }
     }
-    public void setDistance(boolean alfa) {
-        if (alfa) {
-            distance = new EuclideanDistance();
-        } else {
-            distance = new ManhattanDistance();
-        }
-    }
-    public ListView<String> anyadircanciones() throws FileNotFoundException {
-        ListView<String> listacanciones = new ListView<>();
-        String sep = System.getProperty("file.separator");
-        String fichero = "." + sep + "data" + sep + "songs_train_names.csv";
-        Scanner sc = new Scanner(new File(fichero));
-        while (sc.hasNextLine()) {
-            listacanciones.getItems().add(sc.nextLine());
-        }
-        return listacanciones;
-    }
-    public String getCancionRecomendada() {
-        return cancionRecomendada;
-    }
-    public void setCancionRecomendada(String cancionRecomendada) {
-        this.cancionRecomendada = cancionRecomendada;
-    }
-    public  void  getnumeroIteraciones(int numero){
-        numeroIteracion = numero;
-    }
-    public  void  getnumeroClusters(int numero){
-        numeroIteracion = numero;
-    }
+
 }
