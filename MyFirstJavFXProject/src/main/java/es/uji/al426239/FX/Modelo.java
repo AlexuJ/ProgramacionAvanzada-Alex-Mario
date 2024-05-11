@@ -22,15 +22,19 @@ public class Modelo {
     public void setAlgorithm(boolean alfa) {
         if (alfa) {
             algorithm = new KNN(distance);
+            System.out.println("KNN");
         } else {
             algorithm = new KMeans(numeroClusters,numeroIteracion,100,distance);
+            System.out.println("KMeans");
         }
     }
     public void setDistance(boolean alfa) {
         if (alfa) {
             distance = new EuclideanDistance();
+            System.out.println("Euclidean");
         } else {
             distance = new ManhattanDistance();
+            System.out.println("Manhattan");
         }
     }
     public  void  getnumeroIteraciones(int numero){
