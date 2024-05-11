@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 
 public class Vista extends Application {
+    private Controlador controlador;
     private Modelo modelo;
     private Stage escenario;
     public static void main(String[] args) {
@@ -20,6 +21,7 @@ public class Vista extends Application {
     }
     @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
+        this.controlador = new Controlador();
         this.modelo = new Modelo();
         this.escenario = primaryStage;
         primaryStage.setScene(escenaListaCanciones());
@@ -49,17 +51,17 @@ public class Vista extends Application {
     }
     private void seleccionarOpcion (RadioButton radioButton1, RadioButton radioButton2) {
         if (radioButton1.getText().equals("Recommend based on songs features")) {
-            radioButton1.setOnAction(value -> modelo.setAlgorithm(true));
-            radioButton2.setOnAction(value -> modelo.setAlgorithm(false));
+            radioButton1.setOnAction(value -> controlador.setAlgorithm(true));
+            radioButton2.setOnAction(value -> controlador.setAlgorithm(false));
         } else {
-            radioButton1.setOnAction(value -> modelo.setDistance(true));
-            radioButton2.setOnAction(value -> modelo.setDistance(false));
+            radioButton1.setOnAction(value -> controlador.setDistance(true));
+            radioButton2.setOnAction(value -> controlador.setDistance(false));
         }
     }
     private void crearlistacanciones(VBox vBox) throws FileNotFoundException {
         Text titulolistacanciones = new Text("Song Titles");
         titulolistacanciones.setFont(Font.font("Bree Serif",FontWeight.SEMI_BOLD,20));
-        ListView<String> listacanciones = modelo.anyadircanciones();
+        ListView<String> listacanciones = controlador.anyadircanciones();
         vBox.getChildren().addAll(titulolistacanciones,listacanciones);
         botonRecomendar(vBox, listacanciones);
     }
@@ -67,7 +69,7 @@ public class Vista extends Application {
         Button button = new Button("Recommend");
         button.setDisable(true);
         listacanciones.setOnMouseClicked(mouseEvent -> {
-            modelo.setCancionRecomendada(listacanciones.getSelectionModel().getSelectedItem());
+            controlador.setCancionRecomendada(listacanciones.getSelectionModel().getSelectedItem());
             button.setDisable(false);
             button.setOnAction(value -> {
                 escenario.setScene(escenaRecomendarTitulos());
@@ -94,7 +96,7 @@ public class Vista extends Application {
         return hBox;
     }
     private VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) {
-        Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
+        Text text = new Text("If you liked "+controlador.getCancionRecomendada()+" you might like");
         vBox.getChildren().addAll(hBox,text,new ListView<String>());
         return vBox;
     }
