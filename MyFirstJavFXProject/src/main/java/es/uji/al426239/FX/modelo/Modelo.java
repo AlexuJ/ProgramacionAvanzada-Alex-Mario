@@ -24,8 +24,8 @@ public class Modelo {
     public Modelo() {
         this.distance = new EuclideanDistance();
         this.algorithm = new KMeans(3,20,4321,distance);
+        this.numeroRecomendaciones = 5;
     }
-
     public void IsKnn(){
         algorithm = new KNN(distance);
     }
@@ -54,10 +54,13 @@ public class Modelo {
     public void setCancionRecomendada(String cancionRecomendada) {
         this.cancionRecomendada = cancionRecomendada;
     }
-    public  void  getnumeroIteraciones(int numero){
+    public int getNumeroRecomendaciones() {
+        return numeroRecomendaciones;
+    }
+    public  void  setnumeroIteraciones(int numero){
         numeroIteracion = numero;
     }
-    public  void  getnumeroClusters(int numero){
+    public  void  setnumeroClusters(int numero){
         numeroIteracion = numero;
     }
     public int getNumeroIteracion() {
@@ -71,13 +74,12 @@ public class Modelo {
         RecSys recsys = new RecSys(new KMeans(15,200,4321,new EuclideanDistance()));
         recsys.train(new CSVUnlabeledFileReader(ruta+fichero_train).readTableFromSource());
         recsys.run(new CSVUnlabeledFileReader(ruta+fichero_test).readTableFromSource(), readNames(ruta + sep + "songs_test_names.csv"));
-        return recsys.recommend("Lootkemia",5);
+        return recsys.recommend(getCancionRecomendada(),getNumeroRecomendaciones());
     }
     private List<String> readNames(String fileOfItemNames) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(fileOfItemNames));
         String line;
         List<String> names = new ArrayList<>();
-
         while ((line = br.readLine()) != null) {
             names.add(line);
         }
