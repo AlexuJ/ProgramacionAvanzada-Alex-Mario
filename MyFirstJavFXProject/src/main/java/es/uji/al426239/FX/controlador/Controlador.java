@@ -2,6 +2,11 @@ package es.uji.al426239.FX.controlador;
 
 import es.uji.al426239.FX.modelo.Modelo;
 import es.uji.al426239.FX.vista.Vista;
+import es.uji.al426239.algoritmos.Comparator;
+import es.uji.al426239.algoritmos.FilaVacia;
+import es.uji.al426239.algoritmos.TablaVacia;
+
+import java.io.FileNotFoundException;
 
 public class Controlador implements AnswerControlador {
     private Modelo modelo;
@@ -15,7 +20,7 @@ public class Controlador implements AnswerControlador {
     public void setScene(Vista visual){
         this.vista = visual;
     }
-    public void EventAlgorithm(int caso) {
+    public void EventAlgorithm(int caso) throws FileNotFoundException, FilaVacia, TablaVacia, Comparator {
         if (caso == 1) {
             modelo.IsKnn();
         } else {

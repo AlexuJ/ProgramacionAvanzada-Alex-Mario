@@ -26,7 +26,7 @@ public class Vista implements AskVista ,AnswerVista {
     public Vista(final Stage escenario) {
         this.escenario = escenario;
     }
-    public void inicio() throws FileNotFoundException {
+    public void inicio() throws FileNotFoundException, FilaVacia, TablaVacia, Comparator {
         escenario.setScene(escenaListaCanciones());
         escenario.show();
     }
@@ -36,7 +36,7 @@ public class Vista implements AskVista ,AnswerVista {
     public void setControlador(Controlador controlador) {
         this.controlador = controlador;
     }
-    public Scene escenaListaCanciones() throws FileNotFoundException {
+    public Scene escenaListaCanciones() throws FileNotFoundException, FilaVacia, TablaVacia, Comparator {
         VBox vBox = new VBox();
         crearelecciones(vBox,"Recommendation Type", "Recommend based on songs features", "Recommend based on guessed genre");
         crearelecciones(vBox,"Distance Type","Euclidean","Manhattan");
@@ -45,7 +45,7 @@ public class Vista implements AskVista ,AnswerVista {
         vBox.setPadding(new Insets(5));
         return new Scene(vBox);
     }
-    private void crearelecciones(VBox vBox, String texto1, String texto2, String texto3) {
+    private void crearelecciones(VBox vBox, String texto1, String texto2, String texto3) throws FileNotFoundException, FilaVacia, TablaVacia, Comparator {
         Text tiporecomendacion = new Text(texto1);
         tiporecomendacion.setFont(Font.font("Bree Serif", FontWeight.SEMI_BOLD,15));
         RadioButton radioButton1 = new RadioButton(texto2);
@@ -58,10 +58,34 @@ public class Vista implements AskVista ,AnswerVista {
         seleccionarOpcion(radioButton1,radioButton2);
         vBox.getChildren().addAll(tiporecomendacion,radioButton1,radioButton2);
     }
-    private void seleccionarOpcion (RadioButton radioButton1, RadioButton radioButton2) {
+    private void seleccionarOpcion (RadioButton radioButton1, RadioButton radioButton2) throws FileNotFoundException, FilaVacia, TablaVacia, Comparator{
         if (radioButton1.getText().equals("Recommend based on songs features")) {
-            radioButton1.setOnAction(value -> controlador.EventAlgorithm(1));
-            radioButton2.setOnAction(value -> controlador.EventAlgorithm(2));
+            radioButton1.setOnAction(value -> {
+                try {
+                    controlador.EventAlgorithm(1);
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
+                } catch (FilaVacia e) {
+                    throw new RuntimeException(e);
+                } catch (TablaVacia e) {
+                    throw new RuntimeException(e);
+                } catch (Comparator e) {
+                    throw new RuntimeException(e);
+                }
+            });
+            radioButton2.setOnAction(value -> {
+                try {
+                    controlador.EventAlgorithm(2);
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
+                } catch (FilaVacia e) {
+                    throw new RuntimeException(e);
+                } catch (TablaVacia e) {
+                    throw new RuntimeException(e);
+                } catch (Comparator e) {
+                    throw new RuntimeException(e);
+                }
+            });
         } else {
             radioButton1.setOnAction(value -> controlador.EventDistance(1));
             radioButton2.setOnAction(value -> controlador.EventDistance(2));
