@@ -1,17 +1,23 @@
 package es.uji.al426239.FX.modelo;
 
-import es.uji.al426239.algoritmos.Algorithm;
-import es.uji.al426239.algoritmos.KMeans;
-import es.uji.al426239.algoritmos.KNN;
+import es.uji.al426239.algoritmos.*;
 import es.uji.al426239.distance.Distance;
 import es.uji.al426239.distance.EuclideanDistance;
 import es.uji.al426239.distance.ManhattanDistance;
+import es.uji.al426239.lectordetablas.CSVUnlabeledFileReader;
+import es.uji.al426239.sistemaderecomendacion.RecSys;
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
-import java.io.File;
-import java.io.FileNotFoundException;
+import javafx.stage.Stage;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class Modelo {
+public class Modelo extends Application {
     private Algorithm algorithm;
     private Distance distance;
     private int numeroIteracion;
@@ -19,9 +25,15 @@ public class Modelo {
     private int numeroRecomendaciones;
     private String cancionRecomendada;
     public Modelo() {
-        this.algorithm = new KNN(distance);
         this.distance = new EuclideanDistance();
+        this.algorithm = new KMeans(3,20,4321,distance);
     }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
+    }
+
     public void IsKnn(){
         algorithm = new KNN(distance);
     }
@@ -37,7 +49,7 @@ public class Modelo {
     public ListView<String> anyadircanciones() throws FileNotFoundException {
         ListView<String> listacanciones = new ListView<>();
         String sep = System.getProperty("file.separator");
-        String fichero = "." + sep + "data" + sep + "songs_train_names.csv";
+        String fichero = "." + sep + "data" + sep + "songs_test_names.csv";
         Scanner sc = new Scanner(new File(fichero));
         while (sc.hasNextLine()) {
             listacanciones.getItems().add(sc.nextLine());
@@ -59,7 +71,25 @@ public class Modelo {
     public int getNumeroIteracion() {
         return numeroIteracion;
     }
-    public Algorithm getAlgorithm() {
-        return algorithm;
+    public List<String> setRecomendaciones() throws FilaVacia, IOException, TablaVacia, Comparator {
+        String sep = System.getProperty("file.separator");
+        String ruta = "." + sep + "data"+ sep;
+        String fichero_test = "songs_test_withoutnames.csv";
+        String fichero_train = "songs_train_withoutnames.csv";
+        RecSys recsys = new RecSys(new KMeans(15,200,4321,new EuclideanDistance()));
+        recsys.train(new CSVUnlabeledFileReader(ruta+fichero_train).readTableFromSource());
+        recsys.run(new CSVUnlabeledFileReader(ruta+fichero_test).readTableFromSource(), readNames(ruta + sep + "songs_test_names.csv"));
+        return recsys.recommend("Lootkemia",5);
+    }
+    private List<String> readNames(String fileOfItemNames) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(fileOfItemNames));
+        String line;
+        List<String> names = new ArrayList<>();
+
+        while ((line = br.readLine()) != null) {
+            names.add(line);
+        }
+        br.close();
+        return names;
     }
 }

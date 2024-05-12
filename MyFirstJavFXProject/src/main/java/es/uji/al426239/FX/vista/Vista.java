@@ -2,7 +2,11 @@ package es.uji.al426239.FX.vista;
 
 import es.uji.al426239.FX.controlador.Controlador;
 import es.uji.al426239.FX.modelo.Modelo;
+import es.uji.al426239.algoritmos.Comparator;
 import es.uji.al426239.algoritmos.FilaVacia;
+import es.uji.al426239.algoritmos.TablaVacia;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -13,6 +17,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Vista implements AskVista ,AnswerVista {
     private Controlador controlador;
@@ -78,7 +83,7 @@ public class Vista implements AskVista ,AnswerVista {
             button.setOnAction(value -> {
                 try {
                     escenario.setScene(escenaRecomendarTitulos());
-                } catch (FilaVacia e) {
+                } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
                     throw new RuntimeException(e);
                 }
                 escenario.show();
@@ -86,7 +91,7 @@ public class Vista implements AskVista ,AnswerVista {
         });
         vBox.getChildren().addAll(button);
     }
-    public Scene escenaRecomendarTitulos() throws FilaVacia {
+    public Scene escenaRecomendarTitulos() throws FilaVacia, IOException, TablaVacia, Comparator {
         HBox hBox = anyadirNumeroRecomendaciones(new HBox());
         hBox.setSpacing(10);
         hBox.setPadding(new Insets(10));
@@ -103,9 +108,12 @@ public class Vista implements AskVista ,AnswerVista {
         hBox.getChildren().addAll(texto,stringSpinner);
         return hBox;
     }
-    private VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia {
+    private VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia, IOException, TablaVacia, Comparator {
         Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
-        vBox.getChildren().addAll(hBox,text,new ListView<String>());
+        ListView<String> listarecomendaciones = new ListView<>();
+        ObservableList<String> items = FXCollections.observableArrayList(modelo.setRecomendaciones());
+        listarecomendaciones.setItems(items);
+        vBox.getChildren().addAll(hBox,text,listarecomendaciones);
         return vBox;
     }
     private void botonClose(VBox vBox) {
