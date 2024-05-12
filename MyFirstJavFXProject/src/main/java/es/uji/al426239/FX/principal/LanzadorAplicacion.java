@@ -2,7 +2,6 @@ package es.uji.al426239.FX.principal;
 
 import es.uji.al426239.FX.controlador.Controlador;
 import es.uji.al426239.FX.modelo.Modelo;
-import es.uji.al426239.FX.vista.AnsweVista;
 import es.uji.al426239.FX.vista.Vista;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -17,10 +16,10 @@ public class LanzadorAplicacion extends Application {
         Controlador controlador = new Controlador();
         Modelo modelo = new Modelo();
         Vista vista = new Vista(primaryStage);
-        controlador.getModelo(modelo);
-        controlador.getScene(vista);
+        controlador.setModelo(modelo);
+        controlador.setScene(vista);
         vista.setModelo(modelo);
         vista.setControlador(controlador);
-        vista.inicio(vista.escenaListaCanciones());
+        vista.inicio();
     }
 }

@@ -7,7 +7,6 @@ import es.uji.al426239.distance.Distance;
 import es.uji.al426239.distance.EuclideanDistance;
 import es.uji.al426239.distance.ManhattanDistance;
 import javafx.scene.control.ListView;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -17,7 +16,12 @@ public class Modelo {
     private Distance distance;
     private int numeroIteracion;
     private int numeroClusters;
+    private int numeroRecomendaciones;
     private String cancionRecomendada;
+    public Modelo() {
+        this.algorithm = new KNN(distance);
+        this.distance = new EuclideanDistance();
+    }
     public void IsKnn(){
         algorithm = new KNN(distance);
     }
@@ -29,13 +33,6 @@ public class Modelo {
     }
     public void IsManhhatn(){
         distance = new ManhattanDistance();
-    }
-    public void setDistance(boolean alfa) {
-        if (alfa) {
-            distance = new EuclideanDistance();
-        } else {
-            distance = new ManhattanDistance();
-        }
     }
     public ListView<String> anyadircanciones() throws FileNotFoundException {
         ListView<String> listacanciones = new ListView<>();
@@ -58,5 +55,11 @@ public class Modelo {
     }
     public  void  getnumeroClusters(int numero){
         numeroIteracion = numero;
+    }
+    public int getNumeroIteracion() {
+        return numeroIteracion;
+    }
+    public Algorithm getAlgorithm() {
+        return algorithm;
     }
 }

@@ -2,52 +2,48 @@ package es.uji.al426239.FX.controlador;
 
 import es.uji.al426239.FX.modelo.Modelo;
 import es.uji.al426239.FX.vista.Vista;
-import es.uji.al426239.algoritmos.Algorithm;
-import es.uji.al426239.algoritmos.KMeans;
+import es.uji.al426239.algoritmos.Comparator;
+import es.uji.al426239.algoritmos.FilaVacia;
 import es.uji.al426239.algoritmos.KNN;
-import es.uji.al426239.distance.Distance;
+import es.uji.al426239.algoritmos.TablaVacia;
 import es.uji.al426239.distance.EuclideanDistance;
-import es.uji.al426239.distance.ManhattanDistance;
-import javafx.scene.Scene;
+import es.uji.al426239.lectordetablas.CSVLabeledFileReader;
+import es.uji.al426239.lectordetablas.CSVUnlabeledFileReader;
+import es.uji.al426239.lectordetablas.ReaderTemplate;
+import es.uji.al426239.sistemaderecomendacion.RecSys;
 import javafx.scene.control.ListView;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 
-public class Controlador implements AnswerControlador{
+import java.io.FileNotFoundException;
+import java.util.List;
+
+public class Controlador implements AnswerControlador {
     private Modelo modelo;
     private Vista vista;
-    public  void getModelo(Modelo model){
-        modelo = model;
+    public Controlador() {
+        this.modelo = new Modelo();
     }
-    public  void  getScene(Vista visual){
-        visual = visual;
+    public void setModelo(Modelo modelo){
+        this.modelo = modelo;
     }
-    //esto podria ser un enum y esto se va directo a una interfaz
-    @Override
+    public void setScene(Vista visual){
+        this.vista = visual;
+    }
     public void EventAlgorithm(int caso) {
-       switch (caso){
-        case 1 :
+        if (caso == 1) {
             modelo.IsKnn();
-            break;
-
-           default:
-               modelo.IsKmeans();
-       }
-    }
-    //esto igual un enum
-
-
-    @Override
-    public void EventDistance(int caso){
-        switch (caso){
-            case 1 :
-                modelo.IsEuclidean();
-                break;
-
-            default:
-                modelo.IsManhhatn();
+        } else {
+            modelo.IsKmeans();
         }
     }
-
+    public void EventDistance(int caso) {
+        if (caso == 1) {
+            modelo.IsEuclidean();
+        } else {
+            modelo.IsManhhatn();
+        }
+    }
+    private void setRecomendaciones() throws FilaVacia {
+        RecSys recsys = new RecSys(modelo.getAlgorithm());
+        List<String> listarecomendaciones = recsys.recommend(modelo.getCancionRecomendada(), modelo.getNumeroIteracion());
+    }
 }

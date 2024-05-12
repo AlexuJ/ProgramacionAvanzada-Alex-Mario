@@ -2,6 +2,7 @@ package es.uji.al426239.FX.vista;
 
 import es.uji.al426239.FX.controlador.Controlador;
 import es.uji.al426239.FX.modelo.Modelo;
+import es.uji.al426239.algoritmos.FilaVacia;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -13,14 +14,16 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 
-public class Vista implements AskVista ,AnsweVista{
-    /*posible encapsulacion sacar las scenas de vista*/
+public class Vista implements AskVista ,AnswerVista {
     private Controlador controlador;
     private Modelo modelo;
-    private Stage escenario;
-
+    private final Stage escenario;
     public Vista(final Stage escenario) {
         this.escenario = escenario;
+    }
+    public void inicio() throws FileNotFoundException {
+        escenario.setScene(escenaListaCanciones());
+        escenario.show();
     }
     public void setModelo(Modelo modelo) {
         this.modelo = modelo;
@@ -28,7 +31,6 @@ public class Vista implements AskVista ,AnsweVista{
     public void setControlador(Controlador controlador) {
         this.controlador = controlador;
     }
-    //ESCENA NUMERO 1
     public Scene escenaListaCanciones() throws FileNotFoundException {
         VBox vBox = new VBox();
         crearelecciones(vBox,"Recommendation Type", "Recommend based on songs features", "Recommend based on guessed genre");
@@ -38,7 +40,6 @@ public class Vista implements AskVista ,AnsweVista{
         vBox.setPadding(new Insets(5));
         return new Scene(vBox);
     }
-
     private void crearelecciones(VBox vBox, String texto1, String texto2, String texto3) {
         Text tiporecomendacion = new Text(texto1);
         tiporecomendacion.setFont(Font.font("Bree Serif", FontWeight.SEMI_BOLD,15));
@@ -52,12 +53,7 @@ public class Vista implements AskVista ,AnsweVista{
         seleccionarOpcion(radioButton1,radioButton2);
         vBox.getChildren().addAll(tiporecomendacion,radioButton1,radioButton2);
     }
-
-    private void seleccionarOpcion (Toggle toggle1, Toggle  toggle2) {
-
-        // Casting de Toggle a RadioButton
-        RadioButton radioButton1 = (RadioButton) toggle1;
-        RadioButton radioButton2 = (RadioButton) toggle2;
+    private void seleccionarOpcion (RadioButton radioButton1, RadioButton radioButton2) {
         if (radioButton1.getText().equals("Recommend based on songs features")) {
             radioButton1.setOnAction(value -> controlador.EventAlgorithm(1));
             radioButton2.setOnAction(value -> controlador.EventAlgorithm(2));
@@ -69,7 +65,7 @@ public class Vista implements AskVista ,AnsweVista{
     private void crearlistacanciones(VBox vBox) throws FileNotFoundException {
         Text titulolistacanciones = new Text("Song Titles");
         titulolistacanciones.setFont(Font.font("Bree Serif",FontWeight.SEMI_BOLD,20));
-        ListView<String> listacanciones = controlador.anyadircanciones();
+        ListView<String> listacanciones = modelo.anyadircanciones();
         vBox.getChildren().addAll(titulolistacanciones,listacanciones);
         botonRecomendar(vBox, listacanciones);
     }
@@ -77,16 +73,20 @@ public class Vista implements AskVista ,AnsweVista{
         Button button = new Button("Recommend");
         button.setDisable(true);
         listacanciones.setOnMouseClicked(mouseEvent -> {
-            controlador.setCancionRecomendada(listacanciones.getSelectionModel().getSelectedItem());
+            modelo.setCancionRecomendada(listacanciones.getSelectionModel().getSelectedItem());
             button.setDisable(false);
             button.setOnAction(value -> {
-                escenario.setScene(escenaRecomendarTitulos());
+                try {
+                    escenario.setScene(escenaRecomendarTitulos());
+                } catch (FilaVacia e) {
+                    throw new RuntimeException(e);
+                }
                 escenario.show();
             });
         });
         vBox.getChildren().addAll(button);
     }
-    public Scene escenaRecomendarTitulos() {
+    public Scene escenaRecomendarTitulos() throws FilaVacia {
         HBox hBox = anyadirNumeroRecomendaciones(new HBox());
         hBox.setSpacing(10);
         hBox.setPadding(new Insets(10));
@@ -99,12 +99,12 @@ public class Vista implements AskVista ,AnsweVista{
     private HBox anyadirNumeroRecomendaciones(HBox hBox) {
         Text texto = new Text("Number of recommendations:");
         Spinner<Integer> stringSpinner = new Spinner<>(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1,1));
-        stringSpinner.getValueFactory().setValue(5);
+        stringSpinner.getValueFactory().setValue(modelo.getNumeroIteracion());
         hBox.getChildren().addAll(texto,stringSpinner);
         return hBox;
     }
-    private VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) {
-        Text text = new Text("If you liked "+controlador.getCancionRecomendada()+" you might like");
+    private VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia {
+        Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
         vBox.getChildren().addAll(hBox,text,new ListView<String>());
         return vBox;
     }
@@ -112,11 +112,6 @@ public class Vista implements AskVista ,AnsweVista{
         Button button = new Button("Close");
         vBox.getChildren().addAll(button);
         button.setOnAction(value -> escenario.close());
-    }
-    public void inicio(Scene escena){
-        escenario.setScene(escena);
-        escenario.show();
-
     }
 }
 
