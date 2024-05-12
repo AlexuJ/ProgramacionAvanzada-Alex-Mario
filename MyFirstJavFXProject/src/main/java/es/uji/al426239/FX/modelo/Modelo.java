@@ -6,9 +6,7 @@ import es.uji.al426239.distance.EuclideanDistance;
 import es.uji.al426239.distance.ManhattanDistance;
 import es.uji.al426239.lectordetablas.CSVUnlabeledFileReader;
 import es.uji.al426239.sistemaderecomendacion.RecSys;
-import javafx.application.Application;
 import javafx.scene.control.ListView;
-import javafx.stage.Stage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +20,9 @@ public class Modelo {
     private int numeroRecomendaciones;
     private String cancionRecomendada;
     public Modelo() {
-        this.distance = new EuclideanDistance();
-        this.algorithm = new KMeans(3,20,4321,distance);
+        this.numeroIteracion = 200;
         this.numeroRecomendaciones = 5;
+        this.numeroClusters = 15;
     }
     public void IsKnn(){
         algorithm = new KNN(distance);
@@ -48,30 +46,12 @@ public class Modelo {
         }
         return listacanciones;
     }
-    public String getCancionRecomendada() {
-        return cancionRecomendada;
-    }
-    public void setCancionRecomendada(String cancionRecomendada) {
-        this.cancionRecomendada = cancionRecomendada;
-    }
-    public int getNumeroRecomendaciones() {
-        return numeroRecomendaciones;
-    }
-    public  void  setnumeroIteraciones(int numero){
-        numeroIteracion = numero;
-    }
-    public  void  setnumeroClusters(int numero){
-        numeroIteracion = numero;
-    }
-    public int getNumeroIteracion() {
-        return numeroIteracion;
-    }
     public List<String> setRecomendaciones() throws FilaVacia, IOException, TablaVacia, Comparator {
         String sep = System.getProperty("file.separator");
         String ruta = "." + sep + "data"+ sep;
         String fichero_test = "songs_test_withoutnames.csv";
         String fichero_train = "songs_train_withoutnames.csv";
-        RecSys recsys = new RecSys(new KMeans(15,200,4321,new EuclideanDistance()));
+        RecSys recsys = new RecSys(new KMeans(numeroClusters,numeroIteracion,4321, distance));
         recsys.train(new CSVUnlabeledFileReader(ruta+fichero_train).readTableFromSource());
         recsys.run(new CSVUnlabeledFileReader(ruta+fichero_test).readTableFromSource(), readNames(ruta + sep + "songs_test_names.csv"));
         return recsys.recommend(getCancionRecomendada(),getNumeroRecomendaciones());
@@ -85,5 +65,26 @@ public class Modelo {
         }
         br.close();
         return names;
+    }
+    public String getCancionRecomendada() {
+        return cancionRecomendada;
+    }
+    public void setCancionRecomendada(String cancionRecomendada) {
+        this.cancionRecomendada = cancionRecomendada;
+    }
+    public int getNumeroRecomendaciones() {
+        return numeroRecomendaciones;
+    }
+    public int getNumeroIteracion() {
+        return numeroIteracion;
+    }
+    public  void  setnumeroIteraciones(int numero){
+        numeroIteracion = numero;
+    }
+    public int getNumeroClusters() {
+        return numeroClusters;
+    }
+    public  void  setnumeroClusters(int numero){
+        numeroIteracion = numero;
     }
 }
