@@ -7,17 +7,14 @@ import es.uji.al426239.distance.ManhattanDistance;
 import es.uji.al426239.lectordetablas.CSVUnlabeledFileReader;
 import es.uji.al426239.sistemaderecomendacion.RecSys;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Modelo extends Application {
+public class Modelo {
     private Algorithm algorithm;
     private Distance distance;
     private int numeroIteracion;
@@ -27,11 +24,6 @@ public class Modelo extends Application {
     public Modelo() {
         this.distance = new EuclideanDistance();
         this.algorithm = new KMeans(3,20,4321,distance);
-    }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-
     }
 
     public void IsKnn(){
