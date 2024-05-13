@@ -99,23 +99,13 @@ public class Vista implements AskVista ,AnswerVista {
         vBox.setSpacing(5);
         vBox.setPadding(new Insets(10));
         botonClose(vBox);
-        return new Scene(vBox, 350, 300);
+        return new Scene(vBox, 350, 400);
     }
     private HBox anyadirNumeroRecomendaciones(HBox hBox) {
         Text texto = new Text("Number of recommendations:");
         Spinner<Integer> stringSpinner = new Spinner<>(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1,1));
         stringSpinner.getValueFactory().setValue(modelo.getNumeroRecomendaciones());
-        stringSpinner.valueProperty().addListener((obs, oldValue, newValue) -> {
-            VBox vBox = (VBox) hBox.getParent();
-            modelo.setNumeroRecomendaciones(newValue);
-            vBox.getChildren().clear();
-            try {
-                ensenyaRecomendaciones(hBox,vBox);
-            } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
-                throw new RuntimeException(e);
-            }
-        });
-        hBox.getChildren().clear();
+        actualizarListaRecomendaciones(stringSpinner,hBox);
         hBox.getChildren().addAll(texto,stringSpinner);
         return hBox;
     }
@@ -126,6 +116,20 @@ public class Vista implements AskVista ,AnswerVista {
         listarecomendaciones.setItems(items);
         vBox.getChildren().addAll(hBox,text,listarecomendaciones);
         return vBox;
+    }
+    private void actualizarListaRecomendaciones(Spinner<Integer> stringSpinner, HBox hBox) {
+        stringSpinner.valueProperty().addListener((obs, oldValue, newValue) -> {
+            VBox vBox = (VBox) hBox.getParent();
+            modelo.setNumeroRecomendaciones(newValue);
+            vBox.getChildren().clear();
+            try {
+                ensenyaRecomendaciones(hBox,vBox);
+            } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
+                throw new RuntimeException(e);
+            }
+            botonClose(vBox);
+        });
+        hBox.getChildren().clear();
     }
     private void botonClose(VBox vBox) {
         Button button = new Button("Close");
