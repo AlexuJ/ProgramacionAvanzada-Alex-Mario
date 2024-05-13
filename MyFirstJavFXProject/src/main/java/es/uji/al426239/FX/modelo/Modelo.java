@@ -2,9 +2,8 @@ package es.uji.al426239.FX.modelo;
 
 import es.uji.al426239.algoritmos.*;
 import es.uji.al426239.distance.Distance;
-import es.uji.al426239.distance.EuclideanDistance;
-import es.uji.al426239.distance.ManhattanDistance;
 import es.uji.al426239.lectordetablas.CSVUnlabeledFileReader;
+import es.uji.al426239.lectordetablas.ReaderTemplate;
 import es.uji.al426239.sistemaderecomendacion.RecSys;
 import javafx.scene.control.ListView;
 import java.io.*;
@@ -23,18 +22,6 @@ public class Modelo {
         this.numeroIteracion = 200;
         this.numeroRecomendaciones = 5;
         this.numeroClusters = 15;
-    }
-    public void IsKnn(){
-        algorithm = new KNN(distance);
-    }
-    public void  IsKmeans(){
-        algorithm = new KMeans(numeroClusters, numeroIteracion, 100, distance);
-    }
-    public void IsEuclidean(){
-        distance = new EuclideanDistance();
-    }
-    public void IsManhhatn(){
-        distance = new ManhattanDistance();
     }
     public ListView<String> anyadircanciones() throws FileNotFoundException {
         ListView<String> listacanciones = new ListView<>();
@@ -65,6 +52,15 @@ public class Modelo {
         }
         br.close();
         return names;
+    }
+    public void setAlgorithm(Algorithm algorithm) {
+        this.algorithm = algorithm;
+    }
+    public Distance getDistance() {
+        return distance;
+    }
+    public void setDistance(Distance distance) {
+        this.distance = distance;
     }
     public String getCancionRecomendada() {
         return cancionRecomendada;
