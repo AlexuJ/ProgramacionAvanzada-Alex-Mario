@@ -16,9 +16,9 @@ import java.util.Scanner;
 public class Modelo {
     private Algorithm algorithm;
     private Distance distance;
-    private final int numeroIteracion;
+    private int numeroIteracion;
     private final int numeroClusters;
-    private final int numeroRecomendaciones;
+    private int numeroRecomendaciones;
     private String cancionRecomendada;
     private ReaderTemplate lectortrain;
     private ReaderTemplate lectortest;
@@ -74,6 +74,9 @@ public class Modelo {
     }
     public void IsManhattan() {
         distance = new ManhattanDistance();
+    }
+    public void setNumeroRecomendaciones(int numeroRecomendaciones) {
+        this.numeroRecomendaciones = numeroRecomendaciones;
     }
     public Distance getDistance() {
         return distance;

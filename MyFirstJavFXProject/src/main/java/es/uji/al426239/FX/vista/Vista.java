@@ -105,6 +105,17 @@ public class Vista implements AskVista ,AnswerVista {
         Text texto = new Text("Number of recommendations:");
         Spinner<Integer> stringSpinner = new Spinner<>(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1,1));
         stringSpinner.getValueFactory().setValue(modelo.getNumeroRecomendaciones());
+        stringSpinner.valueProperty().addListener((obs, oldValue, newValue) -> {
+            VBox vBox = (VBox) hBox.getParent();
+            modelo.setNumeroRecomendaciones(newValue);
+            vBox.getChildren().clear();
+            try {
+                ensenyaRecomendaciones(hBox,vBox);
+            } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
+                throw new RuntimeException(e);
+            }
+        });
+        hBox.getChildren().clear();
         hBox.getChildren().addAll(texto,stringSpinner);
         return hBox;
     }
