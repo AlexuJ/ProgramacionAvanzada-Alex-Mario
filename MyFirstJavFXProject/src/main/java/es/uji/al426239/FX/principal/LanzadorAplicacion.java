@@ -5,14 +5,14 @@ import es.uji.al426239.FX.modelo.Modelo;
 import es.uji.al426239.FX.vista.Vista;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class LanzadorAplicacion extends Application {
     public static void main(String[] args) {
         launch(args);
     }
     @Override
-    public void start(Stage primaryStage) throws FileNotFoundException {
+    public void start(Stage primaryStage) throws IOException {
         Controlador controlador = new Controlador();
         Modelo modelo = new Modelo();
         Vista vista = new Vista(primaryStage);

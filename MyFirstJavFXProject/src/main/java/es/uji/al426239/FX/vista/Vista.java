@@ -16,7 +16,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Vista implements AskVista ,AnswerVista {
@@ -26,21 +25,15 @@ public class Vista implements AskVista ,AnswerVista {
     public Vista(final Stage escenario) {
         this.escenario = escenario;
     }
-    public void inicio() throws FileNotFoundException {
+    public void inicio() throws IOException {
         escenario.setScene(escenaListaCanciones());
         escenario.show();
     }
-    public void setModelo(Modelo modelo) {
-        this.modelo = modelo;
-    }
-    public void setControlador(Controlador controlador) {
-        this.controlador = controlador;
-    }
-    public Scene escenaListaCanciones() throws FileNotFoundException {
+    private Scene escenaListaCanciones() throws IOException {
         VBox vBox = new VBox();
         crearelecciones(vBox,"Recommendation Type", "Recommend based on songs features", "Recommend based on guessed genre");
         crearelecciones(vBox,"Distance Type","Euclidean","Manhattan");
-        crearlistacanciones(vBox);
+        controlador.crearlistacanciones(vBox);
         vBox.setSpacing(10);
         vBox.setPadding(new Insets(5));
         return new Scene(vBox);
@@ -58,23 +51,7 @@ public class Vista implements AskVista ,AnswerVista {
         seleccionarOpcion(radioButton1,radioButton2);
         vBox.getChildren().addAll(tiporecomendacion,radioButton1,radioButton2);
     }
-    private void seleccionarOpcion (RadioButton radioButton1, RadioButton radioButton2) {
-        if (radioButton1.getText().equals("Recommend based on songs features")) {
-            radioButton1.setOnAction(value -> controlador.EventAlgorithm(1));
-            radioButton2.setOnAction(value -> controlador.EventAlgorithm(2));
-        } else if (radioButton1.getText().equals("Euclidean")) {
-            radioButton1.setOnAction(value -> controlador.EventDistance(1));
-            radioButton2.setOnAction(value -> controlador.EventDistance(2));
-        }
-    }
-    private void crearlistacanciones(VBox vBox) throws FileNotFoundException {
-        Text titulolistacanciones = new Text("Song Titles");
-        titulolistacanciones.setFont(Font.font("Bree Serif",FontWeight.SEMI_BOLD,20));
-        ListView<String> listacanciones = modelo.anyadircanciones();
-        vBox.getChildren().addAll(titulolistacanciones,listacanciones);
-        botonRecomendar(vBox, listacanciones);
-    }
-    private void botonRecomendar(VBox vBox, ListView<String> listacanciones) {
+    public void botonRecomendar(VBox vBox, ListView<String> listacanciones) {
         Button button = new Button("Recommend");
         button.setDisable(true);
         listacanciones.setOnMouseClicked(mouseEvent -> {
@@ -91,7 +68,16 @@ public class Vista implements AskVista ,AnswerVista {
         });
         vBox.getChildren().addAll(button);
     }
-    public Scene escenaRecomendarTitulos() throws FilaVacia, IOException, TablaVacia, Comparator {
+    private void seleccionarOpcion (RadioButton radioButton1, RadioButton radioButton2) {
+        if (radioButton1.getText().equals("Recommend based on songs features")) {
+            radioButton1.setOnAction(value -> controlador.EventAlgorithm(1));
+            radioButton2.setOnAction(value -> controlador.EventAlgorithm(2));
+        } else if (radioButton1.getText().equals("Euclidean")) {
+            radioButton1.setOnAction(value -> controlador.EventDistance(1));
+            radioButton2.setOnAction(value -> controlador.EventDistance(2));
+        }
+    }
+    private Scene escenaRecomendarTitulos() throws FilaVacia, IOException, TablaVacia, Comparator {
         HBox hBox = anyadirNumeroRecomendaciones(new HBox());
         hBox.setSpacing(10);
         hBox.setPadding(new Insets(10));
@@ -103,13 +89,13 @@ public class Vista implements AskVista ,AnswerVista {
     }
     private HBox anyadirNumeroRecomendaciones(HBox hBox) {
         Text texto = new Text("Number of recommendations:");
-        Spinner<Integer> stringSpinner = new Spinner<>(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1,1));
-        stringSpinner.getValueFactory().setValue(modelo.getNumeroRecomendaciones());
-        actualizarListaRecomendaciones(stringSpinner,hBox);
-        hBox.getChildren().addAll(texto,stringSpinner);
+        Spinner<Integer> spinner = new Spinner<>(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1,1));
+        spinner.getValueFactory().setValue(modelo.getNumeroRecomendaciones());
+        controlador.actualizarListaRecomendaciones(spinner,hBox);
+        hBox.getChildren().addAll(texto,spinner);
         return hBox;
     }
-    private VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia, IOException, TablaVacia, Comparator {
+    public VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia, IOException, TablaVacia, Comparator {
         Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
         ListView<String> listarecomendaciones = new ListView<>();
         ObservableList<String> items = FXCollections.observableArrayList(modelo.setRecomendaciones());
@@ -117,24 +103,16 @@ public class Vista implements AskVista ,AnswerVista {
         vBox.getChildren().addAll(hBox,text,listarecomendaciones);
         return vBox;
     }
-    private void actualizarListaRecomendaciones(Spinner<Integer> stringSpinner, HBox hBox) {
-        stringSpinner.valueProperty().addListener((obs, oldValue, newValue) -> {
-            VBox vBox = (VBox) hBox.getParent();
-            modelo.setNumeroRecomendaciones(newValue);
-            vBox.getChildren().clear();
-            try {
-                ensenyaRecomendaciones(hBox,vBox);
-            } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
-                throw new RuntimeException(e);
-            }
-            botonClose(vBox);
-        });
-        hBox.getChildren().clear();
-    }
-    private void botonClose(VBox vBox) {
+    public void botonClose(VBox vBox) {
         Button button = new Button("Close");
         vBox.getChildren().addAll(button);
         button.setOnAction(value -> escenario.close());
+    }
+    public void setModelo(Modelo modelo) {
+        this.modelo = modelo;
+    }
+    public void setControlador(Controlador controlador) {
+        this.controlador = controlador;
     }
 }
 

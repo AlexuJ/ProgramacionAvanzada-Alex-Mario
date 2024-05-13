@@ -7,16 +7,14 @@ import es.uji.al426239.distance.ManhattanDistance;
 import es.uji.al426239.lectordetablas.CSVLabeledFileReader;
 import es.uji.al426239.lectordetablas.ReaderTemplate;
 import es.uji.al426239.sistemaderecomendacion.RecSys;
-import javafx.scene.control.ListView;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Modelo {
     private Algorithm algorithm;
     private Distance distance;
-    private int numeroIteracion;
+    private final int numeroIteracion;
     private final int numeroClusters;
     private int numeroRecomendaciones;
     private String cancionRecomendada;
@@ -27,15 +25,8 @@ public class Modelo {
         this.numeroRecomendaciones = 5;
         this.numeroClusters = 15;
     }
-    public ListView<String> anyadircanciones() throws FileNotFoundException {
-        ListView<String> listacanciones = new ListView<>();
-        String sep = System.getProperty("file.separator");
-        String fichero = "." + sep + "data" + sep + "songs_test_names.csv";
-        Scanner sc = new Scanner(new File(fichero));
-        while (sc.hasNextLine()) {
-            listacanciones.getItems().add(sc.nextLine());
-        }
-        return listacanciones;
+    public void setNumeroRecomendaciones(int numeroRecomendaciones) {
+        this.numeroRecomendaciones = numeroRecomendaciones;
     }
     public List<String> setRecomendaciones() throws FilaVacia, IOException, TablaVacia, Comparator {
         String sep = System.getProperty("file.separator");
@@ -74,9 +65,6 @@ public class Modelo {
     }
     public void IsManhattan() {
         distance = new ManhattanDistance();
-    }
-    public void setNumeroRecomendaciones(int numeroRecomendaciones) {
-        this.numeroRecomendaciones = numeroRecomendaciones;
     }
     public Distance getDistance() {
         return distance;
