@@ -1,6 +1,5 @@
 package es.uji.al426239.FX.modelo;
 
-import com.sun.javafx.stage.EmbeddedWindow;
 import es.uji.al426239.algoritmos.*;
 import es.uji.al426239.distance.Distance;
 import es.uji.al426239.distance.EuclideanDistance;
