@@ -26,7 +26,7 @@ public class Vista implements AskVista ,AnswerVista {
     public Vista(final Stage escenario) {
         this.escenario = escenario;
     }
-    public void inicio() throws FileNotFoundException, FilaVacia, TablaVacia, Comparator {
+    public void inicio() throws FileNotFoundException {
         escenario.setScene(escenaListaCanciones());
         escenario.show();
     }
@@ -36,7 +36,7 @@ public class Vista implements AskVista ,AnswerVista {
     public void setControlador(Controlador controlador) {
         this.controlador = controlador;
     }
-    public Scene escenaListaCanciones() throws FileNotFoundException, FilaVacia, TablaVacia, Comparator {
+    public Scene escenaListaCanciones() throws FileNotFoundException {
         VBox vBox = new VBox();
         crearelecciones(vBox,"Recommendation Type", "Recommend based on songs features", "Recommend based on guessed genre");
         crearelecciones(vBox,"Distance Type","Euclidean","Manhattan");
@@ -45,7 +45,7 @@ public class Vista implements AskVista ,AnswerVista {
         vBox.setPadding(new Insets(5));
         return new Scene(vBox);
     }
-    private void crearelecciones(VBox vBox, String texto1, String texto2, String texto3) throws FileNotFoundException, FilaVacia, TablaVacia, Comparator {
+    private void crearelecciones(VBox vBox, String texto1, String texto2, String texto3) {
         Text tiporecomendacion = new Text(texto1);
         tiporecomendacion.setFont(Font.font("Bree Serif", FontWeight.SEMI_BOLD,15));
         RadioButton radioButton1 = new RadioButton(texto2);
@@ -60,21 +60,9 @@ public class Vista implements AskVista ,AnswerVista {
     }
     private void seleccionarOpcion (RadioButton radioButton1, RadioButton radioButton2) {
         if (radioButton1.getText().equals("Recommend based on songs features")) {
-            radioButton1.setOnAction(value -> {
-                try {
-                    controlador.EventAlgorithm(1);
-                } catch (FileNotFoundException | FilaVacia | TablaVacia | Comparator e) {
-                    throw new RuntimeException(e);
-                }
-            });
-            radioButton2.setOnAction(value -> {
-                try {
-                    controlador.EventAlgorithm(2);
-                } catch (FileNotFoundException | FilaVacia | TablaVacia | Comparator e) {
-                    throw new RuntimeException(e);
-                }
-            });
-        } else {
+            radioButton1.setOnAction(value -> controlador.EventAlgorithm(1));
+            radioButton2.setOnAction(value -> controlador.EventAlgorithm(2));
+        } else if (radioButton1.getText().equals("Euclidean")) {
             radioButton1.setOnAction(value -> controlador.EventDistance(1));
             radioButton2.setOnAction(value -> controlador.EventDistance(2));
         }
