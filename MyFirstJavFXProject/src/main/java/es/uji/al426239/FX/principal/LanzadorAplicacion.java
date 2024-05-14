@@ -2,7 +2,7 @@ package es.uji.al426239.FX.principal;
 
 import es.uji.al426239.FX.controlador.Controlador;
 import es.uji.al426239.FX.modelo.Modelo;
-import es.uji.al426239.FX.vista.FactoriaV;
+import es.uji.al426239.FX.vista.Factoria;
 import es.uji.al426239.FX.vista.FactoriaVista;
 import es.uji.al426239.FX.vista.Vista;
 import javafx.application.Application;
@@ -18,8 +18,8 @@ public class LanzadorAplicacion extends Application {
         Controlador controlador = new Controlador();
         Modelo modelo = new Modelo();
         Vista vista = new Vista(primaryStage);
-        FactoriaV factoriaV = new FactoriaVista();
-        vista.setFactoria(factoriaV);
+        Factoria factoria = new FactoriaVista(controlador);
+        vista.setFactoria(factoria);
         controlador.setModelo(modelo);
         controlador.setVista(vista);
         vista.setModelo(modelo);
