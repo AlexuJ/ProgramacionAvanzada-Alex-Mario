@@ -25,9 +25,6 @@ public class Modelo {
         this.numeroRecomendaciones = 5;
         this.numeroClusters = 15;
     }
-    public void setNumeroRecomendaciones(int numeroRecomendaciones) {
-        this.numeroRecomendaciones = numeroRecomendaciones;
-    }
     public List<String> setRecomendaciones() throws FilaVacia, IOException, TablaVacia, Comparator {
         String sep = System.getProperty("file.separator");
         String ruta = "." + sep + "data"+ sep;
@@ -65,6 +62,9 @@ public class Modelo {
     }
     public void IsManhattan() {
         distance = new ManhattanDistance();
+    }
+    public void setNumeroRecomendaciones(int numeroRecomendaciones) {
+        this.numeroRecomendaciones = numeroRecomendaciones;
     }
     public Distance getDistance() {
         return distance;

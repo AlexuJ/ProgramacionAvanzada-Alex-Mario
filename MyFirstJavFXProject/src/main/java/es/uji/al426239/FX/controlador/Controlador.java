@@ -48,6 +48,7 @@ public class Controlador implements AnswerControlador {
             } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
                 throw new RuntimeException(e);
             }
+            vista.botonVolver(vBox);
             vista.botonClose(vBox);
         });
         hBox.getChildren().clear();

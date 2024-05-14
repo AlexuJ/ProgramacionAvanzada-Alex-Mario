@@ -84,6 +84,7 @@ public class Vista implements AskVista ,AnswerVista {
         VBox vBox = ensenyaRecomendaciones(hBox, new VBox());
         vBox.setSpacing(5);
         vBox.setPadding(new Insets(10));
+        botonVolver(vBox);
         botonClose(vBox);
         return new Scene(vBox, 350, 400);
     }
@@ -107,6 +108,17 @@ public class Vista implements AskVista ,AnswerVista {
         Button button = new Button("Close");
         vBox.getChildren().addAll(button);
         button.setOnAction(value -> escenario.close());
+    }
+    public void botonVolver(VBox vBox) {
+        Button button = new Button("Volver");
+        vBox.getChildren().add(button);
+        button.setOnAction(value -> {
+            try {
+                escenario.setScene(escenaListaCanciones());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
     public void setModelo(Modelo modelo) {
         this.modelo = modelo;
