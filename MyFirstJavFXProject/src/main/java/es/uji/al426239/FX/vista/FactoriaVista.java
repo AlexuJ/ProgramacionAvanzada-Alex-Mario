@@ -1,5 +1,10 @@
 package es.uji.al426239.FX.vista;
 
+<<<<<<< HEAD
+=======
+import es.uji.al426239.FX.controlador.Controlador;
+import es.uji.al426239.distance.Distance;
+>>>>>>> e2299b30f54c3716b61de669729c5cfb883335b6
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
@@ -24,6 +29,7 @@ public class FactoriaVista implements Factoria {
         return radioButton1;
     }
     @Override
+<<<<<<< HEAD
     public void Evenbotones (List < Toggle > alfa, TiposDeEvento tipo) {
         if (tipo == TiposDeEvento.Algoritm) {
             AlgorithmBotton(alfa);
@@ -32,6 +38,27 @@ public class FactoriaVista implements Factoria {
     private void AlgorithmBotton (List < Toggle > botones) {
         for (Toggle boton : botones) {
             RadioButton radioButton = (RadioButton) boton;
+=======
+    public void Evenbotones(List<Toggle> alfa,TiposDeEvento tipo){
+        //cambiar por un switch case
+        for (int i = 0 ; i < alfa.size();i++){
+            Toggle boton = alfa.get(i);
+            RadioButton radioButton = (RadioButton) boton;
+            if (tipo == TiposDeEvento.Algoritm){
+                AlgorithmBotton(radioButton,i+1);
+            }else if(tipo == TiposDeEvento.Distance){
+                DistanceBotton(radioButton,i+1);
+            }
+>>>>>>> e2299b30f54c3716b61de669729c5cfb883335b6
         }
+
+    }
+    private void  AlgorithmBotton(RadioButton radioButton,int a){
+        radioButton.setOnAction(value -> controlador.EventAlgorithm(a));
+
+    }
+
+    private void  DistanceBotton(RadioButton botones,int a){
+        botones.setOnAction(value -> controlador.EventAlgorithm(a));
     }
 }

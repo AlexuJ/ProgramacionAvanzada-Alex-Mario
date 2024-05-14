@@ -15,10 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class Vista implements AskVista ,AnswerVista {
     private Controlador controlador;
@@ -35,8 +32,15 @@ public class Vista implements AskVista ,AnswerVista {
     }
     private Scene escenaListaCanciones() throws IOException {
         VBox vBox = new VBox();
+<<<<<<< HEAD
         crearelecciones(vBox,"Recommendation Type", "Recommend based on guessed genre",TiposDeEvento.Algoritm);
         crearelecciones(vBox,"Distance Type","Euclidean",TiposDeEvento.Distance);
+=======
+        List<String> palabras = Arrays.asList("Recommend based on songs features","Recommend based on guessed genre");
+        crearelecciones(vBox,"Recommendation Type", palabras ,TiposDeEvento.Algoritm);
+        List<String> palabras2 = Arrays.asList("Euclidean","Manhattan");
+        crearelecciones(vBox,"Distance Type",palabras2,TiposDeEvento.Distance);
+>>>>>>> e2299b30f54c3716b61de669729c5cfb883335b6
         controlador.crearlistacanciones(vBox);
         vBox.setSpacing(10);
         vBox.setPadding(new Insets(5));
@@ -49,7 +53,11 @@ public class Vista implements AskVista ,AnswerVista {
         for (String texto : textos) {
             botones.add(factoria.Botones(texto, radioGroupRecommendation));
         }
+<<<<<<< HEAD
         seleccionarOpcion(botones, tiposDeEvento);
+=======
+       factoria.Evenbotones(listaBotones,tiposDeEvento);
+>>>>>>> e2299b30f54c3716b61de669729c5cfb883335b6
     }
     public void botonRecomendar(VBox vBox, ListView<String> listacanciones) {
         Button button = new Button("Recommend");
@@ -62,17 +70,22 @@ public class Vista implements AskVista ,AnswerVista {
                     escenario.setScene(escenaRecomendarTitulos());
                 } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
                     throw new RuntimeException(e);
+
                 }
                 escenario.show();
             });
         });
         vBox.getChildren().addAll(button);
     }
+<<<<<<< HEAD
     private void seleccionarOpcion (List<Toggle> botones,TiposDeEvento tiposDeEvento) {
             if (tiposDeEvento == TiposDeEvento.Algoritm){
                factoria.Evenbotones(botones,tiposDeEvento);
             }
     }
+=======
+
+>>>>>>> e2299b30f54c3716b61de669729c5cfb883335b6
     private Scene escenaRecomendarTitulos() throws FilaVacia, IOException, TablaVacia, Comparator {
         HBox hBox = anyadirNumeroRecomendaciones(new HBox());
         hBox.setSpacing(10);
@@ -113,6 +126,9 @@ public class Vista implements AskVista ,AnswerVista {
     }
     public void setControlador(Controlador controlador) {
         this.controlador = controlador;
+    }
+    public  void  setFactoria(FactoriaV facto){
+        this.factoria = facto;
     }
 }
 
