@@ -1,6 +1,7 @@
 package es.uji.al426239.FX.vista;
 
 import es.uji.al426239.FX.controlador.Controlador;
+import es.uji.al426239.distance.Distance;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
@@ -36,15 +37,23 @@ public class FactoriaVista implements FactoriaV {
     @Override
     public void Evenbotones(List<Toggle> alfa,TiposDeEvento tipo){
         //cambiar por un switch case
-        if (tipo == TiposDeEvento.Algoritm){
-            AlgorithmBotton(alfa);
-        }
-    }
-    private void  AlgorithmBotton(List<Toggle> botones){
-        for (int i = 0 ; i < botones.size();i++){
-            Toggle boton = botones.get(i);
+        for (int i = 0 ; i < alfa.size();i++){
+            Toggle boton = alfa.get(i);
             RadioButton radioButton = (RadioButton) boton;
-
+            if (tipo == TiposDeEvento.Algoritm){
+                AlgorithmBotton(radioButton,i+1);
+            }else if(tipo == TiposDeEvento.Distance){
+                DistanceBotton(radioButton,i+1);
+            }
         }
+
+    }
+    private void  AlgorithmBotton(RadioButton radioButton,int a){
+        radioButton.setOnAction(value -> controlador.EventAlgorithm(a));
+
+    }
+
+    private void  DistanceBotton(RadioButton botones,int a){
+        botones.setOnAction(value -> controlador.EventAlgorithm(a));
     }
 }
