@@ -10,5 +10,5 @@ import java.util.List;
 public interface Factoria {
     Text Texto(String texto1);
     RadioButton Botones(String nombre , ToggleGroup alfa);
-    void Evenbotones(List<Toggle> alfa,TiposDeEvento tipo);
+    void Evenbotones(RadioButton radioButton,TiposDeEvento tipo);
 }

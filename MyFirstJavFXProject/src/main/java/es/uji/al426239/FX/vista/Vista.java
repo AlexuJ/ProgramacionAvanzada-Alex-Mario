@@ -29,25 +29,21 @@ public class Vista implements AskVista ,AnswerVista {
     }
     private Scene escenaListaCanciones() throws IOException {
         VBox vBox = new VBox();
-        List<String> palabras = Arrays.asList("Recommend based on songs features","Recommend based on guessed genre");
-        crearelecciones(vBox,"Recommendation Type", palabras ,TiposDeEvento.Algoritm);
-        List<String> palabras2 = Arrays.asList("Euclidean","Manhattan");
-        crearelecciones(vBox,"Distance Type",palabras2,TiposDeEvento.Distance);
+        crearelecciones(vBox,"Recommendation Type", Arrays.asList("Recommend based on songs features","Recommend based on guessed genre"),TiposDeEvento.Algoritm);
+        crearelecciones(vBox,"Distance Type",Arrays.asList("Euclidean","Manhattan"),TiposDeEvento.Distance);
         controlador.crearlistacanciones(vBox);
         vBox.setSpacing(10);
         vBox.setPadding(new Insets(5));
         return new Scene(vBox);
     }
-    private void crearelecciones(VBox vBox, String texto1, List<String> textos,TiposDeEvento tiposDeEvento) {
+    private void crearelecciones(VBox vBox, String texto1, List<String> textos, TiposDeEvento evento) {
         vBox.getChildren().add(factoria.Texto(texto1));
         ToggleGroup radioGroupRecommendation = new ToggleGroup();
-        List<Toggle> botones = new ArrayList<>();
         for (String texto : textos) {
-            botones.add(factoria.Botones(texto, radioGroupRecommendation));
-            vBox.getChildren().add(factoria.Botones(texto,radioGroupRecommendation));
-
+            RadioButton radioButton = factoria.Botones(texto,radioGroupRecommendation);
+            radioButton.setOnAction(value -> factoria.Evenbotones(radioButton,evento));
+            vBox.getChildren().add(radioButton);
         }
-       factoria.Evenbotones(botones,tiposDeEvento);
     }
     public void botonRecomendar(VBox vBox, ListView<String> listacanciones) {
         Button button = new Button("Recommend");

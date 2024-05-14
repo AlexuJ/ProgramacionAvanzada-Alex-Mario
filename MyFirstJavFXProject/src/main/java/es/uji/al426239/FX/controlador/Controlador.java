@@ -66,16 +66,20 @@ public class Controlador implements AnswerControlador {
     public void EventAlgorithm(int caso) {
         if (caso == 1) {
             modelo.IsKnn();
+            System.out.println("a");
         } else if (caso == 2) {
             modelo.IsKmeans();
+            System.out.println("b");
         }
     }
     @Override
     public void EventDistance(int caso) {
         if (caso == 1) {
             modelo.IsEuclidean();
+            System.out.println("c");
         } else if (caso == 2) {
             modelo.IsManhattan();
+            System.out.println("d");
         }
     }
     public void setModelo(Modelo modelo){

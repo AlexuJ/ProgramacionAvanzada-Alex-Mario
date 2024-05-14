@@ -5,6 +5,7 @@ import es.uji.al426239.distance.Distance;
 import es.uji.al426239.distance.EuclideanDistance;
 import es.uji.al426239.distance.ManhattanDistance;
 import es.uji.al426239.lectordetablas.CSVLabeledFileReader;
+import es.uji.al426239.lectordetablas.CSVUnlabeledFileReader;
 import es.uji.al426239.lectordetablas.ReaderTemplate;
 import es.uji.al426239.sistemaderecomendacion.RecSys;
 import java.io.*;
@@ -54,8 +55,8 @@ public class Modelo {
         String sep = System.getProperty("file.separator");
         String ruta = "." + sep + "data"+ sep;
         algorithm = new KMeans(numeroClusters,numeroIteracion,4321,distance);
-        lectortrain = new CSVLabeledFileReader(ruta + "songs_train_withoutnames.csv");
-        lectortest = new CSVLabeledFileReader(ruta + "songs_test_withoutnames.csv");
+        lectortrain = new CSVUnlabeledFileReader(ruta + "songs_train_withoutnames.csv");
+        lectortest = new CSVUnlabeledFileReader(ruta + "songs_test_withoutnames.csv");
     }
     public void IsEuclidean() {
         distance = new EuclideanDistance();
