@@ -18,7 +18,7 @@ public class LanzadorAplicacion extends Application {
         Controlador controlador = new Controlador();
         Modelo modelo = new Modelo();
         Vista vista = new Vista(primaryStage);
-        Factoria factoria = new FactoriaVista(controlador);
+        Factoria factoria = new FactoriaVista();
         vista.setFactoria(factoria);
         controlador.setModelo(modelo);
         controlador.setVista(vista);

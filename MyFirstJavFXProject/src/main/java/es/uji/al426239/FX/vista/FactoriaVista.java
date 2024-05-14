@@ -2,15 +2,20 @@ package es.uji.al426239.FX.vista;
 
 import es.uji.al426239.FX.controlador.Controlador;
 import javafx.scene.control.RadioButton;
+<<<<<<< HEAD
+=======
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleButton;
+>>>>>>> d76991055db0792b3cba9cbeb35281f4aed38943
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class FactoriaVista implements Factoria {
-    private final Controlador controlador;
-    public FactoriaVista(Controlador controlador) {
-        this.controlador = controlador;
+
+    public FactoriaVista() {
+
     }
     @Override
     public Text Texto(String texto1) {
@@ -19,12 +24,13 @@ public class FactoriaVista implements Factoria {
         return tiporecomendacion;
     }
     @Override
-    public RadioButton Botones(String nombre, ToggleGroup alfa) {
+    public ToggleButton Botones(String nombre, ToggleGroup botones) {
         RadioButton radioButton1 = new RadioButton(nombre);
         radioButton1.setFont(Font.font("Bree Serif", FontWeight.SEMI_BOLD, 10));
-        radioButton1.setToggleGroup(alfa);
+        radioButton1.setToggleGroup(botones);
         return radioButton1;
     }
+<<<<<<< HEAD
     public void Evenbotones(RadioButton radioButton,TiposDeEvento tipo) {
         if (tipo == TiposDeEvento.Algoritm && radioButton.getText().equals("Recommend based on songs features")) {
             AlgorithmBotton(radioButton,1);
@@ -42,4 +48,18 @@ public class FactoriaVista implements Factoria {
     private void  DistanceBotton(RadioButton botones, int a) {
         botones.setOnAction(value -> controlador.EventAlgorithm(a));
     }
+=======
+    public void Evenbotones(List<Toggle> alfa,TiposDeEvento tipo) {
+        for (int i = 0 ; i < alfa.size();i++){
+            Toggle boton = alfa.get(i);
+            RadioButton radioButton = (RadioButton) boton;
+            if (tipo == TiposDeEvento.Algoritm) {
+
+            }else if(tipo == TiposDeEvento.Distance) {
+
+            }
+        }
+    }
+
+>>>>>>> d76991055db0792b3cba9cbeb35281f4aed38943
 }

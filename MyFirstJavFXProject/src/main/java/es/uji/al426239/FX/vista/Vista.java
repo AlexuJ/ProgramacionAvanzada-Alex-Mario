@@ -6,6 +6,7 @@ import es.uji.al426239.algoritmos.Comparator;
 import es.uji.al426239.algoritmos.FilaVacia;
 import es.uji.al426239.algoritmos.TablaVacia;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
@@ -36,6 +37,7 @@ public class Vista implements AskVista ,AnswerVista {
         vBox.setPadding(new Insets(5));
         return new Scene(vBox);
     }
+<<<<<<< HEAD
     private void crearelecciones(VBox vBox, String texto1, List<String> textos, TiposDeEvento evento) {
         vBox.getChildren().add(factoria.Texto(texto1));
         ToggleGroup radioGroupRecommendation = new ToggleGroup();
@@ -43,6 +45,31 @@ public class Vista implements AskVista ,AnswerVista {
             RadioButton radioButton = factoria.Botones(texto,radioGroupRecommendation);
             radioButton.setOnAction(value -> factoria.Evenbotones(radioButton,evento));
             vBox.getChildren().add(radioButton);
+=======
+    private void crearelecciones(VBox vBox, String texto1, List<String> textos,TiposDeEvento tiposDeEvento) {
+
+        ToggleGroup radioGroupRecommendation = new ToggleGroup();
+        List<ToggleButton> botones = new ArrayList<>();
+        int contador = 1;
+        for (String texto : textos) {
+            ToggleButton boton = factoria.Botones(texto, radioGroupRecommendation);
+            botones.add(boton);
+            Event(boton, contador, tiposDeEvento);
+            vBox.getChildren().add(boton);
+            contador++;
+        }
+        vBox.getChildren().add(factoria.Texto(texto1));
+
+    }
+    private void Event(ToggleButton boton,int caso,TiposDeEvento evento){
+        switch (evento){
+            case Algoritm:
+                boton.setOnAction(value -> controlador.EventAlgorithm(caso));
+                break;  // Añadir break para evitar fall-through
+            case Distance:
+                boton.setOnAction(value -> controlador.EventDistance(caso));
+                break;  // Añadir break para evitar fall-through
+>>>>>>> d76991055db0792b3cba9cbeb35281f4aed38943
         }
     }
     public void botonRecomendar(VBox vBox, ListView<String> listacanciones) {

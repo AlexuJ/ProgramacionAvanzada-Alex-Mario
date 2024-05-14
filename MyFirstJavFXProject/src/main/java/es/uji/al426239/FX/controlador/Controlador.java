@@ -62,8 +62,9 @@ public class Controlador implements AnswerControlador {
         vBox.getChildren().addAll(hBox,text,listarecomendaciones);
         return vBox;
     }
-    @Override
+
     public void EventAlgorithm(int caso) {
+        System.out.println("alfa");
         if (caso == 1) {
             modelo.IsKnn();
             System.out.println("a");
