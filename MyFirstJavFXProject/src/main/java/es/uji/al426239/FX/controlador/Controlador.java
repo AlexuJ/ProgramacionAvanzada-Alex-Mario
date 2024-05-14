@@ -5,6 +5,8 @@ import es.uji.al426239.FX.vista.Vista;
 import es.uji.al426239.algoritmos.Comparator;
 import es.uji.al426239.algoritmos.FilaVacia;
 import es.uji.al426239.algoritmos.TablaVacia;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Spinner;
 import javafx.scene.layout.HBox;
@@ -44,7 +46,7 @@ public class Controlador implements AnswerControlador {
             modelo.setNumeroRecomendaciones(newValue);
             vBox.getChildren().clear();
             try {
-                vista.ensenyaRecomendaciones(hBox,vBox);
+                ensenyaRecomendaciones(hBox,vBox);
             } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
                 throw new RuntimeException(e);
             }
@@ -53,6 +55,15 @@ public class Controlador implements AnswerControlador {
         });
         hBox.getChildren().clear();
     }
+    public VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia, IOException, TablaVacia, Comparator {
+        Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
+        ListView<String> listarecomendaciones = new ListView<>();
+        ObservableList<String> items = FXCollections.observableArrayList(modelo.setRecomendaciones());
+        listarecomendaciones.setItems(items);
+        vBox.getChildren().addAll(hBox,text,listarecomendaciones);
+        return vBox;
+    }
+    @Override
     public void EventAlgorithm(int caso) {
         if (caso == 1) {
             modelo.IsKnn();
@@ -60,6 +71,7 @@ public class Controlador implements AnswerControlador {
             modelo.IsKmeans();
         }
     }
+    @Override
     public void EventDistance(int caso) {
         if (caso == 1) {
             modelo.IsEuclidean();

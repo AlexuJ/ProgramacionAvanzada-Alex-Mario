@@ -17,6 +17,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -41,15 +42,14 @@ public class Vista implements AskVista ,AnswerVista {
         vBox.setPadding(new Insets(5));
         return new Scene(vBox);
     }
-    private void crearelecciones(VBox vBox, String texto1, List<String> alfa) {
-        Text tiporecomendacion = factoria.Ftexto(texto1);
-        ListIterator<String> iterator = alfa.listIterator();
+    private void crearelecciones(VBox vBox, String texto1, List<String> textos) {
+        vBox.getChildren().add(factoria.Texto(texto1));
         ToggleGroup radioGroupRecommendation = new ToggleGroup();
-        while (iterator.hasNext()){
-            factoria.Cbotones(iterator.next(),radioGroupRecommendation);
+        List<RadioButton> botones = new ArrayList<>();
+        for (String texto : textos) {
+            botones.add(factoria.Botones(texto,radioGroupRecommendation));
         }
-        seleccionarOpcion(radioButton1,radioButton2);
-        vBox.getChildren().addAll(tiporecomendacion,radioButton1,radioButton2);
+        seleccionarOpcion(botones.get(1),botones.get(2));
     }
     public void botonRecomendar(VBox vBox, ListView<String> listacanciones) {
         Button button = new Button("Recommend");
@@ -81,7 +81,7 @@ public class Vista implements AskVista ,AnswerVista {
         HBox hBox = anyadirNumeroRecomendaciones(new HBox());
         hBox.setSpacing(10);
         hBox.setPadding(new Insets(10));
-        VBox vBox = ensenyaRecomendaciones(hBox, new VBox());
+        VBox vBox = controlador.ensenyaRecomendaciones(hBox, new VBox());
         vBox.setSpacing(5);
         vBox.setPadding(new Insets(10));
         botonVolver(vBox);
@@ -95,14 +95,6 @@ public class Vista implements AskVista ,AnswerVista {
         controlador.actualizarListaRecomendaciones(spinner,hBox);
         hBox.getChildren().addAll(texto,spinner);
         return hBox;
-    }
-    public VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia, IOException, TablaVacia, Comparator {
-        Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
-        ListView<String> listarecomendaciones = new ListView<>();
-        ObservableList<String> items = FXCollections.observableArrayList(modelo.setRecomendaciones());
-        listarecomendaciones.setItems(items);
-        vBox.getChildren().addAll(hBox,text,listarecomendaciones);
-        return vBox;
     }
     public void botonClose(VBox vBox) {
         Button button = new Button("Close");
