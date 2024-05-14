@@ -31,9 +31,9 @@ public class FactoriaVista implements Factoria {
         for (int i = 0 ; i < alfa.size();i++){
             Toggle boton = alfa.get(i);
             RadioButton radioButton = (RadioButton) boton;
-            if (tipo == TiposDeEvento.Algoritm){
+            if (tipo == TiposDeEvento.Algoritm) {
                 AlgorithmBotton(radioButton,i+1);
-            }else if(tipo == TiposDeEvento.Distance){
+            }else if(tipo == TiposDeEvento.Distance) {
                 DistanceBotton(radioButton,i+1);
             }
         }

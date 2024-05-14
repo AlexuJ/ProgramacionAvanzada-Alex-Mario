@@ -22,7 +22,6 @@ public class Vista implements AskVista ,AnswerVista {
     private Factoria factoria;
     public Vista(final Stage escenario) {
         this.escenario = escenario;
-        this.factoria = new FactoriaVista(controlador);
     }
     public void inicio() throws IOException {
         escenario.setScene(escenaListaCanciones());
@@ -45,8 +44,9 @@ public class Vista implements AskVista ,AnswerVista {
         List<Toggle> botones = new ArrayList<>();
         for (String texto : textos) {
             botones.add(factoria.Botones(texto, radioGroupRecommendation));
+            vBox.getChildren().add(factoria.Botones(texto,radioGroupRecommendation));
+
         }
-        seleccionarOpcion(botones, tiposDeEvento);
        factoria.Evenbotones(botones,tiposDeEvento);
     }
     public void botonRecomendar(VBox vBox, ListView<String> listacanciones) {
@@ -66,11 +66,6 @@ public class Vista implements AskVista ,AnswerVista {
             });
         });
         vBox.getChildren().addAll(button);
-    }
-    private void seleccionarOpcion (List<Toggle> botones,TiposDeEvento tiposDeEvento) {
-            if (tiposDeEvento == TiposDeEvento.Algoritm){
-               factoria.Evenbotones(botones,tiposDeEvento);
-            }
     }
     private Scene escenaRecomendarTitulos() throws FilaVacia, IOException, TablaVacia, Comparator {
         HBox hBox = anyadirNumeroRecomendaciones(new HBox());

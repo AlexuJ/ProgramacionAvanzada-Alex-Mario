@@ -74,7 +74,7 @@ public class Controlador implements AnswerControlador {
     public void EventDistance(int caso) {
         if (caso == 1) {
             modelo.IsEuclidean();
-        } else {
+        } else if (caso == 2) {
             modelo.IsManhattan();
         }
     }
