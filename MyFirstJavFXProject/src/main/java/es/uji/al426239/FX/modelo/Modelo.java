@@ -44,6 +44,7 @@ public class Modelo {
         return names;
     }
     public void IsKnn() {
+        System.out.println("ALFA");
         String sep = System.getProperty("file.separator");
         String ruta = "." + sep + "data"+ sep;
         algorithm = new KNN(distance);
@@ -51,6 +52,7 @@ public class Modelo {
         lectortest = new CSVLabeledFileReader(ruta + "songs_test.csv");
     }
     public void IsKmeans() {
+        System.out.println("Beta");
         String sep = System.getProperty("file.separator");
         String ruta = "." + sep + "data"+ sep;
         algorithm = new KMeans(numeroClusters,numeroIteracion,4321,distance);

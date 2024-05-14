@@ -6,6 +6,7 @@ import es.uji.al426239.algoritmos.Comparator;
 import es.uji.al426239.algoritmos.FilaVacia;
 import es.uji.al426239.algoritmos.TablaVacia;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
@@ -39,15 +40,29 @@ public class Vista implements AskVista ,AnswerVista {
         return new Scene(vBox);
     }
     private void crearelecciones(VBox vBox, String texto1, List<String> textos,TiposDeEvento tiposDeEvento) {
-        vBox.getChildren().add(factoria.Texto(texto1));
-        ToggleGroup radioGroupRecommendation = new ToggleGroup();
-        List<Toggle> botones = new ArrayList<>();
-        for (String texto : textos) {
-            botones.add(factoria.Botones(texto, radioGroupRecommendation));
-            vBox.getChildren().add(factoria.Botones(texto,radioGroupRecommendation));
 
+        ToggleGroup radioGroupRecommendation = new ToggleGroup();
+        List<ToggleButton> botones = new ArrayList<>();
+        int contador = 1;
+        for (String texto : textos) {
+            ToggleButton boton = factoria.Botones(texto, radioGroupRecommendation);
+            botones.add(boton);
+            Event(boton, contador, tiposDeEvento);
+            vBox.getChildren().add(boton);
+            contador++;
         }
-       factoria.Evenbotones(botones,tiposDeEvento);
+        vBox.getChildren().add(factoria.Texto(texto1));
+
+    }
+    private void Event(ToggleButton boton,int caso,TiposDeEvento evento){
+        switch (evento){
+            case Algoritm:
+                boton.setOnAction(value -> controlador.EventAlgorithm(caso));
+                break;  // Añadir break para evitar fall-through
+            case Distance:
+                boton.setOnAction(value -> controlador.EventDistance(caso));
+                break;  // Añadir break para evitar fall-through
+        }
     }
     public void botonRecomendar(VBox vBox, ListView<String> listacanciones) {
         Button button = new Button("Recommend");
