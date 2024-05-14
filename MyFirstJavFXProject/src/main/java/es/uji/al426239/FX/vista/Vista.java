@@ -40,7 +40,7 @@ public class Vista implements AskVista ,AnswerVista {
         return new Scene(vBox);
     }
     private void crearelecciones(VBox vBox, String texto1, List<String> textos,TiposDeEvento tiposDeEvento) {
-
+        vBox.getChildren().add(factoria.Texto(texto1));
         ToggleGroup radioGroupRecommendation = new ToggleGroup();
         List<ToggleButton> botones = new ArrayList<>();
         int contador = 1;
