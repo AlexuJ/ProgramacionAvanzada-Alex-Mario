@@ -17,11 +17,14 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.List;
+import java.util.ListIterator;
 
 public class Vista implements AskVista ,AnswerVista {
     private Controlador controlador;
     private Modelo modelo;
     private final Stage escenario;
+    private FactoriaV factoria;
     public Vista(final Stage escenario) {
         this.escenario = escenario;
     }
@@ -38,16 +41,13 @@ public class Vista implements AskVista ,AnswerVista {
         vBox.setPadding(new Insets(5));
         return new Scene(vBox);
     }
-    private void crearelecciones(VBox vBox, String texto1, String texto2, String texto3) {
-        Text tiporecomendacion = new Text(texto1);
-        tiporecomendacion.setFont(Font.font("Bree Serif", FontWeight.SEMI_BOLD,15));
-        RadioButton radioButton1 = new RadioButton(texto2);
-        RadioButton radioButton2 = new RadioButton(texto3);
-        radioButton1.setFont(Font.font("Bree Serif",FontWeight.SEMI_BOLD,10));
-        radioButton2.setFont(Font.font("Bree Serif",FontWeight.SEMI_BOLD,10));
+    private void crearelecciones(VBox vBox, String texto1, List<String> alfa) {
+        Text tiporecomendacion = factoria.Ftexto(texto1);
+        ListIterator<String> iterator = alfa.listIterator();
         ToggleGroup radioGroupRecommendation = new ToggleGroup();
-        radioButton1.setToggleGroup(radioGroupRecommendation);
-        radioButton2.setToggleGroup(radioGroupRecommendation);
+        while (iterator.hasNext()){
+            factoria.Cbotones(iterator.next(),radioGroupRecommendation);
+        }
         seleccionarOpcion(radioButton1,radioButton2);
         vBox.getChildren().addAll(tiporecomendacion,radioButton1,radioButton2);
     }
