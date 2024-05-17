@@ -1,38 +1,57 @@
 package es.uji.al426239.FX.modelo;
 
 import es.uji.al426239.algoritmos.*;
-import es.uji.al426239.distance.Distance;
 import es.uji.al426239.distance.EuclideanDistance;
 import es.uji.al426239.distance.ManhattanDistance;
 import es.uji.al426239.lectordetablas.CSVLabeledFileReader;
 import es.uji.al426239.lectordetablas.CSVUnlabeledFileReader;
-import es.uji.al426239.lectordetablas.ReaderTemplate;
 import es.uji.al426239.sistemaderecomendacion.RecSys;
 import java.io.*;
+import java.nio.file.FileSystems;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Modelo {
-    private Algorithm algorithm;
-    private Distance distance;
     private final int numeroIteracion;
     private final int numeroClusters;
     private int numeroRecomendaciones;
     private String cancionRecomendada;
-    private ReaderTemplate lectortrain;
-    private ReaderTemplate lectortest;
+    private int eleccion;
+    private final HashMap<Integer,Algorithm> Algoritmos;
+    private final HashMap<Integer,RecSys> Recomendadores;
     public Modelo() {
+        this.Algoritmos = new HashMap<>();
+        this.Recomendadores = new HashMap<>();
         this.numeroIteracion = 200;
         this.numeroRecomendaciones = 5;
         this.numeroClusters = 15;
     }
-    public List<String> setRecomendaciones() throws FilaVacia, IOException, TablaVacia, Comparator {
-        String sep = System.getProperty("file.separator");
+    public void inicializar() throws IOException, FilaVacia, TablaVacia, Comparator {
+        Algoritmos.put(0,new KNN(new EuclideanDistance()));
+        Algoritmos.put(1,new KNN(new ManhattanDistance()));
+        Algoritmos.put(2,new KMeans(numeroClusters,numeroIteracion,4321,new EuclideanDistance()));
+        Algoritmos.put(3,new KMeans(numeroClusters,numeroIteracion,4321,new ManhattanDistance()));
+        int i = 0;
+        for (Algorithm algoritmo : Algoritmos.values()) {
+            Recomendadores.put(i,new RecSys(algoritmo));
+            entrenarunearRecsys(Recomendadores.get(i),i);
+            i++;
+        }
+    }
+    private void entrenarunearRecsys(RecSys recSys, int i) throws IOException, FilaVacia, TablaVacia, Comparator {
+        String sep = FileSystems.getDefault().getSeparator();
         String ruta = "." + sep + "data"+ sep;
-        RecSys recsys = new RecSys(algorithm);
-        recsys.train(lectortrain.readTableFromSource());
-        recsys.run(lectortest.readTableFromSource(), readNames(ruta + sep + "songs_test_names.csv"));
-        return recsys.recommend(getCancionRecomendada(),getNumeroRecomendaciones());
+        if (i == 0 || i == 1) {
+            recSys.train(new CSVLabeledFileReader(ruta+"songs_train.csv").readTableFromSource());
+            recSys.run(new CSVLabeledFileReader(ruta+"songs_test.csv").readTableFromSource(),readNames(ruta+"songs_train_names.csv"));
+        } else if (i == 2 || i == 3) {
+            recSys.train(new CSVUnlabeledFileReader(ruta+"songs_train_withoutnames.csv").readTableFromSource());
+            recSys.run(new CSVUnlabeledFileReader(ruta+"songs_test_withoutnames.csv").readTableFromSource(),readNames(ruta+"songs_train_names.csv"));
+        }
+    }
+    public List<String> setRecomendaciones() throws FilaVacia {
+        return Recomendadores.get(eleccion).recommend(getCancionRecomendada(),getNumeroRecomendaciones());
     }
     private List<String> readNames(String fileOfItemNames) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(fileOfItemNames));
@@ -44,36 +63,8 @@ public class Modelo {
         br.close();
         return names;
     }
-    public void IsKnn() {
-        System.out.println("ALFA");
-        String sep = System.getProperty("file.separator");
-        String ruta = "." + sep + "data"+ sep;
-        algorithm = new KNN(distance);
-        lectortrain = new CSVLabeledFileReader(ruta + "songs_train.csv");
-        lectortest = new CSVLabeledFileReader(ruta + "songs_test.csv");
-    }
-    public void IsKmeans() {
-        System.out.println("Beta");
-        String sep = System.getProperty("file.separator");
-        String ruta = "." + sep + "data"+ sep;
-        algorithm = new KMeans(numeroClusters,numeroIteracion,4321,distance);
-        lectortrain = new CSVUnlabeledFileReader(ruta + "songs_train_withoutnames.csv");
-        lectortest = new CSVUnlabeledFileReader(ruta + "songs_test_withoutnames.csv");
-    }
-    public void IsEuclidean() {
-        distance = new EuclideanDistance();
-    }
-    public void IsManhattan() {
-        distance = new ManhattanDistance();
-    }
     public void setNumeroRecomendaciones(int numeroRecomendaciones) {
         this.numeroRecomendaciones = numeroRecomendaciones;
-    }
-    public Distance getDistance() {
-        return distance;
-    }
-    public void setDistance(Distance distance) {
-        this.distance = distance;
     }
     public String getCancionRecomendada() {
         return cancionRecomendada;
@@ -83,5 +74,11 @@ public class Modelo {
     }
     public int getNumeroRecomendaciones() {
         return numeroRecomendaciones;
+    }
+    public int getEleccion() {
+        return eleccion;
+    }
+    public void setEleccion(int eleccion) {
+        this.eleccion = eleccion;
     }
 }

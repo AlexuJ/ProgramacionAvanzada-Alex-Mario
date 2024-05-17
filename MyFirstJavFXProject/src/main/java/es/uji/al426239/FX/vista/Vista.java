@@ -6,7 +6,6 @@ import es.uji.al426239.algoritmos.Comparator;
 import es.uji.al426239.algoritmos.FilaVacia;
 import es.uji.al426239.algoritmos.TablaVacia;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
@@ -30,46 +29,20 @@ public class Vista implements AskVista ,AnswerVista {
     }
     private Scene escenaListaCanciones() throws IOException {
         VBox vBox = new VBox();
-        crearelecciones(vBox,"Recommendation Type", Arrays.asList("Recommend based on songs features","Recommend based on guessed genre"),TiposDeEvento.Algoritm);
-        crearelecciones(vBox,"Distance Type",Arrays.asList("Euclidean","Manhattan"),TiposDeEvento.Distance);
+        crearelecciones(vBox,"Recommendation Type", Arrays.asList("Recommend based on songs features","Recommend based on guessed genre"));
+        crearelecciones(vBox,"Distance Type",Arrays.asList("Euclidean","Manhattan"));
         controlador.crearlistacanciones(vBox);
         vBox.setSpacing(10);
         vBox.setPadding(new Insets(5));
         return new Scene(vBox);
     }
-<<<<<<< HEAD
-    private void crearelecciones(VBox vBox, String texto1, List<String> textos, TiposDeEvento evento) {
+    private void crearelecciones(VBox vBox, String texto1, List<String> textos) {
         vBox.getChildren().add(factoria.Texto(texto1));
         ToggleGroup radioGroupRecommendation = new ToggleGroup();
         for (String texto : textos) {
-            RadioButton radioButton = factoria.Botones(texto,radioGroupRecommendation);
-            radioButton.setOnAction(value -> factoria.Evenbotones(radioButton,evento));
-            vBox.getChildren().add(radioButton);
-=======
-    private void crearelecciones(VBox vBox, String texto1, List<String> textos,TiposDeEvento tiposDeEvento) {
-
-        ToggleGroup radioGroupRecommendation = new ToggleGroup();
-        List<ToggleButton> botones = new ArrayList<>();
-        int contador = 1;
-        for (String texto : textos) {
-            ToggleButton boton = factoria.Botones(texto, radioGroupRecommendation);
-            botones.add(boton);
-            Event(boton, contador, tiposDeEvento);
+            RadioButton boton = factoria.Botones(texto, radioGroupRecommendation);
+            boton.setOnAction(value -> controlador.Evento(boton));
             vBox.getChildren().add(boton);
-            contador++;
-        }
-        vBox.getChildren().add(factoria.Texto(texto1));
-
-    }
-    private void Event(ToggleButton boton,int caso,TiposDeEvento evento){
-        switch (evento){
-            case Algoritm:
-                boton.setOnAction(value -> controlador.EventAlgorithm(caso));
-                break;  // Añadir break para evitar fall-through
-            case Distance:
-                boton.setOnAction(value -> controlador.EventDistance(caso));
-                break;  // Añadir break para evitar fall-through
->>>>>>> d76991055db0792b3cba9cbeb35281f4aed38943
         }
     }
     public void botonRecomendar(VBox vBox, ListView<String> listacanciones) {

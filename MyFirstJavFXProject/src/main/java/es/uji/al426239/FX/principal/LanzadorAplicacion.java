@@ -5,6 +5,9 @@ import es.uji.al426239.FX.modelo.Modelo;
 import es.uji.al426239.FX.vista.Factoria;
 import es.uji.al426239.FX.vista.FactoriaVista;
 import es.uji.al426239.FX.vista.Vista;
+import es.uji.al426239.algoritmos.Comparator;
+import es.uji.al426239.algoritmos.FilaVacia;
+import es.uji.al426239.algoritmos.TablaVacia;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -14,7 +17,7 @@ public class LanzadorAplicacion extends Application {
         launch(args);
     }
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) throws IOException, FilaVacia, TablaVacia, Comparator {
         Controlador controlador = new Controlador();
         Modelo modelo = new Modelo();
         Vista vista = new Vista(primaryStage);
@@ -25,5 +28,6 @@ public class LanzadorAplicacion extends Application {
         vista.setModelo(modelo);
         vista.setControlador(controlador);
         vista.inicio();
+        modelo.inicializar();
     }
 }

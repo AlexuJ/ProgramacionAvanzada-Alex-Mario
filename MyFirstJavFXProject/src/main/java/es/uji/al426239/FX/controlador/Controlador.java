@@ -8,6 +8,7 @@ import es.uji.al426239.algoritmos.TablaVacia;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.Spinner;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -17,15 +18,16 @@ import javafx.scene.text.Text;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.FileSystems;
 import java.util.Scanner;
 
-public class Controlador implements AnswerControlador {
+public class Controlador {
     private Modelo modelo;
     private Vista vista;
     public ListView<String> anyadircanciones() throws FileNotFoundException {
         ListView<String> listacanciones = new ListView<>();
-        String sep = System.getProperty("file.separator");
-        String fichero = "." + sep + "data" + sep + "songs_test_names.csv";
+        String sep = FileSystems.getDefault().getSeparator();
+        String fichero = "." + sep + "data" + sep + "songs_train_names.csv";
         Scanner sc = new Scanner(new File(fichero));
         while (sc.hasNextLine()) {
             listacanciones.getItems().add(sc.nextLine());
@@ -45,14 +47,17 @@ public class Controlador implements AnswerControlador {
             modelo.setNumeroRecomendaciones(newValue);
             vBox.getChildren().clear();
             try {
-                ensenyaRecomendaciones(hBox,vBox);
+                ensenyaRecomendaciones(hBox, vBox);
             } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
                 throw new RuntimeException(e);
             }
-            vista.botonVolver(vBox);
-            vista.botonClose(vBox);
+            agregarBotones(vBox);
         });
         hBox.getChildren().clear();
+    }
+    private void agregarBotones(VBox vBox) {
+        vista.botonVolver(vBox);
+        vista.botonClose(vBox);
     }
     public VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia, IOException, TablaVacia, Comparator {
         Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
@@ -62,25 +67,19 @@ public class Controlador implements AnswerControlador {
         vBox.getChildren().addAll(hBox,text,listarecomendaciones);
         return vBox;
     }
-
-    public void EventAlgorithm(int caso) {
-        System.out.println("alfa");
-        if (caso == 1) {
-            modelo.IsKnn();
-            System.out.println("a");
-        } else if (caso == 2) {
-            modelo.IsKmeans();
-            System.out.println("b");
-        }
-    }
-    @Override
-    public void EventDistance(int caso) {
-        if (caso == 1) {
-            modelo.IsEuclidean();
-            System.out.println("c");
-        } else if (caso == 2) {
-            modelo.IsManhattan();
-            System.out.println("d");
+    public void Evento(RadioButton radioButton) {
+        if (radioButton.getText().equals("Recommend based on songs features")) {
+            modelo.setEleccion(0);
+        } else if (radioButton.getText().equals("Recommend based on guessed genre")) {
+            modelo.setEleccion(2);
+        } else if (radioButton.getText().equals("Manhattan") && modelo.getEleccion() == 0) {
+            modelo.setEleccion(1);
+        } else if (radioButton.getText().equals("Manhattan") && modelo.getEleccion() == 2) {
+            modelo.setEleccion(3);
+        } else if (radioButton.getText().equals("Euclidean") && modelo.getEleccion() == 1) {
+            modelo.setEleccion(0);
+        } else if (radioButton.getText().equals("Euclidean") && modelo.getEleccion() == 3) {
+            modelo.setEleccion(2);
         }
     }
     public void setModelo(Modelo modelo){
