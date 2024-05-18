@@ -13,25 +13,31 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Modelo {
-    private final int numeroIteracion;
-    private final int numeroClusters;
     private int numeroRecomendaciones;
     private String cancionRecomendada;
     private int eleccion;
     private final HashMap<Integer,Algorithm> Algoritmos;
     private final HashMap<Integer,RecSys> Recomendadores;
-    public Modelo() {
+    private IntFactoriasAl factoriaAlgoritmos;
+    private List<String> Algoritmo;
+    private List<String> Distancias;
+
+
+    public Modelo(IntFactoriasAl factoria) {
         this.Algoritmos = new HashMap<>();
         this.Recomendadores = new HashMap<>();
-        this.numeroIteracion = 200;
         this.numeroRecomendaciones = 5;
-        this.numeroClusters = 15;
+        factoriaAlgoritmos = factoria;
+        Algoritmo = factoriaAlgoritmos.GetListaAlgoritmos();
+        Distancias = factoriaAlgoritmos.GetListaDistancias();
     }
     public void inicializar() throws IOException, FilaVacia, TablaVacia, Comparator {
-        Algoritmos.put(0,new KNN(new EuclideanDistance()));
-        Algoritmos.put(1,new KNN(new ManhattanDistance()));
-        Algoritmos.put(2,new KMeans(numeroClusters,numeroIteracion,4321,new EuclideanDistance()));
-        Algoritmos.put(3,new KMeans(numeroClusters,numeroIteracion,4321,new ManhattanDistance()));
+        int Contador = 0;
+        for (String dista : Distancias){
+            for (String Algo : Algoritmo){
+                Algoritmos.put(Contador,factoriaAlgoritmos.Selecion(Algo,dista));
+            }
+        }
         int i = 0;
         for (Algorithm algoritmo : Algoritmos.values()) {
             Recomendadores.put(i,new RecSys(algoritmo));

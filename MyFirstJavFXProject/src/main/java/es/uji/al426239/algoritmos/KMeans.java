@@ -15,6 +15,7 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
     private final Map<Integer, List<Row>> Grupos;
     private Distance distance;
     private final CalcularCentroides calculador;
+    private String name;
 
     public KMeans(int numClusters, int numIterations, long seed, Distance distance) {
         this.numClusters = numClusters;
@@ -24,6 +25,7 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
         this.Grupos = new HashMap<>();
         this.distance = distance;
         this.calculador = new CalcularCentroides();
+        name = "KMeans";
     }
 
     @Override
@@ -80,7 +82,9 @@ public class KMeans implements Algorithm<Table, List<Number>, Integer> {
     public Map<Integer, List<Row>> getGrupos() {
         return Grupos;
     }
+    @Override
     public void setDistance(Distance distance) {
         this.distance = distance;
     }
+
 }
