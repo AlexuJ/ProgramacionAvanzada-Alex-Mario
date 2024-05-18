@@ -12,12 +12,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Modelo {
+public class Modelo implements AskModelo{
     private int numeroRecomendaciones;
     private String cancionRecomendada;
     private int eleccion;
     private final HashMap<Integer,Algorithm> Algoritmos;
     private final HashMap<Integer,RecSys> Recomendadores;
+    private HashMap<String,HashMap<String,RecSys>> Recomendador;
     private IntFactoriasAl factoriaAlgoritmos;
     private List<String> Algoritmo;
     private List<String> Distancias;
@@ -26,18 +27,13 @@ public class Modelo {
     public Modelo(IntFactoriasAl factoria) {
         this.Algoritmos = new HashMap<>();
         this.Recomendadores = new HashMap<>();
+        this.Recomendador = new HashMap<>();
         this.numeroRecomendaciones = 5;
         factoriaAlgoritmos = factoria;
         Algoritmo = factoriaAlgoritmos.GetListaAlgoritmos();
         Distancias = factoriaAlgoritmos.GetListaDistancias();
     }
     public void inicializar() throws IOException, FilaVacia, TablaVacia, Comparator {
-        int Contador = 0;
-        for (String dista : Distancias){
-            for (String Algo : Algoritmo){
-                Algoritmos.put(Contador,factoriaAlgoritmos.Selecion(Algo,dista));
-            }
-        }
         int i = 0;
         for (Algorithm algoritmo : Algoritmos.values()) {
             Recomendadores.put(i,new RecSys(algoritmo));
@@ -87,4 +83,13 @@ public class Modelo {
     public void setEleccion(int eleccion) {
         this.eleccion = eleccion;
     }
+    @Override
+    public List<String> GetAlgoritmos(){
+        return Algoritmo;
+    }
+    @Override
+    public List<String> GetDistancias(){
+        return Distancias;
+    }
+
 }

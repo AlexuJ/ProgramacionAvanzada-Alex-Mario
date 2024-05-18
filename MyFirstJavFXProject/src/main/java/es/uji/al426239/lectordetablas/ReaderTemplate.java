@@ -27,6 +27,9 @@ public abstract class ReaderTemplate {
     abstract String getNextData();
 
     abstract Table createTable();
+    public void  ChangeFile(String ruta){
+        source = ruta;
+    }
 
     public final Table readTableFromSource() throws FileNotFoundException {
         openSource(source);

@@ -1,6 +1,7 @@
 package es.uji.al426239.FX.principal;
 
 import es.uji.al426239.FX.controlador.Controlador;
+import es.uji.al426239.FX.modelo.AskModelo;
 import es.uji.al426239.FX.modelo.Modelo;
 import es.uji.al426239.FX.vista.Factoria;
 import es.uji.al426239.FX.vista.FactoriaVista;
@@ -18,10 +19,12 @@ public class LanzadorAplicacion extends Application {
     }
     @Override
     public void start(Stage primaryStage) throws IOException, FilaVacia, TablaVacia, Comparator {
-        Controlador controlador = new Controlador();
         intFactoriasDis factoriasDis = new FactoryDistance();
         IntFactoriasAl factoriaAlgoritmos = new factoriaAlgoritmos(factoriasDis);
         Modelo modelo = new Modelo(factoriaAlgoritmos);
+        AskModelo askModelo = modelo;
+        Controlador controlador = new Controlador(askModelo);
+
         Vista vista = new Vista(primaryStage);
         Factoria factoria = new FactoriaVista();
         vista.setFactoria(factoria);

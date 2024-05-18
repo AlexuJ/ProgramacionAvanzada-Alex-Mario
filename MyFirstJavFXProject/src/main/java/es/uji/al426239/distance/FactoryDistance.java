@@ -7,18 +7,18 @@ public class FactoryDistance implements intFactoriasDis{
     private List<String> Distancias;
     public FactoryDistance(){
 
-        this.Distancias =new ArrayList<>(List.of("MANHATTHAM","EUCLIDEAN"));
+        this.Distancias =new ArrayList<>(List.of("Euclidean","Manhattan"));
 
     }
 
     public Distance Selecion(String distance) {
         Distance distancia ;
-        distance = distance.toUpperCase();
+
         switch (distance) {
-            case "MANHATTHAM":
+            case "Manhattan":
                 distancia = isMahattam();
                 break;
-            case "EUCLIDEAN":
+            case "Euclidean":
                 distancia = isEuclidean();
                 break;
 

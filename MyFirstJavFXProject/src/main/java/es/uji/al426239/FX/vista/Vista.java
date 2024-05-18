@@ -20,17 +20,21 @@ public class Vista implements AskVista ,AnswerVista {
     private Modelo modelo;
     private final Stage escenario;
     private Factoria factoria;
+    private List<String> Algoritmo;
+    private List<String> Distancias;
     public Vista(final Stage escenario) {
         this.escenario = escenario;
     }
     public void inicio() throws IOException {
+        Algoritmo = controlador.GetAlgoritmos();
+        Distancias = controlador.GetDistancias();
         escenario.setScene(escenaListaCanciones());
         escenario.show();
     }
     private Scene escenaListaCanciones() throws IOException {
         VBox vBox = new VBox();
-        crearelecciones(vBox,"Recommendation Type", Arrays.asList("Recommend based on songs features","Recommend based on guessed genre"));
-        crearelecciones(vBox,"Distance Type",Arrays.asList("Euclidean","Manhattan"));
+        crearelecciones(vBox,"Recommendation Type", Algoritmo);
+        crearelecciones(vBox,"Distance Type",Distancias);
         controlador.crearlistacanciones(vBox);
         vBox.setSpacing(10);
         vBox.setPadding(new Insets(5));

@@ -1,5 +1,6 @@
 package es.uji.al426239.FX.controlador;
 
+import es.uji.al426239.FX.modelo.AskModelo;
 import es.uji.al426239.FX.modelo.Modelo;
 import es.uji.al426239.FX.vista.Vista;
 import es.uji.al426239.algoritmos.Comparator;
@@ -19,11 +20,20 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.FileSystems;
+import java.util.List;
 import java.util.Scanner;
 
 public class Controlador {
     private Modelo modelo;
     private Vista vista;
+    private AskModelo askModelo;
+    private List<String> Algoritmo;
+    private List<String> Distancias;
+    public Controlador(AskModelo askModelo){
+        this.askModelo = askModelo;
+        Algoritmo = askModelo.GetAlgoritmos();
+        Distancias = askModelo.GetDistancias();
+    }
     public ListView<String> anyadircanciones() throws FileNotFoundException {
         ListView<String> listacanciones = new ListView<>();
         String sep = FileSystems.getDefault().getSeparator();
@@ -87,5 +97,12 @@ public class Controlador {
     }
     public void setVista(Vista vista){
         this.vista = vista;
+    }
+    public List<String> GetAlgoritmos(){
+        return Algoritmo;
+    }
+
+    public List<String> GetDistancias(){
+        return Distancias;
     }
 }
