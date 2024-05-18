@@ -24,6 +24,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Controlador {
+String Distancia ;
+String Algoritm ;
     private Modelo modelo;
     private Vista vista;
     private AskModelo askModelo;
@@ -77,20 +79,26 @@ public class Controlador {
         vBox.getChildren().addAll(hBox,text,listarecomendaciones);
         return vBox;
     }
+
     public void Evento(RadioButton radioButton) {
-        if (radioButton.getText().equals("Recommend based on songs features")) {
-            modelo.setEleccion(0);
-        } else if (radioButton.getText().equals("Recommend based on guessed genre")) {
-            modelo.setEleccion(2);
-        } else if (radioButton.getText().equals("Manhattan") && modelo.getEleccion() == 0) {
-            modelo.setEleccion(1);
-        } else if (radioButton.getText().equals("Manhattan") && modelo.getEleccion() == 2) {
-            modelo.setEleccion(3);
-        } else if (radioButton.getText().equals("Euclidean") && modelo.getEleccion() == 1) {
-            modelo.setEleccion(0);
-        } else if (radioButton.getText().equals("Euclidean") && modelo.getEleccion() == 3) {
-            modelo.setEleccion(2);
+        switch (radioButton.getText()){
+                case "Manhattan":
+                    Distancia = Distancias.get(1) ;
+                    break;
+                case "Euclidean":
+                    Distancia =  Distancias.get(0);
+                    break;
+                case "Recommend based on songs features":
+                    Algoritm = Algoritmo.get(0);
+                case "Recommend based on guessed genre":
+                    Algoritm = Algoritmo.get(1);
+                    default:
+                    throw  new IllegalArgumentException("Parametro no reconocido");
+
         }
+    }
+    public boolean isReadyToRecommend() {
+        return Algoritm != null && Distancia != null;
     }
     public void setModelo(Modelo modelo){
         this.modelo = modelo;

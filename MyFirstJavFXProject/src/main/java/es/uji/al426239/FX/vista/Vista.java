@@ -5,6 +5,7 @@ import es.uji.al426239.FX.modelo.Modelo;
 import es.uji.al426239.algoritmos.Comparator;
 import es.uji.al426239.algoritmos.FilaVacia;
 import es.uji.al426239.algoritmos.TablaVacia;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -50,23 +51,33 @@ public class Vista implements AskVista ,AnswerVista {
         }
     }
     public void botonRecomendar(VBox vBox, ListView<String> listacanciones) {
-        Button button = new Button("Recommend");
-        button.setDisable(true);
+       Button buttonRecommend = new Button("Recommend");
+        buttonRecommend.setDisable(true); // Inicialmente deshabilitado
         listacanciones.setOnMouseClicked(mouseEvent -> {
             modelo.setCancionRecomendada(listacanciones.getSelectionModel().getSelectedItem());
-            button.setDisable(false);
-            button.setOnAction(value -> {
-                try {
-                    escenario.setScene(escenaRecomendarTitulos());
-                } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
-                    throw new RuntimeException(e);
-
-                }
-                escenario.show();
-            });
+            actualizarEstadoBotonRecomendar(buttonRecommend);
         });
-        vBox.getChildren().addAll(button);
+        buttonRecommend.setOnAction(value -> {
+            try {
+                escenario.setScene(escenaRecomendarTitulos());
+            } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
+                throw new RuntimeException(e);
+            }
+            escenario.show();
+        });
+        vBox.getChildren().addAll(buttonRecommend);
     }
+
+    private void actualizarEstadoBotonRecomendar(Button buttonRecomend) {
+        // Asegúrate de ejecutar en el hilo de JavaFX
+            if (controlador.isReadyToRecommend() && modelo.getCancionRecomendada() != null) {
+                buttonRecomend.setDisable(false);
+            } else {
+                buttonRecomend.setDisable(true);
+            }
+
+    }
+
     private Scene escenaRecomendarTitulos() throws FilaVacia, IOException, TablaVacia, Comparator {
         HBox hBox = anyadirNumeroRecomendaciones(new HBox());
         hBox.setSpacing(10);
