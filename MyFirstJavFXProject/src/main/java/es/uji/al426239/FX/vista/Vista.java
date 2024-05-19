@@ -20,13 +20,16 @@ public class Vista implements AskVista ,AnswerVista {
     private Modelo modelo;
     private final Stage escenario;
     private Factoria factoria;
+
     public Vista(final Stage escenario) {
         this.escenario = escenario;
     }
+
     public void inicio() throws IOException {
         escenario.setScene(escenaListaCanciones());
         escenario.show();
     }
+
     private Scene escenaListaCanciones() throws IOException {
         VBox vBox = new VBox();
         crearelecciones(vBox,"Recommendation Type", Arrays.asList("Recommend based on songs features","Recommend based on guessed genre"));
@@ -36,6 +39,7 @@ public class Vista implements AskVista ,AnswerVista {
         vBox.setPadding(new Insets(5));
         return new Scene(vBox);
     }
+
     private void crearelecciones(VBox vBox, String texto1, List<String> textos) {
         vBox.getChildren().add(factoria.Texto(texto1));
         ToggleGroup radioGroupRecommendation = new ToggleGroup();
@@ -45,6 +49,7 @@ public class Vista implements AskVista ,AnswerVista {
             vBox.getChildren().add(boton);
         }
     }
+
     public void botonRecomendar(VBox vBox, ListView<String> listacanciones) {
         Button button = new Button("Recommend");
         button.setDisable(true);
@@ -63,6 +68,7 @@ public class Vista implements AskVista ,AnswerVista {
         });
         vBox.getChildren().addAll(button);
     }
+
     private Scene escenaRecomendarTitulos() throws FilaVacia, IOException, TablaVacia, Comparator {
         HBox hBox = anyadirNumeroRecomendaciones(new HBox());
         hBox.setSpacing(10);
@@ -74,36 +80,49 @@ public class Vista implements AskVista ,AnswerVista {
         botonClose(vBox);
         return new Scene(vBox, 350, 400);
     }
+
     private HBox anyadirNumeroRecomendaciones(HBox hBox) {
         Text texto = new Text("Number of recommendations:");
         Spinner<Integer> spinner = new Spinner<>(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1,1));
         spinner.getValueFactory().setValue(modelo.getNumeroRecomendaciones());
-        controlador.actualizarListaRecomendaciones(spinner,hBox);
+        spinner.valueProperty().addListener((obs, oldValue, newValue) -> {
+            try {
+                controlador.actualizarListaRecomendaciones(hBox,newValue);
+            } catch (FilaVacia e) {
+                throw new RuntimeException(e);
+            }
+        });
         hBox.getChildren().addAll(texto,spinner);
         return hBox;
     }
+
     public void botonClose(VBox vBox) {
         Button button = new Button("Close");
         vBox.getChildren().addAll(button);
         button.setOnAction(value -> escenario.close());
     }
+
     public void botonVolver(VBox vBox) {
         Button button = new Button("Volver");
         vBox.getChildren().add(button);
         button.setOnAction(value -> {
             try {
                 escenario.setScene(escenaListaCanciones());
+                controlador.restableceNumeroRecomendaciones();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         });
     }
+
     public void setModelo(Modelo modelo) {
         this.modelo = modelo;
     }
+
     public void setControlador(Controlador controlador) {
         this.controlador = controlador;
     }
+
     public void setFactoria(Factoria facto){
         this.factoria = facto;
     }

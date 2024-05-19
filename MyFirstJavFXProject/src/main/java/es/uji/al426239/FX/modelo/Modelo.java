@@ -20,6 +20,7 @@ public class Modelo {
     private int eleccion;
     private final HashMap<Integer,Algorithm> Algoritmos;
     private final HashMap<Integer,RecSys> Recomendadores;
+
     public Modelo() {
         this.Algoritmos = new HashMap<>();
         this.Recomendadores = new HashMap<>();
@@ -27,7 +28,8 @@ public class Modelo {
         this.numeroRecomendaciones = 5;
         this.numeroClusters = 15;
     }
-    public void inicializar() throws IOException, FilaVacia, TablaVacia, Comparator {
+
+    public void inicializar() throws FilaVacia, IOException, TablaVacia, Comparator {
         Algoritmos.put(0,new KNN(new EuclideanDistance()));
         Algoritmos.put(1,new KNN(new ManhattanDistance()));
         Algoritmos.put(2,new KMeans(numeroClusters,numeroIteracion,4321,new EuclideanDistance()));
@@ -39,20 +41,23 @@ public class Modelo {
             i++;
         }
     }
+
     private void entrenarunearRecsys(RecSys recSys, int i) throws IOException, FilaVacia, TablaVacia, Comparator {
         String sep = FileSystems.getDefault().getSeparator();
         String ruta = "." + sep + "data"+ sep;
         if (i == 0 || i == 1) {
             recSys.train(new CSVLabeledFileReader(ruta+"songs_train.csv").readTableFromSource());
-            recSys.run(new CSVLabeledFileReader(ruta+"songs_test.csv").readTableFromSource(),readNames(ruta+"songs_train_names.csv"));
+            recSys.run(new CSVLabeledFileReader(ruta+"songs_train.csv").readTableFromSource(),readNames(ruta+"songs_train_names.csv"));
         } else if (i == 2 || i == 3) {
             recSys.train(new CSVUnlabeledFileReader(ruta+"songs_train_withoutnames.csv").readTableFromSource());
-            recSys.run(new CSVUnlabeledFileReader(ruta+"songs_test_withoutnames.csv").readTableFromSource(),readNames(ruta+"songs_train_names.csv"));
+            recSys.run(new CSVUnlabeledFileReader(ruta+"songs_train_withoutnames.csv").readTableFromSource(),readNames(ruta+"songs_train_names.csv"));
         }
     }
+
     public List<String> setRecomendaciones() throws FilaVacia {
         return Recomendadores.get(eleccion).recommend(getCancionRecomendada(),getNumeroRecomendaciones());
     }
+
     private List<String> readNames(String fileOfItemNames) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(fileOfItemNames));
         String line;
@@ -63,21 +68,27 @@ public class Modelo {
         br.close();
         return names;
     }
+
     public void setNumeroRecomendaciones(int numeroRecomendaciones) {
         this.numeroRecomendaciones = numeroRecomendaciones;
     }
+
     public String getCancionRecomendada() {
         return cancionRecomendada;
     }
+
     public void setCancionRecomendada(String cancionRecomendada) {
         this.cancionRecomendada = cancionRecomendada;
     }
+
     public int getNumeroRecomendaciones() {
         return numeroRecomendaciones;
     }
+
     public int getEleccion() {
         return eleccion;
     }
+
     public void setEleccion(int eleccion) {
         this.eleccion = eleccion;
     }

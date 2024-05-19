@@ -1,10 +1,9 @@
 package es.uji.al426239.sistemaderecomendacion;
 
-import es.uji.al426239.algoritmos.FilaVacia;
-import es.uji.al426239.algoritmos.TablaVacia;
-import es.uji.al426239.rowytable.Table;
+import es.uji.al426239.algoritmos.*;
 import es.uji.al426239.algoritmos.Comparator;
-import es.uji.al426239.algoritmos.Algorithm;
+import es.uji.al426239.rowytable.Table;
+
 import java.util.*;
 
 public class RecSys {
@@ -13,7 +12,7 @@ public class RecSys {
    private  List<String> testItemNames;
    private final List<String> selectedItems;
    private final Map<Integer, Integer> estimatedLabels;
-   public RecSys(Algorithm<Table, List<Number>, Integer> algorithm) {
+   public RecSys(Algorithm<Table,List<Number>,Integer> algorithm) {
        this.algorithm = algorithm;
        this.selectedItems = new ArrayList<>();
        this.estimatedLabels = new HashMap<>();
