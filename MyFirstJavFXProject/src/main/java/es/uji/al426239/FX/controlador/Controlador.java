@@ -1,9 +1,10 @@
 package es.uji.al426239.FX.controlador;
 
-import es.uji.al426239.FX.modelo.AskModelo;
 import es.uji.al426239.FX.modelo.Modelo;
 import es.uji.al426239.FX.vista.Vista;
+import es.uji.al426239.algoritmos.Comparator;
 import es.uji.al426239.algoritmos.FilaVacia;
+import es.uji.al426239.algoritmos.TablaVacia;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
@@ -15,27 +16,14 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.file.FileSystems;
-import java.util.List;
 import java.util.Scanner;
 
 public class Controlador {
-String Distancia ;
-String Algoritm ;
     private Modelo modelo;
     private Vista vista;
-<<<<<<< HEAD
 
-=======
-    private AskModelo askModelo;
-    private List<String> Algoritmo;
-    private List<String> Distancias;
-    public Controlador(AskModelo askModelo){
-        this.askModelo = askModelo;
-        Algoritmo = askModelo.GetAlgoritmos();
-        Distancias = askModelo.GetDistancias();
-    }
->>>>>>> 02f4723267c2cdeb66f6120c1e4525cbbf059f81
     public ListView<String> anyadircanciones() throws FileNotFoundException {
         ListView<String> listacanciones = new ListView<>();
         String sep = FileSystems.getDefault().getSeparator();
@@ -55,12 +43,21 @@ String Algoritm ;
         vista.botonRecomendar(vBox,listacanciones);
     }
 
-    public void actualizarListaRecomendaciones(HBox hBox, int newValue) throws FilaVacia {
+    public void actualizarListaRecomendaciones(HBox hBox, int newValue) throws FilaVacia, IOException, TablaVacia, Comparator {
         VBox vBox = (VBox) hBox.getParent();
-        vBox.getChildren().clear();
         modelo.setNumeroRecomendaciones(newValue);
+        vBox.getChildren().clear();
         ensenyaRecomendaciones(hBox, vBox);
         agregarBotones(vBox);
+    }
+
+    public VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia {
+        Text text = new Text("If you liked " + modelo.getCancionRecomendada() + " you might like");
+        ListView<String> listarecomendaciones = new ListView<>();
+        ObservableList<String> items = FXCollections.observableArrayList(modelo.setRecomendaciones());
+        listarecomendaciones.setItems(items);
+        vBox.getChildren().addAll(hBox, text, listarecomendaciones);
+        return vBox;
     }
 
     private void agregarBotones(VBox vBox) {
@@ -68,61 +65,37 @@ String Algoritm ;
         vista.botonClose(vBox);
     }
 
-    public VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia {
-        Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
-        ListView<String> listarecomendaciones = new ListView<>();
-        ObservableList<String> items = FXCollections.observableArrayList(modelo.setRecomendaciones(Algoritm,Distancia));
-        listarecomendaciones.setItems(items);
-        vBox.getChildren().addAll(hBox,text,listarecomendaciones);
-        return vBox;
-    }
-
     public void Evento(RadioButton radioButton) {
-        switch (radioButton.getText()){
-                case "Manhattan":
-                    System.out.println("das");
-                    Distancia = Distancias.get(1) ;
-                    break;
-                case "Euclidean":
-                    System.out.println("asd");
-                    Distancia =  Distancias.get(0);
-                    break;
-                case "Recommend based on songs features":
-                    System.out.println("alfa");
-                    Algoritm = Algoritmo.get(0);
-                    break;
-                case "Recommend based on guessed genre":
-                    System.out.println("Joel");
-                    Algoritm = Algoritmo.get(1);
-                    break;
-                    default:
-                    throw  new IllegalArgumentException("Parametro no reconocido");
-
+        String buttonText = radioButton.getText();
+        switch (buttonText) {
+            case "Recommend based on songs features" -> modelo.setEleccion(0);
+            case "Recommend based on guessed genre" -> modelo.setEleccion(2);
+            case "Euclidean" -> selectEuclidean();
+            case "Manhattan" -> selectManhattan();
         }
     }
-<<<<<<< HEAD
 
-    public void restableceNumeroRecomendaciones() {
-        modelo.setNumeroRecomendaciones(5);
+    private void selectEuclidean() {
+        if (modelo.getEleccion() == 1) {
+            modelo.setEleccion(0);
+        } else if (modelo.getEleccion() == 3) {
+            modelo.setEleccion(2);
+        }
     }
 
-=======
-    public boolean isReadyToRecommend() {
-        return Algoritm != null && Distancia != null;
+    private void selectManhattan() {
+        if (modelo.getEleccion() == 0) {
+            modelo.setEleccion(1);
+        } else if (modelo.getEleccion() == 2) {
+            modelo.setEleccion(3);
+        }
     }
->>>>>>> 02f4723267c2cdeb66f6120c1e4525cbbf059f81
+
     public void setModelo(Modelo modelo){
         this.modelo = modelo;
     }
 
     public void setVista(Vista vista){
         this.vista = vista;
-    }
-    public List<String> GetAlgoritmos(){
-        return Algoritmo;
-    }
-
-    public List<String> GetDistancias(){
-        return Distancias;
     }
 }
