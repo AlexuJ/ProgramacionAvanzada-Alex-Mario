@@ -51,25 +51,37 @@ public class factoriaAlgoritmos implements IntFactoriasAl {
             RecSys recomendador;
             switch (elecion) {
                 case "Recommend based on songs features":
+                    System.out.println("estos en is Knn");
                     recomendador = IsKnn(distance);
                     break;
                 case "Recommend based on guessed genre":
+                    System.out.println("estos en is KMEANS");
                      recomendador = IsKmeans(distance);
                     break;
 
                 default:
                     throw  new IllegalArgumentException("Parametro no reconocido");
             }
+            System.out.println("Vuelta");
             return recomendador;
         }
         private RecSys IsKnn(String disce) throws IOException, FilaVacia, TablaVacia, Comparator {
             lector = new CSVLabeledFileReader(ficheroLabel);
+            System.out.println(" se leer");
             Algorithm Algoritmo = new KNN(Factoriadistancias.Selecion(disce));
+            System.out.println("nuevo algoritmo");
             RecSys recomendador = new RecSys(Algoritmo);
+            System.out.println("item creado");
             Table tabla = lector.readTableFromSource();
+            System.out.println("tabla leida");
             recomendador.train(tabla);
+            System.out.println("recomendador entrenado");
             lector.ChangeFile(ficheroTestlabeled);
+            System.out.println("Nuevo fichero");
+            lector.readTableFromSource();
+            System.out.println("leido");
             recomendador.run(lector.readTableFromSource(),readNames(ruta+"songs_train_names.csv"));
+            System.out.println("Recomendacion");
             return recomendador;
 
         }
