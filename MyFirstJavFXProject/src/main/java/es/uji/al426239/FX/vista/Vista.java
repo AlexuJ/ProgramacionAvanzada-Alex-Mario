@@ -65,7 +65,7 @@ public class Vista implements AskVista ,AnswerVista {
         buttonRecomend.setOnAction(value -> {
             try {
                 escenario.setScene(escenaRecomendarTitulos());
-                controlador.reset();
+
 
             } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
                 throw new RuntimeException(e);
@@ -116,6 +116,7 @@ public class Vista implements AskVista ,AnswerVista {
             try {
                 escenario.setScene(escenaListaCanciones());
                 modelo.reset();
+                controlador.reset();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
