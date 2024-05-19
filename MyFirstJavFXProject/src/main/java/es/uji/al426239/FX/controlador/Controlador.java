@@ -74,7 +74,7 @@ String Algoritm ;
     public VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia, IOException, TablaVacia, Comparator {
         Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
         ListView<String> listarecomendaciones = new ListView<>();
-        ObservableList<String> items = FXCollections.observableArrayList(modelo.setRecomendaciones());
+        ObservableList<String> items = FXCollections.observableArrayList(modelo.setRecomendaciones(Algoritm,Distancia));
         listarecomendaciones.setItems(items);
         vBox.getChildren().addAll(hBox,text,listarecomendaciones);
         return vBox;
@@ -83,15 +83,21 @@ String Algoritm ;
     public void Evento(RadioButton radioButton) {
         switch (radioButton.getText()){
                 case "Manhattan":
+                    System.out.println("das");
                     Distancia = Distancias.get(1) ;
                     break;
                 case "Euclidean":
+                    System.out.println("asd");
                     Distancia =  Distancias.get(0);
                     break;
                 case "Recommend based on songs features":
+                    System.out.println("alfa");
                     Algoritm = Algoritmo.get(0);
+                    break;
                 case "Recommend based on guessed genre":
+                    System.out.println("Joel");
                     Algoritm = Algoritmo.get(1);
+                    break;
                     default:
                     throw  new IllegalArgumentException("Parametro no reconocido");
 

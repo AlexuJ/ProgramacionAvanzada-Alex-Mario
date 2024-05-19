@@ -23,6 +23,7 @@ public class Vista implements AskVista ,AnswerVista {
     private Factoria factoria;
     private List<String> Algoritmo;
     private List<String> Distancias;
+    private Button buttonRecomend;
     public Vista(final Stage escenario) {
         this.escenario = escenario;
     }
@@ -46,18 +47,22 @@ public class Vista implements AskVista ,AnswerVista {
         ToggleGroup radioGroupRecommendation = new ToggleGroup();
         for (String texto : textos) {
             RadioButton boton = factoria.Botones(texto, radioGroupRecommendation);
-            boton.setOnAction(value -> controlador.Evento(boton));
+            boton.setOnAction(value -> {
+                    controlador.Evento(boton);
+                    actualizarEstadoBotonRecomendar();
+
+            });
             vBox.getChildren().add(boton);
         }
     }
     public void botonRecomendar(VBox vBox, ListView<String> listacanciones) {
-       Button buttonRecommend = new Button("Recommend");
-        buttonRecommend.setDisable(true); // Inicialmente deshabilitado
+        buttonRecomend = new Button("Recommend");
+        buttonRecomend.setDisable(true); // Inicialmente deshabilitado
         listacanciones.setOnMouseClicked(mouseEvent -> {
             modelo.setCancionRecomendada(listacanciones.getSelectionModel().getSelectedItem());
-            actualizarEstadoBotonRecomendar(buttonRecommend);
+            actualizarEstadoBotonRecomendar();
         });
-        buttonRecommend.setOnAction(value -> {
+        buttonRecomend.setOnAction(value -> {
             try {
                 escenario.setScene(escenaRecomendarTitulos());
             } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
@@ -65,10 +70,10 @@ public class Vista implements AskVista ,AnswerVista {
             }
             escenario.show();
         });
-        vBox.getChildren().addAll(buttonRecommend);
+        vBox.getChildren().addAll(buttonRecomend);
     }
 
-    private void actualizarEstadoBotonRecomendar(Button buttonRecomend) {
+    private void actualizarEstadoBotonRecomendar() {
         // Asegúrate de ejecutar en el hilo de JavaFX
             if (controlador.isReadyToRecommend() && modelo.getCancionRecomendada() != null) {
                 buttonRecomend.setDisable(false);

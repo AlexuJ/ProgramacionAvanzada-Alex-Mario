@@ -24,7 +24,6 @@ public class LanzadorAplicacion extends Application {
         Modelo modelo = new Modelo(factoriaAlgoritmos);
         AskModelo askModelo = modelo;
         Controlador controlador = new Controlador(askModelo);
-
         Vista vista = new Vista(primaryStage);
         Factoria factoria = new FactoriaVista();
         vista.setFactoria(factoria);
@@ -33,6 +32,5 @@ public class LanzadorAplicacion extends Application {
         vista.setModelo(modelo);
         vista.setControlador(controlador);
         vista.inicio();
-        modelo.inicializar();
     }
 }

@@ -33,12 +33,29 @@ public class Modelo implements AskModelo{
         Algoritmo = factoriaAlgoritmos.GetListaAlgoritmos();
         Distancias = factoriaAlgoritmos.GetListaDistancias();
     }
-    public void inicializar() throws IOException, FilaVacia, TablaVacia, Comparator {
-
-    }
-
-    public List<String> setRecomendaciones() throws FilaVacia {
-        return Recomendadores.get(eleccion).recommend(getCancionRecomendada(),getNumeroRecomendaciones());
+    public List<String> setRecomendaciones(String Algorithm,String Distance) throws FilaVacia, IOException, TablaVacia, Comparator {
+        System.out.println("Creando recomendador");
+        RecSys recSys;
+        if (Recomendador.containsKey(Algorithm)){
+            HashMap<String,RecSys> auxiliar = Recomendador.get(Algorithm);
+            if (auxiliar.containsKey(Distance)){
+                recSys = auxiliar.get(Distance);
+            }else {
+                recSys = factoriaAlgoritmos.Selecion(Algorithm,Distance);
+                auxiliar.put(Distance,factoriaAlgoritmos.Selecion(Algorithm,Distance));
+                Recomendador.put(Algorithm,auxiliar);
+            }
+        }else {
+            System.out.println("Primera");
+            HashMap<String,RecSys> auxiliar = new HashMap<>();
+            System.out.println("MAPA");
+            recSys = factoriaAlgoritmos.Selecion(Algorithm,Distance);
+            System.out.println("fabrica");
+            auxiliar.put(Distance,recSys);
+            Recomendador.put(Algorithm,auxiliar);
+        }
+        System.out.println("Ayuda");
+        return    recSys.recommend(getCancionRecomendada(),getNumeroRecomendaciones());
     }
 
     public void setNumeroRecomendaciones(int numeroRecomendaciones) {
