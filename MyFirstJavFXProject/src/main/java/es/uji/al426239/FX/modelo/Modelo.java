@@ -19,6 +19,7 @@ public class Modelo implements AskModelo{
     private final HashMap<Integer,Algorithm> Algoritmos;
     private final HashMap<Integer,RecSys> Recomendadores;
     private HashMap<String,HashMap<String,RecSys>> Recomendador;
+    private RecSys recomendadorActual;
     private IntFactoriasAl factoriaAlgoritmos;
     private List<String> Algoritmo;
     private List<String> Distancias;
@@ -55,7 +56,15 @@ public class Modelo implements AskModelo{
             Recomendador.put(Algorithm,auxiliar);
         }
         System.out.println("Ayuda");
+        System.out.println(cancionRecomendada);
+        System.out.println(recSys.recommend(getCancionRecomendada(),getNumeroRecomendaciones()));
+        recomendadorActual = recSys;
         return    recSys.recommend(getCancionRecomendada(),getNumeroRecomendaciones());
+
+
+    }
+    public void reset(){
+        recomendadorActual.reset();
     }
 
     public void setNumeroRecomendaciones(int numeroRecomendaciones) {
@@ -69,12 +78,6 @@ public class Modelo implements AskModelo{
     }
     public int getNumeroRecomendaciones() {
         return numeroRecomendaciones;
-    }
-    public int getEleccion() {
-        return eleccion;
-    }
-    public void setEleccion(int eleccion) {
-        this.eleccion = eleccion;
     }
     @Override
     public List<String> GetAlgoritmos(){

@@ -36,6 +36,10 @@ String Algoritm ;
         Algoritmo = askModelo.GetAlgoritmos();
         Distancias = askModelo.GetDistancias();
     }
+    public  void reset(){
+        Distancia = null;
+        Algoritm = null;
+    }
     public ListView<String> anyadircanciones() throws FileNotFoundException {
         ListView<String> listacanciones = new ListView<>();
         String sep = FileSystems.getDefault().getSeparator();

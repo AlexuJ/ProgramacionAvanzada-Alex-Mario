@@ -41,10 +41,12 @@ public class factoriaAlgoritmos implements IntFactoriasAl {
             Distancias = Factoriadistancias.GetLista();
             Algoritmos = new ArrayList<>(List.of("Recommend based on songs features","Recommend based on guessed genre"));
             String sep = FileSystems.getDefault().getSeparator();
-            ficheroLabel = "." + sep + "data"+ sep+"songs_train.csv";
-            ficheroUnlabel = "." + sep + "data"+ sep+"songs_train_withoutnames.csv";
-            ficheroTestlabeled = "songs_test.csv";
-            ficheroTestUnlabeled = "songs_test_withoutnames.csv";
+            ruta = "." + sep + "data"+ sep;
+            ficheroLabel =ruta+"songs_train.csv";
+            ficheroUnlabel = ruta+"songs_train_withoutnames.csv";
+            ficheroTestlabeled = ruta + "songs_test.csv";
+            ficheroTestUnlabeled = ruta + "songs_test_withoutnames.csv";
+            ruta = "." + sep + "data"+ sep;
         }
         @Override
         public RecSys Selecion(String elecion, String distance) throws IOException, FilaVacia, TablaVacia, Comparator {
@@ -71,17 +73,10 @@ public class factoriaAlgoritmos implements IntFactoriasAl {
             Algorithm Algoritmo = new KNN(Factoriadistancias.Selecion(disce));
             System.out.println("nuevo algoritmo");
             RecSys recomendador = new RecSys(Algoritmo);
-            System.out.println("item creado");
             Table tabla = lector.readTableFromSource();
-            System.out.println("tabla leida");
             recomendador.train(tabla);
-            System.out.println("recomendador entrenado");
             lector.ChangeFile(ficheroTestlabeled);
-            System.out.println("Nuevo fichero");
-            lector.readTableFromSource();
-            System.out.println("leido");
             recomendador.run(lector.readTableFromSource(),readNames(ruta+"songs_train_names.csv"));
-            System.out.println("Recomendacion");
             return recomendador;
 
         }
