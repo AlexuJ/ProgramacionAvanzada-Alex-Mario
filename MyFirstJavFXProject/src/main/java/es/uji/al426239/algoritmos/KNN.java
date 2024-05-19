@@ -8,10 +8,12 @@ import java.util.List;
 public class KNN implements Algorithm<TableWithLabels, List<Double>, Integer> {
     private TableWithLabels TablaEntrenamiento;
     private Distance distance;
+    private String name;
 
     public KNN(Distance distance) {
         this.TablaEntrenamiento = new TableWithLabels();
         this.distance = distance;
+        name = "KNN";
     }
 
     // Método para aplicar a la tabla de entrenamiento los datos en cuestión
@@ -36,7 +38,7 @@ public class KNN implements Algorithm<TableWithLabels, List<Double>, Integer> {
         }
         return Estimacion;
     }
-
+    @Override
     public void setDistance(Distance distance) {
         this.distance = distance;
     }
