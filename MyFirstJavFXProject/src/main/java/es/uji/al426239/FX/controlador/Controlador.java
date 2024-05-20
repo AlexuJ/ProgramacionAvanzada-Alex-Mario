@@ -2,10 +2,7 @@ package es.uji.al426239.FX.controlador;
 
 import es.uji.al426239.FX.modelo.Modelo;
 import es.uji.al426239.FX.vista.Vista;
-import es.uji.al426239.algoritmos.Comparator;
 import es.uji.al426239.algoritmos.FilaVacia;
-import es.uji.al426239.algoritmos.TablaVacia;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
@@ -16,7 +13,6 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.util.Scanner;
 
@@ -43,7 +39,7 @@ public class Controlador {
         vista.botonRecomendar(vBox,listacanciones);
     }
 
-    public void actualizarListaRecomendaciones(HBox hBox, int newValue) throws FilaVacia, IOException, TablaVacia, Comparator {
+    public void actualizarListaRecomendaciones(HBox hBox, int newValue) throws FilaVacia {
         VBox vBox = (VBox) hBox.getParent();
         modelo.setNumeroRecomendaciones(newValue);
         vBox.getChildren().clear();
@@ -54,7 +50,7 @@ public class Controlador {
     public VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia {
         Text text = new Text("If you liked " + modelo.getCancionRecomendada() + " you might like");
         ListView<String> listarecomendaciones = new ListView<>();
-        ObservableList<String> items = FXCollections.observableArrayList(modelo.setRecomendaciones());
+        ObservableList<String> items = modelo.setRecomendaciones();
         listarecomendaciones.setItems(items);
         vBox.getChildren().addAll(hBox, text, listarecomendaciones);
         return vBox;

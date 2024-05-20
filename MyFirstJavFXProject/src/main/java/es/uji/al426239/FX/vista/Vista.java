@@ -87,7 +87,7 @@ public class Vista implements AskVista ,AnswerVista {
         spinner.valueProperty().addListener((obs, oldValue, newValue) -> {
             try {
                 controlador.actualizarListaRecomendaciones(hBox,newValue);
-            } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
+            } catch (FilaVacia e) {
                 throw new RuntimeException(e);
             }
         });
