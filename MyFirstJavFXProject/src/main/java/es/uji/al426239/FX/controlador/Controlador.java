@@ -79,13 +79,11 @@ String Algoritm ;
     public VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia, IOException, TablaVacia, Comparator {
         Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
         ListView<String> listarecomendaciones = new ListView<>();
+        modelo.setRecomendaciones(Algoritm,Distancia);
         ObservableList<String> items = modelo.getRecomendaciones() ;
         listarecomendaciones.setItems(items);
         vBox.getChildren().addAll(hBox,text,listarecomendaciones);
         return vBox;
-    }
-    public void SetRecomendacion() throws FilaVacia, IOException, TablaVacia, Comparator {
-        modelo.setRecomendaciones(Algoritm,Distancia);
     }
 
     public void Evento(RadioButton radioButton) {
