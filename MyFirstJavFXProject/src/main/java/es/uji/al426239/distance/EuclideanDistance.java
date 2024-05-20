@@ -4,9 +4,9 @@ import javax.xml.namespace.QName;
 import java.util.List;
 
 public class EuclideanDistance implements Distance {
-    private String name;
+
     public EuclideanDistance(){
-        this.name="EuclideanDistance";
+
     }
     @Override
     public double calculateDistance(List<Double> data, List<Double> data2) {
@@ -19,9 +19,6 @@ public class EuclideanDistance implements Distance {
         }
         return Math.sqrt(MetricaEuclidiana);
     }
-    @Override
-    public String getName(){
-        return name;
-    }
+
 
 }

@@ -3,7 +3,7 @@ package es.uji.al426239.distance;
 import java.util.List;
 
 public class ManhattanDistance implements Distance {
-    private String name;
+
     @Override
     public double calculateDistance(List<Double> data, List<Double> data2) {
         if (data.size() != data2.size()) {
@@ -15,8 +15,5 @@ public class ManhattanDistance implements Distance {
         }
         return distanceManhattan;
     }
-    @Override
-    public String getName(){
-        return name;
-    }
+
 }

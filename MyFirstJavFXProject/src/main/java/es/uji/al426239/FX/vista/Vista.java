@@ -64,7 +64,9 @@ public class Vista implements AskVista ,AnswerVista {
         });
         buttonRecomend.setOnAction(value -> {
             try {
+                controlador.SetRecomendacion();
                 escenario.setScene(escenaRecomendarTitulos());
+
 
 
             } catch (FilaVacia | IOException | TablaVacia | Comparator e) {

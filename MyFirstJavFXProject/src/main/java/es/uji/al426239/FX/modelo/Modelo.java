@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Modelo implements AskModelo{
+public class Modelo implements AskModelo , AnswerModelo{
     private int numeroRecomendaciones;
     private String cancionRecomendada;
     private ObservableList<String> recomendaciones;
@@ -25,7 +25,6 @@ public class Modelo implements AskModelo{
     private List<String> Algoritmo;
     private List<String> Distancias;
 
-
     public Modelo(IntFactoriasAl factoria) {
         this.Recomendador = new HashMap<>();
         this.numeroRecomendaciones = 5;
@@ -34,9 +33,11 @@ public class Modelo implements AskModelo{
         Distancias = factoriaAlgoritmos.GetListaDistancias();
         this.recomendaciones = FXCollections.observableArrayList();
     }
+    @Override
     public void setRecomendaciones(String Algorithm,String Distance) throws FilaVacia, IOException, TablaVacia, Comparator {
         System.out.println("Creando recomendador");
         RecSys recSys;
+
         if (Recomendador.containsKey(Algorithm)){
             HashMap<String,RecSys> auxiliar = Recomendador.get(Algorithm);
             if (auxiliar.containsKey(Distance)){
@@ -62,6 +63,7 @@ public class Modelo implements AskModelo{
         recomendaciones.setAll(nuevasRecomendaciones); // Actualiza la ObservableList con las nuevas recomendaciones
 
     }
+
     public void reset(){
         recomendadorActual.reset();
         recomendaciones = FXCollections.observableArrayList();
