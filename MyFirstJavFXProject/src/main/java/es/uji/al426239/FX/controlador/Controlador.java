@@ -3,6 +3,7 @@ package es.uji.al426239.FX.controlador;
 import es.uji.al426239.FX.modelo.Modelo;
 import es.uji.al426239.FX.vista.Vista;
 import es.uji.al426239.algoritmos.FilaVacia;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
@@ -50,7 +51,7 @@ public class Controlador {
     public VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia {
         Text text = new Text("If you liked " + modelo.getCancionRecomendada() + " you might like");
         ListView<String> listarecomendaciones = new ListView<>();
-        ObservableList<String> items = modelo.setRecomendaciones();
+        ObservableList<String> items = FXCollections.observableArrayList(modelo.setRecomendaciones());
         listarecomendaciones.setItems(items);
         vBox.getChildren().addAll(hBox, text, listarecomendaciones);
         return vBox;

@@ -82,7 +82,7 @@ public class Vista implements AskVista ,AnswerVista {
 
     private HBox anyadirNumeroRecomendaciones(HBox hBox) {
         Text texto = new Text("Number of recommendations:");
-        Spinner<Integer> spinner = new Spinner<>(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1,1));
+        Spinner<Integer> spinner = new Spinner<>(new SpinnerValueFactory.IntegerSpinnerValueFactory(0,100,1,1));
         spinner.getValueFactory().setValue(modelo.getNumeroRecomendaciones());
         spinner.valueProperty().addListener((obs, oldValue, newValue) -> {
             try {

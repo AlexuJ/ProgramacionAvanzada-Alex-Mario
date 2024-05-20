@@ -6,8 +6,6 @@ import es.uji.al426239.distance.ManhattanDistance;
 import es.uji.al426239.lectordetablas.CSVLabeledFileReader;
 import es.uji.al426239.lectordetablas.CSVUnlabeledFileReader;
 import es.uji.al426239.sistemaderecomendacion.RecSys;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import java.io.*;
 import java.nio.file.FileSystems;
 import java.util.ArrayList;
@@ -23,14 +21,12 @@ public class Modelo {
     private int eleccion;
     private final HashMap<Integer,  Algorithm> Algoritmos;
     private final HashMap<Integer,RecSys> Recomendadores;
-    private ObservableList<String> recomendaciones;
 
     public Modelo() {
         String sep = FileSystems.getDefault().getSeparator();
         ruta = "." + sep + "data"+ sep;
         this.Algoritmos = new HashMap<>();
         this.Recomendadores = new HashMap<>();
-        this.recomendaciones = FXCollections.observableArrayList();
         this.numeroIteracion = 200;
         this.numeroRecomendaciones = 5;
         this.numeroClusters = 15;
@@ -59,10 +55,9 @@ public class Modelo {
         }
     }
 
-    public ObservableList<String> setRecomendaciones() throws FilaVacia {
-        recomendaciones.clear();
-        recomendaciones = FXCollections.observableArrayList(Recomendadores.get(eleccion).recommend(getCancionRecomendada(),getNumeroRecomendaciones()));
-        return recomendaciones;
+    public List<String> setRecomendaciones() throws FilaVacia {
+        Recomendadores.get(eleccion).recommend(getCancionRecomendada(),getNumeroRecomendaciones()).clear();
+        return Recomendadores.get(eleccion).recommend(getCancionRecomendada(),getNumeroRecomendaciones());
     }
 
     private List<String> readNames(String fileOfItemNames) throws IOException {
