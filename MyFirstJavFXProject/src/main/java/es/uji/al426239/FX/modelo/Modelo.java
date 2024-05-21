@@ -8,12 +8,14 @@ import es.uji.al426239.lectordetablas.CSVUnlabeledFileReader;
 import es.uji.al426239.sistemaderecomendacion.RecSys;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ListView;
 
 import java.io.*;
 import java.nio.file.FileSystems;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class Modelo implements AskModelo{
     private int numeroRecomendaciones;
@@ -35,7 +37,6 @@ public class Modelo implements AskModelo{
         this.recomendaciones = FXCollections.observableArrayList();
     }
     public void setRecomendaciones(String Algorithm,String Distance) throws FilaVacia, IOException, TablaVacia, Comparator {
-        System.out.println("Creando recomendador");
         RecSys recSys;
         if (Recomendador.containsKey(Algorithm)){
             HashMap<String,RecSys> auxiliar = Recomendador.get(Algorithm);
@@ -47,15 +48,11 @@ public class Modelo implements AskModelo{
                 Recomendador.put(Algorithm,auxiliar);
             }
         }else {
-            System.out.println("Primera");
             HashMap<String,RecSys> auxiliar = new HashMap<>();
-            System.out.println("MAPA");
             recSys = factoriaAlgoritmos.Selecion(Algorithm,Distance);
-            System.out.println("fabrica");
             auxiliar.put(Distance,recSys);
             Recomendador.put(Algorithm,auxiliar);
         }
-        System.out.println("Ayuda");
         System.out.println(cancionRecomendada);
         recomendadorActual = recSys;
         List<String> nuevasRecomendaciones = recSys.recommend(cancionRecomendada ,numeroRecomendaciones);
@@ -69,6 +66,16 @@ public class Modelo implements AskModelo{
 
     public void setNumeroRecomendaciones(int numeroRecomendaciones) {
         this.numeroRecomendaciones = numeroRecomendaciones;
+    }
+    public ListView<String> anyadircanciones() throws FileNotFoundException {
+        ListView<String> listacanciones = new ListView<>();
+        String sep = FileSystems.getDefault().getSeparator();
+        String fichero = "." + sep + "data" + sep + "songs_train_names.csv";
+        Scanner sc = new Scanner(new File(fichero));
+        while (sc.hasNextLine()) {
+            listacanciones.getItems().add(sc.nextLine());
+        }
+        return listacanciones;
     }
     public String getCancionRecomendada() {
         return cancionRecomendada;

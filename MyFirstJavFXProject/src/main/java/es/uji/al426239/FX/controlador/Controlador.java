@@ -40,50 +40,19 @@ String Algoritm ;
         Distancia = null;
         Algoritm = null;
     }
-    public ListView<String> anyadircanciones() throws FileNotFoundException {
-        ListView<String> listacanciones = new ListView<>();
-        String sep = FileSystems.getDefault().getSeparator();
-        String fichero = "." + sep + "data" + sep + "songs_train_names.csv";
-        Scanner sc = new Scanner(new File(fichero));
-        while (sc.hasNextLine()) {
-            listacanciones.getItems().add(sc.nextLine());
-        }
-        return listacanciones;
-    }
-    public void crearlistacanciones(VBox vBox) throws FileNotFoundException {
-        Text titulolistacanciones = new Text("Song Titles");
-        titulolistacanciones.setFont(Font.font("Bree Serif", FontWeight.SEMI_BOLD,20));
-        ListView<String> listacanciones = anyadircanciones();
-        vBox.getChildren().addAll(titulolistacanciones,listacanciones);
-        vista.botonRecomendar(vBox,listacanciones);
-    }
-    public void actualizarListaRecomendaciones(Spinner<Integer> spinner, HBox hBox) {
-        spinner.valueProperty().addListener((obs, oldValue, newValue) -> {
-            VBox vBox = (VBox) hBox.getParent();
-            modelo.setNumeroRecomendaciones(newValue);
-            vBox.getChildren().clear();
-            try {
-                modelo.reset();
-                ensenyaRecomendaciones(hBox, vBox);
-            } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
-                throw new RuntimeException(e);
-            }
-            agregarBotones(vBox);
-        });
-        hBox.getChildren().clear();
-    }
     private void agregarBotones(VBox vBox) {
         vista.botonVolver(vBox);
         vista.botonClose(vBox);
     }
-    public VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia, IOException, TablaVacia, Comparator {
+    public ObservableList ensenyaRecomendaciones() throws FilaVacia, IOException, TablaVacia, Comparator {
         Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
         ListView<String> listarecomendaciones = new ListView<>();
         modelo.setRecomendaciones(Algoritm,Distancia);
         ObservableList<String> items = modelo.getRecomendaciones() ;
-        listarecomendaciones.setItems(items);
-        vBox.getChildren().addAll(hBox,text,listarecomendaciones);
-        return vBox;
+        return items;
+    }
+    public void  SetRecomendaciones() throws FilaVacia, IOException, TablaVacia, Comparator {
+        modelo.setRecomendaciones(Algoritm,Distancia);
     }
 
     public void Evento(RadioButton radioButton) {

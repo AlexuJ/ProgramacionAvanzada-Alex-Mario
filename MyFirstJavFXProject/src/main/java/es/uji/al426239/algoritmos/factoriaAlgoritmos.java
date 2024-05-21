@@ -33,20 +33,19 @@ public class factoriaAlgoritmos implements IntFactoriasAl {
         private ReaderTemplate lector;
 
         private  int seed;
-        public factoriaAlgoritmos(intFactoriasDis distacias) {
+        public factoriaAlgoritmos(intFactoriasDis distacias,Integer numeroIteracion,Integer seed,Integer numeroClusters,List<String> ficheros,String ruta) {
             Factoriadistancias = distacias;
             this.numeroIteracion = 200;
-            this.numeroClusters = 15;
-            this.seed = 4321;
+            this.numeroClusters = numeroClusters;
+            this.seed = seed;
             Distancias = Factoriadistancias.GetLista();
             Algoritmos = new ArrayList<>(List.of("Recommend based on songs features","Recommend based on guessed genre"));
-            String sep = FileSystems.getDefault().getSeparator();
-            ruta = "." + sep + "data"+ sep;
-            ficheroLabel =ruta+"songs_train.csv";
-            ficheroUnlabel = ruta+"songs_train_withoutnames.csv";
-            ficheroTestlabeled = ruta + "songs_test.csv";
-            ficheroTestUnlabeled = ruta + "songs_test_withoutnames.csv";
-            ruta = "." + sep + "data"+ sep;
+            this.ruta = ruta;
+            ficheroLabel =ruta+ficheros.get(0);
+            ficheroUnlabel = ruta+ficheros.get(1);
+            ficheroTestlabeled = ruta + ficheros.get(2);
+            ficheroTestUnlabeled = ruta + ficheros.get(3);
+
         }
         @Override
         public RecSys Selecion(String elecion, String distance) throws IOException, FilaVacia, TablaVacia, Comparator {
