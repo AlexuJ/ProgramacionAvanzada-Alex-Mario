@@ -12,6 +12,9 @@ import es.uji.al426239.distance.intFactoriasDis;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LanzadorAplicacion extends Application {
     public static void main(String[] args) {
@@ -20,7 +23,10 @@ public class LanzadorAplicacion extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException, FilaVacia, TablaVacia, Comparator {
         intFactoriasDis factoriasDis = new FactoryDistance();
-        IntFactoriasAl factoriaAlgoritmos = new factoriaAlgoritmos(factoriasDis);
+        String sep = FileSystems.getDefault().getSeparator();
+        String ruta = "." + sep + "data"+ sep;
+        List<String> ficheros =new ArrayList<>(List.of("songs_train.csv","songs_train_withoutnames.csv","songs_test.csv","songs_test_withoutnames.csv"));
+        IntFactoriasAl factoriaAlgoritmos = new factoriaAlgoritmos(factoriasDis,200,1,15,ficheros,ruta);
         Modelo modelo = new Modelo(factoriaAlgoritmos);
         AskModelo askModelo = modelo;
         Controlador controlador = new Controlador(askModelo);

@@ -26,6 +26,7 @@ public class factoriaAlgoritmos implements IntFactoriasAl {
     private ReaderTemplate lector;
     private  int seed;
 
+<<<<<<< HEAD
     public factoriaAlgoritmos(intFactoriasDis distacias) {
         Factoriadistancias = distacias;
         this.numeroIteracion = 200;
@@ -40,6 +41,35 @@ public class factoriaAlgoritmos implements IntFactoriasAl {
         ficheroTestlabeled = ruta + "songs_test.csv";ficheroTestUnlabeled = ruta + "songs_test_withoutnames.csv";
         ruta = "." + sep + "data"+ sep;
     }
+=======
+        private  int seed;
+        public factoriaAlgoritmos(intFactoriasDis distacias,Integer numeroIteracion,Integer seed,Integer numeroClusters,List<String> ficheros,String ruta) {
+            Factoriadistancias = distacias;
+            this.numeroIteracion = 200;
+            this.numeroClusters = numeroClusters;
+            this.seed = seed;
+            Distancias = Factoriadistancias.GetLista();
+            Algoritmos = new ArrayList<>(List.of("Recommend based on songs features","Recommend based on guessed genre"));
+            this.ruta = ruta;
+            ficheroLabel =ruta+ficheros.get(0);
+            ficheroUnlabel = ruta+ficheros.get(1);
+            ficheroTestlabeled = ruta + ficheros.get(2);
+            ficheroTestUnlabeled = ruta + ficheros.get(3);
+
+        }
+        @Override
+        public RecSys Selecion(String elecion, String distance) throws IOException, FilaVacia, TablaVacia, Comparator {
+            RecSys recomendador;
+            switch (elecion) {
+                case "Recommend based on songs features":
+                    System.out.println("estos en is Knn");
+                    recomendador = IsKnn(distance);
+                    break;
+                case "Recommend based on guessed genre":
+                    System.out.println("estos en is KMEANS");
+                     recomendador = IsKmeans(distance);
+                    break;
+>>>>>>> ae2dfad86e5bacd37abceab72c4973d444bc073c
 
     @Override
     public RecSys Selecion(String elecion, String distance) throws IOException, FilaVacia, TablaVacia, Comparator {

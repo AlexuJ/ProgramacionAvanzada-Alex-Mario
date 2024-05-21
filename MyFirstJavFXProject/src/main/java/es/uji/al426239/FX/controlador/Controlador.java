@@ -41,6 +41,7 @@ public class Controlador {
         Distancia = null;
         Algoritm = null;
     }
+<<<<<<< HEAD
 
     public ListView<String> anyadircanciones() throws FileNotFoundException {
         ListView<String> listacanciones = new ListView<>();
@@ -77,10 +78,13 @@ public class Controlador {
         hBox.getChildren().clear();
     }
 
+=======
+>>>>>>> ae2dfad86e5bacd37abceab72c4973d444bc073c
     private void agregarBotones(VBox vBox) {
         vista.botonVolver(vBox);
         vista.botonClose(vBox);
     }
+<<<<<<< HEAD
 
     public VBox ensenyaRecomendaciones(HBox hBox, VBox vBox) throws FilaVacia, IOException, TablaVacia, Comparator {
         Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
@@ -90,6 +94,17 @@ public class Controlador {
         listarecomendaciones.setItems(items);
         vBox.getChildren().addAll(hBox,text,listarecomendaciones);
         return vBox;
+=======
+    public ObservableList ensenyaRecomendaciones() throws FilaVacia, IOException, TablaVacia, Comparator {
+        Text text = new Text("If you liked "+modelo.getCancionRecomendada()+" you might like");
+        ListView<String> listarecomendaciones = new ListView<>();
+        modelo.setRecomendaciones(Algoritm,Distancia);
+        ObservableList<String> items = modelo.getRecomendaciones() ;
+        return items;
+    }
+    public void  SetRecomendaciones() throws FilaVacia, IOException, TablaVacia, Comparator {
+        modelo.setRecomendaciones(Algoritm,Distancia);
+>>>>>>> ae2dfad86e5bacd37abceab72c4973d444bc073c
     }
 
     public void Evento(RadioButton radioButton) {

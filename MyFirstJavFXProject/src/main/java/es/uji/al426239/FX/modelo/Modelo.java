@@ -4,9 +4,15 @@ import es.uji.al426239.algoritmos.*;
 import es.uji.al426239.sistemaderecomendacion.RecSys;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+<<<<<<< HEAD
+=======
+import javafx.scene.control.ListView;
+
+>>>>>>> ae2dfad86e5bacd37abceab72c4973d444bc073c
 import java.io.*;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class Modelo implements AskModelo {
     private int numeroRecomendaciones;
@@ -43,6 +49,10 @@ public class Modelo implements AskModelo {
             auxiliar.put(Distance,recSys);
             Recomendador.put(Algorithm,auxiliar);
         }
+<<<<<<< HEAD
+=======
+        System.out.println(cancionRecomendada);
+>>>>>>> ae2dfad86e5bacd37abceab72c4973d444bc073c
         recomendadorActual = recSys;
         List<String> nuevasRecomendaciones = recSys.recommend(cancionRecomendada ,numeroRecomendaciones);
         recomendaciones.setAll(nuevasRecomendaciones); // Actualiza la ObservableList con las nuevas recomendaciones
@@ -56,7 +66,20 @@ public class Modelo implements AskModelo {
     public void setNumeroRecomendaciones(int numeroRecomendaciones) {
         this.numeroRecomendaciones = numeroRecomendaciones;
     }
+<<<<<<< HEAD
 
+=======
+    public ListView<String> anyadircanciones() throws FileNotFoundException {
+        ListView<String> listacanciones = new ListView<>();
+        String sep = FileSystems.getDefault().getSeparator();
+        String fichero = "." + sep + "data" + sep + "songs_train_names.csv";
+        Scanner sc = new Scanner(new File(fichero));
+        while (sc.hasNextLine()) {
+            listacanciones.getItems().add(sc.nextLine());
+        }
+        return listacanciones;
+    }
+>>>>>>> ae2dfad86e5bacd37abceab72c4973d444bc073c
     public String getCancionRecomendada() {
         return cancionRecomendada;
     }
