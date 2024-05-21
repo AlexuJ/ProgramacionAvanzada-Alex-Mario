@@ -1,18 +1,19 @@
 package es.uji.al426239.sistemaderecomendacion;
 
-import es.uji.al426239.algoritmos.*;
-import es.uji.al426239.algoritmos.Comparator;
+import es.uji.al426239.algoritmos.FilaVacia;
+import es.uji.al426239.algoritmos.TablaVacia;
 import es.uji.al426239.rowytable.Table;
-
+import es.uji.al426239.algoritmos.Comparator;
+import es.uji.al426239.algoritmos.Algorithm;
 import java.util.*;
 
 public class RecSys {
-   private final Algorithm<Table, List<Number>, Integer> algorithm;
+   private Algorithm<Table, List<Number>, Integer> algorithm;
    private Table testData;
    private  List<String> testItemNames;
-   private final List<String> selectedItems;
-   private final Map<Integer, Integer> estimatedLabels;
-   public RecSys(Algorithm<Table,List<Number>,Integer> algorithm) {
+   private List<String> selectedItems;
+   private  Map<Integer, Integer> estimatedLabels;
+   public RecSys(Algorithm<Table, List<Number>, Integer> algorithm) {
        this.algorithm = algorithm;
        this.selectedItems = new ArrayList<>();
        this.estimatedLabels = new HashMap<>();
@@ -51,4 +52,7 @@ public class RecSys {
     private List<String> getNamesSelectedItems() {
        return selectedItems;
    }
+    public void reset(){
+       selectedItems = new ArrayList<>();
+    }
 }
