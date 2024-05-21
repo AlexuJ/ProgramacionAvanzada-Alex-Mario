@@ -1,21 +1,14 @@
 package es.uji.al426239.FX.modelo;
 
 import es.uji.al426239.algoritmos.*;
-import es.uji.al426239.distance.EuclideanDistance;
-import es.uji.al426239.distance.ManhattanDistance;
-import es.uji.al426239.lectordetablas.CSVLabeledFileReader;
-import es.uji.al426239.lectordetablas.CSVUnlabeledFileReader;
 import es.uji.al426239.sistemaderecomendacion.RecSys;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.io.*;
-import java.nio.file.FileSystems;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Modelo implements AskModelo{
+public class Modelo implements AskModelo {
     private int numeroRecomendaciones;
     private String cancionRecomendada;
     private ObservableList<String> recomendaciones;
@@ -24,7 +17,6 @@ public class Modelo implements AskModelo{
     private IntFactoriasAl factoriaAlgoritmos;
     private List<String> Algoritmo;
     private List<String> Distancias;
-
 
     public Modelo(IntFactoriasAl factoria) {
         this.Recomendador = new HashMap<>();
@@ -35,7 +27,6 @@ public class Modelo implements AskModelo{
         this.recomendaciones = FXCollections.observableArrayList();
     }
     public void setRecomendaciones(String Algorithm,String Distance) throws FilaVacia, IOException, TablaVacia, Comparator {
-        System.out.println("Creando recomendador");
         RecSys recSys;
         if (Recomendador.containsKey(Algorithm)){
             HashMap<String,RecSys> auxiliar = Recomendador.get(Algorithm);
@@ -47,21 +38,16 @@ public class Modelo implements AskModelo{
                 Recomendador.put(Algorithm,auxiliar);
             }
         }else {
-            System.out.println("Primera");
             HashMap<String,RecSys> auxiliar = new HashMap<>();
-            System.out.println("MAPA");
             recSys = factoriaAlgoritmos.Selecion(Algorithm,Distance);
-            System.out.println("fabrica");
             auxiliar.put(Distance,recSys);
             Recomendador.put(Algorithm,auxiliar);
         }
-        System.out.println("Ayuda");
-        System.out.println(cancionRecomendada);
         recomendadorActual = recSys;
         List<String> nuevasRecomendaciones = recSys.recommend(cancionRecomendada ,numeroRecomendaciones);
         recomendaciones.setAll(nuevasRecomendaciones); // Actualiza la ObservableList con las nuevas recomendaciones
-
     }
+
     public void reset(){
         recomendadorActual.reset();
         recomendaciones = FXCollections.observableArrayList();
@@ -70,22 +56,28 @@ public class Modelo implements AskModelo{
     public void setNumeroRecomendaciones(int numeroRecomendaciones) {
         this.numeroRecomendaciones = numeroRecomendaciones;
     }
+
     public String getCancionRecomendada() {
         return cancionRecomendada;
     }
+
     public void setCancionRecomendada(String cancionRecomendada) {
         this.cancionRecomendada = cancionRecomendada;
     }
+
     public int getNumeroRecomendaciones() {
         return numeroRecomendaciones;
     }
+
     public ObservableList<String> getRecomendaciones() {
         return recomendaciones;
     }
+
     @Override
     public List<String> GetAlgoritmos(){
         return Algoritmo;
     }
+
     @Override
     public List<String> GetDistancias(){
         return Distancias;

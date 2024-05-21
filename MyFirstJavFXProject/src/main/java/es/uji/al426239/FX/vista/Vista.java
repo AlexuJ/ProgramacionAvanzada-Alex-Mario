@@ -5,7 +5,6 @@ import es.uji.al426239.FX.modelo.Modelo;
 import es.uji.al426239.algoritmos.Comparator;
 import es.uji.al426239.algoritmos.FilaVacia;
 import es.uji.al426239.algoritmos.TablaVacia;
-import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -24,6 +23,7 @@ public class Vista implements AskVista ,AnswerVista {
     private List<String> Algoritmo;
     private List<String> Distancias;
     private Button buttonRecomend;
+
     public Vista(final Stage escenario) {
         this.escenario = escenario;
     }
@@ -33,6 +33,7 @@ public class Vista implements AskVista ,AnswerVista {
         escenario.setScene(escenaListaCanciones());
         escenario.show();
     }
+
     private Scene escenaListaCanciones() throws IOException {
         escenario.setTitle("Song Recommender");
         VBox vBox = new VBox();
@@ -43,6 +44,7 @@ public class Vista implements AskVista ,AnswerVista {
         vBox.setPadding(new Insets(5));
         return new Scene(vBox);
     }
+
     private void crearelecciones(VBox vBox, String texto1, List<String> textos) {
         vBox.getChildren().add(factoria.Texto(texto1));
         ToggleGroup radioGroupRecommendation = new ToggleGroup();
@@ -56,6 +58,7 @@ public class Vista implements AskVista ,AnswerVista {
             vBox.getChildren().add(boton);
         }
     }
+
     public void botonRecomendar(VBox vBox, ListView<String> listacanciones) {
         buttonRecomend = new Button("Recommend");
         buttonRecomend.setDisable(true); // Inicialmente deshabilitado
@@ -66,8 +69,6 @@ public class Vista implements AskVista ,AnswerVista {
         buttonRecomend.setOnAction(value -> {
             try {
                 escenario.setScene(escenaRecomendarTitulos());
-
-
             } catch (FilaVacia | IOException | TablaVacia | Comparator e) {
                 throw new RuntimeException(e);
             }
@@ -78,12 +79,7 @@ public class Vista implements AskVista ,AnswerVista {
 
     private void actualizarEstadoBotonRecomendar() {
         // Asegúrate de ejecutar en el hilo de JavaFX
-            if (controlador.isReadyToRecommend() && modelo.getCancionRecomendada() != null) {
-                buttonRecomend.setDisable(false);
-            } else {
-                buttonRecomend.setDisable(true);
-            }
-
+        buttonRecomend.setDisable(!controlador.isReadyToRecommend() || modelo.getCancionRecomendada() == null);
     }
 
     private Scene escenaRecomendarTitulos() throws FilaVacia, IOException, TablaVacia, Comparator {
@@ -98,6 +94,7 @@ public class Vista implements AskVista ,AnswerVista {
         botonClose(vBox);
         return new Scene(vBox, 350, 400);
     }
+
     private HBox anyadirNumeroRecomendaciones(HBox hBox) {
         Text texto = new Text("Number of recommendations:");
         Spinner<Integer> spinner = new Spinner<>(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1,1));
@@ -106,11 +103,13 @@ public class Vista implements AskVista ,AnswerVista {
         hBox.getChildren().addAll(texto,spinner);
         return hBox;
     }
+
     public void botonClose(VBox vBox) {
         Button button = new Button("Close");
         vBox.getChildren().addAll(button);
         button.setOnAction(value -> escenario.close());
     }
+
     public void botonVolver(VBox vBox) {
         Button button = new Button("Volver");
         vBox.getChildren().add(button);
@@ -124,12 +123,15 @@ public class Vista implements AskVista ,AnswerVista {
             }
         });
     }
+
     public void setModelo(Modelo modelo) {
         this.modelo = modelo;
     }
+
     public void setControlador(Controlador controlador) {
         this.controlador = controlador;
     }
+
     public void setFactoria(Factoria facto){
         this.factoria = facto;
     }
