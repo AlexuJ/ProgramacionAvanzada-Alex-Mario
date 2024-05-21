@@ -31,6 +31,7 @@ public class Vista implements AskVista ,AnswerVista {
     }
 
     private Scene escenaListaCanciones() throws IOException {
+        escenario.setTitle("Song Recommender");
         VBox vBox = new VBox();
         crearelecciones(vBox, "Recommendation Type", Arrays.asList("Recommend based on songs features", "Recommend based on guessed genre"));
         crearelecciones(vBox, "Distance Type", Arrays.asList("Euclidean", "Manhattan"));
@@ -69,6 +70,7 @@ public class Vista implements AskVista ,AnswerVista {
     }
 
     private Scene escenaRecomendarTitulos() throws FilaVacia, IOException, TablaVacia, Comparator {
+        escenario.setTitle("Song Recommender");
         HBox hBox = anyadirNumeroRecomendaciones(new HBox());
         hBox.setSpacing(10);
         hBox.setPadding(new Insets(10));
